@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Companytb extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'company',
+        'country',
+        'city',
+        'block',
+        'contact',
+        'category',
+        'subcategory'
+    ];
+}

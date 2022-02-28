@@ -1,0 +1,110 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ImportExcelController;
+use App\Http\Controllers\pagecontroller;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CompanyController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+/*
+Route::get('/', function () {
+    return view('welcome');
+});
+*/
+Route::get('/',[WelcomeController::class,"welcomeindex"]);
+Route::get('/categories',[CategoryController::class,"FrontCategory"]);
+
+//landing page Route
+//Route::get("/home",[HomeController::class,"index"]);
+Route::get("/about",[pagecontroller::class,"about"]);
+Route::get("/companies",[CompanyController::class,"companyshow"]);
+//Route::get("/registration",[pagecontroller::class,"registration"]);
+//Route::get("/login",[HomeController::class,"login"]);
+Route::get("/plans",[pagecontroller::class,"plans"]);
+//Route::get("/password_reset",[pagecontroller::class,"password_reset"]);
+Route::get("/contactus",[pagecontroller::class,"contactus"]);
+//Route::get("/admin/dashboard",[pagecontroller::class,"dashboard"]);
+//Route::get("/admin/login",[pagecontroller::class,"adminlogin"]);
+
+//Title and Tag ..................................
+
+Route::get('/admin/title', [App\Http\Controllers\TitleandtagController::class, 'titleandtag'])->name('titleandtag')->middleware('is_admin');
+Route::post('save_title', [App\Http\Controllers\TitleandtagController::class, 'save_title'])->name('save_title')->middleware('is_admin');
+//Route::get("titleandtag", "TitleandtagController@titleandtag")->name('titleandtag');
+//Route::post("save_title", "TitleandtagController@save_title")->name('save_title');
+
+// Slider Site ...................................................?
+
+//Route::get("slider/add", "SliderController@slideradd")->name('slideradd');
+//Route::post("slider/save", "SliderController@slider_save")->name('slider_save');
+
+
+//Route::get('/admin/slider', [App\Http\Controllers\SliderController::class, 'slideradd'])->name('slideradd')->middleware('is_admin');
+//Route::post('slider/save', [App\Http\Controllers\SliderController::class, 'slider_save'])->name('slider_save')->middleware('is_admin');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get("/login",[App\Http\Controllers\HomeController::class,"login"])->name('login');
+
+
+
+
+
+Route::get('adminlogin',[App\Http\Controllers\pagecontroller::class,"adminlogin"])->name('adminlogin');
+
+//admin aria
+
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminindex'])->name('admin.home')->middleware('is_admin');
+
+Route::get('/admin/page', [App\Http\Controllers\pagecontroller::class, 'pagesetting'])->name('admin.page')->middleware('is_admin');
+Route::get('/admin/user', [App\Http\Controllers\pagecontroller::class, 'userpage'])->name('admin.user')->middleware('is_admin');
+
+//ADMIN COMPANY
+Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'admincompanyshow'])->name('admin.companies')->middleware('is_admin');
+Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
+
+//For Review
+Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
+Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store')->middleware('is_admin');
+//For emailverify
+Route::get('/admin/emailverify', [App\Http\Controllers\EmailVeryfyController::class, 'emailshow'])->name('admin.emailverify')->middleware('is_admin');
+
+
+//For Category
+Route::get('/admin/categories', [App\Http\Controllers\CategoryController::class, 'create'])->name('categories.create')->middleware('is_admin');
+Route::post('/admin/categories', [App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store')->middleware('is_admin');
+//Route::get('/user','ImportExcelController@index');
+//Route::post('/user/import','ImportExcelController@import');
+
+
+//ImportExcelController
+
+Route::get('/admin/user', [App\Http\Controllers\VimbisoUserController::class, 'create'])->middleware('is_admin');
+//Route::post('/user/import', [App\Http\Controllers\ImportExcelController::class, 'import'])->middleware('is_admin');
+
+
+//Route::get('/admin/user',[App\Http\Controllers\pagecontroller::class,'importUser']);
+//Route::post('/import',[App\Http\Controllers\pagecontroller::class,'import'])->name('user.import');
+
+
+Route::get('export-user',[\App\Http\Controllers\VimbisoUserController::class,'exportUser'])->name('export-user')->middleware('is_admin');
+Route::post('import-user',[\App\Http\Controllers\VimbisoUserController::class,'importUser'])->name('import-user')->middleware('is_admin');
+
+
+//COMPANY EPORT IMPORT
+Route::get('export-company',[\App\Http\Controllers\CompanyController::class,'exportCompany'])->name('export-company')->middleware('is_admin');
+Route::post('import-company',[\App\Http\Controllers\CompanyController::class,'importCompany'])->name('import-company')->middleware('is_admin');
+
+
