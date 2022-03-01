@@ -45,8 +45,6 @@ class CompanyImport implements
     {
         foreach ($rows as $row) {
             $company = Companytb::create([
-                'name' => $row['name'],
-                'email' => $row['email'],
                 'id'=>$row['id'],
            'company'=>$row['company'],
            'country'=>$row['country'],
