@@ -201,7 +201,7 @@
 													</g>
 												</svg>
 												<!--end::Svg Icon-->
-											</span>Add New Categories</a>
+											</span>Add Reviews</a>
 											<!--end::Button-->
 										</div>
 									</div>
