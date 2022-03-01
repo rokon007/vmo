@@ -284,15 +284,16 @@
 									                  <i aria-hidden="true" class="ki ki-close"></i>
 									</button>
 								</div>
+								<form action="{{route('company.save')}}" method="post"  class="form">
+									@csrf
 									<div class="modal-body">
-										<div class="card card-custom gutter-b example example-compact">
+										<div class="offset-xxl-0 col-xxl-12">
 											
 											<!--begin::Form-->
 											
-												<div class="card-body">
+												<div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
 												<div class="row">
-												<form action="{{route('company.save')}}" method="post"  class="form">
-									@csrf
+												
 												<div class="col-xl-6">
 												<div class="form-group">
 														<label>Company name</label>
@@ -604,8 +605,9 @@
 							<div class="modal-footer">
 		<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
 		<input  name="submit" type="submit" class="btn btn-primary font-weight-bold" value="Submit">
-		              </form>
+		             
 						</div>
+						 </form>
 					</div>
 				</div>
 			</div>
