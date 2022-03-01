@@ -16,14 +16,14 @@ class CompanyImport implements ToModel
     public function model(array $row)
     {
         return new Companytb([
-           'id'=>$row[0],
-           'company'=>$row[1],
-           'country'=>$row[2],
-           'city'=>$row[3],
-           'block'=>$row[4],
-           'contact'=>$row[5],
-           'category'=>$row[6],
-           'subcategory'=>$row[7]
+           'id'=>$row[7],
+           'company'=>$row[3],
+           'country'=>$row[5],
+           'city'=>$row[2],
+           'block'=>$row[0],
+           'contact'=>$row[4],
+           'category'=>$row[1],
+           'subcategory'=>$row[8]
 
         ]);
     }
