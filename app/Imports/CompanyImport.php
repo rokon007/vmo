@@ -1,30 +1,84 @@
 <?php
 
 namespace App\Imports;
-use App\Models\Companytb;
-use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\Importable;
-use Maatwebsite\Excel\Concerns\SkipsOnError;
-use Maatwebsite\Excel\Concerns\WithValidation;
-class CompanyImport implements ToModel
-{
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
-    public function model(array $row)
-    {
-        return new Companytb([
-           'id'=>$row['0'],
-           'company'=>$row['1'],
-           'country'=>$row['2'],
-           'city'=>$row['3'],
-           'block'=>$row['4'],
-           'contact'=>$row['5'],
-           'category'=>$row['6'],
-           'subcategory'=>$row['7']
 
-        ]);
+use App\Models\Companytb;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\RegistersEventListeners;
+use Maatwebsite\Excel\Concerns\SkipsErrors;
+use Maatwebsite\Excel\Concerns\SkipsFailures;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\SkipsOnFailure;
+use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
+use Maatwebsite\Excel\Events\AfterImport;
+use Maatwebsite\Excel\Validators\Failure;
+use Throwable;
+
+
+
+class CompanyImport implements 
+    ToModel,
+    ToCollection,                           
+    WithHeadingRow,
+    SkipsOnError,
+    WithValidation,
+    SkipsOnFailure,
+    WithChunkReading,
+    ShouldQueue,
+    WithEvents
+{
+     use Importable, SkipsErrors, SkipsFailures, RegistersEventListeners;
+   
+
+
+
+    public function collection(Collection $rows)
+    {
+        foreach ($rows as $row) {
+            $company = Companytb::create([
+                'name' => $row['name'],
+                'email' => $row['email'],
+                'id'=>$row['id'],
+           'company'=>$row['company'],
+           'country'=>$row['country'],
+           'city'=>$row['city'],
+           'block'=>$row['block'],
+           'contact'=>$row['contact'],
+           'category'=>$row['category'],
+           'subcategory'=>$row['subcategory']
+            ]);
+
+            
+        }
+    }
+
+    public function rules(): array
+    {
+        return [
+            '*.email' => ['email', 'unique:users,email']
+        ];
+    }
+
+
+    public function chunkSize(): int
+    {
+        return 1000;
+    }
+
+    public static function afterImport(AfterImport $event)
+    {
+    }
+
+    public function onFailure(Failure ...$failure)
+    {
     }
 }
