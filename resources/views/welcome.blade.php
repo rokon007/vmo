@@ -3,8 +3,9 @@
 @section('title')
 
          <?php
-     $title = DB::table('titetle_and_tags')->first(); ?>
-      <title> {{$title->title}} </title>
+     //$title = DB::table('titetle_and_tags')->first(); ?>
+
+      <title> Vimbiso </title>
     <meta  name="keywords" content="{{$title->tags}} ">
     <meta name="description" content="{{$title->deteles}}">
   
