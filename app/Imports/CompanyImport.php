@@ -26,7 +26,7 @@ use Throwable;
 
 
 class CompanyImport implements 
-    ToModel,
+    
     ToCollection,                           
     WithHeadingRow,
     SkipsOnError,
