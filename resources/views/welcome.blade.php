@@ -6,8 +6,8 @@
      //$title = DB::table('titetle_and_tags')->first(); ?>
 
       <title> Vimbiso </title>
-    <meta  name="keywords" content="{{$title->tags}} ">
-    <meta name="description" content="{{$title->deteles}}">
+    <meta  name="keywords" content=" ">
+    <meta name="description" content="">
   
 
 @endsection
