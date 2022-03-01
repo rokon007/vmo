@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Models\user2;
+
 use Excel;
 use App\Imports\UserImport;
 
@@ -46,11 +46,7 @@ class pagecontroller extends Controller
    {
       return view('admin.categories');
    }
-    public function userpage()
-   {
-      $Alluser=user2::All();
-      return view('admin.user',compact('Alluser'));
-   }
+   
 
    //public function importUser()
   // {
