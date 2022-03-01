@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Models\reviews;
-use\App\Models\VimbisoUser;
+use App\Models\reviews;
+use App\Models\VimbisoUser;
 
 
 class ReviewController extends Controller

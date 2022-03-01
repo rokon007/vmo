@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Exports\CompanyExport;
 use App\Imports\CompanyImport;
 use Excel;
-use\App\Models\Companytb;
-use\App\Models\Category;
+use App\Models\Companytb;
+use App\Models\Category;
 
 class CompanyController extends Controller
 {

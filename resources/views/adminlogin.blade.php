@@ -24,9 +24,9 @@ License: You must have a valid license purchased only from themeforest(the above
 		<title>Login Page | Vimbiso Admin</title>
 		<meta name="description" content="Login page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<link rel="canonical" href="https://keenthemes.com/metronic" />
+		<link rel="canonical" href={{asset("https://keenthemes.com/metronic")}} />
 		<!--begin::Fonts-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<link rel="stylesheet" href={{asset("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700")}} />
 		<!--end::Fonts-->
 		<!--begin::Page Custom Styles(used by this page)-->
 		<link href={{asset("theme/html/demo1/dist/assets/css/pages/login/classic/login-35883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />

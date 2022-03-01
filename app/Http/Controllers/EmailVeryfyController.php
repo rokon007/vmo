@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Models\VimbisoUser;
+use App\Models\VimbisoUser;
 
 class EmailVeryfyController extends Controller
 {

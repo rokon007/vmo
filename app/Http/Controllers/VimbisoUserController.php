@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Exports\VimbisoUserExport;
 use App\Imports\VimbisoUserImport;
 use Excel;
-use\App\Models\VimbisoUser;
+use App\Models\VimbisoUser;
 
 class VimbisoUserController extends Controller
 {
