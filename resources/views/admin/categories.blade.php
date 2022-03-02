@@ -292,15 +292,15 @@
 													</td>
 													@endif
 													<td>{{$categorie->created_at}}</td>
-													</tr>
-													@endforeach
+													h
 													
 													
 												@if($categorie->getAttribute('category_id')!=NULL)
 													<td>{{$categorie->category_id}}</td>
 													@else
 														@endif
-												
+												</tr>
+													@endforeac
 												
 											</tbody>
 										</table>
