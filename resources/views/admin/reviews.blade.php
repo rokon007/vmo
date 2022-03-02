@@ -273,8 +273,8 @@
                                                  <tr>
                                                     <td><a><i class="la la-trash"></i></a></td>
                                                     <td>{{$reviewsdata->name}}</td>
-													<td>{{$reviewsdata->contact}}</td>
 													<td>{{$reviewsdata->company}}</td>
+													<td>{{$reviewsdata->contact}}</td>
 													<td>{{$reviewsdata->purchaseditem}}</td>
 												</tr>
 											@endforeach
@@ -375,7 +375,7 @@
 																</div>
 																<div class="form-group">
 																	<label>Date of purchase</label>
-																	<input type="date" class="form-control form-control-solid form-control-lg" name="dateofpurchase" placeholder="Last Name" value="" />
+																	<input type="date" class="form-control form-control-solid form-control-lg" name="dateofpurchase" placeholder="" value="" />
 																	<span class="form-text text-muted">Please enter Date of purchase.</span>
 																</div>
 																		
@@ -395,7 +395,7 @@
 																</div>
 																<div class="form-group">
 																	<label>Ratings</label>
-																	<input type="number" class="form-control form-control-solid form-control-lg" name="ratings" placeholder="First Name" value="" />
+																	<input type="number" class="form-control form-control-solid form-control-lg" name="ratings"  />
 																	<span class="form-text text-muted">Please put your Ratings.</span>
 																</div>
 																<div class="form-group">
@@ -449,7 +449,7 @@
 																		 <div class="form-group">
 																	       <label>Company</label>
 
-																	       <select name="category_id" class="form-control form-control-solid form-control-lg" id="exampleSelectl">
+																	       <select name="company" class="form-control form-control-solid form-control-lg" id="exampleSelectl">
 															<option value="">No Company</option>
 															@foreach($CompanyNameData as $companyname)
                                                             <option value="{{$companyname->company_name}}" >{{$companyname->company_name}}</option>

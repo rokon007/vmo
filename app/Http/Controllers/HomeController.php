@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\reviews;
 use DB;
 
 class HomeController extends Controller
@@ -29,7 +30,8 @@ class HomeController extends Controller
     {
         $Allcategories=Category::All();
         $categories=Category::whereNull('category_id')->limit(12)->get();
-        return view('home',compact('categories','Allcategories'));
+        $Allreviews=reviews::All();
+        return view('home',compact('categories','Allcategories','Allreviews'));
     }
      public function login()
     {

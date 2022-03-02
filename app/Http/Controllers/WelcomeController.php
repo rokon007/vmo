@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\reviews;
 
 class WelcomeController extends Controller
 {
@@ -11,9 +12,9 @@ class WelcomeController extends Controller
    {
     $Allcategories=Category::All();
     $categories=Category::whereNull('category_id')->limit(12)->get();
-   
+   $Allreviews=reviews::All();
      
-     return view('welcome',compact('categories','Allcategories'));
+     return view('welcome',compact('categories','Allcategories','Allreviews'));
     
 
    }

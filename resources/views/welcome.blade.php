@@ -161,81 +161,79 @@
                          </div>
 
                          <div class="owl-carousel owl-theme owl-client">
+						 
+						 
+						   
+						 
+						 
+						 
+						 
+						  
+
+						 
+						
+						 @foreach($Allreviews as $reviews)
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
                                              <img src="images/tst-image1.jpg" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>Jackson</h4>
-                                             <span>Shopify Developer</span>
+                                             <h4>{{$reviews->name}}&#160;<i class="fa fa-check-circle text-primary"></i></h4>
+                                             <span><i class="fa fa-location" style="color:green;"></i>{{$reviews->branchlocation}}</span>
+											 <p style="">{{$reviews->getAttribute('created_at')->format('D, d, M, Y')}} </p>
                                         </div>
-                                        <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
+										
+										@if($reviews->getAttribute('ratings')==1) 
+										<div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#C70039;"></i>
+                                            
                                         </div>
+										@elseif($reviews->getAttribute('ratings')==2)
+										   <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#FF5733;"></i>
+                                             <i class="fa fa-star" style="color:#FF5733;"></i>
+                                              
+                                        </div>
+										@elseif($reviews->getAttribute('ratings')==3)
+										   <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#FFC300;"></i>
+                                             <i class="fa fa-star" style="color:#FFC300;"></i>
+                                              <i class="fa fa-star" style="color:#FFC300;"></i>
+                                             
+                                        </div>
+										@elseif($reviews->getAttribute('ratings')==4)
+										    <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#00ff36;"></i>
+                                             <i class="fa fa-star" style="color:#00ff36;"></i>
+                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+                                              
+                                        </div>
+										@elseif($reviews->getAttribute('ratings')==5)
+										      <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#51a127;"></i>
+                                             <i class="fa fa-star" style="color:#51a127;"></i>
+                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                        </div>
+										@else
+											<div class="tst-rating">
+                                             <i class="fa fa-map" style="color:#C70039;"></i>
+                                             
+                                        </div>
+										@endif
+                                        <p>{{$reviews->review}}</p>
+                                        <p class="mb-0 mt-3"style="font-size:18px; " ><i class="fa fa-building"></i>&#160;{{$reviews->company}}</p>
                                    </div>
                               </div>
+                        @endforeach
+                              
 
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="tst-image">
-                                             <img src="images/tst-image2.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>Camila</h4>
-                                             <span>Marketing Manager</span>
-                                        </div>
-                                        <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   </div>
-                              </div>
+                             
 
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="tst-image">
-                                             <img src="images/tst-image3.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>Barbie</h4>
-                                             <span>Art Director</span>
-                                        </div>
-                                        <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="tst-image">
-                                             <img src="images/tst-image4.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>Andrio</h4>
-                                             <span>Web Developer</span>
-                                        </div>
-                                        <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   </div>
-                              </div>
+                              
 
                          </div>
 

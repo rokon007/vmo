@@ -17,7 +17,7 @@ class reviews extends Model
         'dateofpurchase',
         'branchlocation',
         'review',
-       ' ratings',
+       'ratings',
         'typeofpurchase',
        'resolved',
         'response',
