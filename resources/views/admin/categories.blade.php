@@ -263,7 +263,7 @@
 										<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
 											<thead>
 												<tr>
-													<th>#</th>
+													
 													<th>Action</th>
 													<th >Categories</th>
 												    <th>Parent </th>
@@ -275,11 +275,12 @@
 											</thead>
 											<tbody>
 												
-
-													@foreach($viewcategories as $key=>$categorie)
-                                                           <tr>
-                                                           	<td>{{$key+1}}</td>
-                                                           	 <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
+												
+                                                             <tr>
+													@foreach($viewcategories as $categorie)
+                                                          
+                                                           
+                                       <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
                                                     <td>{{$categorie->name}}</td>
 													@if($categorie->getAttribute('category_id')!=NULL)
                                                    
@@ -299,9 +300,9 @@
 													<td>{{$categorie->category_id}}</td>
 													@else
 														@endif
-												</tr>
-													@endforeach
 												
+													@endforeach
+												</tr>
 											</tbody>
 										</table>
 										<!--end: Datatable-->
