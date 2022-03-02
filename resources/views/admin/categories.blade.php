@@ -292,7 +292,7 @@
 													</td>
 													@endif
 													<td>{{$categorie->created_at}}</td>
-													h
+													
 													
 													
 												@if($categorie->getAttribute('category_id')!=NULL)
