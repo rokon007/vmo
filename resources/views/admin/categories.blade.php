@@ -281,7 +281,8 @@
                                                            	<td>{{$key+1}}</td>
                                                            	 <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
                                                     <td>{{$categorie->name}}</td>
-                                                    @if($categorie->category_id)
+													@if($categorie->getAttribute('category_id')!=NULL)
+                                                   
 													<td>{{$categorie->category_id}}</td>
 													@else
 													 <td>
@@ -295,7 +296,7 @@
 													@endforeach
 													
 													
-												@if($categorie->category_id)
+												@if($categorie->getAttribute('category_id')!=NULL)
 													<td>{{$categorie->category_id}}</td>
 													@else
 														@endif
