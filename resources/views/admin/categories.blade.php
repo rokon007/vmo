@@ -268,9 +268,7 @@
 													<th >Categories</th>
 												    <th>Parent </th>
 													<th>Creat Date</th>
-													<th></th>
-													<th></th>
-													<th></th>
+													
 												</tr>
 											</thead>
 											<tbody>
@@ -290,8 +288,7 @@
 													No Parent	
 													</i> 
 													</td>
-													@endif
-													<td>{{$categorie->category_id}}</td>
+													@endif													
 													<td>{{$categorie->created_at}}</td>	
 													</tr>
 													@endforeach
