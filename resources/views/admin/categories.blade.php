@@ -277,9 +277,7 @@
 												
 												
                                                              <tr>
-													@foreach($Allcategories as $categorie)
-                                                          
-                                                           
+													@foreach($Allcategories as $categorie)    
                                        <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
                                                     <td>{{$categorie->name}}</td>
 													@if($categorie->getAttribute('category_id')!=NULL)
@@ -292,15 +290,8 @@
 													</i> 
 													</td>
 													@endif
-													<td>{{$categorie->created_at}}</td>
-													
-													
-													
-												@if($categorie->getAttribute('category_id')!=NULL)
 													<td>{{$categorie->category_id}}</td>
-													@else
-														@endif
-												
+													<td>{{$categorie->created_at}}</td>													
 													@endforeach
 												</tr>
 											</tbody>
