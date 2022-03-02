@@ -277,7 +277,7 @@
 												
 												
                                                              <tr>
-													@foreach($viewcategories as $categorie)
+													@foreach($Allcategories as $categorie)
                                                           
                                                            
                                        <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
