@@ -27,6 +27,16 @@ class pagecontroller extends Controller
         return view("frontpage.contactus");
     }
     //-------------------------
+    //indexprofile
+    public function indexprofile()
+    {
+        return view('profile');
+    }
+     public function indexsettings()
+    {
+        return view('settings');
+    }
+
     //------------------------
     //**************************************************************************************************************************************************************************************
 

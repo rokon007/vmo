@@ -27,6 +27,9 @@ Route::get('/', function () {
 Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
 Route::get('/',[WelcomeController::class,"welcomeindex"]);
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
+//Normal User
+Route::get('/profile', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
+Route::get('/settings', [App\Http\Controllers\pagecontroller::class, 'indexsettings'])->name('settings');
 
 //landing page Route
 //Route::get("/home",[HomeController::class,"index"]);
