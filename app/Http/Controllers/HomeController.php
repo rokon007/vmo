@@ -37,15 +37,6 @@ class HomeController extends Controller
     {
         return view('login');
     }
-//indexprofile
-    public function indexprofile()
-    {
-        return view('profile');
-    }
-     public function indexsettings()
-    {
-        return view('settings');
-    }
 
     public function adminIndex()
     {

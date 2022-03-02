@@ -30,11 +30,11 @@ class pagecontroller extends Controller
     //indexprofile
     public function indexprofile()
     {
-        return view('profile');
+        return view('frontpage.profile');
     }
      public function indexsettings()
     {
-        return view('settings');
+        return view('frontpage.settings');
     }
 
     //------------------------

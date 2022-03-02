@@ -105,13 +105,13 @@ https://templatemo.com/tm-516-known
                       For Businesses
                     </a>
                              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-dark border-bottom border-dark" href="{{ route('login') }}"><i class="fa fa-user"></i>{{ __('Login') }}</a>
+                                    <a class="dropdown-item text-dark border-bottom border-dark" href="{{ route('login') }}"><i class="fa fa-user">{ __('Login') }}</i>{</a>
                                     <!--<a class="dropdown-item text-dark border-bottom border-dark" href="{{url('about')}}"><i class="fab fa-get-pocket"></i>Profile</a>-->
                                
                             @endif
                              @if (Route::has('register'))
                                 
-                                    <a class="dropdown-item text-dark" href="{{ route('register') }}"><i class="fa fa-user"></i>{{ __('Register') }}</a>
+                                    <a class="dropdown-item text-dark" href="{{ route('register') }}"><i class="fa fa-user">{{ __('Register') }}</i></a>
                                 <!-- <a class="dropdown-item text-dark" href="{{url('registration')}}"><i class="fas fa-user"></i>
                                 <a class="dropdown-item text-dark" href="{{url('login')}}"><i class="fas fa-user"></i>Login</a>
                            Register</a>
@@ -132,8 +132,8 @@ https://templatemo.com/tm-516-known
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-									 <a class="dropdown-item text-dark" href="{{ route('profile') }}"><i class="fa fa-user"></i>{{ __('Profile') }}</a>
-									 <a class="dropdown-item text-dark" href="{{ route('settings') }}"><i class="fa fa-user"></i>{{ __('Settings') }}</a>
+									 <a class="dropdown-item text-dark" href="{{ route('profile') }}"><i class="fa fa-user">{{ __('Profile') }}</i></a>
+									 <a class="dropdown-item text-dark" href="{{ route('settings') }}"><i class="fa fa-user">{{ __('Settings') }}</i></a>
                                     </div>
                             
                         @endguest
