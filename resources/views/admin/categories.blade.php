@@ -276,8 +276,9 @@
 											<tbody>
 												
 												
-                                                             <tr>
-													@foreach($Allcategories as $categorie)    
+                                                             
+													@foreach($Allcategories as $categorie)
+													<tr>
                                        <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
                                                     <td>{{$categorie->name}}</td>
 													@if($categorie->getAttribute('category_id')!=NULL)
@@ -291,9 +292,10 @@
 													</td>
 													@endif
 													<td>{{$categorie->category_id}}</td>
-													<td>{{$categorie->created_at}}</td>													
+													<td>{{$categorie->created_at}}</td>	
+													</tr>
 													@endforeach
-												</tr>
+												
 											</tbody>
 										</table>
 										<!--end: Datatable-->
