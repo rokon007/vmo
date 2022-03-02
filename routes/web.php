@@ -6,6 +6,7 @@ use App\Http\Controllers\ImportExcelController;
 use App\Http\Controllers\pagecontroller;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+//Route::get('click_delete/{id}','ReviewController@delete_funtion')->name('reviews.delete')->middleware('is_admin');
+Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
 Route::get('/',[WelcomeController::class,"welcomeindex"]);
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
 
@@ -78,6 +81,7 @@ Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 's
 //For Review
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
 Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store')->middleware('is_admin');
+
 //For emailverify
 Route::get('/admin/emailverify', [App\Http\Controllers\EmailVeryfyController::class, 'emailshow'])->name('admin.emailverify')->middleware('is_admin');
 
@@ -106,5 +110,6 @@ Route::post('import-user',[\App\Http\Controllers\VimbisoUserController::class,'i
 //COMPANY EPORT IMPORT
 Route::get('export-company',[\App\Http\Controllers\CompanyController::class,'exportCompany'])->name('export-company')->middleware('is_admin');
 Route::post('import-company',[\App\Http\Controllers\CompanyController::class,'importCompany'])->name('import-company')->middleware('is_admin');
+
 
 

@@ -114,7 +114,12 @@
 						<div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
-								
+								@if($message = Session::get('success'))
+								<div class="alert alert-success alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<strong>{{$message}}</strong>
+								</div>
+								@endif
 								<!--end::Notice-->
 								<!--begin::Card-->
 								<div class="card card-custom">
@@ -263,6 +268,7 @@
 												    <th>Company</th>
 													<th>Contact</th>
 													<th>Purchased item</th>
+													
 												</tr>
 											</thead>
 											<tbody>
@@ -271,7 +277,7 @@
 													
                                             @foreach($ReviewData as $reviewsdata)
                                                  <tr>
-                                                    <td><a><i class="la la-trash"></i></a></td>
+                                                    <td><a href="/click_delete/{{$reviewsdata->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
                                                     <td>{{$reviewsdata->name}}</td>
 													<td>{{$reviewsdata->company}}</td>
 													<td>{{$reviewsdata->contact}}</td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\reviews;
 use App\Models\VimbisoUser;
+use DB;
 
 
 class ReviewController extends Controller
@@ -16,7 +17,6 @@ class ReviewController extends Controller
       $CompanyNameData=VimbisoUser::All();
     
      return view('admin.reviews',compact('ReviewData','CompanyNameData'));
-
    }
 
 
@@ -46,4 +46,17 @@ class ReviewController extends Controller
      $create=reviews::create($data);
      return redirect()->route('reviews.create');
    }
+
+ /* public function delete($id)
+     {reviews
+       $data=reviews::find($id);
+       $data->delete();
+       return redirect()->route('reviews.create');
+     }*/
+
+     public function delete_funtion($id)
+     {
+      DB::delete('delete from reviews where id=?',[$id]);
+      return redirect()->route('reviews.create')->with('success','Data deleted');
+     }
 }
