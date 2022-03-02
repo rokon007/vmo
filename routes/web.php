@@ -86,9 +86,11 @@ Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'st
 Route::get('/admin/emailverify', [App\Http\Controllers\EmailVeryfyController::class, 'emailshow'])->name('admin.emailverify')->middleware('is_admin');
 
 
-//For Category
+//For Category 
 Route::get('/admin/categories', [App\Http\Controllers\CategoryController::class, 'create'])->name('categories.create')->middleware('is_admin');
 Route::post('/admin/categories', [App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store')->middleware('is_admin');
+
+Route::get('ccategory_delete/{id}', [App\Http\Controllers\CategoryController::class, 'delete_category'])->name('categories.delete')->middleware('is_admin');
 //Route::get('/user','ImportExcelController@index');
 //Route::post('/user/import','ImportExcelController@import');
 

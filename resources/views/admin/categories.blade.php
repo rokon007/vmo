@@ -114,7 +114,12 @@
 						<div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
-								
+								@if($message = Session::get('success'))
+								<div class="alert alert-success alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<center><strong>{{$message}}</strong></center>
+								</div>
+								@endif
 								<!--end::Notice-->
 								<!--begin::Card-->
 								<div class="card card-custom">
@@ -274,7 +279,7 @@
 													@foreach($viewcategories as $key=>$categorie)
                                                            <tr>
                                                            	<td>{{$key+1}}</td>
-                                                           	<td><a><i class="la la-trash"></i></a></td>
+                                                           	 <td><a href="/ccategory_delete/{{$categorie->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
                                                     <td>{{$categorie->name}}</td>
                                                     @if($categorie->category_id)
 													<td>{{$categorie->category_id}}</td>

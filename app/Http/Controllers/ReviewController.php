@@ -57,6 +57,6 @@ class ReviewController extends Controller
      public function delete_funtion($id)
      {
       DB::delete('delete from reviews where id=?',[$id]);
-      return redirect()->route('reviews.create')->with('success','Data deleted');
+      return redirect()->route('reviews.create')->with('success','Data deleted Successfully');
      }
 }

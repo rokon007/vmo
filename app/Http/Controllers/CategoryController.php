@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use DB;
 
 class CategoryController extends Controller
 {
@@ -28,7 +29,13 @@ class CategoryController extends Controller
       );
      $create=Category::create($data);
      return redirect()->route('categories.create');
-   }
+   }   
+
+    public function delete_category($id)
+     {
+      DB::delete('delete from categories where id=?',[$id]);
+      return redirect()->route('categories.create')->with('success','Data deleted Successfully');
+     }
 
    //--------------------------------------------------//
 
