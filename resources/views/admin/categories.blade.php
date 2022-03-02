@@ -300,7 +300,7 @@
 													@else
 														@endif
 												</tr>
-													@endforeac
+													@endforeach
 												
 											</tbody>
 										</table>
