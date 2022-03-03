@@ -14,7 +14,7 @@ class AddTimestampsToVimbisoUsers extends Migration
     public function up()
     {
         Schema::table('vimbiso_users', function (Blueprint $table) {
-            $table->timestamps();
+             $table->timestamps();
         });
     }
 
