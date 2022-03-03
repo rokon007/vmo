@@ -24,6 +24,7 @@ https://templatemo.com/tm-516-known
      <link rel="stylesheet" href="css/font-awesome.min.css">
      <link rel="stylesheet" href="css/owl.carousel.css">
      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
@@ -105,7 +106,7 @@ https://templatemo.com/tm-516-known
                       For Businesses
                     </a>
                              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-dark border-bottom border-dark" href="{{ route('login') }}"><i class="fa fa-user">{ __('Login') }}</i>{</a>
+                                    <a class="dropdown-item text-dark border-bottom border-dark" href="{{ route('login') }}"><i class="fa fa-user">{{ __('Login') }}</i></a>
                                     <!--<a class="dropdown-item text-dark border-bottom border-dark" href="{{url('about')}}"><i class="fab fa-get-pocket"></i>Profile</a>-->
                                
                             @endif
@@ -120,6 +121,8 @@ https://templatemo.com/tm-516-known
                             @endif
                              @else
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <i class="fa fa-user" style="color:green;font-size:25px;"></i>
+							  &#160;
                       {{ Auth::user()->name }}
                     </a>
                              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
@@ -132,7 +135,7 @@ https://templatemo.com/tm-516-known
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-									 <a class="dropdown-item text-dark" href="{{ route('profile') }}"><i class="fa fa-user">{{ __('Profile') }}</i></a>
+									 <a class="dropdown-item text-dark" href="{{ route('profile') }}"><i class="fa fa-get-pocket">{{ __('Profile') }}</i></a>
 									 <a class="dropdown-item text-dark" href="{{ route('settings') }}"><i class="fa fa-user">{{ __('Settings') }}</i></a>
                                     </div>
                             
@@ -156,8 +159,15 @@ https://templatemo.com/tm-516-known
 
           </div>
      </section>
-
-
+     @if($message = Session::get('success'))
+     
+		 <script>
+	          swal("Thanks for your contribution","{!!Session::get('success')!!}","success",{
+				  button:"OK",
+			  })
+	     </script>
+		 
+	 @endif
 
 
 

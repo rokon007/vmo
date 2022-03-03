@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\reviews;
 use App\Models\VimbisoUser;
 use DB;
+use App\Models\Companytb;
 
 
 class ReviewController extends Controller
@@ -14,7 +15,8 @@ class ReviewController extends Controller
    {
     $ReviewData=reviews::All();
      //company name sending  company_name
-      $CompanyNameData=VimbisoUser::All();
+      $CompanyNameData=Companytb::All();
+     
     
      return view('admin.reviews',compact('ReviewData','CompanyNameData'));
    }
@@ -46,6 +48,9 @@ class ReviewController extends Controller
      $create=reviews::create($data);
      return redirect()->route('reviews.create');
    }
+
+
+   
 
  /* public function delete($id)
      {reviews

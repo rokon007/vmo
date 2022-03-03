@@ -25,7 +25,7 @@ Route::get('/', function () {
 */
 //Route::get('click_delete/{id}','ReviewController@delete_funtion')->name('reviews.delete')->middleware('is_admin');
 Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
-Route::get('/',[WelcomeController::class,"welcomeindex"]);
+Route::get('/',[WelcomeController::class,"welcomeindex"])->name('welcome');
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
 //Normal User
 Route::get('/profile', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
@@ -84,6 +84,8 @@ Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 's
 //For Review
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
 Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store')->middleware('is_admin');
+Route::post('/give/reviews', [App\Http\Controllers\pagecontroller::class, 'give'])->name('reviews.give');
+
 
 //For emailverify
 Route::get('/admin/emailverify', [App\Http\Controllers\EmailVeryfyController::class, 'emailshow'])->name('admin.emailverify')->middleware('is_admin');

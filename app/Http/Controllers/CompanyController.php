@@ -15,8 +15,10 @@ class CompanyController extends Controller
    {
     //admin
       $CompanyData=Companytb::All();
+       $CompanyNameData=Companytb::All();
+       
     
-     return view('frontpage.viewcompanies',compact('CompanyData'));
+     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData'));
       
 
    }

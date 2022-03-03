@@ -456,9 +456,9 @@
 																	       <label>Company</label>
 
 																	       <select name="company" class="form-control form-control-solid form-control-lg" id="exampleSelectl">
-															<option value="">No Company</option>
+															<option value="">Select A Company</option>
 															@foreach($CompanyNameData as $companyname)
-                                                            <option value="{{$companyname->company_name}}" >{{$companyname->company_name}}</option>
+                                                            <option value="{{$companyname->company}}" >{{$companyname->company}}</option>
 															@endforeach
 															
 														</select>

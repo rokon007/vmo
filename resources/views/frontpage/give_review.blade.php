@@ -10,7 +10,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/add-review/" method="POST">
+               <form action="{{route('reviews.give')}}" method="post"  class="form">
+									@csrf
                     <input type="hidden" name="csrfmiddlewaretoken" value="lB6hTX7BPDoxyGkcanDqHJTLrOl1ZKiysBVUI5EuLhGxCIiDxvFx1JJwPdYURiU9">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email or WhatsApp number</label>
@@ -24,33 +25,13 @@
                         <div id="company-dropdown" class="w-100 mb-3">
                             <label for="exampleInputPassword1">Company name</label>
                             <span style="color:lightgray"> (Not listed add company <a style="cursor:pointer" class="text-success" onclick="unlistedcompany()">+</a> )</span>
-                            <select class="form-control js-example-basic-single" name="company" required>
-                                <option value="">Select Company</option>
-                                
-                                <option value="598">Reserve Bank of Zimbabwe.</option>
-                                
-                                <option value="327">Highveld Harvesters (Pvt) Ltd</option>
-                                
-                                <option value="2">Sealworld (Pvt) Ltd.</option>
-                                
-                                <option value="295">Sealworld (Pvt) Ltd.</option>
-                                
-                                <option value="296">Lovol Construction and Agriculture</option>
-                                
-                                <option value="297">Machinery Exchange (Pvt) Ltd</option>
-                                
-                                <option value="298">Nicnel Plant &amp; Equipment</option>
-                                
-                                <option value="299">Nets House</option>
-                                
-                                <option value="300">Dore &amp; Pitt (Pvt) Ltd</option>
-                                 <option value="4680">Amara&#x27;s Health Spa</option>
-                                
-                                <option value="4681">Fleek Nails Salon</option>
-                                
-                                <option value="4682">Tabara Wellness Spa</option>
-                                
-                            </select>
+                             <select name="company" class="form-control form-control-solid form-control-lg" id="exampleSelectl">
+															<option value="">Select A Company</option>
+															@foreach($CompanyNameData as $companyname)
+                                                            <option value="{{$companyname->company}}" >{{$companyname->company}}</option>
+															@endforeach
+															
+														</select>
                         </div>
                     </div>
                     <div class="form-group d-flex flex-row">
@@ -60,7 +41,7 @@
                         </div>
                         <div class="col-lg-6 col-sm-12 ml-2">
                             <label for="exampleInputPassword1">Type of purchase</label>
-                            <select class="form-control" name="type-of-purchase">
+                            <select class="form-control" name="purchaseditem">
                                 <option value="">Select purchase type</option>
                                 <option value="service">Service</option>
                                 <option value="product">Product</option>
@@ -70,11 +51,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Date of purchase</label>
-                        <input type="date" class="form-control" name="date"  required>
+                        <input type="date" class="form-control" name="dateofpurchase"  required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Branch location <span style="color:lightgray">(where you made the purchase)</span></label>
-                        <input type="text" class="form-control" name="branch" placeholder="Enter branch location"  required>
+                        <input type="text" class="form-control" name="branchlocation" placeholder="Enter branch location"  required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Your review</label>
@@ -82,7 +63,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Ratings</label>
-                        <input type="number" step="1" max="5" class="form-control" name="rating" placeholder="/5"  required>
+                        <input type="number" step="1" max="5" class="form-control" name="ratings" placeholder="/5"  required>
                     </div>
                     <!-- <div class="Stars" style="--rating: 5;" aria-label="Rating of this product is 2.3 out of 5."> -->
                 

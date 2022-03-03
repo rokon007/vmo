@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\reviews;
 use DB;
+use App\Models\Companytb;
 
 class HomeController extends Controller
 {
@@ -31,19 +32,21 @@ class HomeController extends Controller
         $Allcategories=Category::All();
         $categories=Category::whereNull('category_id')->limit(12)->get();
         $Allreviews=reviews::All();
-        return view('home',compact('categories','Allcategories','Allreviews'));
+        $CompanyNameData=Companytb::All();
+        return view('home',compact('categories','Allcategories','Allreviews','CompanyNameData'));
     }
      public function login()
     {
         return view('login');
     }
-
+ 
     public function adminIndex()
     {
         $usercount=DB::table('vimbiso_users')->count();
          $categoriescount=DB::table('categories')->count();
          $reviewscount=DB::table('reviews')->count();
-        return view('admin.adminhome',compact('usercount','categoriescount','reviewscount'));
+         $companycount=DB::table('companytbs')->count();
+        return view('admin.adminhome',compact('usercount','categoriescount','reviewscount','companycount'));
     }
     
 }
