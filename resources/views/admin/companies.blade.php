@@ -568,7 +568,7 @@
 												</div>												
 												
 												
-												
+									<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>			
 												<div class="col-xl-6">
 												<div class="form-group">
 														<label>contact</label>
@@ -576,17 +576,42 @@
 													</div>
 												<div class="form-group">
 														<label for="exampleSelectl">Select Parent catagori</label>
-														<select name="category" class="form-control form-control-lg" id="exampleSelectl">
+														<select name="category" class="form-control form-control-lg" id="category" >
 															<option value="">Select Parent catagori</option>
 															@foreach($categories as $NewcategoriData)
                                                             <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->name}}</option>
 															@endforeach
 															
 														</select>
+														<script>
+														jQuery(document).ready(function(){
+															jQuery('#category').change(function(){
+																let cid=jQuery(this).val();
+																jQuery.ajax({
+																	url:'/getSubcate',
+																	type:'post',
+																	data:'cid='+cid+'&_token={{csrf_token()}}',
+																	success:function(result){
+																		jquery('#subcategory').html(result)
+																	}
+																});
+															});
+														});
+														
+														</script>
+														
+														
+														
 													</div>
 													<div class="form-group">
 														<label>Subcategory</label>
-			                                             <input   type="text" name="name"  class="form-control form-control-lg" placeholder="Catagori name">
+			                                             <select name="subcategory" class="form-control form-control-lg" id="subcategory">
+															
+															
+                                                           
+															
+															
+														</select>
 													</div>
 													<div class="form-group">
 														

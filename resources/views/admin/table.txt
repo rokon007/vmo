@@ -1,0 +1,20 @@
+Business profile: #1
+
+Image:
+Description:
+Verified
+Category:
+Tags:
+Status:
+(#1 for claimed profile #2 for uncliamed profile #3 for AskingReviews)
+
+     business_profile 
+	 email   description   verified  category  tags  status image
+
+
+            
+   company_name,email,description,country,city,block,verified,category,tags:,status:business_image
+
+
+
+ id, password, last_login, is_superuser, groups, user_permissions, username, first_name, last_name, email, is_staff, is_active, date_joined, company_name, country, city, block, contact, level

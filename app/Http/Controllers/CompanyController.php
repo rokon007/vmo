@@ -16,11 +16,18 @@ class CompanyController extends Controller
     //admin
       $CompanyData=Companytb::All();
        $CompanyNameData=Companytb::All();
-       
-    
-     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData'));
-      
+     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData'));      
+   }
 
+    public function getSubcate(Request $request)
+   { 
+         $cid=$request->post('cid');
+         $subcste=DB::table('categories')->where('category_id',$cid)->get();
+         $html='<option value="">Select Subcatagory</option>';
+         foreach($subcste as $list){
+          $html='<option value="'.$list->name.'">'.$list->name.'</option>';
+          echo $html;
+         }
    }
    public function admincompanyshow()
    {

@@ -23,7 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-//Route::get('click_delete/{id}','ReviewController@delete_funtion')->name('reviews.delete')->middleware('is_admin');
+
+Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
+
 Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
 Route::get('/',[WelcomeController::class,"welcomeindex"])->name('welcome');
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
@@ -77,9 +79,11 @@ Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminind
 Route::get('/admin/page', [App\Http\Controllers\pagecontroller::class, 'pagesetting'])->name('admin.page')->middleware('is_admin');
 //Route::get('/admin/user', [App\Http\Controllers\pagecontroller::class, 'userpage'])->name('admin.user')->middleware('is_admin');
 
-//ADMIN COMPANY
+//ADMIN COMPANY companies
 Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'admincompanyshow'])->name('admin.companies')->middleware('is_admin');
 Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
+
+Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
 
 //For Review
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');

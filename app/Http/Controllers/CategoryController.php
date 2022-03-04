@@ -8,10 +8,13 @@ use DB;
 
 class CategoryController extends Controller
 {
-   public function index()
+   public function subcat(Request $request)
    {
     // 
    }
+
+   
+
    public function create()
    {
     $Allcategories=Category::All();

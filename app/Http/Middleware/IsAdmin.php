@@ -19,9 +19,12 @@ class IsAdmin
         if (auth()->user()->is_admin==1) {
             return $next($request);
         }
+        elseif(auth()->user()->is_admin==NULL){
+             return redirect('home')->with('error','You can not access the admin area');
+        }
 
         //not admin redirection
-        return redirect('home')->with('error','You can not access the admin area');
+        return redirect('adminlogin')->with('error','Sorry your session is over !');
         
     }
 }
