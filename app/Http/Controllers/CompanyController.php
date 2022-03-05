@@ -36,8 +36,9 @@ class CompanyController extends Controller
     //admin
       $CompanyData=Companytb::All();
       $categories=Category::whereNull('category_id')->get();
+       $Allcategories=Category::All();
     
-      return view('admin.companies',compact('CompanyData','categories'));
+      return view('admin.companies',compact('CompanyData','categories','Allcategories'));
 
 
    }

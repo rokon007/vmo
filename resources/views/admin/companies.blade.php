@@ -579,7 +579,9 @@
 														<select name="category" class="form-control form-control-lg" id="category" >
 															<option value="">Select Parent catagori</option>
 															@foreach($categories as $NewcategoriData)
-                                                            <option value="{{$NewcategoriData->subcategory}}" >{{$NewcategoriData->name}}</option>
+															
+                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->name}}</option>
+														   	
 															@endforeach
 															
 														</select>
@@ -607,8 +609,12 @@
 														<label>Subcategory</label>
 			                                             <select name="subcategory" class="form-control form-control-lg" id="sub">
 															
-															
-                                                           <option value="">Select Subcategory</option>
+															<option value="">Select Subcategoryi</option>
+                                                         @foreach($Allcategories as $NewcategoriData)
+														 @if($NewcategoriData->getAttribute('category_id')!=NULL)
+                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->category_id }}-->{{$NewcategoriData->name }}</option>
+														      @endif
+															@endforeach
 															
 															
 														</select>
