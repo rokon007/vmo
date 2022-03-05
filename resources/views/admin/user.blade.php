@@ -309,25 +309,7 @@
 											
 												<div class="card-body">
 													
-													<div class="form-group">
-														<label>Catagori name</label>
-			<input   type="text" name="name"  class="form-control form-control-lg" placeholder="Catagori name">
-													</div>
-													
-													
-													<div class="form-group">
-														<label for="exampleSelectl">Select Parent catagori</label>
-														<select name="category_id" class="form-control form-control-lg" id="exampleSelectl">
-															<option value="">No subcategory</option>
-															
-															
-														</select>
-													</div>
-													
-													
-													<!--begin: Code-->
-													
-													<!--end: Code-->
+													<h1>Under Constraction</h1>
 												</div>
 												
 											

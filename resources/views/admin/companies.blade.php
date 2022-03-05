@@ -579,7 +579,7 @@
 														<select name="category" class="form-control form-control-lg" id="category" >
 															<option value="">Select Parent catagori</option>
 															@foreach($categories as $NewcategoriData)
-                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->name}}</option>
+                                                            <option value="{{$NewcategoriData->subcategory}}" >{{$NewcategoriData->name}}</option>
 															@endforeach
 															
 														</select>
@@ -592,7 +592,7 @@
 																	type:'post',
 																	data:'cid='+cid+'&_token={{csrf_token()}}',
 																	success:function(result){
-																		jquery('#subcategory').html(result)
+																		jquery('#sub').html(result)
 																	}
 																});
 															});
@@ -605,10 +605,10 @@
 													</div>
 													<div class="form-group">
 														<label>Subcategory</label>
-			                                             <select name="subcategory" class="form-control form-control-lg" id="subcategory">
+			                                             <select name="subcategory" class="form-control form-control-lg" id="sub">
 															
 															
-                                                           
+                                                           <option value="">Select Subcategory</option>
 															
 															
 														</select>

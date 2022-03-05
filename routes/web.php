@@ -83,7 +83,7 @@ Route::get('/admin/page', [App\Http\Controllers\pagecontroller::class, 'pagesett
 Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'admincompanyshow'])->name('admin.companies')->middleware('is_admin');
 Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
 
-Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
+Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate'])->name('get.subcat');
 
 //For Review
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
@@ -100,8 +100,10 @@ Route::get('/admin/categories', [App\Http\Controllers\CategoryController::class,
 Route::post('/admin/categories', [App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store')->middleware('is_admin');
 
 Route::get('ccategory_delete/{id}', [App\Http\Controllers\CategoryController::class, 'delete_category'])->name('categories.delete')->middleware('is_admin');
-//Route::get('/user','ImportExcelController@index');
-//Route::post('/user/import','ImportExcelController@import');
+
+
+Route::get('viewcompany/{name}', [App\Http\Controllers\CategoryController::class, 'viewcompany']);
+
 
 
 //ImportExcelController

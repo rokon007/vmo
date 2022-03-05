@@ -8,6 +8,7 @@ use App\Imports\CompanyImport;
 use Excel;
 use App\Models\Companytb;
 use App\Models\Category;
+use DB;
 
 class CompanyController extends Controller
 {
@@ -22,7 +23,8 @@ class CompanyController extends Controller
     public function getSubcate(Request $request)
    { 
          $cid=$request->post('cid');
-         $subcste=DB::table('categories')->where('category_id',$cid)->get();
+          //$subcste=companytb::where('subcategory',[$cid])->get();
+        $subcste=DB::table('categories')->where('subcategory',$cid)->get();
          $html='<option value="">Select Subcatagory</option>';
          foreach($subcste as $list){
           $html='<option value="'.$list->name.'">'.$list->name.'</option>';

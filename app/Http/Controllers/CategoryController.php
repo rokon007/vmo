@@ -5,12 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use DB;
+use App\Models\Companytb;
 
 class CategoryController extends Controller
 {
    public function subcat(Request $request)
    {
     // 
+   }
+
+    public function viewcompany(Request $request,$name)
+   {
+     
+
+      $CompanyData=companytb::where('subcategory',[$name])->get();
+        $CompanyNameData=Companytb::All();
+     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData')); 
+      
    }
 
    

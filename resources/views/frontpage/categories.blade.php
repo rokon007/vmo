@@ -23,7 +23,7 @@
                                                 <!---->
 												<center>
                                                       @foreach($categories as $categorie)
-                                                              <a href="/view-companies/3/" style="text-decoration:none;color:black;font-size:16px">{{$categorie->name}}</a>
+                                                             <a href="/viewcompany/{{$categorie->name}}" style="text-decoration:none;color:black;font-size:16px">{{$categorie->name}}</a>
                                                                  <hr>                   
                                                       @endforeach 												  
                                                 </center>													   
@@ -55,7 +55,7 @@
                  @foreach ($Category as $videoLink)
 			 <div class="col-md-3">    
           <div class="form-group">
-                <button class="btn btn-secondary mr-2 " type="">{{ $videoLink->name }}</button>	
+                <a href="/viewcompany/{{$videoLink->name}}"><button class="btn btn-secondary mr-2 " type="">{{ $videoLink->name }}</button></a>	
                  
           </div>
         </div> 
@@ -70,6 +70,6 @@
  </section>
  </center>
  <!-- Modal -->
-         @include('frontpage.give_review');
+        
      <!-- FOOTER -->
 @endsection
