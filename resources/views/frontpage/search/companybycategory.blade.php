@@ -1,4 +1,4 @@
-@extends('frontpage1')
+@extends('frontpage.search.frontpage1')
  
 
 @section('body')
