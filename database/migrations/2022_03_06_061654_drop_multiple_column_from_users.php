@@ -14,7 +14,7 @@ class DropMultipleColumnFromUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['rememberToken','timestamps']);
+            $table->dropColumn(['created_at','updated_at','remember_token']);
         });
     }
 
