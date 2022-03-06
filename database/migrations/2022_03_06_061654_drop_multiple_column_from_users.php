@@ -14,7 +14,7 @@ class DropMultipleColumnFromUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['name','email','email_verified_at','password','is_admin','company_name','companycontact','address']);
+            $table->dropColumn(['rememberToken','timestamps']);
         });
     }
 
