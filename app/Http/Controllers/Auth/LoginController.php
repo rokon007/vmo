@@ -51,7 +51,7 @@ class LoginController extends Controller
             if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
 
                // yes its user
-                if(auth()->user()->is_admin==1){
+                if(auth()->user()->is_superuser==1){
                     //its an admin
                     return redirect()->route('admin.home');
                 }
