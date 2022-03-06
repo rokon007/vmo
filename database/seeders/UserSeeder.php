@@ -17,13 +17,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Super Admin',
+           'username' => 'Super Admin',
             'email' => 'rokon07@hotmail.com',
             'password' => Hash::make('rokon007'),
-            'is_admin' => '1',
+            'is_superuser' => '1',
             'company_name' => 'Admin',
-            'companycontact' => '+8801717524792',
-            'address' => 'Rangpur',
+            'contact' => '+8801717524792',
             
         ]);
     }
