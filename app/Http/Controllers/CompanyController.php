@@ -15,19 +15,26 @@ use DB;
 
 class CompanyController extends Controller
 {
-    public function companyshow()
-   {
+
+  function index()
+  {
     $joindata=User::join('business_profiles','email','=','users.email')
                        ->join('users.company_name','=','reviews.company')
                        ->get(['companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.subcategory',
                         'companytbs.category','reviews.ratings','reviews.resolved','reviews.isresolved','business_profiles.email','business_profiles.verified','business_profiles.tags','business_profiles.status','business_profiles.image']);
+
+     return view('frontpage.viewcompanies',compact('joindata'));
+  }
+    public function companyshow()
+   {
+    
 
 
 
     //admin
       $CompanyData=Companytb::All();
        $CompanyNameData=Companytb::All();
-     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData','joindata'));      
+     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData'));      
    }
 
     public function getSubcate(Request $request)
