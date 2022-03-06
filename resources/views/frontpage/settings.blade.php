@@ -86,7 +86,7 @@
        <div class="col-md-6"> 
        <div class="form-group">
                 <label for="exampleInputEmail1">Company Name</label>
-                 <input id="name" style="height:45px;font-size: 20px" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" >
+                 <input id="name" style="height:45px;font-size: 20px" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -96,7 +96,7 @@
 
           <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                 <input id="email"style="height:45px;font-size: 20px" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" >
+                 <input id="email"style="height:45px;font-size: 20px" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" readonly >
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
