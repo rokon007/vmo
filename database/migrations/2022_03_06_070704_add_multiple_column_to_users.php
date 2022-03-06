@@ -21,9 +21,7 @@ class AddMultipleColumnToUsers extends Migration
             $table->string('user_permissions')->after('groups')->nullable();          
              $table->string('username')->after('user_permissions')->nullable();
             $table->string('first_name')->after('username')->nullable();
-            $table->string('last_name')->after('first_name')->nullable();          
-          
-            $table->string('email')->unique();
+            $table->string('last_name')->after('first_name')->nullable();           $table->string('email')->after('last_name')->unique();
             $table->string('is_staff')->after('email')->nullable();
             $table->string('is_active')->after('is_staff')->nullable();        
            $table->string('date_joined')->after('is_active')->nullable();
