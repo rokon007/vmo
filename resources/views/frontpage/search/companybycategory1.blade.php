@@ -308,7 +308,7 @@ https://templatemo.com/tm-516-known
 	
 
                                                                                 
-          @foreach($CompanyData as $Data)                                            		
+          @foreach($CompanyData1 as $Data)                                            		
 	  <div class="col-sm-3 col-lg-8 col-md-3 ">
 	                   
 	               <a href="#">
