@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Company Name</label>
-                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" >
+                 <input id="company_name" type="text" class="form-control @error('name') is-invalid @enderror" name="company_name" value="{{ old('name') }}" required autocomplete="name" >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
          <div class="col-md-6">    
            <div class="form-group">
                 <label for="exampleInputEmail1">Company Contact</label>
-                <input type="text"  id="companycontact" name="companycontact" class="form-control" >
+                <input type="text"  id="contact1" name="contact" class="form-control" >
                       
             </div>
             <div class="form-group">
