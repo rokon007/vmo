@@ -25,14 +25,14 @@ class AddMultipleColumnToUsers extends Migration
            $table->string('email')->after('last_name')->unique();
             $table->string('is_staff')->after('email')->nullable();
             $table->string('is_active')->after('is_staff')->nullable();        
-           $table->string('')->after('is_active')->nullable();
-             $table->timestamp('date_joined')->after('')->nullable();
-             $table->string('company_name')->after('date_joined')->nullable();   
-            $table->string('country')->after('company_name')->nullable();
-             $table->string('city')->after('country')->nullable();
-            $table->string('block')->after('city')->nullable();         
-            $table->string('contact')->after('block')->nullable();
+           $table->string('date_joined')->after('is_active')->nullable();
+             $table->timestamp('company_name')->after('date_joined')->nullable();
+             $table->string('country')->after('company_name')->nullable();   
+            $table->string('city')->after('country')->nullable();
+             $table->string('block')->after('city')->nullable();
+            $table->string('contact')->after('block')->nullable();         
             $table->string('level')->after('contact')->nullable();
+           
         });
     }
 
