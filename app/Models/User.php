@@ -18,34 +18,39 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
-        'name',
-        'email',
-        'password',
-        'companycontact',
-        'address',
-
-           
-           'email_verified_at',
+           'id',
            'password',
-           'is_admin',
+           'last_login',
+           'is_superuser',
+           'groups',
+           'user_permissions',
+           'username',
+           'first_name',
+           'last_name',
+           'email',
+           'is_staff',
+           'is_active',
+           'date_joined',
            'company_name',
-           
-           
-           'remember_token',
+           'country',
+           'city',
+           'block',
+           'contact',
+           'level',
            'created_at',
            'updated_at'
 
     ];
 
     /**
+    
      * The attributes that should be hidden for serialization.
-     *
+     *  'remember_token',
      * @var array<int, string>
      */
     protected $hidden = [
         'password',
-        'remember_token',
+        
     ];
 
     /**
