@@ -23,7 +23,7 @@ https://templatemo.com/tm-516-known
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/font-awesome.min.css">
      <link rel="stylesheet" href="css/owl.carousel.css">
-     <link rel="stylesheet" href=asset("css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
      <!-- MAIN CSS -->

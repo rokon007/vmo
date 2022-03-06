@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Exports\CompanyExport;
 use App\Imports\CompanyImport;
 use Excel;
+use App\Models\User;
 use App\Models\Companytb;
+use App\Models\reviews;
+use App\Models\business_profile;
 use App\Models\Category;
 use DB;
 
@@ -14,10 +17,17 @@ class CompanyController extends Controller
 {
     public function companyshow()
    {
+    $joindata=User::join('business_profiles','email','=','users.email')
+                       ->join('users.company_name','=','reviews.company')
+                       ->get(['companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.subcategory',
+                        'companytbs.category','reviews.ratings','reviews.resolved','reviews.isresolved','business_profiles.email','business_profiles.verified','business_profiles.tags','business_profiles.status','business_profiles.image']);
+
+
+
     //admin
       $CompanyData=Companytb::All();
        $CompanyNameData=Companytb::All();
-     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData'));      
+     return view('frontpage.viewcompanies',compact('CompanyData','CompanyNameData','joindata'));      
    }
 
     public function getSubcate(Request $request)

@@ -17,7 +17,7 @@ use App\Http\Controllers\ReviewController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+*/ 
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -84,8 +84,11 @@ Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'ad
 Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
 
 Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
+//For Review Saverecord
 
-//For Review
+ Route::post('/bussinesprofile/save', [App\Http\Controllers\JoinInsertControler::class, 'Saverecord'])->name('bussinesprofile.save');
+
+//For Review Saverecord
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
 Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store')->middleware('is_admin');
 Route::post('/give/reviews', [App\Http\Controllers\pagecontroller::class, 'give'])->name('reviews.give');

@@ -78,11 +78,14 @@
           <div class="form_container">
     <div class="title_container">
       <center><h2>Update Business Profile</h2></center>
+      @if(session('status'))
+        <h6 class="alart alart-success">{{session('status')}}</h6>
+      @endif
       </div>
       <div class="row clearfix">
      
-        <form method="POST" action="">
-           @csrf
+       <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
+         @csrf
        <div class="col-md-6"> 
        <div class="form-group">
                 <label for="exampleInputEmail1">Company Name</label>

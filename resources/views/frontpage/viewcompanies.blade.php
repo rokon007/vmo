@@ -148,14 +148,14 @@
 					  <br>
                         <div class="col-lg-3  align-items-center justify-content-center">
                           <!--<img src="images/logo-no-bg-2.png">-->
-                            <img src={{asset("images/llogo.jpg")}} class="img-responsive" style="width:160px;height:200px" class="card-img" alt="" >
+                            <img src="upload/image/{{$Data->image}}" class="img-responsive" style="width:160px;height:200px" class="card-img" alt="" >
                           
                           
                         </div>
 	                   <div class="col-lg-9 align-items-center justify-content-center">
                           <ul>
                             <li>
-                              <p class="card-title" style="font-size:25px">{{$Data->company}}</p>
+                              <p class="card-title" style="font-size:25px">{{$Data->company}}---{{$Data->image}}</p>
 							 
                             <p style="font-size:16px">
                               
