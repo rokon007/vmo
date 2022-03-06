@@ -135,7 +135,8 @@
 
                    <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
-                               <a href="#feature" class=" btn btn-default form-control">{{$categorie->name}}</a>
+
+                               <a href="/viewcompany1/{{$categorie->name}}" class=" btn btn-default form-control">{{$categorie->name}}</a>
                                <br></br>
                          </div>
                     </div>

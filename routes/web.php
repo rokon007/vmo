@@ -83,7 +83,7 @@ Route::get('/admin/page', [App\Http\Controllers\pagecontroller::class, 'pagesett
 Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'admincompanyshow'])->name('admin.companies')->middleware('is_admin');
 Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
 
-Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate'])->name('get.subcat');
+Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
 
 //For Review
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
@@ -103,6 +103,8 @@ Route::get('ccategory_delete/{id}', [App\Http\Controllers\CategoryController::cl
 
 
 Route::get('viewcompany/{name}', [App\Http\Controllers\CategoryController::class, 'viewcompany']);
+
+Route::get('viewcompany1/{name}', [App\Http\Controllers\CategoryController::class, 'viewcompany1']);
 
 
 
