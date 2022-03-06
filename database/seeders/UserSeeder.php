@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 
-class UserSeeder extends Seeder
+class userSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
-     * @return void
+     * @return void 
      */
     public function run()
     {
