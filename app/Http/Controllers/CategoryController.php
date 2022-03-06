@@ -29,8 +29,8 @@ class CategoryController extends Controller
          
 
       $CompanyData1=companytb::where('category',[$name])->get();
-        $CompanyNameData1=Companytb::All();
-     return view('frontpage.search.companybycategory1',compact('CompanyData1','CompanyNameData1')); 
+        $CompanyNameData=Companytb::All();
+     return view('frontpage.search.companybycategory1',compact('CompanyData1','CompanyNameData')); 
       
    }
 
