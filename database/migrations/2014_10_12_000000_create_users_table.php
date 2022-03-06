@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('is_staff')->nullable();
             $table->string('is_active')->nullable();
             $table->timestamp('date_joined')->nullable();
-            $table->string('company_name')->nullable();
+            $table->string('company_name')->unique();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->string('block')->nullable();

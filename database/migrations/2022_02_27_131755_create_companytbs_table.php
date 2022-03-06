@@ -15,7 +15,7 @@ class CreateCompanytbsTable extends Migration
     {
         Schema::create('companytbs', function (Blueprint $table) {
             $table->id();          
-            $table->string("company");
+            $table->string("company")->unique();
             $table->string("country")->nullable();
             $table->string("city")->nullable();
             $table->string("block")->nullable();

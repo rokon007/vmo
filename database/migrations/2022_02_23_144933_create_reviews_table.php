@@ -28,7 +28,7 @@ class CreateReviewsTable extends Migration
                      $table->text("response")->nullable();
                       $table->string("isresolved")->nullable();
                        $table->string("whatsappreview")->nullable();
-                        $table->string("company")->nullable();
+                        $table->string("company")->unique();
                          $table->string("unlisted company")->nullable();
             $table->timestamps();
         });
