@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class UserSeeder extends Seeder
+class User_dataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,14 +16,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'Super Admin',
+         DB::table('users')->insert([
+           'username' => 'Super Admin',
             'email' => 'rokon07@hotmail.com',
             'password' => Hash::make('rokon007'),
-            'is_admin' => '1',
+            'is_superuser' => '1',
             'company_name' => 'Admin',
-            'companycontact' => '+8801717524792',
-            'address' => 'Rangpur',
+            'contact' => '+8801717524792',
             
         ]);
     }
