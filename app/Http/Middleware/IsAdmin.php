@@ -16,10 +16,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->is_admin==1) {
+        if (auth()->user()->is_superuser==1) {
             return $next($request);
         }
-        elseif(auth()->user()->is_admin==NULL){
+        elseif(auth()->user()->is_superuser==NULL){
              return redirect('home')->with('error','You can not access the admin area');
         }
 

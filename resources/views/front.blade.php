@@ -103,7 +103,7 @@ https://templatemo.com/tm-516-known
                             @endif
                              @else
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      {{ Auth::user()->name }}
+                      {{ Auth::user()->username }}
                     </a>
                              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                                    <a class="dropdown-item text-dark border-bottom border-dark" href="{{ route('logout') }}"><i class="fas fa-user"></i>{{ __('Logout') }}
