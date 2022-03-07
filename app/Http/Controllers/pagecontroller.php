@@ -9,7 +9,8 @@ use App\Imports\UserImport;
 use App\Models\reviews;
 use DB;
 use App\Models\Companytb;
-
+use App\Models\User;
+use App\Models\Category;
 class pagecontroller extends Controller
 {
 
@@ -48,7 +49,25 @@ class pagecontroller extends Controller
     //------------------------
     //**************************************************************************************************************************************************************************************
 
+ // public function SetUser(Request $request,$id)
+ //   {
+ //       // $UserData=User::where('id',[$id])->get(); 
+ //     // $UserData=DB::('select * from users where id=?',[$id]);
+ //     $UserData=DB::table('users')->where('id',[$id])->get();
+ //      return view('admin.userset',compact('UserData'));  
 
+
+   
+ //   }
+
+   function SetUser($id)
+   {
+     $Allcategories=Category::All();
+    $categories=Category::whereNull('category_id')->get();
+    // $cat6=Category::where!Null('category_id')->get();
+    $UserData=User::find($id);
+    return view('admin.userset',['UserData' => $UserData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
+   }
 
    public function adminlogin()
    {

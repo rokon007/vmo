@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Exports\VimbisoUserExport;
-use App\Imports\VimbisoUserImport;
+use App\Exports\UserExport;
+use App\Imports\UsersImport;
 use Excel;
 use App\Models\VimbisoUser;
+use App\Models\User;
 
 class VimbisoUserController extends Controller
 {
     public function create()
    {
-    $VimbisoUser_Data=VimbisoUser::All();
+    $VimbisoUser_Data=User::All();
    
     
      return view('admin.user',compact('VimbisoUser_Data'));
@@ -20,7 +21,7 @@ class VimbisoUserController extends Controller
    }
     public function exportUser()
     {
-        return Excel::download(new VimbisoUserExport,'users.xlsx');
+        return Excel::download(new UserExport,'users.xlsx');
 
     }
 
@@ -28,7 +29,7 @@ class VimbisoUserController extends Controller
     {
       // $this->validate($request,['select_file' =>'required|mimes:xls,xlsx']);
      
-       Excel::import(new VimbisoUserImport,$request->file('file'));
+       Excel::import(new UsersImport,$request->file('file'));
       
        return back()->with('success','Excel Data Imported successfully');
     }

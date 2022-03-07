@@ -7,10 +7,11 @@ use App\Http\Controllers\pagecontroller;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes   
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -23,8 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-
+// Route::get('userset/{id}',[App\Http\Controllers\UserController::class,'SetUser'])->name('user.set')->middleware('is_admin');
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
+
+Route::get('userset/{id}', [App\Http\Controllers\pagecontroller::class, 'SetUser'])->name('user.set')->middleware('is_admin');
 
 Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
 Route::get('/',[WelcomeController::class,"welcomeindex"])->name('welcome');

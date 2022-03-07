@@ -250,7 +250,7 @@
 												<tr>
 													<th>Username</th>
 													<th >Company name</th>
-												    <th>Contacy</th>
+												    <th>Contact</th>
 													<th>Email address</th>
 													<th>Level</th>
 													<th>Country</th>
@@ -268,8 +268,8 @@
 													             <td>{{$row->contact}}</td>     	
                                                     <td>{{$row->email}}</td>
 													             <td>{{$row->level}}</td>
-													             <td>{{$row->country}}</td>
-													            <td><a><i class="la la-trash"></i></a></td>
+													             <td>{{$row->country}}</td>											             
+													           <td><a href="/userset/{{$row->id}}"><i class="fas fa-wrench icon-lg" style="color:black;"></i></a></td>
 													         </tr>
 													@endforeach
 													

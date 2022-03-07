@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\business_profile;
 use DB;
 use App\Models\Companytb;
+use App\Models\User;
 
 class JoinInsertControler extends Controller
 {
@@ -18,6 +19,15 @@ class JoinInsertControler extends Controller
         'block'=> $request->block,
       );
      $create=Companytb::create($Companysdata);
+
+
+     // $data=User::find($request->input('email')->email);
+                 
+     //              $data->country==$request->input('country');
+     //              $data->city==$request->input('city');
+     //              $data->block==$request->input('block');
+     //              $data->save();
+       
 
 
 
