@@ -39,7 +39,7 @@ Route::get('/settings', [App\Http\Controllers\pagecontroller::class, 'indexsetti
 //landing page Route
 //Route::get("/home",[HomeController::class,"index"]);
 Route::get("/about",[pagecontroller::class,"about"]);
-Route::get("/companies",[CompanyController::class,"companyshow"]);
+Route::get("/companies",[CompanyController::class,"index"]);
 //Route::get("/registration",[pagecontroller::class,"registration"]);
 //Route::get("/login",[HomeController::class,"login"]);
 Route::get("/plans",[pagecontroller::class,"plans"]);

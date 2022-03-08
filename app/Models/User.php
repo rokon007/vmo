@@ -17,6 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     // function UserData()
+     // {
+     //    return $this->hsaMany('App\Models\business_profile');
+     // }
+
+
     protected $fillable = [
            'id',
            'password',
