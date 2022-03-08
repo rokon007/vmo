@@ -205,6 +205,15 @@
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
+												<a href="{{url('/admin/company_set')}}" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">Company Settings</span>
+												</a>
+											</li>
+											
+											<li class="menu-item" aria-haspopup="true">
 												<a href="{{url('/admin/reviews')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
@@ -212,6 +221,7 @@
 													<span class="menu-text">Reviewss</span>
 												</a>
 											</li>
+											
 											<li class="menu-item" aria-haspopup="true">
 												<a href="#" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">

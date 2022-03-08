@@ -27,7 +27,7 @@
                          <form id="contact-form" role="form" action="" method="post">
                               
 
-                              <div class="col-md-12 col-sm-12">
+                              <div class="col-md-10 col-sm-12">
                                   <input type="search" name="search" class="form-control" placeholder="Company or category">
                     
                                    

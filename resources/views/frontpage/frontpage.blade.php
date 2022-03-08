@@ -91,7 +91,7 @@ https://templatemo.com/tm-516-known
                     <ul class="nav navbar-nav navbar-nav-first">
                          <li><a href="{{url('home')}}" class="smoothScroll">Home</a></li>
                          <li><a href="{{url('about')}}" class="smoothScroll">About</a></li>
-                         <li><a href="{{url('companies')}}" class="smoothScroll">View Companies</a></li>
+                         <li><a href="{{url('categories')}}" class="smoothScroll">View Companies</a></li>
                          
                          
                          <li><a href="{{url('contactus')}}" class="smoothScroll">Contact us</a></li>
@@ -192,20 +192,20 @@ https://templatemo.com/tm-516-known
                               <div class="footer-logo mb-2">
                                 <a href="index.html"><img src="images/logo-no-bg-2.png" style="max-width: 124px;" class="img-fluid" alt="logo"></a>
                             </div>
-                              <address>
+                            <!--  <address>
                                    <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
-                              </address>
+                              </address> 
 
                               <ul class="social-icon">
                                    <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
                                    <li><a href="#" class="fa fa-twitter"></a></li>
                                    <li><a href="#" class="fa fa-instagram"></a></li>
-                              </ul>
+                              </ul> -->
 
                               <div class="copyright-text"> 
                                    <p>Copyright &copy; 2022 Vimbiso</p>
                                    
-                                   <p>Design: Rokon</p>
+                                   
                               </div>
                          </div>
                     </div>
@@ -214,21 +214,19 @@ https://templatemo.com/tm-516-known
                          <div class="footer-info">
                               <div class="section-title">
                                    <h2>Find us</h2>
+								    
+                                   
                               </div>
                               <address>
                                    <p><a href="www.vimbiso.org">www.vimbiso.org</a></p>
                                    <p><a href="mailto: info@vimbiso.org">info@vimbiso.org</a></p>
+								   <p><i class="fas fa-phone"></i> WhatsApp</p>
+								   <p><a href="https://wa.me/message/6JWZWJBN4VDEA1">Send Message</a></p>
                               </address>
 
                               <div class="footer_menu">
-                                   <i class="fas fa-phone"></i> <h2>WhatsApp</h2>
-                                   <span><a href="https://wa.me/message/6JWZWJBN4VDEA1" target="_blank">Send Message</a></span>
-                                   <ul>
-                                        <li><a href="#">Career</a></li>
-                                        <li><a href="#">Investor</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Refund Policy</a></li>
-                                   </ul>
+                                  
+                                  
                               </div>
                          </div>
                     </div>
@@ -236,7 +234,7 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-4 col-sm-12">
                          <div class="footer-info newsletter-form">
                               <div class="section-title">
-                                   <h2>Don't miss to subscribe to our new feeds, kindly fill the form below</h2>
+                                   <h4>Don't miss to subscribe to our new feeds, kindly fill the form below</h4>
                               </div>
                               <div>
                                    <div class="form-group">
