@@ -42,7 +42,7 @@ class ReviewController extends Controller
         'response'=> $request->response,
         'isresolved'=> $request->isresolved,
         'whatsappreview'=> $request->whatsappreview,
-        'company'=> $request->company,
+        'company_id'=> $request->company,
         'unlisted company'=> $request->unlistedcompany,
       );
      $create=reviews::create($data);

@@ -28,7 +28,7 @@ class CreateReviewsTable extends Migration
                      $table->text("response")->nullable();
                       $table->string("isresolved")->nullable();
                        $table->string("whatsappreview")->nullable();
-                        $table->string("company")->unique();
+                        $table->integer("company_id")->unique();
                          $table->string("unlisted company")->nullable();
             $table->timestamps();
         });
@@ -44,3 +44,6 @@ class CreateReviewsTable extends Migration
         Schema::dropIfExists('reviews');
     }
 }
+
+
+
