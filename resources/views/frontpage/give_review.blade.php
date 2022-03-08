@@ -28,7 +28,7 @@
                              <select name="company_id" class="form-control form-control-solid form-control-lg" id="company_id">
 															<option value="">Select A Company</option>
 															@foreach($CompanyNameData as $companyname)                                                          
-															<option value="4">{{$companyname->id}}</option>
+															<option value="{{$companyname->id}}">{{$companyname->company}}</option>
 
 
 															@endforeach											
