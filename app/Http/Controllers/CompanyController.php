@@ -21,7 +21,7 @@ class CompanyController extends Controller
     $joindata = DB::table('users')
             ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
               ->join('companytbs', 'users.id', '=', 'companytbs.user_id')
-               ->join('reviews', 'companytbs.company', '=', 'reviews.company')
+               ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
             ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.company as company')
             ->get();
 
