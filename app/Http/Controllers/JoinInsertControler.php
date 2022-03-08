@@ -12,26 +12,31 @@ class JoinInsertControler extends Controller
 {
    public function Saverecord(Request $request)
    {
-       $Companysdata = array(
-        'company'=> $request->name,
-        'country'=> $request->country,
-         'city'=> $request->city,
-        'block'=> $request->block,
-      );
-     $create=Companytb::create($Companysdata);
+     //   $Companysdata = array(
+     //    'user_id'=>$request->userid,
+     //    'company'=> $request->name,
+     //    'country'=> $request->country,
+     //     'city'=> $request->city,
+     //    'block'=> $request->block,
+     //  );
+     // $create=Companytb::create($Companysdata);
 
 
-     // $data=User::find($request->input('email')->email);
-                 
-     //              $data->country==$request->input('country');
-     //              $data->city==$request->input('city');
-     //              $data->block==$request->input('block');
-     //              $data->save();
-       
+      $Companytb= new Companytb;
+      $Companytb->user_id=$request->input('userid');
+      $Companytb->company=$request->input('name');
+      $Companytb->country=$request->input('country');
+      $Companytb->city=$request->input('city');
+      $Companytb->block=$request->input('block');
+      $Companytb->save();
+
+
+    
 
 
 
       $business_profile= new business_profile;
+      $business_profile->user_id=$request->input('userid');
       $business_profile->email=$request->input('email');
       $business_profile->description=$request->input('description');
       if($request->hasfile('business_image'))

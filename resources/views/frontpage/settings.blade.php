@@ -87,6 +87,15 @@
        <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
          @csrf
        <div class="col-md-6"> 
+	   <div class="form-group">
+                <label for="exampleInputEmail1">User Id</label>
+                 <input id="name" style="height:45px;font-size: 20px" type="text" class="form-control @error('name') is-invalid @enderror" name="userid" value="{{Auth::user()->id}}" readonly >
+                      @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+            </div>
        <div class="form-group">
                 <label for="exampleInputEmail1">Company Name</label>
                  <input id="name" style="height:45px;font-size: 20px" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
