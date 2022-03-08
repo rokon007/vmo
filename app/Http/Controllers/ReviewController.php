@@ -43,10 +43,10 @@ class ReviewController extends Controller
         'isresolved'=> $request->isresolved,
         'whatsappreview'=> $request->whatsappreview,
         'company_id'=> $request->company,
-        'unlisted company'=> $request->unlistedcompany,
+        'unlistedcompany'=> $request->unlistedcompany,
       );
      $create=reviews::create($data);
-     return redirect()->route('reviews.create');
+     return redirect()->route('reviews.create')->with('success','Review aded Successfully');
    }
 
 
