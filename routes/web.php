@@ -11,7 +11,7 @@ use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes   
+| Web Routes   companies
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These

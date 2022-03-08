@@ -15,6 +15,7 @@ class CreateBusinessProfilesTable extends Migration
     {
         Schema::create('business_profiles', function (Blueprint $table) {
             $table->id();
+             $table->string("user_id")->unique();
             $table->string('email')->unique();
             $table->longText('description')->nullable();
             $table->string('verified')->nullable();

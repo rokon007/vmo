@@ -20,6 +20,7 @@ class CompanyController extends Controller
   {
     $joindata=User::join('business_profiles','email','=','users.email')
                        ->join('users.company_name','=','reviews.company')
+                        ->join('users.company_name','=','companytbs.company')
                        ->get(['companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.subcategory',
                         'companytbs.category','reviews.ratings','reviews.resolved','reviews.isresolved','business_profiles.email','business_profiles.verified','business_profiles.tags','business_profiles.status','business_profiles.image']);
 
