@@ -172,26 +172,23 @@
 														</div>
 														<div class="col-md-4 my-2 my-md-0">
 															<div class="d-flex align-items-center">
-																<label class="mr-3 mb-0 d-none d-md-block">Lavel:</label>
+																<label class="mr-3 mb-0 d-none d-md-block">Company:</label>
 																<select class="form-control" id="kt_datatable_search_status">
 																	<option value="">All</option>
-																	<option value="1">1</option>
-																	<option value="2">2</option>
-																	<option value="3">3</option>
-																	<option value="4">4</option>
-																	<option value="5">5</option>
-																	<option value="6">6</option>
+																	@foreach($UserData as $row)
+																	<option value="{{$row->company}}">{{$row->company}}</option>
+																	@endforeach
 																</select>
 															</div>
 														</div>
 														<div class="col-md-4 my-2 my-md-0">
 															<div class="d-flex align-items-center">
-																<label class="mr-3 mb-0 d-none d-md-block">Type:</label>
+																<label class="mr-3 mb-0 d-none d-md-block">Country:</label>
 																<select class="form-control" id="kt_datatable_search_type">
 																	<option value="">All</option>
-																	<option value="1">Online</option>
-																	<option value="2">Retail</option>
-																	<option value="3">Direct</option>
+																	@foreach($UserData as $row)
+																	<option value="{{$row->country}}">{{$row->country}}</option>
+																	@endforeach
 																</select>
 															</div>
 														</div>
@@ -209,6 +206,7 @@
 											<thead>
 												<tr>
 													<th>Id</th>
+													<th>*</th>
 													<th >Company name</th>
 												    <th>Country</th>
 													<th>City</th>
@@ -222,12 +220,26 @@
 
 													@foreach($UserData as $row)
                                                  <tr>
-                                                    <td>{{$row->id}}</td>
+												    <td>{{$row->id}}</td>
+                                                    <td>
+													@if($row->getAttribute('category')!=NULL)
+														<i class="far fa-grin-alt icon-md">
+                                                        Updeted
+														</i>
+
+														
+													@else
+														<i class="fas fa-times-circle icon-md">
+													Not updated	
+													</i> 
+														
+													@endif
+													</td>
                                                     <td>{{$row->company}}</td>
 													             <td>{{$row->country}}</td>     	
                                                     <td>{{$row->city}}</td>
-													             										             
-													           <td><a href="/userscompany/{{$row->id}}"><i class="fas fa-wrench icon-lg" style="color:black;"><button class="btn btn-icon"></button></i></a></td>
+													             									             
+													           <td><a href="{{ url('userscompany/'.$row->id) }}"><i class="fas fa-wrench icon-lg" style="color:black;"><button class="btn btn-icon"></button></i></a></td>
 													         </tr>
 													@endforeach
 													

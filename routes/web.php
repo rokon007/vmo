@@ -83,10 +83,10 @@ Route::get('/admin/page', [App\Http\Controllers\pagecontroller::class, 'pagesett
 
 Route::get('/admin/company_set', [App\Http\Controllers\pagecontroller::class, 'setcompany'])->name('admin.company_set')->middleware('is_admin');
 
-Route::get('/userscompany/{id}', [App\Http\Controllers\pagecontroller::class, 'usercompany'])->name('usercompany')->middleware('is_admin');
+Route::get('/userscompany/{id}',[App\Http\Controllers\pagecontroller::class,'usercompany'])->name('usercompany')->middleware('is_admin');
 
-Route::post('admin/edit/company/{id}',[App\Http\Controllers\pagecontroller::class,'companyedit']);
-
+Route::put('companyedite/{id}',[App\Http\Controllers\pagecontroller::class,'companyedit']);
+// Route::put('update-student/{id}', [StudentController::class, 'update']);
 //Route::get('/admin/user', [App\Http\Controllers\pagecontroller::class, 'userpage'])->name('admin.user')->middleware('is_admin');
 
 //ADMIN COMPANY companies

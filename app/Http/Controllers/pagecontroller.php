@@ -102,12 +102,13 @@ class pagecontroller extends Controller
      //  $users = DB::select('select * from companytbs where id = ?',[$id]);
      //  return view('stud_update',['users'=>$users]);
      //   }
-         public function companyedit(Request $request,$id)
+        
+         public function companyedit(Request $request, $cid)
           {
             $category = $request->input('category');
             $subcategory = $request->input('subcategory');
-        DB::update('update companytbs set category = ?,subcategory=? where id = ?',[$category,$subcategory,$id]);
-          return redirect()->route('usercompany')->with('success','Record updated successfully');
+        DB::update('update companytbs set category = ?,subcategory=? where id = ?',[$category,$subcategory,$cid]);
+          return redirect()->route('admin.company_set')->with('success','Record updated successfully');
         
             }
 
