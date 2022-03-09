@@ -18,6 +18,7 @@ class CompanyController extends Controller
 
   function index()
   {
+    $CompanyNameData=Companytb::All();
     $joindata = DB::table('users')
             ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
               ->join('companytbs', 'users.id', '=', 'companytbs.user_id')
@@ -33,7 +34,7 @@ class CompanyController extends Controller
 //             ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id')
 //             ->get();
 
-      return view('frontpage.viewcompanies',compact('joindata'));
+      return view('frontpage.viewcompanies',compact('joindata','CompanyNameData'));
   }
     public function companyshow()
    {

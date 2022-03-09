@@ -308,22 +308,23 @@ https://templatemo.com/tm-516-known
 	
 
                                                                                 
-          @foreach($CompanyData1 as $Data)                                            		
-	  <div class="col-sm-3 col-lg-8 col-md-3 ">
+         @foreach($joindata as $Data)                                            		
+	  <div class="col-sm-3 col-lg-8 col-md-3">
 	                   
 	               <a href="#">
                       <div class="row no-gutters list-group-item text-center" border="" style="border:5px;border:red;background-color:#e9e9ed;padding:0px !important">>
 					  <br>
                         <div class="col-lg-3  align-items-center justify-content-center">
-                          <!--<img src="images/logo-no-bg-2.png">-->
-                            <img src={{asset("images/llogo.jpg")}} class="img-responsive" style="width:160px;height:200px" class="card-img" alt="" >
+                         
+  <img src="<?php echo asset("uploads/image/$Data->image")?>"  class="img-responsive" style="width:160px;height:200px;padding:6px;" class="card-img" alt="" >
                           
-                          
+                      
+                      
                         </div>
 	                   <div class="col-lg-9 align-items-center justify-content-center">
                           <ul>
                             <li>
-                              <p class="card-title" style="font-size:25px">{{$Data->company}}</p>
+                              <p class="card-title" style="font-size:25px">{{$Data->company_name}}</p>
 							 
                             <p style="font-size:16px">
                               
@@ -333,14 +334,16 @@ https://templatemo.com/tm-516-known
                               
                               </p>
 							  
-                            <p  style="font-size:18px"><i class="fa fa-map-marker-alt"></i> {{$Data->block}},{{$Data->city}}, {{$Data->country}}</p>
-                            <p  style="font-size:18px"><i class="fa fa-phone"></i>{{$Data->contact}} &nbsp; <span ><i class="fas fa-envelope"></i> {{$Data->contact}}</span></p>
+                            <p  style="font-size:18px"><i class="fa fa-map-marker-alt"></i> 
+                              {{$Data->block}},{{$Data->city}}, {{$Data->country}}</p>
+                            <p  style="font-size:18px"><i class="fa fa-phone"></i>{{$Data->contact}} &nbsp; <span ><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
                             <p  style="font-size:18px">Total Reviews: <strong>0</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
-                              
+                                       @if($Data->ratings ==NULL)
                                       </p><p style="color:red;font-size:18px" class="m-0">Not rated yet</p>
-                              
-                            
+                                       @else
+                                        </p><p style="color:green;font-size:18px" class="m-0">Rated</p>
+                                       @endif
                             <p class="card-text text"></p>
                             </li>                            
                            
