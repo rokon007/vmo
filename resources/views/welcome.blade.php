@@ -189,9 +189,7 @@
 															@else
 																 border: 5px solid black;
 															 @endif
-                                                            
- 
-  ">
+                                                               ">
                                         <div class="tst-image">
                                              <img src="images/tst-image1.jpg" class="img-responsive" alt="">
                                         </div>

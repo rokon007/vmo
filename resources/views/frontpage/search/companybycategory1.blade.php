@@ -21,7 +21,7 @@ https://templatemo.com/tm-516-known
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
      <link rel="stylesheet" href="../css/bootstrap.min.css">
-     <link rel="stylesheet" href="../css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
      <link rel="stylesheet" href="../css/owl.carousel.css">
      <link rel="stylesheet" href="../css/owl.theme.default.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -198,7 +198,7 @@ https://templatemo.com/tm-516-known
                                                       <br>
                                                        
                                                    </div>
-                   <div class="card mb-3" style="min-width: 16rem !important;border:3px solid var(--green);border-radius:10px">
+                     <div class="card mb-3" style="min-width: 16rem !important; border: 3px solid #51a127;border-radius:10px">
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item text-center div-green" style="color:white">
                               <h3 class="m-0"style="color:white"><strong>No. of reviews</strong></h3>
@@ -308,55 +308,96 @@ https://templatemo.com/tm-516-known
 	
 
                                                                                 
-         @foreach($joindata as $Data)                                            		
+       @foreach($joindata as $Data)                                            		
 	  <div class="col-sm-3 col-lg-8 col-md-3">
 	                   
-	               <a href="#">
-                      <div class="row no-gutters list-group-item text-center" border="" style="border:5px;border:red;background-color:#e9e9ed;padding:0px !important">>
-					  <br>
-                        <div class="col-lg-3  align-items-center justify-content-center">
-                         
+	             
+                      <div class="row no-gutters list-group-item text-center" border="" 
+					  style="border-radius: 25px; padding: 20px;  
+								                            @if($Data->ratings ==1)
+                                                            border: 5px solid #C70039;
+														@elseif($Data->ratings ==2)
+														 border: 5px solid #FF5733;
+														 @elseif($Data->ratings ==3)
+														  border: 5px solid #FFC300;
+														  @elseif($Data->ratings ==4)
+														   border: 5px solid #00ff36;
+														   @elseif($Data->ratings ==5)
+														    border: 5px solid #51a127;
+															@else
+																 border: 5px solid black;
+															 @endif
+                                                               ">
+							
+							  <div class="col-lg-3">
+                        <div class="align-items-center justify-content-center">
   <img src="<?php echo asset("uploads/image/$Data->image")?>"  class="img-responsive" style="width:160px;height:200px;padding:6px;" class="card-img" alt="" >
-                          
-                      
-                      
-                        </div>
-	                   <div class="col-lg-9 align-items-center justify-content-center">
-                          <ul>
-                            <li>
-                              <p class="card-title" style="font-size:25px">{{$Data->company_name}}</p>
-							 
-                            <p style="font-size:16px">
-                              
-                                
-                            {{$Data->category}}-> {{$Data->subcategory}}
-                                
-                              
+                        </div>	
+						</div>
+						<div class="col-lg-9">
+                        <div class="card-body ">
+                            <p class="card-title" style="color:#1b3d81;font-size:18px">{{$Data->company_name}}</p>
+                               <p class="card-text">
+                                <i class="fas fa-chevron-circle-right metallic-green"></i> {{$Data->category}} -&gt; {{$Data->subcategory}}
                               </p>
-							  
-                            <p  style="font-size:18px"><i class="fa fa-map-marker-alt"></i> 
-                              {{$Data->block}},{{$Data->city}}, {{$Data->country}}</p>
-                            <p  style="font-size:18px"><i class="fa fa-phone"></i>{{$Data->contact}} &nbsp; <span ><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
-                            <p  style="font-size:18px">Total Reviews: <strong>0</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
+                            <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{$Data->block}}, {{$Data->city}}, {{$Data->country}}</p>
+                            <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp; <span class="pull-right"><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
+                            <p class="card-text">Total Reviews: <strong>1</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>5</strong></span></p>
                               <p class="text-center">
-                                       @if($Data->ratings ==NULL)
-                                      </p><p style="color:red;font-size:18px" class="m-0">Not rated yet</p>
-                                       @else
-                                        </p><p style="color:green;font-size:18px" class="m-0">Rated</p>
-                                       @endif
-                            <p class="card-text text"></p>
-                            </li>                            
-                           
-                           
-                          </ul>
+                                      
+										@if($Data->ratings ==1) 
+										<div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#C70039;"></i>
+                                            
+                                        </div>
+										@elseif($Data->ratings ==2)
+										   <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#FF5733;"></i>
+                                             <i class="fa fa-star" style="color:#FF5733;"></i>
+                                              
+                                        </div>
+										@elseif($Data->ratings ==3)
+										   <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#FFC300;"></i>
+                                             <i class="fa fa-star" style="color:#FFC300;"></i>
+                                              <i class="fa fa-star" style="color:#FFC300;"></i>
+                                             
+                                        </div>
+										@elseif($Data->ratings ==4)
+										    <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#00ff36;"></i>
+                                             <i class="fa fa-star" style="color:#00ff36;"></i>
+                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+                                              
+                                        </div>
+										@elseif($Data->ratings ==5)
+										      <div class="tst-rating">
+                                             <i class="fa fa-star" style="color:#51a127;"></i>
+                                             <i class="fa fa-star" style="color:#51a127;"></i>
+                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                        </div>
+										@else
+											<div class="tst-rating">
+                                             <i class="fa fa-map" style="color:#C70039;"></i>
+                                             
+                                        </div>
+										@endif
+                                      
+                                        </p>
+                          
+                            <p class="card-text text">{{$Data->description}}</p>
+                          </div>
 						  </div>
-                        </div>
-						</a>
-						 <div ><br></div>
-	               </div>
-				   
-				   
-	  @endforeach 
+						  </div>
+						 
+						   <br>
+						  </div>
+						 
+						  
+				    @endforeach
 	 
 	
 						 
