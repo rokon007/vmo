@@ -11,11 +11,11 @@
  
  <!----> 
  <div class="form_container">
-                                 <div class="card mb-3" style="min-width: 16rem !important; border: 3px solid #51a127;border-radius:10px">
+                                 <div class="col-md-3" >
 				                      <div class="item">
                                         <div class="courses-thumb">
-                                           <div class="courses-top">
-											  <div class="card-header div-1">
+                                           <div class="courses-top" style="border: 3px solid #51a127;border-radius:10px">
+											  <div class="card-header">
                                                     <center>
 													<h2 style="text-decoration:none;color: white;" class="card-title">Categories</h1>
 													</center>
