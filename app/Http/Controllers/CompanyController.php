@@ -15,7 +15,7 @@ use DB;
 
 class CompanyController extends Controller
 {
-
+  
   function index()
   {
     $CompanyNameData=Companytb::All();
@@ -23,7 +23,7 @@ class CompanyController extends Controller
             ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
               ->join('companytbs', 'users.id', '=', 'companytbs.user_id')
                ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
-            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.company as company')
+            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.id  as company_id')
             ->get();
 
 

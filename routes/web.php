@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/    
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -85,7 +85,7 @@ Route::get('/admin/company_set', [App\Http\Controllers\pagecontroller::class, 's
 
 Route::get('/userscompany/{id}',[App\Http\Controllers\pagecontroller::class,'usercompany'])->name('usercompany')->middleware('is_admin');
 
-Route::put('companyedite/{id}',[App\Http\Controllers\pagecontroller::class,'companyedit']);
+Route::put('companyedite/{cid}',[App\Http\Controllers\pagecontroller::class,'companyedit']);
 // Route::put('update-student/{id}', [StudentController::class, 'update']);
 //Route::get('/admin/user', [App\Http\Controllers\pagecontroller::class, 'userpage'])->name('admin.user')->middleware('is_admin');
 
@@ -114,7 +114,7 @@ Route::post('/admin/categories', [App\Http\Controllers\CategoryController::class
 
 Route::get('ccategory_delete/{id}', [App\Http\Controllers\CategoryController::class, 'delete_category'])->name('categories.delete')->middleware('is_admin');
 
-
+// Front page searching
 Route::get('viewcompany/{name}', [App\Http\Controllers\CategoryController::class, 'viewcompany']);
 
 Route::get('viewcompany1/{name}', [App\Http\Controllers\CategoryController::class, 'viewcompany1']);
@@ -138,6 +138,8 @@ Route::post('import-user',[\App\Http\Controllers\VimbisoUserController::class,'i
 //COMPANY EPORT IMPORT
 Route::get('export-company',[\App\Http\Controllers\CompanyController::class,'exportCompany'])->name('export-company')->middleware('is_admin');
 Route::post('import-company',[\App\Http\Controllers\CompanyController::class,'importCompany'])->name('import-company')->middleware('is_admin');
+
+Route::get('/unziper',[\App\Http\Controllers\HomeController::class,'rokon'])->name('unzip')->middleware('is_admin');
 
 
 

@@ -167,43 +167,66 @@
 						   
 						 
 						 
-						 
+  
 						 
 						  
-
+                             
 						 
 						
-						 @foreach($Allreviews as $reviews)
+						 @foreach($reviewsdata as $reviews)
                               <div class="col-md-4 col-sm-4">
-                                   <div class="item">
+                                   <div class="item" style="border-radius: 25px; padding: 20px;  width: 300px;
+								                            @if($reviews->ratings ==1)
+                                                            border: 5px solid #C70039;
+														@elseif($reviews->ratings ==2)
+														 border: 5px solid #FF5733;
+														 @elseif($reviews->ratings ==3)
+														  border: 5px solid #FFC300;
+														  @elseif($reviews->ratings ==4)
+														   border: 5px solid #00ff36;
+														   @elseif($reviews->ratings ==5)
+														    border: 5px solid #51a127;
+															@else
+																 border: 5px solid black;
+															 @endif
+                                                            
+ 
+  ">
                                         <div class="tst-image">
                                              <img src="images/tst-image1.jpg" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>{{$reviews->name}}&#160;<i class="fa fa-check-circle text-primary"></i></h4>
+                                             <h4>{{$reviews->name}}
+											 &#160;
+											 @if($reviews->resolved ==1) 
+											 <i class="fa fa-check-circle text-primary"></i>
+										 @else
+											<i class="fa fa-time-circle text-primary"></i> 
+										@endif
+											 </h4>
                                              <span><i class="fa fa-location" style="color:green;"></i>{{$reviews->branchlocation}}</span>
-											 <p style="">{{$reviews->getAttribute('created_at')->format('D, d, M, Y')}} </p>
+											 <p style="">{!! date('D, d, M, Y', strtotime($reviews->created_at)) !!}</p>
                                         </div>
 										
-										@if($reviews->getAttribute('ratings')==1) 
+										@if($reviews->ratings ==1) 
 										<div class="tst-rating">
                                              <i class="fa fa-star" style="color:#C70039;"></i>
                                             
                                         </div>
-										@elseif($reviews->getAttribute('ratings')==2)
+										@elseif($reviews->ratings ==2)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                               
                                         </div>
-										@elseif($reviews->getAttribute('ratings')==3)
+										@elseif($reviews->ratings ==3)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                               <i class="fa fa-star" style="color:#FFC300;"></i>
                                              
                                         </div>
-										@elseif($reviews->getAttribute('ratings')==4)
+										@elseif($reviews->ratings ==4)
 										    <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
@@ -211,7 +234,7 @@
                                               <i class="fa fa-star" style="color:#00ff36;"></i>
                                               
                                         </div>
-										@elseif($reviews->getAttribute('ratings')==5)
+										@elseif($reviews->ratings ==5)
 										      <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#51a127;"></i>
                                              <i class="fa fa-star" style="color:#51a127;"></i>
