@@ -416,7 +416,7 @@ body {
                         
                     <div class="form-group text-center"> <button type="submit" class="btn" style="background-color:var(--red);color:white">Login</button> </div>
                     
-                    <center><input class="btn btn-danger" type="submit" value="Login" /></center>
+                   
                 </form>
         <br></br>
       <div class="form-group p-3"> 
