@@ -202,7 +202,7 @@
 											<i class="fa fa-time-circle text-primary"></i> 
 										@endif
 											 </h4>
-                                             <span><i class="fa fa-location" style="color:green;"></i>{{$reviews->branchlocation}}</span>
+                                             <span><i class="fas fa-map-marker-alt" style="color:green;"></i>{{$reviews->branchlocation}}</span>
 											 <p style="">{!! date('D, d, M, Y', strtotime($reviews->created_at)) !!}</p>
                                         </div>
 										

@@ -56,6 +56,774 @@ https://templatemo.com/tm-516-known
     .div-5 {
      background-color: #1b3d81;
     }
+	 .div-futer {
+        background-color: #d7ddd7;
+    }
+	
+	@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+@font-face {
+	font-family: 'gotham';
+	src: url('fonts/Gotham-Medium-Regular.ttf');
+	font-weight: bold;
+  }
+@font-face {
+	font-family: 'gotham';
+	src: url('fonts/Gotham-Light.otf');
+}
+:root {
+	--red: #a62c2b;
+	--green: #296e01;
+	--yellow: #fdcc0d;
+  }
+
+button{
+	cursor: pointer;
+}
+
+.text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 6; /* number of lines to show */
+			line-clamp: 6; 
+	-webkit-box-orient: vertical;
+ }
+  
+  
+  .pagination li.active {
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
+  }
+  
+  .pagination li:hover:not(.active) {background-color: #ddd;}
+  
+  .pagination li:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+  }
+  
+  .pagination li:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+  }  
+.metallic-red{
+	color:#a62c2b;
+}
+.metallic-green{
+	color:#296e01;
+}
+.metallic-yellow{
+	color:#fdcc0d;
+}
+.btn-category{
+	font-size: 18px;
+}
+h1{
+	margin-bottom: 10px !important;
+}
+.logo{
+    max-width: 140px;
+    max-height: 65px;
+    cursor: pointer;
+}
+body{
+    font-family: 'gotham';
+	overflow-x: hidden;
+}
+
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;	
+}
+.clearfix:after { clear: both; }
+
+/* ---------- SEARCH ---------- */
+.cover-search{
+	min-height: 64px;
+}
+#search {
+	background: #fff;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 7px;
+    width: inherit;
+}
+
+#search input {
+	color: #1B1B21;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+#search input[type="search"],
+#search input[type="submit"] {
+	border-radius: 3px;
+	font-size: 1rem;
+	width: auto;
+}
+
+#search input[type="search"] {
+	background: #fff;
+	color: #42454e;
+	min-width: 75%;
+	padding: 6px 8px;
+}
+
+#search input[type="submit"] {
+	background: #B30E16;
+	color: #fff;
+	padding: 6px 10px;
+}
+
+#search input[type="submit"]:hover {
+	background: #189e83;
+}
+
+#search input[type="search"]::-webkit-input-placeholder { color: #fff; }
+#search input[type="search"]:-moz-placeholder { color: #fff; }
+#search input[type="search"]:-ms-input-placeholder { color: #fff; }
+
+.section-title{
+	font-size: 1.125rem;
+}
+
+
+.custom-btn {
+	width: 130px;
+	height: 40px;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: 500;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+	outline: none;
+	border: none;
+	letter-spacing: 0.5px;
+	text-transform: capitalize;
+	margin-right:40px;
+	margin-bottom:40px;
+}
+
+
+
+.bright-red-bg{
+	background:linear-gradient(to right, #cb2d3e, #ef473a) !important;color:white;
+}
+.bright-green-bg{
+	background:linear-gradient(to right, #093028, #237A57) !important;color:white
+}
+.bright-yellow-bg{
+	background:  linear-gradient(to right, #F7971E,#FFD200 );
+}
+.review-bad{
+	background: linear-gradient(#fff,#fff) padding-box, linear-gradient(to right, #cb2d3e, #ef473a) border-box;
+	padding: 20px;
+	border: 5px solid transparent;
+	border-radius: 15px;
+	display: inline-block;
+}
+.review-medium{
+	background: linear-gradient(#fff,#fff) padding-box, linear-gradient(to right, #F7971E,#FFD200 ) border-box;
+	padding: 20px;
+	border: 5px solid transparent;
+	border-radius: 15px;
+	display: inline-block;
+}
+
+.review-good{
+	background: linear-gradient(#fff,#fff) padding-box, linear-gradient(to right, #56ab2f, #a8e063) border-box;
+	padding: 20px;
+	border: 5px solid transparent;
+	border-radius: 15px;
+	display: inline-block;
+}
+.propicbox {
+	float: left;
+}
+
+
+.propic {
+	width: 50px;
+	border-radius: 50px;   
+}
+
+.reviewerbox {
+	margin: -7px 0 0 60px;
+	
+}
+
+
+
+.reviewername {
+	color: black;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+a, a:visited, a:hover {
+	color: #1B3D81;
+	text-decoration: none;
+}
+
+.reviewdate {
+	font-size: 14px;
+	line-height: 1em;
+	font-weight: 400;
+	color: #1B3D81;
+	margin: -10px 0 0 0
+}
+
+
+.review {
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+.bottomText {
+	margin: 15px 0 15px;
+	font-size: 14px;
+	color: #1B3D81;
+}
+.fa-check-circle{
+	color: #1B3D81;
+}
+.plans-cover-text{
+	font-size: 1.8rem;
+	line-height: 2.8rem;
+	opacity: 0.6;
+}
+
+.plans-cover-text-2{
+	font-size: 5.8rem;
+	line-height: 6rem;
+}
+
+.card-header{
+	background: transparent;
+}
+.card2{
+	border: 5px solid #F5D21F;
+	border-radius: 12px;
+}
+
+.card1{
+	border: 5px solid #B30E16;
+	border-radius: 12px;
+
+}
+.card3{
+	border: 5px solid #14903F;
+	border-radius: 12px;
+
+}
+@keyframes animation {
+0%{
+	opacity: 0;
+	transform: scale(.1)  rotate(30deg);
+}
+50%{
+	transform: rotate(-10deg);
+}
+75%{
+	transform: rotate(3deg);
+}
+100%{
+	opacity: 1;
+	tranform: scale(1);
+}
+}
+
+/* set the size and position of the icon */
+.icon-plus {
+	position: relative;
+	top:50%;
+	left:50%;
+	width: 30px;
+	height: 30px;
+	color:rgb(11, 136, 84);
+	transform: translate(-50%, -50%);
+  }
+  /* vertical line */
+  .icon-plus:before {
+	content:"";
+	position: absolute;
+	top: 0;
+	left: 37.5%;
+	width: 25%;
+	height: 100%;
+	background-color: rgb(11, 136, 84);
+  }
+  /* horizontal line */
+  .icon-plus:after {
+	content:"";
+	position: absolute;
+	top:37.5%;
+	left: 0;
+	width: 100%;
+	height: 25%;
+	background-color: rgb(11, 136, 84);
+  }
+
+  @keyframes scroll {
+	0% {
+		transform: translateX(0);
+   }
+	100% {
+		transform: translateX(calc(-250px * 5));
+   }
+}
+.slider {
+	height: fit-content;
+	margin: 20px;
+	overflow: hidden;
+	position: relative;
+	width: auto;
+
+}
+/* .slider::before, .slider::after {
+	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	content: "";
+	height: 100px;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+} */
+.slider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+.slider::before {
+	left: 0;
+	top: 0;
+}
+.slider .slide-track {
+	animation: scroll 40s linear infinite;
+	display: flex;
+	width: calc(250px * 14);
+}
+.slider .slide-track:hover
+{
+    animation-play-state: paused;
+}
+/* .slider .slide {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+} */
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #D7DDD7;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #B30E16;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+	color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: var(--blue);
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  color: black;
+  background: #B30E16;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #B30E16;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #B30E16;
+    padding: 13px 20px;
+    border: 1px solid #B30E16;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: linear-gradient(to right, #000000, #434343) !important;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #B30E16;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #B30E16;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+
+.metallic-red-bg{
+	background:linear-gradient(to right, #cb2d3e, #ef473a) !important;color:white;border:0px !important;
+}
+
+:root {
+	--star-size: 60px;
+	--star-color: #fff;
+	--star-background: #fc0;
+}
+.Stars {
+	--percent: calc(var(--rating) / 5 * 100%);
+	display: inline-block;
+	font-size: var(--star-size);
+	font-family: Times;
+	line-height: 1;
+}
+.Stars::before {
+	content: '★★★★★';
+	letter-spacing: 3px;
+	background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.metallic-red{
+	color: #B30E16;
+}
+
+.checkmark__circle {
+	stroke-dasharray: 166;
+	stroke-dashoffset: 166;
+	stroke-width: 2;
+	stroke-miterlimit: 10;
+	stroke: green;
+	fill: none;
+	animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  
+  .checkmark {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	display: block;
+	stroke-width: 2;
+	stroke: green;
+	stroke-miterlimit: 10;
+	margin: 10% auto;
+	box-shadow: inset 0px 0px 0px #7ac142;
+	animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+  
+  .checkmark__check {
+	transform-origin: 50% 50%;
+	stroke-dasharray: 48;
+	stroke-dashoffset: 48;
+	animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke {
+	100% {
+	  stroke-dashoffset: 0;
+	}
+  }
+  @keyframes scale {
+	0%, 100% {
+	  transform: none;
+	}
+	50% {
+	  transform: scale3d(1.1, 1.1, 1);
+	}
+  }
+  @keyframes fill {
+	100% {
+	  box-shadow: inset 0px 0px 0px 30px #fff;
+	}
+  }
+
+  
+ 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+	.cover{
+		background-size:contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-color: #D7DDD7;
+		background-position-y: 80%;
+	}
+	.cover-sm-bg{
+		height: 200px;
+		background-image: url("/static/images/cover1.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: #D7DDD7;
+		background-position: center;
+		width: 100%;
+	}
+	.cover-text{
+		font-size: 18px;
+	}
+	.cover-text-2{
+		font-size: 14px;
+	}
+
+	.category-block {
+		padding: 13px 22px;
+		min-width: 190px;
+		/* min-height: 89px; */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		transition: all 0.2s ease;
+	}
+	.text-sm-center{
+		text-align: center;
+	}
+	.category-block {
+		padding: 8px 3px;
+		min-width: 170px;
+		/* min-height: 89px; */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		transition: all 0.2s ease;
+	}
+	.reviewcard {
+		box-sizing: border-box;
+		font-weight: 400;
+		height: fit-content;
+		margin: 20px;
+		color: black;
+	}
+	.slider {
+	height: fit-content;
+	margin: 10px;
+	overflow: hidden;
+	position: relative;
+	width: auto;
+	}
+	.navbar-light .navbar-nav .nav-link {
+	margin: 0px;
+	}
+	.category-parent-sm{
+		font-size: 18px !important;
+	}
+	.pagination li {
+		color: black;
+		float: left;
+		padding: 1px 7px;
+		text-decoration: none;
+		border: 1px solid #ddd;
+	}
+	.font-heading-sm{
+		font-size: 18px !important;
+	}
+	.font-description-sm{
+		font-size: 12px !important;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+	.cover{
+		min-width: 1349px;
+		max-height: 492px;
+		background-image: url("/static/images/cover1.jpg");
+		background-size:contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: #D7DDD7;
+		background-position-y: 80%;
+	}
+	.cover-text{
+		font-size: 2.875rem;
+		line-height: 3.75rem;
+	}
+	.cover-text-2{
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+	.category-block{
+        padding: 24px 18px;
+        min-width: 290px;
+        min-height: 89px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        transition: all 0.2s ease;
+    }
+	.text-lg-left{
+		text-align: left;
+	}
+	.reviewcard {
+		box-sizing: border-box;
+		padding: 20px;
+		font-weight: 400;
+		border-radius: 15px;
+		width: 20vw;
+		height: fit-content;
+		margin: 20px;
+		color:black;
+		background-color: white;
+	}
+	.navbar-light .navbar-nav .nav-link{
+		margin: 20px 5px;
+	}
+	.pagination li {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		border: 1px solid #ddd;
+	  }
+}
 </style>
 
 </head>
@@ -153,15 +921,11 @@ https://templatemo.com/tm-516-known
                     </button></li>
                     </ul>
 
-          <!----<ul class="nav navbar-nav navbar-right">
-                         <li><a href="#"><i class="fa fa-phone"></i> +65 2244 1100</a></li>
-                    </ul> ---->
                </div>
 
           </div>
      </section>
      @if($message = Session::get('success'))
-     
 		 <script>
 	          swal("Thanks for your contribution","{!!Session::get('success')!!}","success",{
 				  button:"OK",
@@ -169,89 +933,82 @@ https://templatemo.com/tm-516-known
 	     </script>
 		 
 	 @endif
-
-
-
-
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
       @yield('body')
-    
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
-
-
-
-
-     <footer id="footer">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Vimbiso</h2>
-                              </div>
-                              <div class="footer-logo mb-2">
-                                <a href="index.html"><img src="images/logo-no-bg-2.png" style="max-width: 124px;" class="img-fluid" alt="logo"></a>
+    <div class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-2 pb-2">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30 d-flex justify-content-center border-right border-dark">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span><a href = "">www.vimbiso.org</a></span>
                             </div>
-                            <!--  <address>
-                                   <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
-                              </address> 
-
-                              <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-instagram"></a></li>
-                              </ul> -->
-
-                              <div class="copyright-text"> 
-                                   <p>Copyright &copy; 2022 Vimbiso</p>
-                                   
-                                   
-                              </div>
-                         </div>
+                        </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Find us</h2>
-								    
-                                   
-                              </div>
-                              <address>
-                                   <p><a href="www.vimbiso.org">www.vimbiso.org</a></p>
-                                   <p><a href="mailto: info@vimbiso.org">info@vimbiso.org</a></p>
-								   <p><i class="fas fa-phone"></i> WhatsApp</p>
-								   <p><a href="https://wa.me/message/6JWZWJBN4VDEA1">Send Message</a></p>
-                              </address>
-
-                              <div class="footer_menu">
-                                  
-                                  
-                              </div>
-                         </div>
+                    <div class="col-xl-4 col-md-4 mb-30 d-flex justify-content-center border-right border-dark">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>WhatsApp</h4>
+                                <span><a href="https://wa.me/message/6JWZWJBN4VDEA1" target="_blank">Send Message</a></span>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-12">
-                         <div class="footer-info newsletter-form">
-                              <div class="section-title">
-                                   <h4>Don't miss to subscribe to our new feeds, kindly fill the form below</h4>
-                              </div>
-                              <div>
-                                   <div class="form-group">
-                                        <form action="#" method="get">
-                                             <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
-                                             <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
-                                        </form>
-                                        <span><sup>*</sup> Please note - we do not spam your email.</span>
-                                   </div>
-                              </div>
-                         </div>
+                    <div class="col-xl-4 col-md-4 mb-30 d-flex justify-content-center">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span><a href = "mailto: info@vimbiso.org">info@vimbiso.org</a></span>
+                            </div>
+                        </div>
                     </div>
-                    
-               </div>
-          </div>
-     </footer>
+                </div>
+            </div>
+            <div class="footer-content pt-2 pb-2">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50 d-flex justify-content-center">
+                        <div class="footer-widget">
+                            <div class="footer-logo mb-2">
+                                <a href="index.html"><img src="/static/images/logo-no-bg-2.png" style="max-width: 124px;" class="img-fluid" alt="logo"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8 mb-50 d-flex justify-content-center">
+                        <div class="footer-widget">
+                            <div class="footer-text mb-25">
+                                <p style="color:black;font-size:14px">Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                <div class="subscribe-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Email Address">
+                                        <button class="m-0"><i class="fab fa-telegram-plane"></i></button>
+                                    </form>
+                                </div>
+                            </div>                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright © 2022, All Rights Reserved Vimbiso</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
      <!-- SCRIPTS -->
