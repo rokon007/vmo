@@ -11,7 +11,7 @@
  
  <!----> 
  <div class="form_container">
-                                 <div class="col-md-3" >
+                                 <div class="card mb-3" style="min-width: 16rem !important; border: 3px solid #51a127;border-radius:10px">
 				                      <div class="item">
                                         <div class="courses-thumb">
                                            <div class="courses-top">

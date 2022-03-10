@@ -26,7 +26,7 @@ public function viewcompany(Request $request,$name)
             ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.id  as company_id')
             ->get();
 
-      return view('frontpage.search.companybycategory',compact('joindata','CompanyNameData'));
+      return view('frontpage.viewcompanies',compact('joindata','CompanyNameData'));
   }
 
 
@@ -66,7 +66,7 @@ public function viewcompany(Request $request,$name)
             ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.id  as company_id')
             ->get();
 
-      return view('frontpage.search.companybycategory1',compact('joindata','CompanyNameData')); 
+       return view('frontpage.viewcompanies',compact('joindata','CompanyNameData'));
   }
 
    public function create()
