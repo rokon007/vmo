@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <center><input class="btn btn-primary" type="submit" value="Register" /></center>
+      <!--  <center><input class="btn btn-primary" type="submit" value="Register" /></center> -->
          
         </form>
         <br></br>
