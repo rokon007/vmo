@@ -11,13 +11,23 @@
  
  <!----> 
  <div class="form_container">
+                                 <div class="col-md-1" >
+				                      <div class="item">
+                                        <div class="courses-thumb">
+                                           
+                                        </div>
+                                      </div>
+                                 </div>
+                               </div>
+ 
+ <div class="form_container">
                                  <div class="col-md-3" >
 				                      <div class="item">
                                         <div class="courses-thumb">
-                                           <div class="courses-top" style="border: 3px solid #51a127;border-radius:10px">
-											  <div class="card-header">
+                                           <div class="courses-top">
+											  <div class="card-header div-1">
                                                     <center>
-													<h2 style="text-decoration:none;color: white;" class="card-title">Categories</h1>
+													<h2 style=" background-color: #f20c23;;color: white;" class="card-title">Categories</h1>
 													</center>
                                                 </div>
                                                 <!---->
