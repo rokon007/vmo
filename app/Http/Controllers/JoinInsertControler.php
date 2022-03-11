@@ -12,18 +12,10 @@ class JoinInsertControler extends Controller
 {
    public function Saverecord(Request $request)
    {
-     //   $Companysdata = array(
-     //    'user_id'=>$request->userid,
-     //    'company'=> $request->name,
-     //    'country'=> $request->country,
-     //     'city'=> $request->city,
-     //    'block'=> $request->block,
-     //  );
-     // $create=Companytb::create($Companysdata);
 
 
       $Companytb= new Companytb;
-      $Companytb->user_id=$request->input('userid');
+      $Companytb->email=$request->input('email');
       $Companytb->company=$request->input('name');
       $Companytb->country=$request->input('country');
       $Companytb->city=$request->input('city');

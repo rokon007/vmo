@@ -8,6 +8,7 @@ use App\Models\reviews;
 use DB;
 use App\Models\Companytb;
 
+
 class HomeController extends Controller
 {
     /**
@@ -33,7 +34,13 @@ class HomeController extends Controller
         $categories=Category::whereNull('category_id')->limit(12)->get();
         $Allreviews=reviews::All();
         $CompanyNameData=Companytb::All();
-        return view('home',compact('categories','Allcategories','Allreviews','CompanyNameData'));
+         $reviewsdata = DB::table('companytbs')
+            ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+             
+              
+            ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
+            ->get();
+        return view('home',compact('categories','Allcategories','Allreviews','CompanyNameData','reviewsdata'));
     }
      public function login()
     {

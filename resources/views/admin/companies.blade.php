@@ -229,10 +229,10 @@
 										<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
 											<thead>
 												<tr>
+												     <th>Email</th>
 													<th>Company Name</th>
 													<th >Country</th>
-												    <th>City</th>
-													<th>Block</th>
+												    <th>City</th>		
 													<th>Contact</th>
 													<th>Category</th>
 													<th>Subcategory</th>
@@ -244,11 +244,10 @@
 
 													@foreach($CompanyData as $data)
                                                            <tr>
-                                                           	
+                                                     <td>{{$data->email}}</td>      	
                                                     <td>{{$data->company}}</td>
 													<td>{{$data->country}}</td>
-													<td>{{$data->city}}</td>
-													<td>{{$data->block}}</td>
+													<td>{{$data->city}}</td>													
 													<td>{{$data->contact}}</td>
 													<td>{{$data->category}}</td>
 													<td>{{$data->subcategory}}</td>
@@ -272,6 +271,16 @@
 						<!--end::Entry-->
 					</div>
 					<!--end::Content-->
+					</section>
+					 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     @if($message = Session::get('success'))
+		 <script>
+	          swal("Vimbiso Admin","{!!Session::get('success')!!}","success",{
+				  button:"OK",
+			  })
+	     </script>
+		 
+	 @endif
 
                                                               <!--begin::Modal-->
 														<div class="modal fade" id="exampleModalSizeLg" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeLg" aria-hidden="true">
@@ -295,6 +304,10 @@
 												<div class="row">
 												
 												<div class="col-xl-6">
+												<div class="form-group">
+														<label>Company Email</label>
+			                                             <input   type="text" name="email"  class="form-control form-control-lg" placeholder="Email">
+												</div>
 												<div class="form-group">
 														<label>Company name</label>
 			                                             <input   type="text" name="company"  class="form-control form-control-lg" placeholder="Company name">
@@ -561,15 +574,16 @@
 														<label>City</label>
 			                                             <input   type="text" name="city"  class="form-control form-control-lg" placeholder="City name">
 													</div>
-													<div class="form-group">
-														<label>Block</label>
-			                                             <input   type="text" name="block"  class="form-control form-control-lg" placeholder="Block name">
-													</div>
+													
 												</div>												
 												
 												
 									<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>			
 												<div class="col-xl-6">
+												<div class="form-group">
+														<label>Block</label>
+			                                             <input   type="text" name="block"  class="form-control form-control-lg" placeholder="Block name">
+													</div>
 												<div class="form-group">
 														<label>contact</label>
 			                                             <input   type="tel" name="contact"  class="form-control form-control-lg" placeholder="Catagori name">

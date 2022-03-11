@@ -10,6 +10,7 @@ class Companytb extends Model
     use HasFactory;
 
     protected $fillable = [
+        'email',
         'company',
         'country',
         'city',

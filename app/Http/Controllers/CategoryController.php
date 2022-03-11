@@ -20,10 +20,10 @@ public function viewcompany(Request $request,$name)
    $CompanyNameData=Companytb::All();
     $joindata = DB::table('users')
             ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
-              ->join('companytbs', 'users.id', '=', 'companytbs.user_id')
+              ->join('companytbs', 'users.email', '=', 'companytbs.email')
                ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
                  ->where('companytbs.subcategory',[$name])
-            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.id  as company_id')
+            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
             ->get();
 
       return view('frontpage.search.companybycategory',compact('joindata','CompanyNameData'));
@@ -35,35 +35,17 @@ public function viewcompany(Request $request,$name)
   
         
 
-   //  public function viewcompany(Request $request,$name)
-   // {
-     
-
-   //    $CompanyData=companytb::where('subcategory',[$name])->get();
-   //      $CompanyNameData=Companytb::All();
-   //   return view('frontpage.search.companybycategory',compact('CompanyData','CompanyNameData')); 
-      
-   // }
-
-   // public function viewcompany1(Request $request,$name)
-   // {
-         
-
-   //    $CompanyData1=companytb::where('category',[$name])->get();
-   //      $CompanyNameData=Companytb::All();
-   //   return view('frontpage.search.companybycategory1',compact('CompanyData1','CompanyNameData')); 
-      
-   // }
+   
 
     public function viewcompany1(Request $request,$name)
   {
    $CompanyNameData=Companytb::All();
     $joindata = DB::table('users')
             ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
-              ->join('companytbs', 'users.id', '=', 'companytbs.user_id')
+              ->join('companytbs', 'users.email', '=', 'companytbs.email')
                ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
                  ->where('companytbs.category',[$name])
-            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.id  as company_id')
+            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
             ->get();
 
       return view('frontpage.search.companybycategory1',compact('joindata','CompanyNameData')); 

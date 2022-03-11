@@ -21,9 +21,9 @@ class CompanyController extends Controller
     $CompanyNameData=Companytb::All();
     $joindata = DB::table('users')
             ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
-              ->join('companytbs', 'users.id', '=', 'companytbs.user_id')
+              ->join('companytbs', 'users.email', '=', 'companytbs.email')
                ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
-            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.id as user_id','reviews.*','companytbs.id  as company_id')
+            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
             ->get();
 
 
@@ -73,6 +73,7 @@ class CompanyController extends Controller
    public function store(Request $request)
    {
      $data = array(
+        'email'=> $request->email,
         'company'=> $request->company,
         'country'=> $request->country,
         'city'=> $request->city,
@@ -83,7 +84,7 @@ class CompanyController extends Controller
         
       );
      $create=Companytb::create($data);
-     return redirect()->route('admin.companies');
+     return redirect()->route('admin.companies')->with('success','Company added successfully');
    }
 
    public function exportCompany()
