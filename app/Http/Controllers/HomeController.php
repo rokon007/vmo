@@ -49,7 +49,7 @@ class HomeController extends Controller
  
     public function adminIndex()
     {
-        $usercount=DB::table('vimbiso_users')->count();
+        $usercount=DB::table('users')->count();
          $categoriescount=DB::table('categories')->count();
          $reviewscount=DB::table('reviews')->count();
          $companycount=DB::table('companytbs')->count();

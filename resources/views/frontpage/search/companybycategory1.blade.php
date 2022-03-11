@@ -331,7 +331,7 @@ https://templatemo.com/tm-516-known
 							
 							  <div class="col-lg-3">
                         <div class="align-items-center justify-content-center">
-  <img src="<?php echo asset("uploads/image/$Data->image")?>"  class="img-responsive" style="width:160px;height:200px;padding:6px;" class="card-img" alt="" >
+  <img src="<?php echo asset("uploads/image/$Data->email.jpg")?>"  class="img-responsive" style="width:160px;height:200px;padding:6px;" class="card-img" alt="" >
                         </div>	
 						</div>
 						<div class="col-lg-9">

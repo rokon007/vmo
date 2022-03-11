@@ -19,4 +19,9 @@ class Companytb extends Model
         'category',
         'subcategory'
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(reviews::class);
+    }
 }

@@ -26,4 +26,9 @@ class reviews extends Model
         'company',
         'unlistedcompany'
     ];
+
+    public function companytbs()
+    {
+        return $this->belongsTo(Companytb::class);
+    }
 }
