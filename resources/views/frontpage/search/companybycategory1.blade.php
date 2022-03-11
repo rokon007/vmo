@@ -336,7 +336,7 @@ https://templatemo.com/tm-516-known
 						</div>
 						<div class="col-lg-9">
                         <div class="card-body ">
-                            <p class="card-title" style="color:#1b3d81;font-size:18px">{{$Data->company_name}}</p>
+                            <p class="card-title" style="color:#1b3d81;font-size:18px">{{$Data->company}}</p>
                                <p class="card-text">
                                 <i class="fas fa-chevron-circle-right metallic-green"></i> {{$Data->category}} -&gt; {{$Data->subcategory}}
                               </p>
