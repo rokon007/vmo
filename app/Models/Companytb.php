@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Companytb extends Model
 {
     use HasFactory;
-
+    protected $table='companytbs';
     protected $fillable = [
         'email',
         'company',
@@ -20,7 +20,7 @@ class Companytb extends Model
         'subcategory'
     ];
 
-    public function reviews()
+    public function reviews1()
     {
         return $this->hasMany(reviews::class);
     }

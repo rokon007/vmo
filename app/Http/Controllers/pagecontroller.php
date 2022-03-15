@@ -34,12 +34,26 @@ class pagecontroller extends Controller
         return view('frontpage.contactus',compact('CompanyNameData'));
     }
     //-------------------------
-    //indexprofile
-    public function indexprofile()
+   
+
+   function indexprofile($company)
     {
-        $CompanyNameData=Companytb::All();
-        return view('frontpage.profile',compact('CompanyNameData'));
-    }
+$CData = DB::table('companytbs')->where('company',$company)->first();
+ $RData = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.company',[$company])
+            ->get();
+ $reviewscount= Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.company',[$company])
+           ->count();
+    $ratings = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.company',[$company])
+    ->sum('ratings');
+
+// return $CData;
+ 
+     return view('frontpage.profile',compact('CData','RData','reviewscount','ratings'));
+   }
+
      public function indexsettings()
     {
         $CompanyNameData=Companytb::All();

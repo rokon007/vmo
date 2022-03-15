@@ -251,7 +251,7 @@
 																<a href="#" class="text-danger font-weight-bold font-size-h2 mt-3">Company</a>
 																<!--end::Svg Icon-->
 															</span>
-															<a href="#" class="text-danger font-weight-bold font-size-h3 mt-3">Total: 10</a>
+															<a href="#" class="text-danger font-weight-bold font-size-h3 mt-3">Total: {{$companycount}}</a>
 														</div>
 														<div class="col bg-light-success px-6 py-8 rounded-xl">
 															<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">

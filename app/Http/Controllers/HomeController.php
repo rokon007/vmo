@@ -56,8 +56,8 @@ class HomeController extends Controller
         return view('admin.adminhome',compact('usercount','categoriescount','reviewscount','companycount'));
     }
     
-    public function rokon()
+    public function UploadImage()
     {
-        return view('rokon');
+        return view('admin.uploadimage');
     }
 }

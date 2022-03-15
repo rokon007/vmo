@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             
-            'name' => 'Animal Park & Zoo',
+            'name' => 'Animals & Pets',
             'subcategory' => '1',
             'status' => '1',
         ]);

@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */    
-/*
+/*   companies
 Route::get('/', function () {
     return view('welcome');
 });
@@ -33,7 +33,7 @@ Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, '
 Route::get('/',[WelcomeController::class,"welcomeindex"])->name('welcome');
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
 //Normal User
-Route::get('/profile', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
+Route::get('/profile/{company}', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
 Route::get('/settings', [App\Http\Controllers\pagecontroller::class, 'indexsettings'])->name('settings');
 
 //landing page Route
@@ -67,7 +67,7 @@ Route::post('save_title', [App\Http\Controllers\TitleandtagController::class, 's
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get("/login",[App\Http\Controllers\HomeController::class,"login"])->name('login');
+
 
 
 
@@ -139,7 +139,7 @@ Route::post('import-user',[\App\Http\Controllers\VimbisoUserController::class,'i
 Route::get('export-company',[\App\Http\Controllers\CompanyController::class,'exportCompany'])->name('export-company')->middleware('is_admin');
 Route::post('import-company',[\App\Http\Controllers\CompanyController::class,'importCompany'])->name('import-company')->middleware('is_admin');
 
-Route::get('/unziper',[\App\Http\Controllers\HomeController::class,'rokon'])->name('unzip')->middleware('is_admin');
+Route::get('/upload-image',[\App\Http\Controllers\HomeController::class,'UploadImage'])->name('upload.image')->middleware('is_admin');
 
 
 
