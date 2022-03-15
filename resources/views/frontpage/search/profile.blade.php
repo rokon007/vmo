@@ -1,4 +1,4 @@
-@extends('frontpage.frontpage')
+@extends('frontpage.search.frontpage1')
  
 
 @section('body') 
@@ -480,32 +480,21 @@ button.bg-dark:hover {
 <br><br>
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
-                @if(
-              asset("uploads/image/$CData->email.jpg")
-                !=NULL)
-                <img class="border border-dark" src="<?php echo asset("uploads/image/non.jpg")?>" style="max-height: 149px;max-width: 198px;">
-               @else
-               <img class="border border-dark" src="<?php echo asset("uploads/image/$CData->email.jpg")?>" style="max-height: 149px;max-width: 198px;">
-               @endif
+                
+                <img class="border border-dark" src="uploads/image/non.jpg" style="max-height: 149px;max-width: 198px;">
+               
             
             <div class="flex-column pl-4">
                 <h1 class="font-heading-sm">{{$CData->company}}</h1>
                 
-                <p>Total Reviews:{{$reviewscount}}</p>
-                <p> Avg ratings: <strong>
-                    @if($ratings !=NULL)
-                {{$ratings/$reviewscount}}
-                @else
-                0
-                @endif
-            </strong></p>
+                <p>Total Reviews: 0</p>
+                <p> Avg ratings: <strong>0</strong></p>
                 
             </div>
         </div>
         
-        <div class="row">
-             <div class="col-lg-1"><br></div>
-            <div class="col-lg-7">
+        <div class="row1">
+            <div class="d-flex flex-column col-lg-8 col-sm-12">
                 <div class="theme--light p-lg-5 p-0">
                     <div class="comments">  
 
@@ -517,41 +506,21 @@ button.bg-dark:hover {
                         <div class="flex-row m-2">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">Excellent </span>
                             <div class="progress w-75 float-right font-description-sm">
-                                <div class="bright-green-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
-                                  @if($ratings !=NULL)
-                                {{($ratings/$reviewscount)/10}}%
-                                 @else
-                                  0%
-                                @endif
-                                ">
-                                  @if($ratings !=NULL)
-                                {{($ratings/$reviewscount)/10}}
-                                 @else
-                                   0
-                                @endif
+                                <div class="bright-green-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                0
                                 </div>
                             </div>
                         </div>
                         <div class="flex-row m-2">
-                            <span class="font-description-sm" style="float:left;">Average </span>
+                            <span class="font-description-sm" style="float:left;">Average</span>
                             <div class="progress w-75 float-right">
-                                <div class="bright-yellow-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
-                                 @if($ratings !=NULL)
-                                {{$ratings/$reviewscount}}%
-                                   @else
-                                  0%
-                                @endif
-                                ">
-                                @if($ratings !=NULL)
-                               {{$ratings/$reviewscount}}
-                                @else
-                                  0
-                                @endif
+                                <div class="bright-yellow-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                0
                                 </div>
                             </div>
                         </div>
                         <div class="flex-row m-2">
-                            <span class="font-description-sm" style="float:left;">Bad  </span>
+                            <span class="font-description-sm" style="float:left;">Bad</span>
                             <div class="progress w-75 float-right">
                                 <div class="bright-red-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
                                 0
@@ -563,100 +532,16 @@ button.bg-dark:hover {
                         <input class="form-control" id="myInput" type="text" placeholder="Search reviews">
                         <!---->
                         </div>
-                        <br>
-                         @foreach($RData as $reviews)
-                        <div>
-                            
-                                <div class="card review-card v-card v-sheet theme--light elevation-2 review-good mt-3" style="width: 100%;">
-                            
-                            
-                                <div class="header">
-                                <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
-                                </div>
-                                <span class="displayName title metallic-red">{{$reviews->name}}</span> <span class="displayName caption">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->created_at)) !!}</span> &nbsp;<span><i class="fas fa-map-marker-alt"></i> {{$reviews->branchlocation}}</span>
-                                <div class="pull-right" style="padding-top:10px">
-                                    
-                                        
-                                            @if($reviews->ratings ==1) 
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#C70039;"></i>
-                                            
-                                        </div>
-                                        @elseif($reviews->ratings ==2)
-                                           <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#FF5733;"></i>
-                                             <i class="fa fa-star" style="color:#FF5733;"></i>
-                                              
-                                        </div>
-                                        @elseif($reviews->ratings ==3)
-                                           <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#FFC300;"></i>
-                                             <i class="fa fa-star" style="color:#FFC300;"></i>
-                                              <i class="fa fa-star" style="color:#FFC300;"></i>
-                                             
-                                        </div>
-                                        @elseif($reviews->ratings ==4)
-                                            <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              
-                                        </div>
-                                        @elseif($reviews->ratings ==5)
-                                              <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                        </div>
-                                        @else
-                                            <div class="tst-rating">
-                                             <i class="fa fa-map" style="color:#C70039;"></i>
-                                             
-                                        </div>
-                                        @endif
-                                        
-                                    
-                                </div>
-                                
-                                <br>
-                                </div>
-                                <!---->
-                                <div class="wrapper comment">
-                                <p class="review">{{$reviews->review}}</p>
-                                
-                                    <p class="bottomText mt-0 mb-0 pull-right">review on WhatsApp <a href="#" target="_blank"><i class="fab fa-whatsapp fa-2x ml-2"></i></a></p>   
-                                
-                                </div>
-                                
-                                <div class="v-dialog__container" style="display: block;"></div>
-                            </div>
-                            <!---->
-                            
-                             </div>
-                             <br>
-                         @endforeach
-                                
-                            
-                            
-                       
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card" style="width: 30rem;border-radius: 25px; padding: 30px; border: 1px solid black;">
+            <div class="d-flex flex-column col-lg-4 col-sm-12 pt-6 align-items-center pb-6">
+                <div class="card" style="width: 18rem;border-radius: 25px; padding: 20px; border: 1px solid black;">
                     
-                     <center>
-                         @if(
-              asset("uploads/image/$CData->email.jpg")
-                !=NULL)
-                        <img class="card-img-top" src="<?php echo asset("uploads/image/non.jpg")?>" alt="Card image cap" style="width:180px;height:180px">
-                        @else
-                        <img class="card-img-top" src="<?php echo asset("uploads/image/$CData->email.jpg")?>" alt="Card image cap" style="width:180px;height:180px">
-                        @endif
-                    </center>   
+                     <center><img class="card-img-top" src="uploads/image/non.jpg" alt="Card image cap" style="width:140px;height:140px"></center>   
                     
                     
                     <div class="card-body">

@@ -1,4 +1,4 @@
-@extends('frontpage.frontpage')
+@extends('frontpage.frontpage1')
  
 
 @section('body') 
