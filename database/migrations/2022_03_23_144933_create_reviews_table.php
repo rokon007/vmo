@@ -14,7 +14,7 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+            
 
             $table->id();
             $table->string("name");
@@ -24,7 +24,7 @@ class CreateReviewsTable extends Migration
             $table->string("dateofpurchase")->nullable();
             $table->string("branchlocation")->nullable();
             $table->text("review");
-            $table->string("ratings")->nullable();
+            $table->Integer("ratings")->nullable();
             $table->string("typeofpurchase")->nullable();
             $table->string("resolved")->nullable();
             $table->text("response")->nullable();

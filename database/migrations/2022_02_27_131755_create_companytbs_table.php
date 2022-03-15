@@ -14,7 +14,7 @@ class CreateCompanytbsTable extends Migration
     public function up()
     {
         Schema::create('companytbs', function (Blueprint $table) {
-             $table->engine = 'InnoDB';
+             
             $table->bigIncrements('id');
             $table->string("email")->unique();         
             $table->string("company")->nullable();
