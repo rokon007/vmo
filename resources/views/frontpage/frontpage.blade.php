@@ -20,14 +20,14 @@ https://templatemo.com/tm-516-known
      <meta name="author" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href={{asset("css/bootstrap.min.css")}}>
-     <link rel="stylesheet" href={{asset("https://pro.fontawesome.com/releases/v5.10.0/css/all.css")}} integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
-     <link rel="stylesheet" href={{asset("css/owl.carousel.css")}}>
-     <link rel="stylesheet" href={{asset("css/owl.theme.default.min.css")}}>
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
      <!-- MAIN CSS -->
-     <link rel="stylesheet" href={{asset("css/templatemo-style.css")}}>
+     <link rel="stylesheet" href="css/templatemo-style.css">
 	 
      <style>
     .div-1 {
@@ -1012,11 +1012,11 @@ ul {
 
 
      <!-- SCRIPTS -->
-     <script src={{asset("js/jquery.js")}}></script>
-     <script src={{asset("js/bootstrap.min.js")}}></script>
-     <script src={{asset("js/owl.carousel.min.js")}}></script>
-     <script src={{asset("js/smoothscroll.js")}}></script>
-     <script src={{asset("js/custom.js")}}></script>
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
 
 </body>
 </html>
