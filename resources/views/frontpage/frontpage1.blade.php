@@ -858,7 +858,17 @@ ul {
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="{{url('home')}}" class="smoothScroll">Home</a></li>
+                         <li>
+                          @guest
+                            @if (Route::has('register'))
+                         <a href="{{url('/')}}" class="smoothScroll">Home1</a>
+                           @endif
+                             @else
+
+                          <a href="{{url('home')}}" class="smoothScroll">Home2</a>
+                         
+                          @endguest
+                         </li>
                          <li><a href="{{url('about')}}" class="smoothScroll">About</a></li>
                          <li><a href="{{url('categories')}}" class="smoothScroll">View Companies</a></li>
                          

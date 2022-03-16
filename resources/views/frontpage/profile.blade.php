@@ -487,14 +487,14 @@ button.bg-dark:hover {
                @else
                <img class="border border-dark" src="<?php echo asset("uploads/image/$CData->email.jpg")?>" style="max-height: 149px;max-width: 198px;">
                @endif
-            
+           
             <div class="flex-column pl-4">
                 <h1 class="font-heading-sm">{{$CData->company}}</h1>
                 
                 <p>Total Reviews:{{$reviewscount}}</p>
                 <p> Avg ratings: <strong>
                     @if($ratings !=NULL)
-                {{$ratings/$reviewscount}}
+                {{round($ratings/$reviewscount, 2)}}
                 @else
                 0
                 @endif
@@ -525,7 +525,7 @@ button.bg-dark:hover {
                                 @endif
                                 ">
                                   @if($ratings !=NULL)
-                                {{($ratings/$reviewscount)/10}}
+                                 {{round(($ratings/$reviewscount)/10, 2)}}
                                  @else
                                    0
                                 @endif

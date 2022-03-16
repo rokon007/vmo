@@ -1055,6 +1055,13 @@ ul {
                                   </label>
                               </div>
                             </li>
+                            <li class="list-group-item">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="timeperiod" id="time-3" value="3">
+                                  <label class="form-check-label" for="exampleRadios1">24 months
+                                  </label>
+                              </div>
+                            </li>
 
                           </ul>
                         </div>
@@ -1071,9 +1078,16 @@ ul {
 	 
 	 <!------------------------------------------------------------->
 	 
+<style type="text/css">
+    .w-5{
+        display: none;
+    }
+</style>
 
-
-	
+	 <div class="col-sm-3 col-lg-8 col-md-3">
+    <center><button class="btn btn-icon">{{$joindata->links()}}</button></center>
+    <br>
+     </div>
 
                                                                                 
        @foreach($joindata as $Data)    
@@ -1083,15 +1097,15 @@ ul {
 	             
                       <div class="row no-gutters list-group-item text-center" border="" 
 					  style="border-radius: 25px; padding: 20px;  
-								                            @if($Data->ratings ==1)
+								                            @if($Data->subcategory ==1)
                                                             border: 5px solid #C70039;
-														@elseif($Data->ratings ==2)
+														@elseif($Data->subcategory ==2)
 														 border: 5px solid #FF5733;
-														 @elseif($Data->ratings ==3)
+														 @elseif($Data->subcategory ==3)
 														  border: 5px solid #FFC300;
-														  @elseif($Data->ratings ==4)
+														  @elseif($Data->subcategory ==4)
 														   border: 5px solid #00ff36;
-														   @elseif($Data->ratings ==5)
+														   @elseif($Data->subcategory ==5)
 														    border: 5px solid #51a127;
 															@else
 																 border: 5px solid black;
@@ -1111,28 +1125,28 @@ ul {
                               </p>
                             <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{$Data->block}}, {{$Data->city}}, {{$Data->country}}</p>
                             <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp; <span class="pull-right"><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
-                            <p class="card-text">Total Reviews: <strong>1</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>5</strong></span></p>
+                            <p class="card-text">Total Reviews: <strong>0</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
                                       
-										@if($Data->ratings ==1) 
+										@if($Data->count ==1) 
 										<div class="tst-rating">
                                              <i class="fa fa-star" style="color:#C70039;"></i>
                                             
                                         </div>
-										@elseif($Data->ratings ==2)
+										@elseif($Data->count ==2)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                               
                                         </div>
-										@elseif($Data->ratings ==3)
+										@elseif($Data->count ==3)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                               <i class="fa fa-star" style="color:#FFC300;"></i>
                                              
                                         </div>
-										@elseif($Data->ratings ==4)
+										@elseif($Data->count ==4)
 										    <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
@@ -1140,7 +1154,7 @@ ul {
                                               <i class="fa fa-star" style="color:#00ff36;"></i>
                                               
                                         </div>
-										@elseif($Data->ratings ==5)
+										@elseif($Data->count ==5)
 										      <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#51a127;"></i>
                                              <i class="fa fa-star" style="color:#51a127;"></i>
@@ -1153,7 +1167,7 @@ ul {
                                       
                                         </p>
                           
-                            <p class="card-text text">{{$Data->description}}</p>
+                            <p class="card-text text">{{$Data->email}}</p>
                           </div>
 						  </div>
 						  </div>

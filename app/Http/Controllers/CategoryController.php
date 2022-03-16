@@ -18,29 +18,30 @@ class CategoryController extends Controller
 public function viewcompany(Request $request,$name)
   {
    $CompanyNameData=Companytb::All();
-    $RData = DB::table('users')
-            ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
-              ->join('companytbs', 'users.email', '=', 'companytbs.email')
-               ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
-                 ->where('companytbs.subcategory',[$name])
-            ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
+      // $RData12 =  Companytb::where('subcategory',[$name])
+      // ->with('reviews')
+      // ->get();
+     
+   
+
+         $RData1 = DB::table('companytbs')
+->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+->select('companytbs.company as company','companytbs.email as email','companytbs.country as country','companytbs.city as city','companytbs.block as block','companytbs.contact as contact','companytbs.category as category','companytbs.subcategory as subcategory', DB::raw("count(reviews.id) as count"))
+ ->where('companytbs.subcategory',[$name])
+->groupBy('companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.email',)
+->get();
+
+    $RData = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+     ->select('companytbs.*','reviews.company_id as id','reviews.ratings','companytbs.id  as company_id')
+           ->where('companytbs.subcategory',[$name])
             ->get();
 
-            $reviewscount = DB::table('users')
-            ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
-              ->join('companytbs', 'users.email', '=', 'companytbs.email')
-               ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
-                 ->where('companytbs.subcategory',[$name])
-                  ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
-             ->count();
-
-              $ratings = DB::table('users')
-            ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
-              ->join('companytbs', 'users.email', '=', 'companytbs.email')
-               ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
-                 ->where('companytbs.subcategory',[$name])
-                  ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
-            ->sum('ratings');
+           $reviewscount= Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.subcategory',[$name])
+           ->count();
+    $ratings = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.subcategory',[$name])
+    ->sum('ratings');
 
 
      // $CData = DB::table('companytbs')->where('company',$company)->first();
@@ -55,11 +56,11 @@ public function viewcompany(Request $request,$name)
  //    ->sum('ratings');
 
 
-       $joindata=companytb::where('subcategory',[$name])->get();
+       $joindata=companytb::where('subcategory',[$name])->paginate(4);
      
          
    
-      return view('frontpage.search.companybycategory1',compact('joindata','CompanyNameData','RData','reviewscount','ratings')); 
+      return view('frontpage.search.companybycategory1',compact('joindata','CompanyNameData','RData1','reviewscount','ratings')); 
   }
 
 
@@ -81,7 +82,7 @@ public function viewcompany(Request $request,$name)
    //          ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
    //          ->get();
  $CompanyNameData=Companytb::All();
-     $joindata=companytb::where('category',[$name])->get();
+     $joindata=companytb::where('category',[$name])->paginate(4);
       return view('frontpage.search.companybycategory1',compact('joindata','CompanyNameData')); 
   }
 
