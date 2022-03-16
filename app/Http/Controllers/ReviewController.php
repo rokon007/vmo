@@ -46,8 +46,7 @@ class ReviewController extends Controller
 
       $reviews= new reviews;
       $reviews->name=$request->input('name');
-      $reviews->contact=$request->input('contact');
-      
+      $reviews->contact=$request->input('contact');     
       $reviews->purchaseditem=$request->input('purchaseditem');
       $reviews->itemcounter=$request->input('itemcounter');
       $reviews->dateofpurchase=$request->input('dateofpurchase');
@@ -55,12 +54,30 @@ class ReviewController extends Controller
       $reviews->review=$request->input('review');
       $reviews->ratings=$request->input('ratings');
       $reviews->typeofpurchase=$request->input('typeofpurchase');
-      $reviews->resolved=$request->input('resolved');
       $reviews->response=$request->input('response');
-      $reviews->isresolved=$request->input('isresolved');
-      $reviews->whatsappreview=$request->input('whatsappreview');
       $reviews->company_id=$request->input('company_id');
       $reviews->unlistedcompany=$request->input('unlistedcompany');
+      if($request->has('resolved')){
+          $resolved = implode(',', $request->input('resolved'));
+           $reviews->resolved = $resolved;
+        }else{
+            $resolved = 0;
+           $reviews->resolved = $resolved;
+        }
+        if($request->has('isresolved')){
+          $isresolved = implode(',', $request->input('isresolved'));
+          $reviews->isresolved = $isresolved;
+        }else{
+           $isresolved = 0;
+          $reviews->isresolved = $isresolved;
+        }
+         if($request->has('whatsappreview')){
+         $whatsappreview = implode(',', $request->input('whatsappreview'));
+          $reviews->whatsappreview = $whatsappreview;
+        }else{
+             $whatsappreview = 0;
+          $reviews->whatsappreview = $whatsappreview;
+        }
       $reviews->save();
 
      return redirect()->route('reviews.create')->with('success','Review aded Successfully');
@@ -81,4 +98,61 @@ class ReviewController extends Controller
       DB::delete('delete from reviews where id=?',[$id]);
       return redirect()->route('reviews.create')->with('success','Data deleted Successfully');
      }
+      public function edit_funtion($id)
+     {
+        $RData = DB::table('companytbs')
+            ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+             
+              
+            ->select('companytbs.company','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
+             ->where('reviews.id',$id)
+           ->first();
+        $CompanyNameData=Companytb::All();
+        // return $RData;
+       return view('admin.review_edit',compact('RData','CompanyNameData'));
+     }
+     
+     public function updatereview_funtion(Request $request, int $id)
+{
+      $reviews = reviews::find($id); 
+      $reviews->name=$request->input('name');
+      $reviews->contact=$request->input('contact');     
+      $reviews->purchaseditem=$request->input('purchaseditem');
+      $reviews->itemcounter=$request->input('itemcounter');
+      $reviews->dateofpurchase=$request->input('dateofpurchase');
+      $reviews->branchlocation=$request->input('branchlocation');
+      $reviews->review=$request->input('review');
+      $reviews->ratings=$request->input('ratings');
+      $reviews->typeofpurchase=$request->input('typeofpurchase');
+      $reviews->response=$request->input('response');
+      $reviews->company_id=$request->input('company_id');
+      $reviews->unlistedcompany=$request->input('unlistedcompany');
+      if($request->has('resolved')){
+          $resolved = implode(',', $request->input('resolved'));
+           $reviews->resolved = $resolved;
+        }else{
+            $resolved = 0;
+           $reviews->resolved = $resolved;
+        }
+        if($request->has('isresolved')){
+          $isresolved = implode(',', $request->input('isresolved'));
+          $reviews->isresolved = $isresolved;
+        }else{
+           $isresolved = 0;
+          $reviews->isresolved = $isresolved;
+        }
+         if($request->has('whatsappreview')){
+         $whatsappreview = implode(',', $request->input('whatsappreview'));
+          $reviews->whatsappreview = $whatsappreview;
+        }else{
+             $whatsappreview = 0;
+          $reviews->whatsappreview = $whatsappreview;
+        }
+
+      $reviews->update();
+       
+    return redirect()->route('reviews.create')->with('status','Reviews Updated Successfully');
+}
+
+
 }

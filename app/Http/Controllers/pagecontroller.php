@@ -38,7 +38,10 @@ class pagecontroller extends Controller
 
    function indexprofile($company)
     {
-$CData = DB::table('companytbs')->where('company',$company)->first();
+
+
+          try {
+       $CData = DB::table('companytbs')->where('company',$company)->first();
  $RData = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
            ->where('companytbs.company',[$company])
             ->get();
@@ -48,6 +51,12 @@ $CData = DB::table('companytbs')->where('company',$company)->first();
     $ratings = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
            ->where('companytbs.company',[$company])
     ->sum('ratings');
+    } catch (ModelNotFoundException $exception) {
+        return back()->withError($exception->getMessage())->withInput();
+    }
+    
+
+
 
 // return $CData;
  

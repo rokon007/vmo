@@ -29,7 +29,8 @@ Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'s
 
 Route::get('userset/{id}', [App\Http\Controllers\pagecontroller::class, 'SetUser'])->name('user.set')->middleware('is_admin');
 
-Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
+
+
 Route::get('/',[WelcomeController::class,"welcomeindex"])->name('welcome');
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
 //Normal User
@@ -102,7 +103,10 @@ Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getS
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
 Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store')->middleware('is_admin');
 Route::post('/give/reviews', [App\Http\Controllers\pagecontroller::class, 'give'])->name('reviews.give');
-
+Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
+Route::get('click_edit/{id}', [App\Http\Controllers\ReviewController::class, 'edit_funtion'])->name('reviews.edit')->middleware('is_admin');
+// updatereview
+Route::post('/updatereview/{id}',[App\Http\Controllers\ReviewController::class, 'updatereview_funtion'])->name('updatereview')->middleware('is_admin');  
 
 //For emailverify
 Route::get('/admin/emailverify', [App\Http\Controllers\EmailVeryfyController::class, 'emailshow'])->name('admin.emailverify')->middleware('is_admin');

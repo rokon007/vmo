@@ -478,6 +478,14 @@ button.bg-dark:hover {
 }
 </style>
 <br><br>
+@if($CData->email==NULL)
+<div class="container1-fluid1 m-0 p-0">
+ <div class="flex-column pl-4">
+                <h1 class="font-heading-sm">Set up your company first</h1>
+            </div>
+</div>
+
+ @else
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
                 @if(
@@ -678,5 +686,7 @@ button.bg-dark:hover {
 
     </div>
 
+
+ @endif
  
 @endsection

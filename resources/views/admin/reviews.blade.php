@@ -265,7 +265,7 @@
 												<tr>
 													<th>Action</th>
 													<th >Name</th>
-												    <th>Company</th>
+												    <th>Company id</th>
 													<th>Contact</th>
 													<th>Purchased item</th>
 													
@@ -277,9 +277,12 @@
 													
                                             @foreach($ReviewData as $reviewsdata)
                                                  <tr>
-                                                    <td><a href="/click_delete/{{$reviewsdata->id}}"><i class="la la-trash icon-lg" style="color:red;"></i></a></td>
+                                                    <td>
+													<a href="/click_delete/{{$reviewsdata->id}}" title="Delete"><i class="la la-trash icon-lg" style="color:red;"></i></a> 
+													<a href="/click_edit/{{$reviewsdata->id}}" title="Edit details"><i class="la la-edit icon-lg"style="color:#FFC300;"></i></a>
+													</td>
                                                     <td>{{$reviewsdata->name}}</td>
-													<td>{{$reviewsdata->company}}</td>
+													<td>{{$reviewsdata->company_id}}</td>
 													<td>{{$reviewsdata->contact}}</td>
 													<td>{{$reviewsdata->purchaseditem}}</td>
 												</tr>
@@ -428,13 +431,13 @@
 																		<div class="checkbox-inline">
 																		         
 																				 <label class="checkbox checkbox-danger">
-                                                                               <input type="checkbox" value="1" name="Check_isresolved"  />
+                                                                               <input type="checkbox" value="1" name="isresolved[]"  />
                                                                                <span></span>
                                                                                   Is resolved
                                                                                </label>
 																				 
                                                                                 <label class="checkbox checkbox-danger">
-                                                                                <input type="checkbox" value="1" name="Check_whatsappreview"/>
+                                                                                <input type="checkbox" value="1" name="whatsappreview[]"/>
                                                                                 <span></span>
                                                                                    Whatsapp review
                                                                                 </label>                                                                                                                                                          
@@ -444,7 +447,7 @@
 																	<div class="form-group">
 																		<div class="checkbox-inline">																		        						 
                                                                               <label class="checkbox checkbox-danger ">
-                                                                             <input type="checkbox" value="1" name="Check_resolved" />
+                                                                             <input type="checkbox" value="1" name="resolved[]" />
                                                                              <span></span>
                                                                                  Resolved
                                                                                  </label>
