@@ -23,9 +23,6 @@ class ReviewController extends Controller
 
 
   
-  
-
-
    public function store(Request $request)
    {
      $data = array(
@@ -42,7 +39,7 @@ class ReviewController extends Controller
         'response'=> $request->response,
         'isresolved'=> $request->isresolved,
         'whatsappreview'=> $request->whatsappreview,
-        'company_id'=> $request->company_id,
+        'company'=> $request->company_id,
         'unlistedcompany'=> $request->unlistedcompany,
       );
      $create=reviews::create($data);
