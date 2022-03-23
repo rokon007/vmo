@@ -1161,7 +1161,7 @@ ul {
 										
                                       
                                         </p>
-                                        @elseif(($Data->Totalratings)/($Data->count) ==1)
+                                        @elseif(($Data->count)/($Data->count) ==1)
                           
                             <p class="card-text text">Not reted</p>
                             @endif
