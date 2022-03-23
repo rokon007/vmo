@@ -16,14 +16,14 @@ class CreateBusinessProfilesTable extends Migration
         Schema::create('business_profiles', function (Blueprint $table) {
             $table->id();
             $table->integer("user_id")->nullable();
-            $table->string('email')->unsigned();
+            $table->string('email')->unique();
             $table->longText('description')->nullable();
             $table->string('verified')->nullable();
             $table->string('category')->nullable();
             $table->string('tags')->nullable();
             $table->string('status')->nullable();
             $table->string('image')->nullable();
-             $table->foreign('email')->references('email')->on('companytbs');
+             // $table->foreign('email')->references('email')->on('companytbs');
             $table->timestamps();
         });
     }
