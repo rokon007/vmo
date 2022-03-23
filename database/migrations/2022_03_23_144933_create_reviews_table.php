@@ -30,10 +30,10 @@ class CreateReviewsTable extends Migration
             $table->text("response")->nullable();
             $table->string("isresolved")->nullable();
             $table->string("whatsappreview")->nullable();
-            $table->bigInteger('company_id')->unsigned();
+            $table->bigInteger('company_id')->unique();
             $table->string("unlistedcompany")->nullable();
             $table->string("show")->nullable();
-            $table->foreign('company_id')->references('id')->on('companytbs');
+            // $table->foreign('company_id')->references('id')->on('companytbs');
             $table->timestamps();
         });
     }
