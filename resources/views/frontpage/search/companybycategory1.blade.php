@@ -1101,7 +1101,20 @@ ul {
 	             
                       <div class="row no-gutters list-group-item text-center" border="" 
 					  style="border-radius: 25px; padding: 20px;  
-								                                                   ">
+								                            @if(round(($Data->totalratings)/($Data->count))==1) 
+                                                            border: 5px solid #C70039;
+														@elseif(round(($Data->totalratings)/($Data->count))==2)
+														 border: 5px solid #FF5733;
+														 @elseif(round(($Data->totalratings)/($Data->count))==3)
+														  border: 5px solid #FFC300;
+														  @elseif(round(($Data->totalratings)/($Data->count))==4)
+														   border: 5px solid #00ff36;
+														   @elseif(round(($Data->totalratings)/($Data->count))==5)
+														    border: 5px solid #51a127;
+															@else
+																 border: 5px solid black;
+															 @endif
+                                                               ">
 							
 							  <div class="col-lg-3">
                         <div class="align-items-center justify-content-center">
@@ -1123,25 +1136,25 @@ ul {
                             <p class="card-text">Total Reviews: <strong>{{$Data->count-1}}</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
                                       
-										@if(round(($Data->count)/($Data->count))==2) 
+										@if(round(($Data->totalratings)/($Data->count))==2) 
 										<div class="tst-rating">
                                              <i class="fa fa-star" style="color:#C70039;"></i>
                                             
                                         </div>
-										@elseif(round(($Data->count)/($Data->count))==3)
+										@elseif(round(($Data->totalratings)/($Data->count))==3)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                               
                                         </div>
-										@elseif(round(($Data->count)/($Data->count))==4)
+										@elseif(round(($Data->totalratings)/($Data->count))==4)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                               <i class="fa fa-star" style="color:#FFC300;"></i>
                                              
                                         </div>
-										@elseif(round(($Data->count)/($Data->count))==5)
+										@elseif(round(($Data->totalratings)/($Data->count))==5)
 										    <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
@@ -1149,7 +1162,7 @@ ul {
                                               <i class="fa fa-star" style="color:#00ff36;"></i>
                                               
                                         </div>
-										@elseif(round(($Data->count)/($Data->count))==6)
+										@elseif(round(($Data->totalratings)/($Data->count))==6)
 										      <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#51a127;"></i>
                                              <i class="fa fa-star" style="color:#51a127;"></i>
@@ -1161,7 +1174,7 @@ ul {
 										
                                       
                                         </p>
-                                        @elseif(($Data->count)/($Data->count) ==1)
+                                        @elseif(($Data->totalratings)/($Data->count) ==1)
                           
                             <p class="card-text text">Not reted</p>
                             @endif
