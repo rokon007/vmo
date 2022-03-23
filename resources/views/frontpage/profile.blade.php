@@ -1,4 +1,13 @@
 @extends('frontpage.frontpage1')
+
+
+@section('title') 
+ <title>Vimbiso | Profile</title>
+         <meta name="description" content="vary good">
+     <meta name="keywords" content="vimbiso">
+    
+@endsection 
+ 
  
 
 @section('body') 
@@ -488,21 +497,23 @@ button.bg-dark:hover {
  @else
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
-                @if(
-              asset("uploads/image/$CData->email.jpg")
-                !=NULL)
-                <img class="border border-dark" src="<?php echo asset("uploads/image/non.jpg")?>" style="max-height: 149px;max-width: 198px;">
-               @else
-               <img class="border border-dark" src="<?php echo asset("uploads/image/$CData->email.jpg")?>" style="max-height: 149px;max-width: 198px;">
-               @endif
+                 @if(File::exists("uploads/image/$CData->email.jpg"))
+   <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+                          @else 
+  <img src="<?php echo asset("uploads/image/non.jpg")?>"   class="border border-dark" style="max-height: 149px;max-width: 198px;">
+                       @endif
            
             <div class="flex-column pl-4">
                 <h1 class="font-heading-sm">{{$CData->company}}</h1>
                 
-                <p>Total Reviews:{{$reviewscount}}</p>
+                <p>Total Reviews:{{$reviewscount-1}}</p>
                 <p> Avg ratings: <strong>
                     @if($ratings !=NULL)
-                {{round($ratings/$reviewscount, 2)}}
+						@if(($reviewscount-1)!=0)
+                {{round($ratings/($reviewscount-1), 2)}}
+			@else
+                0
+			@endif
                 @else
                 0
                 @endif
@@ -523,43 +534,99 @@ button.bg-dark:hover {
                         <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2"style="border-radius: 25px; padding: 20px; border: 1px solid black;">
                         
                         <div class="flex-row m-2">
-                            <span class="text-lg-center text-left font-description-sm" style="float:left;">Excellent </span>
+                            <span class="text-lg-center text-left font-description-sm" style="float:left;">Excellent . </span>
                             <div class="progress w-75 float-right font-description-sm">
                                 <div class="bright-green-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
                                   @if($ratings !=NULL)
-                                {{($ratings/$reviewscount)/10}}%
+									  @if(($reviewscount-1)!=0)
+									  @if(round($ratings/($reviewscount-1))==1)
+										  15%
+                                @elseif(round($ratings/($reviewscount-1))==2)
+									35%
+								 @elseif(round($ratings/($reviewscount-1))==3)
+									 55%
+								 @elseif(round($ratings/($reviewscount-1))==4)
+									 75%
+								  @elseif(round($ratings/($reviewscount-1))==5)
+									  95%
+								  @elseif(round($ratings/($reviewscount-1))>=5)
+									  100%
+								   @endif
+								    @endif
                                  @else
                                   0%
                                 @endif
                                 ">
                                   @if($ratings !=NULL)
-                                 {{round(($ratings/$reviewscount)/10, 2)}}
+									  @if(($reviewscount-1)!=0)
+									  @if(round($ratings/($reviewscount-1))==1)
+										  15%
+                                @elseif(round($ratings/($reviewscount-1))==2)
+									35%
+								 @elseif(round($ratings/($reviewscount-1))==3)
+									 55%
+								 @elseif(round($ratings/($reviewscount-1))==4)
+									 75%
+								  @elseif(round($ratings/($reviewscount-1))==5)
+									  95%
+								  @elseif(round($ratings/($reviewscount-1))>=5)
+									  100%
+								   @endif
+								    @endif
                                  @else
-                                   0
+                                  0%
                                 @endif
                                 </div>
                             </div>
                         </div>
                         <div class="flex-row m-2">
-                            <span class="font-description-sm" style="float:left;">Average </span>
+                            <span class="font-description-sm" style="float:left;">Average  . </span>
                             <div class="progress w-75 float-right">
                                 <div class="bright-yellow-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
-                                 @if($ratings !=NULL)
-                                {{$ratings/$reviewscount}}%
-                                   @else
+                                  @if($ratings !=NULL)
+									  @if(($reviewscount-1)!=0)
+									  @if(round($ratings/($reviewscount-1))==1)
+										  20%
+                                @elseif(round($ratings/($reviewscount-1))==2)
+									40%
+								 @elseif(round($ratings/($reviewscount-1))==3)
+									 60%
+								 @elseif(round($ratings/($reviewscount-1))==4)
+									 80%
+								  @elseif(round($ratings/($reviewscount-1))==5)
+									  100%
+								  @elseif(round($ratings/($reviewscount-1))>=5)
+									  100%
+								   @endif
+								   @endif
+                                 @else
                                   0%
                                 @endif
                                 ">
                                 @if($ratings !=NULL)
-                               {{$ratings/$reviewscount}}
-                                @else
-                                  0
+									 @if(($reviewscount-1)!=0)
+									  @if(round($ratings/($reviewscount-1))==1)
+										  20%
+                                @elseif(round($ratings/($reviewscount-1))==2)
+									40%
+								 @elseif(round($ratings/($reviewscount-1))==3)
+									 60%
+								 @elseif(round($ratings/($reviewscount-1))==4)
+									 80%
+								  @elseif(round($ratings/($reviewscount-1))==5)
+									  100%
+								  @elseif(round($ratings/($reviewscount-1))>=5)
+									  100%
+								   @endif
+								    @endif
+                                 @else
+                                  0%
                                 @endif
                                 </div>
                             </div>
                         </div>
                         <div class="flex-row m-2">
-                            <span class="font-description-sm" style="float:left;">Bad  </span>
+                            <span class="font-description-sm" style="float:left;">Bad    ....  </span>
                             <div class="progress w-75 float-right">
                                 <div class="bright-red-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
                                 0
@@ -573,6 +640,7 @@ button.bg-dark:hover {
                         </div>
                         <br>
 						 @foreach($RData as $reviews)
+						 @if($reviews->show !=1)
                         <div>
                             
                                 <div class="card review-card v-card v-sheet theme--light elevation-2 review-good mt-3" style="width: 100%;">
@@ -644,6 +712,11 @@ button.bg-dark:hover {
                             <!---->
 							
                              </div>
+							 @else
+								 <div>
+							 <center><h4 style="color:red;">No Review yeat !</h4></center>
+							 </div>
+							 @endif
 							 <br>
                          @endforeach
                                 
@@ -657,13 +730,12 @@ button.bg-dark:hover {
                 <div class="card" style="width: 30rem;border-radius: 25px; padding: 30px; border: 1px solid black;">
                     
                      <center>
-                         @if(
-              asset("uploads/image/$CData->email.jpg")
-                !=NULL)
-                        <img class="card-img-top" src="<?php echo asset("uploads/image/non.jpg")?>" alt="Card image cap" style="width:180px;height:180px">
-                        @else
-                        <img class="card-img-top" src="<?php echo asset("uploads/image/$CData->email.jpg")?>" alt="Card image cap" style="width:180px;height:180px">
-                        @endif
+					 @if(File::exists("uploads/image/$CData->email.jpg"))
+          <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="card-img-top" alt="Card image cap" style="width:180px;height:180px">
+                          @else 
+          <img src="<?php echo asset("uploads/image/non.jpg")?>"class="card-img-top" alt="Card image cap" style="width:180px;height:180px">
+                       @endif
+					 
                     </center>   
                     
                     
@@ -677,7 +749,7 @@ button.bg-dark:hover {
                         </i>
                {{$CData->country}}, {{$CData->city}}, {{$CData->block}}
                        </li>
-                        <li class="list-group-item"><i class="fas fa-phone-square metallic-red"></i> {{$CData->contact}}</li>
+                        <li class="list-group-item"><i class="fas fa-phone-square metallic-red"></i>{{$CData->contact}}</li>
                     </ul>
 
                 </div>

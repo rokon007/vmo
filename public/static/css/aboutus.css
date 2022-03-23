@@ -23,6 +23,25 @@
 
 
 
+.image-circle2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-top: 2px dashed var(--red);
+    border-right: 2px dashed var(--red);
+    border-left: 2px dashed var(--green);
+    border-bottom: 2px dashed var(--yellow);
+    padding: 10px;
+    animation: spin 10s infinite linear;
+}
+.image-circle2 img {
+    animation: spin 10s infinite reverse linear;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+
 
 @keyframes spin {
     100% {

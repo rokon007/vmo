@@ -28,11 +28,14 @@ Route::get('/', function () {
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
 
 Route::get('userset/{id}', [App\Http\Controllers\pagecontroller::class, 'SetUser'])->name('user.set')->middleware('is_admin');
+Route::post('/updateuser/{email}',[App\Http\Controllers\pagecontroller::class, 'updateuser_funtion'])->name('updateuser')->middleware('is_admin');	
 
 
 
 Route::get('/',[WelcomeController::class,"welcomeindex"])->name('welcome');
 Route::get('/categories',[CategoryController::class,"FrontCategory"]);
+// Route::post('/search',[CategoryController::class,"search"]);
+Route::get('/search',[App\Http\Controllers\CategoryController::class, 'search'])->name('search'); 
 //Normal User
 Route::get('/profile/{company}', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
 Route::get('/settings', [App\Http\Controllers\pagecontroller::class, 'indexsettings'])->name('settings');
@@ -98,6 +101,11 @@ Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getS
 //For Review Saverecord
 
  Route::post('/bussinesprofile/save', [App\Http\Controllers\JoinInsertControler::class, 'Saverecord'])->name('bussinesprofile.save');
+ Route::get('/admin/bussinesprofile',[App\Http\Controllers\pagecontroller::class,'businessprofile'])->name('admin.bussinesprofile')->middleware('is_admin');
+ Route::post('import-profiles',[\App\Http\Controllers\ProfileController::class,'importprofiles'])->name('import-profiles')->middleware('is_admin');
+ Route::get('export-profile',[\App\Http\Controllers\ProfileController::class,'exportprofile'])
+    ->name('export-profile')->middleware('is_admin');  
+
 
 //For Review Saverecord
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
@@ -106,7 +114,9 @@ Route::post('/give/reviews', [App\Http\Controllers\pagecontroller::class, 'give'
 Route::get('click_delete/{id}', [App\Http\Controllers\ReviewController::class, 'delete_funtion'])->name('reviews.delete')->middleware('is_admin');
 Route::get('click_edit/{id}', [App\Http\Controllers\ReviewController::class, 'edit_funtion'])->name('reviews.edit')->middleware('is_admin');
 // updatereview
-Route::post('/updatereview/{id}',[App\Http\Controllers\ReviewController::class, 'updatereview_funtion'])->name('updatereview')->middleware('is_admin');  
+Route::post('/updatereview/{id}',[App\Http\Controllers\ReviewController::class, 'updatereview_funtion'])->name('updatereview')->middleware('is_admin');
+Route::post('import-reviews',[\App\Http\Controllers\ReviewController::class,'importreviews'])->name('import-reviews')->middleware('is_admin'); 
+Route::get('export-reviews',[\App\Http\Controllers\ReviewController::class,'exportreviews'])->name('export-reviews')->middleware('is_admin');   
 
 //For emailverify
 Route::get('/admin/emailverify', [App\Http\Controllers\EmailVeryfyController::class, 'emailshow'])->name('admin.emailverify')->middleware('is_admin');
@@ -118,6 +128,9 @@ Route::post('/admin/categories', [App\Http\Controllers\CategoryController::class
 
 Route::get('ccategory_delete/{id}', [App\Http\Controllers\CategoryController::class, 'delete_category'])->name('categories.delete')->middleware('is_admin');
 
+Route::post('import-category',[\App\Http\Controllers\CategoryController::class,'importCategory'])->name('import-category')->middleware('is_admin');
+Route::get('export-category',[\App\Http\Controllers\CategoryController::class,'exportcategory'])->name('export-category')->middleware('is_admin');  
+
 // Front page searching
 Route::get('viewcompany/{name}', [App\Http\Controllers\CategoryController::class, 'viewcompany']);
 
@@ -127,7 +140,9 @@ Route::get('viewcompany1/{name}', [App\Http\Controllers\CategoryController::clas
 
 //ImportExcelController
 
-Route::get('/admin/user', [App\Http\Controllers\VimbisoUserController::class, 'create'])->middleware('is_admin');
+Route::get('/admin/user', [App\Http\Controllers\VimbisoUserController::class, 'create'])->name('admin-user')->middleware('is_admin'); 
+Route::get('/admin/add-user', [App\Http\Controllers\VimbisoUserController::class, 'view_adduser'])->name('adduser')->middleware('is_admin'); 
+
 //Route::post('/user/import', [App\Http\Controllers\ImportExcelController::class, 'import'])->middleware('is_admin');
 
 

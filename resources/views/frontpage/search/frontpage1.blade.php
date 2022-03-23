@@ -28,6 +28,7 @@ https://templatemo.com/tm-516-known
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href={{asset("css/templatemo-style.css")}}>
+	  <link rel="shortcut icon" type="image/png" href={{asset("static/images/favicon.ico")}}/>
      <style>
     .div-1 {
         background-color: #f20c23;

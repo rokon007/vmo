@@ -116,6 +116,8 @@
    <div class="d-flex flex-column-fluid">
 	<!--begin::Container-->
 		<div class="container">
+		<form action="{{ route('updateuser', ['email' => $UserData->email]) }}"  method="post"  class="form">
+		@csrf
           <div class="card card-custom">
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
@@ -128,7 +130,7 @@
                <div class="col-xl-5">
 			   <div class="form-group">
                         <label class="required" for="id_username">Username:</label>
-                            <input class="form-control form-control-lg" type="text" name="username" value="{{$UserData['id']}}_{{$UserData['company_name']}}" class="vTextField" maxlength="150" autocapitalize="none" autocomplete="username" required="" id="id_username">
+                            <input class="form-control form-control-lg" type="text" name="username" value="{{$UserData->id}}_{{$UserData->company_name}}" class="vTextField" maxlength="150" autocapitalize="none" autocomplete="username" required="" id="id_username">
                        <h3><span class="d-block text-muted pt-2 font-size-lg">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span></h3>
                 </div>
         </div>
@@ -170,19 +172,19 @@
 		     <div class="col-xl-4">
 			   <div class="form-group">
                         <label class="required" for="id_username">First name:</label>
-                            <input class="form-control form-control-lg" type="text"value="{{$UserData['first_name']}}" name="first_name" id="first_name">
+                            <input class="form-control form-control-lg" type="text"value="{{$UserData->first_name}}" name="first_name" id="first_name">
                  </div>       
                </div> 
 			    <div class="col-xl-4">
 			   <div class="form-group">
                         <label class="required" for="id_username">Last name:</label>
-                            <input class="form-control form-control-lg" type="text" value="{{$UserData['last_name']}}" name="last_name" id="last_name">
+                            <input class="form-control form-control-lg" type="text" value="{{$UserData->last_name}}" name="last_name" id="last_name">
                  </div>       
                </div> 
 			    <div class="col-xl-4">
 			   <div class="form-group">
                         <label class="required" for="id_username">Email address:</label>
-                            <input class="form-control form-control-lg" type="email" value="{{$UserData['email']}}" name="email" value="" id="email">
+                            <input class="form-control form-control-lg" type="email" value="{{$UserData->email}}" name="email" value="" id="email">
                  </div>       
                </div> 
        
@@ -203,20 +205,20 @@
 	    <div class="row"> 
 		     <div class="col-xl-8">
 			   <div class="form-group">
-                     <input type="checkbox" name="is_active" id="id_is_active" checked="">
+                     <input type="checkbox" name="is_active[]" id="id_is_active" {{ $UserData->is_active == 1 ? 'checked' : null }}>
 						<label  for="id_is_active">Active</label>
                        <h3><span class="d-block text-muted pt-2 font-size-lg">Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</span></h3>
                  </div>       
                </div> 
 			    <div class="col-xl-8">
 			   <div class="form-group">
-                         <input type="checkbox" name="is_staff" id="id_is_staff"><label class="vCheckboxLabel" for="id_is_staff">Staff status</label>
+                         <input type="checkbox" name="is_staff[]" id="id_is_staff" {{ $UserData->is_staff == 1 ? 'checked' : null }}><label class="vCheckboxLabel" for="id_is_staff">Staff status</label>
                         <h3><span class="d-block text-muted pt-2 font-size-lg">Designates whether the user can log into this admin site.</span></h3>
                  </div>       
                </div> 
 			    <div class="col-xl-8">
 			   <div class="form-group">
-                       <input type="checkbox" name="is_superuser" id="id_is_superuser">
+                       <input type="checkbox" name="is_superuser[]" id="id_is_superuser" {{ $UserData->is_superuser == 1 ? 'checked' : null }} >
 						<label class="vCheckboxLabel" for="id_is_superuser">Superuser status</label>
                         <h3><span class="d-block text-muted pt-2 font-size-lg">Designates that this user has all permissions without explicitly assigning them.</span></h3>
                  </div>       
@@ -228,37 +230,7 @@
 </div>
 
 <br>
- <div class="card card-custom">
-	<div class="card-header flex-wrap border-0 pt-6 pb-0">								
-		<div class="card-title">								
-			<h3 class="card-label">Permissions
-				<span class="d-block text-muted pt-2 font-size-sm">Select user to change</span></h3>
-		</div>																							
-          
-    <div class="offset-xxl-0 col-xxl-12">
-	    <div class="row"> 
-		     <div class="col-xl-8">
-			   <div class="form-group">
-                    
-                 </div>       
-               </div> 
-			    <div class="col-xl-8">
-			   <div class="form-group">
-                         
-                 </div>       
-               </div> 
-			    <div class="col-xl-8">
-			   <div class="form-group">
-                      
-                 </div>       
-               </div> 
-       
-		</div>
-	</div>
-</div>
-</div>
 
-<br>
  <div class="card card-custom">
 	<div class="card-header flex-wrap border-0 pt-6 pb-0">								
 		<div class="card-title" style="backgraund:green;">								
@@ -295,7 +267,16 @@
 			   <div class="form-group">
                    
                 <div>
-                         <img id="Image3" style="height:200px;width: 175px;float:right;" src="uploads/image/non.jpg">
+                         <img id="Image3" style="height:200px;width: 175px;float:right;" src="<?php 
+						 if(File::exists("uploads/image/$UserData->email.jpg"))
+						 {
+						 echo asset("uploads/image/$UserData->email.jpg");
+						 }
+						 else
+						 {
+							 echo asset("uploads/image/non.jpg");
+						 }
+						 ?>">
                 </div>
        
                  </div>       
@@ -303,7 +284,7 @@
 			     <div class="col-xl-7">
 			   <div class="form-group">
                  <label class="required" for="id_username">Description:</label>
-                   <textarea name="description"  rows="3"  class="form-control form-control-lg" id="description" value=""></textarea>  
+                   <textarea name="description"  rows="3"  class="form-control form-control-lg" id="description" value="">{{$UserData->description}}</textarea>  
                  </div>       
                </div>
 			   
@@ -313,7 +294,7 @@
                 <div>
                        <label class="required" >Category:</label>
                            <select class="form-control form-control-lg" name="category" id="category" >
-						  
+						   <option value="{{$UserData->category}}" >{{$UserData->category}}</option>
 						   @foreach($categories as $cat)
                            <option value="{{$cat->name}}" >{{$cat->name}}</option>
 							@endforeach
@@ -341,10 +322,10 @@
                 <div class="col-xl-3">
 				    <div class="from-group">
 					     <label class="required">Tags:</label>                       
-                  <select class="form-control form-control-lg" name="profile-0-tags" id="id_profile-0-tags">
-                  <option value="1"></option>
-                  <option value="3">Vimbiso</option>
-                  <option value="4">Bank</option>
+                  <select class="form-control form-control-lg" name="tags" id="id_profile-0-tags">
+                  <option value="{{$UserData->tags}}">{{$UserData->tags}}</option>
+                  <option value="Vimbiso">Vimbiso</option>
+                  <option value="Bank">Bank</option>
                   </select>
 					
 				</div>			   
@@ -356,14 +337,14 @@
 					     
                   <label >Status:</label>
                         
-                            <input type="number" name="status" value="{{$UserData['last_name']}}" class="form-control form-control-lg" id="status">                    
+                            <input type="number" name="status" value="{{$UserData->status}}" class="form-control form-control-lg" id="status">                    
                         <h3><span class="d-block text-muted pt-2 font-size-lg">#1 for claimed profile #2 for uncliamed profile #3 for AskingReviews</span></h3>
 			</div>			   
 		</div>
 		 <div class="col-xl-3">
 				<br></br>
 			   <div class="form-group">
-                     <input type="checkbox" class="from-control" name="verified" id="verified"><label >Verified</label>  
+                     <input type="checkbox" class="from-control" name="verified[]" id="verified"  {{ $UserData->verified == 1 ? 'checked' : null }}><label >Verified</label>  
                  </div>       
                </div> 
 		
@@ -379,7 +360,30 @@
 
 
 </div>
+<br>
+ <div class="card card-custom">
+	<div class="card-header flex-wrap border-0 pt-6 pb-0">								
+																									
+          
+    <div class="offset-xxl-0 col-xxl-12">
+	    <div class="row"> 
+		     <div class="col-xl-12">
+			 <center>
+			   <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                 </div> 
+             </center>				 
+               </div> 
+			   
+			  
+       
+		</div>
+	</div>
+</div>
+</div>
 
+
+</form>
 
         <br>  
           

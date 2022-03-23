@@ -34,10 +34,16 @@ class HomeController extends Controller
         $categories=Category::whereNull('category_id')->limit(12)->get();
         $Allreviews=reviews::All();
         $CompanyNameData=Companytb::All();
+         // $reviewsdata = DB::table('companytbs')
+         //    ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+             
+              
+         //    ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
+         //    ->get();
          $reviewsdata = DB::table('companytbs')
             ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
              
-              
+              ->whereNull('reviews.show')
             ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
             ->get();
         return view('home',compact('categories','Allcategories','Allreviews','CompanyNameData','reviewsdata'));

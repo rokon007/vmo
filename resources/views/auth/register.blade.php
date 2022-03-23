@@ -1,4 +1,10 @@
 @extends('frontpage.frontpage')
+@section('title') 
+ <title>Vimbiso | Create Business</title>
+         <meta name="description" content="vary good">
+     <meta name="keywords" content="vimbiso">
+    
+@endsection 
  
 
 @section('body')  

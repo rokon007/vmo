@@ -23,8 +23,9 @@ class reviews extends Model
         'response',
         'isresolved',
         'whatsappreview',
-        'company',
-        'unlistedcompany'
+        'company_id',
+        'unlistedcompany',
+        'show'
     ];
 
     public function companytbs()

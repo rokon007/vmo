@@ -480,8 +480,13 @@ button.bg-dark:hover {
 <br><br>
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
+		 @if(File::exists("uploads/image/$CData->email.jpg"))
+   <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+                          @else 
+  <img src="<?php echo asset("uploads/image/non.jpg")?>"   class="border border-dark" style="max-height: 149px;max-width: 198px;">
+                       @endif
                 
-                <img class="border border-dark" src="uploads/image/non.jpg" style="max-height: 149px;max-width: 198px;">
+             <!--   <img class="border border-dark" src="uploads/image/non.jpg" style="max-height: 149px;max-width: 198px;"> -->
                
             
             <div class="flex-column pl-4">
@@ -540,8 +545,13 @@ button.bg-dark:hover {
             </div>
             <div class="d-flex flex-column col-lg-4 col-sm-12 pt-6 align-items-center pb-6">
                 <div class="card" style="width: 18rem;border-radius: 25px; padding: 20px; border: 1px solid black;">
+				 @if(File::exists("uploads/image/$CData->email.jpg"))
+  <center> <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="card-img-top" alt="Card image cap" style="width:140px;height:140px"></center>   
+                          @else 
+  <center> <img src="<?php echo asset("uploads/image/non.jpg")?>"class="card-img-top" alt="Card image cap" style="width:140px;height:140px"></center>   
+                       @endif
                     
-                     <center><img class="card-img-top" src="uploads/image/non.jpg" alt="Card image cap" style="width:140px;height:140px"></center>   
+          <!--           <center><img class="card-img-top" src="uploads/image/non.jpg" alt="Card image cap" style="width:140px;height:140px"></center>   -->
                     
                     
                     <div class="card-body">

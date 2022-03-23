@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 
-      @yield('title')
-    <!-- <title>Vimbiso</title>
+     
+    <title>Vimbiso | Company</title>
          <meta name="description" content="vary good">
      <meta name="keywords" content="vimbiso">
-     -->
+    
 <!-- 
 
 Known Template 
@@ -830,11 +830,15 @@ ul {
 
      <!-- PRE LOADER -->
      <section class="preloader">
-          <div class="spinner">
+          <!--<div class="spinner">
 
                <span class="spinner-rotate"></span>
                
-          </div>
+          </div>-->
+		  <link rel="stylesheet" href="../static/css/aboutus.css">
+		  <div class="image-circle2 m-2">
+                <img src="../static/images/logo-no-bg.png" />
+            </div>
      </section>
 
 
@@ -1085,27 +1089,27 @@ ul {
 </style>
 
 	 <div class="col-sm-3 col-lg-8 col-md-3">
-    <center><button class="btn btn-icon">{{$joindata->links()}}</button></center>
+    <center><button class="btn btn-icon">{{$RData1->links()}}</button></center>
     <br>
      </div>
 
                                                                                 
-       @foreach($joindata as $Data)    
+       @foreach($RData1 as $Data)    
        <a href="/profile/{{$Data->company}}">                                        		
 	  <div class="col-sm-3 col-lg-8 col-md-3">
 	                   
 	             
                       <div class="row no-gutters list-group-item text-center" border="" 
 					  style="border-radius: 25px; padding: 20px;  
-								                            @if($Data->subcategory ==1)
+								                            @if(round(($Data->Totalratings)/($Data->count))==1) 
                                                             border: 5px solid #C70039;
-														@elseif($Data->subcategory ==2)
+														@elseif(round(($Data->Totalratings)/($Data->count))==2)
 														 border: 5px solid #FF5733;
-														 @elseif($Data->subcategory ==3)
+														 @elseif(round(($Data->Totalratings)/($Data->count))==3)
 														  border: 5px solid #FFC300;
-														  @elseif($Data->subcategory ==4)
+														  @elseif(round(($Data->Totalratings)/($Data->count))==4)
 														   border: 5px solid #00ff36;
-														   @elseif($Data->subcategory ==5)
+														   @elseif(round(($Data->Totalratings)/($Data->count))==5)
 														    border: 5px solid #51a127;
 															@else
 																 border: 5px solid black;
@@ -1114,7 +1118,11 @@ ul {
 							
 							  <div class="col-lg-3">
                         <div class="align-items-center justify-content-center">
+						 @if(File::exists("uploads/image/$Data->image.jpg"))
+   <img src="<?php echo asset("uploads/image/$Data->image.jpg")?>"  class="img-responsive" style="width:200px;height:200px;padding:6px;" class="card-img" alt="" >
+                          @else 
   <img src="<?php echo asset("uploads/image/non.jpg")?>"  class="img-responsive" style="width:200px;height:200px;padding:6px;" class="card-img" alt="" >
+                       @endif
                         </div>	
 						</div>
 						<div class="col-lg-9">
@@ -1125,28 +1133,28 @@ ul {
                               </p>
                             <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{$Data->block}}, {{$Data->city}}, {{$Data->country}}</p>
                             <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp; <span class="pull-right"><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
-                            <p class="card-text">Total Reviews: <strong>0</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
+                            <p class="card-text">Total Reviews: <strong>{{$Data->count-1}}</strong>  &nbsp; <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
                                       
-										@if($Data->count ==1) 
+										@if(round(($Data->Totalratings)/($Data->count))==2) 
 										<div class="tst-rating">
                                              <i class="fa fa-star" style="color:#C70039;"></i>
                                             
                                         </div>
-										@elseif($Data->count ==2)
+										@elseif(round(($Data->Totalratings)/($Data->count))==3)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                               
                                         </div>
-										@elseif($Data->count ==3)
+										@elseif(round(($Data->Totalratings)/($Data->count))==4)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                               <i class="fa fa-star" style="color:#FFC300;"></i>
                                              
                                         </div>
-										@elseif($Data->count ==4)
+										@elseif(round(($Data->Totalratings)/($Data->count))==5)
 										    <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
@@ -1154,7 +1162,7 @@ ul {
                                               <i class="fa fa-star" style="color:#00ff36;"></i>
                                               
                                         </div>
-										@elseif($Data->count ==5)
+										@elseif(round(($Data->Totalratings)/($Data->count))==6)
 										      <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#51a127;"></i>
                                              <i class="fa fa-star" style="color:#51a127;"></i>
@@ -1163,11 +1171,14 @@ ul {
                                               <i class="fa fa-star" style="color:#51a127;"></i>
                                         </div>
 										
-										@endif
+										
                                       
                                         </p>
+                                        @elseif(($Data->Totalratings)/($Data->count) ==1)
                           
-                            <p class="card-text text">{{$Data->email}}</p>
+                            <p class="card-text text">Not reted</p>
+                            @endif
+                            
                           </div>
 						  </div>
 						  </div>

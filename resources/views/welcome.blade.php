@@ -24,11 +24,11 @@
                     <div class="col-md-6 col-sm-12">
                          <h1>YOUR REVIEW MATTERS</h1>
                                              <h3>Read reviews,<span style="color:#d0a522;">Write reviews.</span> <span class="metallic-red">Find companies.</span></h3>
-                         <form id="contact-form" role="form" action="" method="post">
-                              
+                         <form id="contact-form" role="form" action="{{url('/search')}}" method="get">
+                                @csrf
 
                               <div class="col-md-10 col-sm-12">
-                                  <input type="search" name="search" class="form-control" placeholder="Company or category">
+                                  <input type="text" name="search1" class="form-control" placeholder="Company">
                     
                                    
                               </div>
@@ -127,7 +127,7 @@
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
                               <h2 style="float: left;">Explore categories <small>Meet Professional Trainers</small></h2>
-                              <a class="btn btn-primary" style="float: right;"  href="{{url('/categories')}}" >View All</a>
+                              <a class="btn border-0" style="background:linear-gradient(to right, #093028, #237A57);color:white; float: right;" href="{{url('/categories')}}" >View All</a>
                          </div>
                     </div>
 

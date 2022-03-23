@@ -181,7 +181,7 @@
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
-												<a href="#" class="menu-link">
+												<a href="{{url('/admin/bussinesprofile')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>

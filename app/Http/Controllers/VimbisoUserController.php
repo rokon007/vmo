@@ -11,6 +11,12 @@ use App\Models\User;
 
 class VimbisoUserController extends Controller
 {
+   public function view_adduser()
+    {
+        
+        return view('admin.adduser');
+    }
+
     public function create()
    {
     $VimbisoUser_Data=User::All();
@@ -33,4 +39,6 @@ class VimbisoUserController extends Controller
       
        return back()->with('success','Excel Data Imported successfully');
     }
+
+    
 }

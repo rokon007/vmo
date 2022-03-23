@@ -1,4 +1,10 @@
 @extends('frontpage.frontpage')
+@section('title') 
+ <title>Vimbiso | About</title>
+         <meta name="description" content="vary good">
+     <meta name="keywords" content="vimbiso">
+    
+@endsection 
  
 
 @section('body') 
@@ -6,19 +12,16 @@
 
 <!--  About -->
       <section id="team">
-          <div class="container">
-               <div class="row">
-
-                     <!-- Content -->
+              <!-- Content -->
     
-<!--<link rel="stylesheet" href="/static/css/aboutus.css"> -->
+<link rel="stylesheet" href="../static/css/aboutus.css">
 
 <div class="container-fluid m-0 p-0">
     <div class="row justify-content-center align-items-center">
 
         <div class="col-sm-12 col-md-8 col-lg-8 pl-5 pr-3 p-lg-5  align-items-center text-left">
             <h1 class="about-heading pb-lg-5 pb-sm-2">WHAT IS VIMBISO</h1>
-            <span class="about-description">
+            <span class="about-description" style="text-decoration:none;color:black;font-size:16px">
                 Vimbiso is a free independent & transparent customer assurance platform.
                 At Vimbiso we believe the key to unlocking business success starts by listening to your customers.<br><br>
                 Our mission is to bridge the gap between consumers & companies.
@@ -28,15 +31,15 @@
 
         <div class="col-sm-12 col-md-4 col-lg-4">
             <div class="image-circle m-5">
-                <img src="/static/images/logo-no-bg.png" />
+                <img src="../static/images/logo-no-bg.png" />
             </div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-5 pl-lg-5 pt-lg-5 pb-lg-5 pr-lg-0 pl-5 align-items-center">
-            <img class="ceo-img img-thumbnail" src="/static/images/ceo.jpg">
+            <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpg">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
-            <span class="about-description">
+            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
                 The concept for Vimbiso came to me in November 2020, it was triggered by a moment of reflection.
                 There is an undeniably negative perception of Zimbabwean owned businesses, public institutions, parastatals, NGO’s & civil society organisation.<br><br>
                 I have continually heard words & phrases such as, poor quality, corruption, lack lustre service delivery, theft, deception, dishonesty just to name a few.
@@ -52,9 +55,11 @@
     
 </div>
 
-
-               </div>
-          </div>
+    
+    
+        <script>
+            ''
+        </script>
      </section>
                     
                     

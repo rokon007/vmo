@@ -19,6 +19,7 @@ class UserController extends Controller
     {
        Excel::import(new UsersImport,$request->file('file'));
     }
+    
 
     
 

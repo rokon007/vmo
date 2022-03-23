@@ -28,6 +28,7 @@ https://templatemo.com/tm-516-known
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
+	  <link rel="shortcut icon" type="image/png" href="static/images/favicon.ico"/>
 	 
      <style>
     .div-1 {
@@ -831,11 +832,15 @@ ul {
 
      <!-- PRE LOADER -->
      <section class="preloader">
-          <div class="spinner">
+          <!--<div class="spinner">
 
                <span class="spinner-rotate"></span>
                
-          </div>
+          </div>-->
+		  <link rel="stylesheet" href="../static/css/aboutus.css">
+		  <div class="image-circle2 m-2">
+                <img src="../static/images/logo-no-bg.png" />
+            </div>
      </section>
 
 

@@ -1,5 +1,11 @@
 @extends('frontpage.frontpage')
- 
+ @section('title') 
+ <title>Vimbiso | Login</title>
+         <meta name="description" content="vary good">
+     <meta name="keywords" content="vimbiso">
+	 
+    
+@endsection 
 
 @section('body')  
 
@@ -374,6 +380,14 @@ body {
     <div class="title_container">
     	<center><h2><strong>Business Account Login</strong></h2></center>
       </div>
+	   @if($message = Session::get('error'))
+		 <script>
+	          swal("Login faild","{!!Session::get('error')!!}","error",{
+				  button:"OK",
+			  })
+	     </script>
+		 
+	 @endif
     
     <div class="row clearfix">
      

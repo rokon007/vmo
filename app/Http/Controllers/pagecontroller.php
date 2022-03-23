@@ -11,6 +11,7 @@ use DB;
 use App\Models\Companytb;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\business_profile;
 class pagecontroller extends Controller
 {
 
@@ -34,6 +35,14 @@ class pagecontroller extends Controller
         return view('frontpage.contactus',compact('CompanyNameData'));
     }
     //-------------------------
+
+     public function businessprofile()
+    {
+          $Allcategories=Category::All();
+    $categories=Category::whereNull('category_id')->get();
+        $BprofileData=business_profile::All();
+        return view('admin.bprofile',compact('BprofileData','Allcategories','categories'));
+    }
    
 
    function indexprofile($company)
@@ -91,8 +100,11 @@ class pagecontroller extends Controller
    {
      $Allcategories=Category::All();
     $categories=Category::whereNull('category_id')->get();
-    // $cat6=Category::where!Null('category_id')->get();
-    $UserData=User::find($id);
+
+       $UserData = DB::table('users')
+     ->join('business_profiles', 'users.email', '=', 'business_profiles.email')
+                 ->where('users.id',[$id])
+                 ->first();
     return view('admin.userset',['UserData' => $UserData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
    }
 
@@ -134,9 +146,74 @@ class pagecontroller extends Controller
           return redirect()->route('admin.company_set')->with('success','Record updated successfully');
         
             }
+    //USER UPDATE        
+            public function updateuser_funtion(Request $request,string $email)
+          {
+   
+               $username = $request->input('username');
+               $first_name = $request->input('first_name');
+               $last_name = $request->input('last_name');
+               
+      if($request->has('is_active')){
+          $is_active = 1;
+          
+        }else{
+            $is_active = 0;
+           
+        }
+        if($request->has('is_staff')){
+          $is_staff =1;
+          
+        }else{
+           $is_staff = 0;
+         
+        }
+         if($request->has('is_superuser')){
+         $is_superuser =1;
+         
+        }else{
+             $is_superuser = 0;
+         
+        }
+
+     
+        DB::update('update users set username = ?,first_name=?,last_name=?,is_active=?,is_staff=?,is_superuser=? where email = ?',[$username,$first_name,$last_name,$is_active,$is_staff,$is_superuser,$email]);
 
 
-   // REVIEW SAVE
+            $profile=DB::table('business_profiles')->where('email',$email)->first();
+               $description = $request->input('description');
+               $category = $request->input('category');
+               $tags = $request->input('tags');
+                $status = $request->input('status');
+               if($request->has('verified'))
+                                      {
+                                    $verified =1;
+                                       }
+                                       else
+                                       {
+                                         $verified = 0;
+                                        }
+
+         if($request->hasfile('business_image'))         
+        {
+           $destination = 'uploads/image/'.$profile->image;
+   if(File::exists($destination))
+   {
+     File::delete($destination);   
+   }
+            $file=$request->file('business_image');
+            $extention=$file->getClientOriginalExtension();
+            $filename= $request->input('email').'.'.$extention;
+            $file->move('uploads/image/',$filename);
+            // $profile->image=$filename;
+        }
+                              
+              DB::update('update business_profiles set description = ?,category=?,tags=?,status=?,verified=? where email = ?',[$description,$category,$tags,$status,$verified,$email]);                           
+       
+         return redirect()->route('admin-user')->with('success','User Updated Successfully');
+            }
+
+   // REVIEW SAVE 
 
 public function give(Request $request)
    {

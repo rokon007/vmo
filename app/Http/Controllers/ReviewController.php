@@ -7,13 +7,16 @@ use App\Models\reviews;
 use App\Models\VimbisoUser;
 use DB;
 use App\Models\Companytb;
+use Excel;
+use App\Imports\reviewsImport;
+use App\Exports\reviewsExport;
 
 
 class ReviewController extends Controller
 {
    public function create()
    {
-    $ReviewData=reviews::All();
+    $ReviewData=reviews::whereNull('show')->get();
      //company name sending  company_name
       $CompanyNameData=Companytb::All();
      
@@ -83,8 +86,20 @@ class ReviewController extends Controller
      return redirect()->route('reviews.create')->with('success','Review aded Successfully');
    }
 
+   public function exportreviews()
+    {
+        return Excel::download(new reviewsExport,'reviews.xlsx');
 
-   
+    }
+
+   public function importreviews(Request $request)
+    {
+      // $this->validate($request,['select_file' =>'required|mimes:xls,xlsx']);
+     
+       Excel::import(new reviewsImport,$request->file('file'));
+      
+       return back()->with('success','Excel Data Imported successfully');
+    }
 
  /* public function delete($id)
      {reviews

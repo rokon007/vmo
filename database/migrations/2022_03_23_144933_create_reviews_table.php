@@ -32,7 +32,8 @@ class CreateReviewsTable extends Migration
             $table->string("whatsappreview")->nullable();
             $table->bigInteger('company_id')->unsigned();
             $table->string("unlistedcompany")->nullable();
-            $table->foreign('company_id')->references('id')->on('companytbs');
+            $table->string("show")->nullable();
+            // $table->foreign('company_id')->references('id')->on('companytbs');
             $table->timestamps();
         });
     }
