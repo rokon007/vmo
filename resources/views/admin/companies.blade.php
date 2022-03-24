@@ -229,6 +229,7 @@
 										<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
 											<thead>
 												<tr>
+												<th>id</th>
 												     <th>Email</th>
 													<th>Company Name</th>
 													<th >Country</th>
@@ -244,6 +245,7 @@
 
 													@foreach($CompanyData as $data)
                                                            <tr>
+														    <td>{{$data->id}}</td> 
                                                      <td>{{$data->email}}</td>      	
                                                     <td>{{$data->company}}</td>
 													<td>{{$data->country}}</td>
