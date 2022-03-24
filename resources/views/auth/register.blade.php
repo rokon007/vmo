@@ -8,82 +8,62 @@
  
 
 @section('body')  
-
-<link rel="stylesheet" href="css/regi.css">
-<div class="form_wrapper">
-  <div class="form_container">
-    <div class="title_container">
-    	<center><h2>Create Business Account</h2></center>
-      </div>
-    
-    <div class="row clearfix">
-     
-        <form method="POST" action="{{ route('register') }}">
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        
+    </div>
+   <form class="row d-flex justify-content-center" method="POST" action="{{ route('register') }}">
         	 @csrf
-       <div class="col-md-6">    
-          <div class="form-group">
+        <h2 class="col-12 text-center p-3 metallic-red"><strong>Create Business Account</strong></h2>
+     
+        
+        <div class="col-lg-5 col-sm-6">
+            <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                <input type="email" class="form-control" id="exampleInputEmail1"  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  autofocus placeholder="Enter a valid email address">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Company Name</label>
-                 <input id="company_name" type="text" class="form-control @error('name') is-invalid @enderror" name="company_name" value="{{ old('name') }}" required autocomplete="name" >
-                      @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                <input type="text" class="form-control" id="exampleInputEmail1" name="company_name" placeholder="Enter unique company name">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
-                <input type="text"  id="adress" name="address" class="form-control" >
-                     
+                <input type="text" class="form-control" id="exampleInputEmail1" name="address" placeholder="Enter your company address">
             </div>
-        </div> 
-
-         <div class="col-md-6">    
-           <div class="form-group">
+        </div>
+        <div class="col-lg-5 col-sm-6">
+            <div class="form-group">
                 <label for="exampleInputEmail1">Company Contact</label>
-                <input type="text"  id="contact1" name="contact" class="form-control" >
-                      
+                <input type="text" class="form-control" id="exampleInputEmail1" name="contact" placeholder="Enter company contact">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Confirm Password</label>
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="Enter password">
             </div>
         </div>
-
-        <center><input class="btn btn-primary" type="submit" value="Register" /></center>
-         
-        </form>
-        <br></br>
-      <center>
-      	 <div class="form-group">
-                <small style="font-size: medium;">Already have an account? <a class="text-danger" href="{{url('login')}}">Login</a></small> 
+	
+        <div class="flex-row">
+            <div class="form-group text-center">
+                <button type="submit" class="btn metallic-red-bg text-center">Sign Up</button>
             </div>
-      </center>
-    </div>
-  </div>
+            <div class="form-group">
+                <small style="font-size: medium;">Already have an account? <a class="text-danger"  href="{{url('login')}}">Login</a></small> 
+            </div>
+        </div>
+    </form>
 </div>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+
+
+
+
+
+
+
+
+
 
 @endsection

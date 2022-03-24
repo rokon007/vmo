@@ -12,25 +12,22 @@
 @section('body') 
 
 
-  <!-- Content -->
+      <!-- Content -->
     
-<link rel="stylesheet" href="../static/css/contactus.css">
-<link rel="stylesheet" href="../static/css/aboutus.css">
+<link rel="stylesheet" href="/static/css/contactus.css">
+<link rel="stylesheet" href="/static/css/aboutus.css">
 
         <div class="container-fluid d-flex justify-content-center align-items-center pb-5">
-		<br>
                 <div class="row">
-				<center>
-                        <div class="col-lg-6 col-sm-6 d-flex justify-content-center align-items-center">
+                        <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center">
                                 <div class="form-group d-flex justify-content-center align-items-center p-3">
-								<br>
                                 <div class="image-circle">
-                                        <img src="../static/images/logo-no-bg.png" />
+                                        <img src="/static/images/logo-no-bg.png" />
                                 </div>
                                 </div>
                         </div>
-                 </center>
-                        <div class="col-lg-6 col-sm-6">
+
+                        <div class="col-lg-6 col-sm-12">
                                 <form>
                                         <h2 class="text-center mb-4">Talk to Us</h2>
 
@@ -63,16 +60,6 @@
                         </div>
                 </div>
         </div>
-
-    
-    
-        <script>
-            ''
-        </script>
-
-<!-- FOOTER -->
-
-
 @endsection 
 @include('frontpage.give_review');
 

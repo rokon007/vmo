@@ -13,256 +13,143 @@
 @endsection
 @section('body')  
 
- <section id="home">
-          <div class="row">
 
-             <div class="owl-carousel owl-theme home-slider">
-                         <div class="item item-first">
-                              <div class="caption">
-                                   <div class="container">
-                    <div class="container">
-                    <div class="col-md-6 col-sm-12">
-                         <h1>YOUR REVIEW MATTERS</h1>
-                                             <h3>Read reviews,<span style="color:#d0a522;">Write reviews.</span> <span class="metallic-red">Find companies.</span></h3>
-                         <form id="contact-form" role="form" action="{{url('/search')}}" method="get">
-                                @csrf
-
-                              <div class="col-md-10 col-sm-12">
-                                  <input type="text" name="search1" class="form-control" placeholder="Company">
-                    
-                                   
-                              </div>
-
-                              <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control btn-danger" name="search" value="Search">
-                              </div>
-
-                         </form>
-                    </div>
-
-                    
-
-               </div>
-                </div>
-                </div>
-
-               </div>
-                </div>
-          
+    <!-- Navbar -->
+    
 
 
+    <!-- Content -->
+    
 
-
-
-
-
-
-
-
-
-
-<!--  <div class="owl-carousel owl-theme home-slider">
-                         <div class="item item-first">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>YOUR REVIEW MATTERS</h1>
-                                             <h3>Read reviews,<span style="color:#d0a522;">Write reviews.</span> <span class="metallic-red">Find companies.</span></h3>
-               
-                                            <div class="col-lg-12 col-sm-12 col-xs-12 cover-search ml-lg-5">
+<div class="container-fluid">
+        <div class="row cover p-lg-5 p-sm-1">
+            <div class="col-lg-6 col-sm-12 col-xs-12 p-4 ml-lg-5 text-sm-center text-lg-left">
+                <span class="cover-text"><b>YOUR REVIEW MATTERS</b></span>
+                <br>
+                <span class="cover-text-2"><span class="metallic-green">Read reviews.</span> <span style="color:#d0a522;">Write reviews.</span> <span class="metallic-red">Find companies.</span></span>
+                <br>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-xs-12 cover-search ml-lg-5">
                 <div id="search">
-                    <form action="/search/" method="GET">
-                         <fieldset class="clearfix mb-0">
-                              <div class="col-lg-6">
-                                      <input type="search" name="search" class="form-control" placeholder="Company or category">
-                              </div>
-                              <div class="col-lg-1"></div>
-                              <div class="col-lg-2">
-                                    <input type="submit" value="Search" style="float: right;" class="section-btn btn btn-default smoothScroll">
-                              </div>
-                           
-                           
-                         </fieldset>
+                    <form action="{{url('/search')}}" method="get">
+                        <fieldset class="clearfix mb-0">
+                            <input type="text" name="search1" placeholder="Company or category">
+                            <input type="submit" value="Search" class="button float-right bright-red-bg">
+                        </fieldset>
                     </form>
                 </div>
             </div>
+            <div class="d-lg-none d-sm-block cover-sm-bg">
+            </div> 
+        </div>
+        <section class="row mt-4 px-lg-5">
+                <div class="col-12 px-lg-5">
+                    <span class="section-title float-left">Explore categories</span>
+                    <a class="btn float-right text-white border-0 bright-green-bg" href="{{url('/categories')}}">View All</a>
+                </div><br>
+        </section>
+        <div class="row d-flex align-items-center justify-content-center my-2">
+            @foreach($categories as $categorie)
+                <!-- UIkit CARD -->
+                
+                    <a href="/viewcompany1/{{$categorie->name}}"><button class="btn btn-default  btn-category m-1 category-block" style="text-transform:capitalize;">{{$categorie->name}}</button></a>
 
-                                        </div>
-                                        
-                                   </div>
-                              </div>
-                         </div> -->
+            @endforeach                               
+            
+                
 
-                       <!---  <div class="item item-second">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>Start your journey with our practical courses</h1>
-                                             <h3>Our online courses are built in partnership with technology leaders and are designed to meet industry demands.</h3>
-                                             <a href="#courses" class="section-btn btn btn-default smoothScroll">Take a course</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div> -->
-
-                    <!--     <div class="item item-third">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>Efficient Learning Methods</h1>
-                                             <h3>Nam eget sapien vel nibh euismod vulputate in vel nibh. Quisque eu ex eu urna venenatis sollicitudin ut at libero. Visit <a rel="nofollow" href="https://www.facebook.com/templatemo">templatemo</a> page.</h3>
-                                             <a href="#contact" class="section-btn btn btn-default smoothScroll">Let's chat</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div> -->
-                    </div>
-          </div>
-     </section>
-      <!--  Explore categories -->
-      <section id="team">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title">
-                              <h2 style="float: left;">Explore categories <small>Meet Professional Trainers</small></h2>
-                              <a class="btn border-0" style="background:linear-gradient(to right, #093028, #237A57);color:white; float: right;" href="{{url('/categories')}}" >View All</a>
-                         </div>
-                    </div>
-
-                   @foreach($categories as $categorie)
-
-                   <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-
-                               <a href="/viewcompany1/{{$categorie->name}}" class=" btn btn-default form-control">{{$categorie->name}}</a>
-                               <br></br>
-                         </div>
-                    </div>
-          
-                 @endforeach
-
-               </div>
-          </div>
-     </section>
+                                           
+            
+        </div>
+        <h2 class="text-center">Recent Reviews</h2>
+        <div class="slider">
+            <div class="slide-track">
+                
                     
+                     @foreach($reviewsdata as $reviews)
+                    <a href="/view-companies-description/6321/">
                     
-                    
-                   
-
-      <!--  Recent Reviews  -->
-     <section id="testimonial">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title">
-                              <h2>Recent Reviews <small>from around the world</small></h2>
-                         </div>
-
-                         <div class="owl-carousel owl-theme owl-client">
-						 
-						 
-						   
-						 
-						 
-  
-						 
-						  
-                             
-						 
-						
-						 @foreach($reviewsdata as $reviews)
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item" style="border-radius: 25px; padding: 20px;  width: 300px;
-								                            @if($reviews->ratings ==1)
-                                                            border: 5px solid #C70039;
-														@elseif($reviews->ratings ==2)
-														 border: 5px solid #FF5733;
-														 @elseif($reviews->ratings ==3)
-														  border: 5px solid #FFC300;
-														  @elseif($reviews->ratings ==4)
-														   border: 5px solid #00ff36;
-														   @elseif($reviews->ratings ==5)
-														    border: 5px solid #51a127;
-															@else
-																 border: 5px solid black;
-															 @endif
-                                                               ">
-                                        <div class="tst-image">
-                                             <img src="images/tst-image1.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>{{$reviews->name}}
-											 &#160;
-											 @if($reviews->resolved ==1) 
-											 <i class="fa fa-check-circle text-primary"></i>
-										 @else
-											<i class="fa fa-time-circle text-primary"></i> 
-										@endif
-											 </h4>
-                                             <span><i class="fas fa-map-marker-alt" style="color:green;"></i>{{$reviews->branchlocation}}</span>
-											 <p style="">{!! date('D, d, M, Y', strtotime($reviews->created_at)) !!}</p>
-                                        </div>
-										
-										@if($reviews->ratings ==1) 
-										<div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#C70039;"></i>
+                        <div class="slide">
+                            
+                                
+								@if($reviews->ratings ==1)
+								    <div  class="reviewcard review-bad">
+								@elseif($reviews->ratings ==2)
+								    <div  class="reviewcard review-two">
+								@elseif($reviews->ratings ==3)
+								     <div  class="reviewcard review-bad">
+								@elseif($reviews->ratings ==4)
+								      <div  class="reviewcard review-medium">
+								@elseif($reviews->ratings ==5)
+                                       <div  class="reviewcard review-good">								
+								@else
+								<div  class="reviewcard review-bad">
+								@endif
+								
+                            
+                            <div class="propicbox">
+                                <img src="rokon/w7.pngwing.com/pngs/419/473/png-transparent-computer-icons-user-profile-login-user-heroes-sphere-black-thumbnail.png" class="propic">
+                            </div>
+                            <div class="reviewerbox">
+                                <span style="font-size:px">{{$reviews->name}}
+                                    
+                                </span>
+								@if($reviews->ratings ==1) 
+										<div class="flex-row">
+                                             <span class="fa fa-star" style="color:#C70039;"></span>
                                             
                                         </div>
 										@elseif($reviews->ratings ==2)
-										   <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#FF5733;"></i>
-                                             <i class="fa fa-star" style="color:#FF5733;"></i>
+										  <div class="flex-row">
+                                             <span class="fa fa-star" style="color:#FF5733;"></span>
+                                             <span class="fa fa-star" style="color:#FF5733;"></span>
                                               
                                         </div>
 										@elseif($reviews->ratings ==3)
-										   <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#FFC300;"></i>
-                                             <i class="fa fa-star" style="color:#FFC300;"></i>
-                                              <i class="fa fa-star" style="color:#FFC300;"></i>
+										  <div class="flex-row">
+                                             <span class="fa fa-star" style="color:#FFC300;"></span>
+                                             <span class="fa fa-star" style="color:#FFC300;"></span>
+                                              <span class="fa fa-star" style="color:#FFC300;"></span>
                                              
                                         </div>
 										@elseif($reviews->ratings ==4)
-										    <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+										    <div class="flex-row">
+                                             <span class="fa fa-star" style="color:#00ff36;"></span>
+                                             <span class="fa fa-star" style="color:#00ff36;"></span>
+                                              <span class="fa fa-star" style="color:#00ff36;"></span>
+                                              <span class="fa fa-star" style="color:#00ff36;"></span>
                                               
                                         </div>
 										@elseif($reviews->ratings ==5)
-										      <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
+										      <div class="flex-row">
+                                             <span class="fa fa-star" style="color:#51a127;"></span>
+                                             <span class="fa fa-star" style="color:#51a127;"></span>
+                                              <span class="fa fa-star" style="color:#51a127;"></span>
+                                              <span class="fa fa-star" style="color:#51a127;"></span>
+                                              <span class="fa fa-star" style="color:#51a127;"></span>
                                         </div>
 										@else
-											<div class="tst-rating">
-                                             <i class="fa fa-map" style="color:#C70039;"></i>
+											<div class="flex-row">
+                                             <span class="fa fa-map" style="color:#C70039;"></span>
                                              
                                         </div>
 										@endif
-                                        <p>{{$reviews->review}}</p>
-                                        <p class="mb-0 mt-3"style="font-size:18px; " ><i class="fa fa-building"></i>&#160;{{$reviews->company}}</p>
-                                   </div>
-                              </div>
-                        @endforeach
-                              
-
-                             
-
-                              
-
-                         </div>
-
-               </div>
-          </div>
-     </section>
- 
-
- @include('frontpage.give_review');
+                                
+                                <span style="color:var(--blue);font-size:14px !important">{!! date('D, d, M, Y', strtotime($reviews->created_at)) !!}  <i class="fas fa-map-marker-alt text-success"></i> {{$reviews->branchlocation}}</span>
+                            </div>
+                            <p class="review p-1 text">{{$reviews->review}}</p>
+                            <p class="mb-0 mt-3"><i class="fas fa-building"></i> {{$reviews->company}}</p>
+                            
+                            </div>
+                        </div>
+                    
+                        </a>
+                      @endforeach
+  
+            </div>
+        </div>
+            
+    </div>
+    <!-- Review messages -->
+   @include('frontpage.give_review');
 @endsection
