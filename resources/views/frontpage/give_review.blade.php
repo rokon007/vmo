@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-               <form action="{{route('reviews.give')}}" method="post"  class="form">
+               <form action="{{route('reviews.give')}}" method="post" >
 									@csrf
                     <input type="hidden" name="csrfmiddlewaretoken" value="lB6hTX7BPDoxyGkcanDqHJTLrOl1ZKiysBVUI5EuLhGxCIiDxvFx1JJwPdYURiU9">
                     <div class="form-group">
