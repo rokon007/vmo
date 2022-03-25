@@ -19,9 +19,26 @@ class ReviewController extends Controller
     
   public function googlecallback()
    {
+
     $user = Socialite::driver('google')->user();
  
-   return  $user->token;
+   // return  $user->token;
+    $CompanyNameData=Companytb::All();
+
+   return view('frontpage.socialreviews',compact('user','CompanyNameData'));
+   // try {
+   //          $user = Socialite::driver('google')->user();
+   //          $user = User::firstOrCreate([
+   //              'email' =>$user->getEmail()
+   //          ],[
+   //              'name' => $user->getName(),
+   //              'password' => Hash::make(Str::random(24))
+   //          ]);
+   //          Auth::login($user, true);
+   //          return redirect('/dashboard');
+   //      } catch (\Throwable $th) {
+   //          return redirect('/login')->withError('Something went wrong! '.$th->getMessage());
+   //      }
    }
 
 
