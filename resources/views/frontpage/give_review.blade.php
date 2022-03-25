@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-lg-6 col-sm-12 p-0 pr-3">
                      <div class="form-group">
-                      <a href="/review/giv"><button class="btn btn-success form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with This Site</button></a>
+                      <a href="/review"><button class="btn btn-success form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with This Site</button></a>
                      </div>
                         </div>
                      </div>

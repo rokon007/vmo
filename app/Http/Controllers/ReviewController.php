@@ -23,15 +23,6 @@ class ReviewController extends Controller
    return  $user->token;
    }
 
-public function givshow()
-   {
-   
-     //company name sending  company_name
-      $CompanyNameData=Companytb::All();
-     
-    
-     return view('frontpage.reviewgiving');
-   }
 
 
    public function create()

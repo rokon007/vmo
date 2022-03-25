@@ -29,4 +29,14 @@ class WelcomeController extends Controller
     
 
    }
+   public function givshow()
+   {
+   
+     //company name sending  company_name
+      $CompanyNameData=Companytb::All();
+     
+    
+     return view('frontpage.reviewgiving',compact('CompanyNameData'));
+   }
+
 }

@@ -30,7 +30,7 @@ Route::get('/', function () {
 Route::get('/auth/redirect', function () {
     return Socialite::driver('google')->redirect();
 });
-Route::get('/review/giv',[App\Http\Controllers\ReviewController::class,'givshow']);
+Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
  
 // Route::get('https://vimbisotest.herokuapp.com/review/google/callback', function () {
 //     $user = Socialite::driver('google')->user();
