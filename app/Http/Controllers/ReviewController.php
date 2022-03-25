@@ -14,6 +14,26 @@ use App\Exports\reviewsExport;
 
 class ReviewController extends Controller
 {
+
+    
+  public function googlecallback()
+   {
+    $user = Socialite::driver('google')->user();
+ dd($user);
+   return  $user->token;
+   }
+
+public function givshow()
+   {
+   
+     //company name sending  company_name
+      $CompanyNameData=Companytb::All();
+     
+    
+     return view('frontpage.reviewgiving',compact('CompanyNameData'));
+   }
+
+
    public function create()
    {
     $ReviewData=reviews::whereNull('show')->get();

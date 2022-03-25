@@ -8,6 +8,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,20 @@ Route::get('/', function () {
 });
 */
 // Route::get('userset/{id}',[App\Http\Controllers\UserController::class,'SetUser'])->name('user.set')->middleware('is_admin');
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+Route::get('/review/giv',[App\Http\Controllers\ReviewController::class,'givshow']);
+ 
+// Route::get('https://vimbisotest.herokuapp.com/review/google/callback', function () {
+//     $user = Socialite::driver('google')->user();
+//  dd($user);
+//      $user->token
+// });
+Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
+
+
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
 
 Route::get('userset/{id}', [App\Http\Controllers\pagecontroller::class, 'SetUser'])->name('user.set')->middleware('is_admin');
