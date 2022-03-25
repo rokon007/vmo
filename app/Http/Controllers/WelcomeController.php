@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\reviews;
 use App\Models\Companytb;
 use DB;
+use Laravel\Socialite\Facades\Socialite;
 
 class WelcomeController extends Controller
 {
