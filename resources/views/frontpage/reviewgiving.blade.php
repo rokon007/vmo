@@ -1,97 +1,80 @@
-@extends('frontpage.frontpage9')
- @section('title') 
- <title>Vimbiso|Review</title>
+@extends('frontpage.frontpage')
+@section('title') 
+ <title>Vimbiso | About</title>
          <meta name="description" content="vary good">
      <meta name="keywords" content="vimbiso">
     
 @endsection 
+ 
+
 @section('body') 
 
- <!-- Content -->
+
+<!--  About -->
+      <section id="team">
+              <!-- Content -->
     
-<style>
-    .row{
-        margin-left: 0px;
-    }
-</style>
+<link rel="stylesheet" href="../static/css/aboutus.css">
 
+<div class="container-fluid m-0 p-0">
+    <div class="row justify-content-center align-items-center">
 
-    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
-        <div class="row align-items-center">
-		 <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
-                               <br>
-                        </div>
-            
-            <div class="col-lg-6 col-sm-12 m-lg-0 m-4" style="border:2px solid var(--red);border-radius:10px">
-                <h2 class="text-center p-3"><strong>Give a review</strong></h2>
-                
-              <form action="{{route('reviews.give')}}" method="post" >
-									@csrf
-                    <input type="hidden" name="csrfmiddlewaretoken" value="lB6hTX7BPDoxyGkcanDqHJTLrOl1ZKiysBVUI5EuLhGxCIiDxvFx1JJwPdYURiU9">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email or WhatsApp number</label>
-                        <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" placeholder="Enter Email or WhatsApp number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Your name</label>
-                        <input type="text" class="form-control" id="reveiwer-name" name="name" placeholder="Your name" required>
-                    </div>
-					
-                    <div class="form-row d-flex justify-content-center align-items-center" id="company-block">
-                        <div id="company-dropdown" class="w-100 mb-3">
-                            <label for="exampleInputPassword1">Company name</label>
-                            <span style="color:lightgray"> (Not listed add company <a style="cursor:pointer" class="text-success" onclick="unlistedcompany()">+</a> )</span>
-                             <select name="company_id" class="form-control form-control-solid form-control-lg" id="company_id">
-															<option value="">Select A Company</option>
-															@foreach($CompanyNameData as $companyname)                                                          
-															<option value="{{$companyname->id}}">{{$companyname->company}}</option>
+        <div class="col-sm-12 col-md-8 col-lg-8 pl-5 pr-3 p-lg-5  align-items-center text-left">
+            <h1 class="about-heading pb-lg-5 pb-sm-2">WHAT IS VIMBISO</h1>
+            <span class="about-description" style="text-decoration:none;color:black;font-size:16px">
+                Vimbiso is a free independent & transparent customer assurance platform.
+                At Vimbiso we believe the key to unlocking business success starts by listening to your customers.<br><br>
+                Our mission is to bridge the gap between consumers & companies.
+                We provide a powerful voice to share their experiences & enable companies to respond & continually improve their customer’s experience.
+            </span>
+        </div>
 
-
-															@endforeach											
-														</select>
-                        </div>
-                    </div>
-                    <div class="form-group d-flex flex-row">
-                        <div class="col-lg-6 col-sm-12 p-0 pr-3">
-                            <label for="exampleInputPassword1">Product or service purchased</label>
-                            <input type="text" class="form-control" name="purchased-item" placeholder="Enter Product or service name" required>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 ml-2">
-                            <label for="exampleInputPassword1">Type of purchase</label>
-                            <select class="form-control" name="purchaseditem">
-                                <option value="">Select purchase type</option>
-                                <option value="service">Service</option>
-                                <option value="product">Product</option>
-                                <option value="location">Location</option>
-                            </select>  
-                        </div>                      
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Date of purchase</label>
-                        <input type="date" class="form-control" name="dateofpurchase"  required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Branch location <span style="color:lightgray">(where you made the purchase)</span></label>
-                        <input type="text" class="form-control" name="branchlocation" placeholder="Enter branch location"  required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Your review</label>
-                        <textarea type="text" class="form-control" name="review"  required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Ratings</label>
-                        <input type="number" step="1" max="5" class="form-control" name="ratings" placeholder="/5"  required>
-                    </div>
-                    <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="Submit" class="btn btn-primary">Add Review</button>
-            </div>
-                
-            </div>
-            
-        </form>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="image-circle m-5">
+                <img src="../static/images/logo-no-bg.png" />
             </div>
         </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-5 pl-lg-5 pt-lg-5 pb-lg-5 pr-lg-0 pl-5 align-items-center">
+            <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpg">
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-7 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
+            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
+                The concept for Vimbiso came to me in November 2020, it was triggered by a moment of reflection.
+                There is an undeniably negative perception of Zimbabwean owned businesses, public institutions, parastatals, NGO’s & civil society organisation.<br><br>
+                I have continually heard words & phrases such as, poor quality, corruption, lack lustre service delivery, theft, deception, dishonesty just to name a few.
+                Granted some of these views are accurate there are some dubious entities in the Zimbabwean community however there are also some fantastically impressive entities which consequently through no fault of their own are painted with the same brush.<br><br>
+                With this in mind I thought to myself there must be a way for consumers, donors and investors to filter between the dubious entities & the genuine ones.
+                I concluded the best way of doing this was social proof which by definition comes from customers & stake holders, and with declining trust those voices tend to carry a lot more weight than a branded message from the entities themselves.
+                In a nutshell Vimbiso is a platform to showcase & promote those genuine entities Zimbabwe has to offer the Zimbabwean community & beyond.<br><br>
+                Vimbiso will through social proof allow entities to take advantage of external validation and consumer advocacy in order to improve & in still confidence to consumers, donors & investors on a global stage.
+            </span>
+        </div>
+
     </div>
-	 
+    
+</div>
+
+    
+    
+        <script>
+            ''
+        </script>
+     </section>
+                    
+                    
+                    
+                   
+
+       <!-- Modal -->
+         
+
+     <!-- FOOTER -->
+
+
 @endsection
+
+
+    
+      
+     
