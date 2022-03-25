@@ -66,9 +66,7 @@
                     
                    
 
-       <!-- Modal -->
-         @include('frontpage.give_review');
-
+       
      <!-- FOOTER -->
 
 

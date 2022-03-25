@@ -151,5 +151,5 @@
             
     </div>
     <!-- Review messages -->
-   @include('frontpage.give_review');
+  
 @endsection

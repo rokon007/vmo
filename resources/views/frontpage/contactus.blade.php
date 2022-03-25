@@ -61,7 +61,7 @@
                 </div>
         </div>
 @endsection 
-@include('frontpage.give_review');
+
 
 
     
