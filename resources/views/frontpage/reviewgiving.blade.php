@@ -41,7 +41,7 @@
                         <div id="company-dropdown" class="w-100 mb-3">
                             <label for="exampleInputPassword1">Company name</label>
                             <span style="color:lightgray"> (Not listed add company <a style="cursor:pointer" class="text-success" onclick="unlistedcompany()">+</a> )</span>
-                             <select name="company_id" class="form-control form-control-solid form-control-lg" id="company_id">
+                             <select name="company_id" class="form-control form-control-solid form-control" id="company_id">
 															<option value="">Select A Company</option>
 															@foreach($CompanyNameData as $companyname)                                                          
 															<option value="{{$companyname->id}}">{{$companyname->company}}</option>
@@ -83,7 +83,7 @@
                         <input type="number" step="1" max="5" class="form-control" name="ratings" placeholder="/5"  required>
                     </div>
                     <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                
                 <button type="Submit" class="btn btn-primary">Add Review</button>
             </div>
                 
