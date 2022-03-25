@@ -27,9 +27,11 @@ Route::get('/', function () {
 */
 // Route::get('userset/{id}',[App\Http\Controllers\UserController::class,'SetUser'])->name('user.set')->middleware('is_admin');
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
-});
+// Route::get('/auth/redirect', function () {
+//     return Socialite::driver('google')->redirect();
+//      return Socialite::driver('google')->redirect();
+// });
+Route::get('/auth/redirect',[App\Http\Controllers\WelcomeController::class,'redirect']);
 Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
  
 // Route::get('https://vimbisotest.herokuapp.com/review/google/callback', function () {

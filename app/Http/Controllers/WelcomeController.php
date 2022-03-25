@@ -38,5 +38,11 @@ class WelcomeController extends Controller
     
      return view('frontpage.reviewgiving',compact('CompanyNameData'));
    }
+   public function redirect()
+   {
+    
+     return Socialite::driver('google')->redirect();
+
+   }
 
 }
