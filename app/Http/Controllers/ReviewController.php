@@ -30,7 +30,7 @@ public function givshow()
       $CompanyNameData=Companytb::All();
      
     
-     return view('frontpage.reviewgiving',compact('CompanyNameData'));
+     return view('frontpage.reviewgiving');
    }
 
 
