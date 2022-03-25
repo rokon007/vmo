@@ -34,10 +34,15 @@ Route::get('/', function () {
 Route::get('/auth/redirect',[App\Http\Controllers\WelcomeController::class,'redirect']);
 Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
  
-Route::get('https://vimbisotest.herokuapp.com/review/google/callback', function () {
+// Route::get('https://vimbisotest.herokuapp.com/review/google/callback', function () {
+//     $user = Socialite::driver('google')->user();
+//  dd($user);
+//      $user->token
+// });
+Route::get('/auth/callback', function () {
     $user = Socialite::driver('google')->user();
- dd($user);
-     $user->token
+   dd($user);
+     $user->token;
 });
 Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
