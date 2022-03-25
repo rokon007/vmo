@@ -39,12 +39,12 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 //  dd($user);
 //      $user->token
 // });
-Route::get('/auth/callback', function () {
+Route::get('/review/google/callback', function () {
     $user = Socialite::driver('google')->user();
    dd($user);
      $user->token;
 });
-Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
+// Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
