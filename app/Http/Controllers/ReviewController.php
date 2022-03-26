@@ -20,7 +20,7 @@ class ReviewController extends Controller
   public function googlecallback($callback)
    {
 
-    $user = Socialite::driver('callback')->user();
+    $user = Socialite::driver('google')->user();
  
    // return  $user->token;
     
@@ -71,7 +71,7 @@ class ReviewController extends Controller
 
 protected function loginOrCreateAccount($providerUser, $driver)
     {
-        echo 'ok rokon';
+        echo ok rokon;
     }
   
    public function store(Request $request)
