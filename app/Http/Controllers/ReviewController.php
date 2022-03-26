@@ -20,14 +20,14 @@ class ReviewController extends Controller
   public function googlecallback($callback)
    {
 
-    $user = Socialite::driver('google')->user();
+    // $user = Socialite::driver('google')->user();
  
-   // return  $user->token;
+    return  $callback->token;
     
 
-     return empty($user->email)
-            ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
-            : $this->loginOrCreateAccount($user, $driver);
+     // return empty($user->email)
+     //        ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
+     //        : $this->loginOrCreateAccount($user, $driver);
 
 
 
