@@ -17,17 +17,23 @@ class ReviewController extends Controller
 {
 
     
-  public function googlecallback($callback)
+  public function googlecallback()
    {
 
-    // $user = Socialite::driver('google')->user();
+    $user = Socialite::driver('google')->user(
+
+    ['client_id' => '989521392121-au4k06d79m7qq0f0dnu8aupqfe9k1gvs.apps.googleusercontent.com'],
+        ['client_secret' => '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'],
+        ['redirect' => 'https://vimbisotest.herokuapp.com/review/google/callback']
+
+    );
  
-    return  $callback;
+   // return  $user->token;
     
 
-     // return empty($user->email)
-     //        ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
-     //        : $this->loginOrCreateAccount($user, $driver);
+     return empty($user->email)
+            ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
+            : $this->loginOrCreateAccount($user, $driver);
 
 
 
