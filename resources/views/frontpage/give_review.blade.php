@@ -22,7 +22,7 @@
 						
 						 <div class="col-lg-12 col-sm-12 p-0 pr-3">
 					 <div class="form-group">
-					  <a href="#"><button class="btn  form-control"><img <img src="https://img.icons8.com/cute-clipart/48/000000/facebook.png"/> Continue with FaceBook</button></a>
+					  <a href="/auth/redirectfacebook"><button class="btn  form-control"><img <img src="https://img.icons8.com/cute-clipart/48/000000/facebook.png"/> Continue with FaceBook</button></a>
 					 </div>
 						</div>
 						</div>

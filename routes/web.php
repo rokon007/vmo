@@ -46,6 +46,9 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 // });
 Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
+Route::get('/auth/redirectfacebook',[App\Http\Controllers\WelcomeController::class,'redirectfacebook']);
+Route::get('/login/facebook/callback',[App\Http\Controllers\ReviewController::class,'facebookcallback']);
+
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
 

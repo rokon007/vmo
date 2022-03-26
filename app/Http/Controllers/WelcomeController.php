@@ -51,4 +51,14 @@ class WelcomeController extends Controller
 
    }
 
+
+   public function redirectfacebook()
+   {
+     // return Socialite::driver('google')->redirect();
+      return Socialite::driver('facebook') ->redirect();
+   
+   
+
+   }
+
 }
