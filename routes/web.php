@@ -44,7 +44,7 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 //    dd($user);
 //      $user->token;
 // });
-Route::get('/review/google/callback/{driver}',[App\Http\Controllers\ReviewController::class,'googlecallback']);
+Route::get('/review/google/callback/{state}',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
