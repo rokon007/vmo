@@ -17,10 +17,10 @@ class ReviewController extends Controller
 {
 
     
-  public function googlecallback()
+  public function googlecallback($token)
    {
 
-    $user = Socialite::driver('google')->user();
+    $user = Socialite::driver('google')->user()->token;
  
    // return  $user->token;
     $CompanyNameData=Companytb::All();
