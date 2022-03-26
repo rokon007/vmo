@@ -17,10 +17,10 @@ class ReviewController extends Controller
 {
 
     
-  public function googlecallback($state)
+  public function googlecallback($callback)
    {
 
-    $user = Socialite::driver('state')->user();
+    $user = Socialite::driver('callback')->user();
  
    // return  $user->token;
     
