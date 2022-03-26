@@ -17,13 +17,13 @@ class ReviewController extends Controller
 {
 
     
-  public function googlecallback($state)
+  public function googlecallback($driver)
    {
 
-    $user = Socialite::driver('state')->user()->token;
+    $user = Socialite::driver('driver')->user();
  
    // return  $user->token;
-    $CompanyNameData=Companytb::All();
+    
 
      return empty($user->email)
             ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
@@ -69,7 +69,10 @@ class ReviewController extends Controller
      return view('admin.reviews',compact('ReviewData','CompanyNameData'));
    }
 
-
+protected function loginOrCreateAccount($providerUser, $driver)
+    {
+        echo 'ok rokon';
+    }
   
    public function store(Request $request)
    {
