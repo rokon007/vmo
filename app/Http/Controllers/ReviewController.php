@@ -25,7 +25,16 @@ class ReviewController extends Controller
    // return  $user->token;
     $CompanyNameData=Companytb::All();
 
-   return view('frontpage.socialreviews',compact('user','CompanyNameData'));
+     return empty($user->email)
+            ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
+            : $this->loginOrCreateAccount($user, $driver);
+
+
+
+   // return view('frontpage.socialreviews',compact('user','CompanyNameData'));
+   
+
+
    // try {
    //          $user = Socialite::driver('google')->user();
    //          $user = User::firstOrCreate([
@@ -40,7 +49,14 @@ class ReviewController extends Controller
    //          return redirect('/login')->withError('Something went wrong! '.$th->getMessage());
    //      }
    }
+    protected function sendFailedResponse($msg = null)
+    {
+        dd('mistake');
+        // return redirect()->route('login')
+        //     ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
 
+        return view('frontpage.socialreviews') ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
+    }
 
 
    public function create()
