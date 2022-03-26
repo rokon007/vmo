@@ -22,7 +22,7 @@ class ReviewController extends Controller
 
     // $user = Socialite::driver('google')->user();
  
-    return  $callback->token;
+    return  $callback;
     
 
      // return empty($user->email)
