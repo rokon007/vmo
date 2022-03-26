@@ -71,7 +71,7 @@ class ReviewController extends Controller
 
 protected function loginOrCreateAccount($providerUser, $driver)
     {
-        echo ok rokon;
+        echo 'ok rokon';
     }
   
    public function store(Request $request)
