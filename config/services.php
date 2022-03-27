@@ -36,23 +36,10 @@ return [
     'redirect' => 'https://vimbisotest.herokuapp.com/review/google/callback',
 ],
 
-
-
-
-return [
-
-    ....
-
-    'facebook' => [
-
-        'client_id' => '413235483803463',
-
-        'client_secret' => '826c846b7a30eff16a63f7e45711b69f',
-
-        'redirect' => 'https://vimbisotest.herokuapp.com/login/facebook/callback',
-
-    ],
-
-]
-
+'facebook' => [
+    'client_id' => '413235483803463',
+    'client_secret' => '826c846b7a30eff16a63f7e45711b69f',
+    'redirect' => 'https://vimbisotest.herokuapp.com/login/facebook/callback',
+],
+    
 ];
