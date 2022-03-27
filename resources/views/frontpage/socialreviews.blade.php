@@ -1,4 +1,4 @@
-@extends('frontpage.frontpage')
+@extends('frontpage.frontpage9')
  @section('title') 
  <title>Vimbiso|Review</title>
          <meta name="description" content="vary good">
@@ -30,11 +30,11 @@
                     <input type="hidden" name="csrfmiddlewaretoken" value="lB6hTX7BPDoxyGkcanDqHJTLrOl1ZKiysBVUI5EuLhGxCIiDxvFx1JJwPdYURiU9">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email or WhatsApp number</label>
-                        <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" value="{{$finduser->email}}" required>
+                        <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" value="{{Auth::user()->email}}" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Your name</label>
-                        <input type="text" class="form-control" id="reveiwer-name" name="name" value="{{$finduser->name}}" required>
+                        <input type="text" class="form-control" id="reveiwer-name" name="name" value="{{Auth::user()->company_name}}" required>
                     </div>
 					
                     <div class="form-row d-flex justify-content-center align-items-center" id="company-block">
