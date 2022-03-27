@@ -11,7 +11,7 @@
    <!-- <link rel="stylesheet" href={{asset("css/bootstrap.min.css")}}>-->
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href={{asset("rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")}}  >
+    <link rel="stylesheet" href={{asset("rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")}} >
     <link rel="stylesheet" href={{asset("rokon/static/css/style.css")}} > 
     <link rel="stylesheet" href={{asset("rokon/static/css/auth.css")}} >
     <script src={{asset("rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")}}></script>
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href={{asset("rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css")}} > 
     <link rel="stylesheet" href={{asset("rokon/static/css/notifications.css")}} >
     <script src={{asset("rokon/static/js/notifications.var.js")}} type="text/javascript"></script>
-    <link href={{asset("rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")}} rel="stylesheet" >
+    <link rel="stylesheet" href={{asset("rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")}} >
     <script src={{asset("rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js")}}></script>
 
     <link rel="shortcut icon" type="image/png" href={{asset("rokon/static/images/favicon.ico")}} >
