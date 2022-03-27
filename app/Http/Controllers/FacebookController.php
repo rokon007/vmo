@@ -52,7 +52,7 @@ class FacebookController extends Controller
     public function handleFacebookCallback()
 
     {
-        $CompanyNameData=Companytb::All();
+       
 
         try {
 
@@ -75,7 +75,7 @@ class FacebookController extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews');
 
          
 
@@ -100,7 +100,7 @@ class FacebookController extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews');
 
             }
 

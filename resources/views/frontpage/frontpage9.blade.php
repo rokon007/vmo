@@ -85,7 +85,7 @@
                             <a class="dropdown-item text-dark border-bottom border-dark" href="/accounts/password/reset/"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
 							 <a class="dropdown-item text-dark border-bottom border-dark"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
 							  <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('settings') }}"><i class="fab fa-get-pocket">{{ __('Settings') }}</i></a>
-                            <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('logout') }}"
+                            <a class="dropdown-item text-dark border-bottom border-dark"  
 							onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">					
 							<i class="fas fa-sign-in-alt"></i>&nbsp  {{ __('Logout') }}}</a>
