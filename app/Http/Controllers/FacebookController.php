@@ -12,8 +12,6 @@ use Exception;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Companytb;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\ServiceProvider;
 
     
 
@@ -54,7 +52,7 @@ class FacebookController extends Controller
     public function handleFacebookCallback()
 
     {
-       
+        $CompanyNameData=Companytb::All();
 
         try {
 
@@ -77,7 +75,7 @@ class FacebookController extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('CompanyNameData'));
 
          
 
@@ -102,7 +100,7 @@ class FacebookController extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('CompanyNameData'));
 
             }
 
