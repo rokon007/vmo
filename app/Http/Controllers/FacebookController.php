@@ -81,7 +81,7 @@ class FacebookController extends Controller
                 $newUser = User::create([
 
                     'first_name' => $user->name,
-
+                     'company_name' => $user->name,
                     'email' => $user->email,
 
                     'username'=> $user->id,
