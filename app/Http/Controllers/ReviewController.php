@@ -16,6 +16,22 @@ use Laravel\Socialite\Facades\Socialite;
 class ReviewController extends Controller
 {
 
+public function facebookcallback()
+   {
+
+    $user = Socialite::driver('facebook')->user();
+ 
+   // return  $user->token;
+    
+
+     return empty($user->email)
+            ? $this->sendFailedResponse("No email id returned from {$driver} provider.")
+            : $this->loginOrCreateAccount($user, $driver);
+
+
+
+   
+   }
     
   public function googlecallback()
    {
