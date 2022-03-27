@@ -22,13 +22,11 @@ use App\Http\Controllers\Googlecontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */    
-/*   companies
+/*   
 Route::get('/', function () {
     return view('welcome');
 });
 */
-
-
 Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 
 // Route::get('/auth/redirect',[App\Http\Controllers\WelcomeController::class,'redirect']);
@@ -36,9 +34,9 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 
 
 
-Route::get('/auth/redirectfacebook', [FacebookController::class, 'redirectToGoogle']);
+Route::get('/auth/redirectfacebook', [FacebookController::class, 'redirectToFacebook']);
 
-Route::get('/login/facebook/callback', [FacebookController::class, 'handleGoogleCallback']);
+Route::get('/login/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
 
 
 Route::get('/auth/redirectgoogle', [Googlecontroller::class, 'redirectToGoogle']);
