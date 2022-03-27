@@ -26,33 +26,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-// Route::get('userset/{id}',[App\Http\Controllers\UserController::class,'SetUser'])->name('user.set')->middleware('is_admin');
 
-// Route::get('/auth/redirect', function () {
-//     return Socialite::driver('google')->redirect();
-//      return Socialite::driver('google')->redirect();
-// });
-Route::get('/auth/redirect',[App\Http\Controllers\WelcomeController::class,'redirect']);
+
 Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
- 
-// Route::get('https://vimbisotest.herokuapp.com/review/google/callback', function () {
-//     $user = Socialite::driver('google')->user();
-//  dd($user);
-//      $user->token
-// });
-// Route::get('/review/google/callback', function () {
-//     $user = Socialite::driver('google')->user();
-//    dd($user);
-//      $user->token;
-// });
-Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
-// Route::get('/auth/redirectfacebook',[App\Http\Controllers\WelcomeController::class,'redirectfacebook']);
-// Route::get('/login/facebook/callback',[App\Http\Controllers\ReviewController::class,'facebookcallback']);
+// Route::get('/auth/redirect',[App\Http\Controllers\WelcomeController::class,'redirect']);
+// Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
-Route::get('/auth/redirectfacebook', [FacebookController::class, 'redirectToFacebook']);
 
-Route::get('/login/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
+Route::get('/auth/redirectfacebook', [FacebookController::class, 'redirectToGoogle']);
+
+Route::get('/login/facebook/callback', [FacebookController::class, 'handleGoogleCallback']);
+
+
+Route::get('/auth/redirectgoogle', [Googlecontroller::class, 'redirectToFacebook']);
+
+Route::get('/login/google/callback', [Googlecontroller::class, 'handleFacebookCallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
