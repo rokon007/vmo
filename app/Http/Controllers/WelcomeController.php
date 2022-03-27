@@ -55,7 +55,12 @@ class WelcomeController extends Controller
    public function redirectfacebook()
    {
      // return Socialite::driver('google')->redirect();
-      return Socialite::driver('facebook') ->redirect();
+      return Socialite::driver('facebook') 
+          ->with(
+        ['client_id' => '413235483803463'],
+        ['client_secret' => '826c846b7a30eff16a63f7e45711b69f'],
+        ['redirect' => 'redirect' => 'http://vimbisotest.herokuapp.com/login/facebook/callback'])
+      ->redirect();
    
    
 
