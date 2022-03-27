@@ -12,6 +12,8 @@ use Exception;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Companytb;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 
     
 
