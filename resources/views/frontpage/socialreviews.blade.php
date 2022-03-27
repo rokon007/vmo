@@ -1,4 +1,4 @@
-@extends('frontpage.frontpage9')
+@extends('frontpage.frontpage')
  @section('title') 
  <title>Vimbiso|Review</title>
          <!-- <meta name="description" content="vary good">

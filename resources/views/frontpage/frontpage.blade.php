@@ -11,18 +11,18 @@
     
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" >
-    <link rel="stylesheet" href="rokon/static/css/style.css"> 
-    <link rel="stylesheet" href="rokon/static/css/auth.css">
+    <link rel="stylesheet" href="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" >
+    <link rel="stylesheet" href="/rokon/static/css/style.css"> 
+    <link rel="stylesheet" href="/rokon/static/css/auth.css">
     <script src="rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <link rel="stylesheet" href="rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="" /> 
-    <link rel="stylesheet" href="rokon/static/css/notifications.css ">
-    <script src="rokon/static/js/notifications.var.js " type="text/javascript"></script>
-    <link href="rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="/rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="" /> 
+    <link rel="stylesheet" href="/rokon/static/css/notifications.css ">
+    <script src="/rokon/static/js/notifications.var.js " type="text/javascript"></script>
+    <link href="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="rokon/static/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="/rokon/static/images/favicon.ico"/>
     
   </head>
 
@@ -30,7 +30,7 @@
     <!-- Navbar -->
     
 <nav class="navbar navbar-expand-lg navbar-light bg-white pl-5 pr-5">
-    <a class="navbar-brand" href="/"><img src={{asset("images/logo-no-bg-2.png")}} class="logo"></a>
+    <a class="navbar-brand" href="/"><img src="{{asset('images/logo-no-bg-2.png')}}" class="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -202,11 +202,11 @@
  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- UIkit JS -->
-    <script src="rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
-    <script src="rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
     
     
     

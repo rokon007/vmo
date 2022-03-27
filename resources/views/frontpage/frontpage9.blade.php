@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/dist/css/select2.min.css')}}"/>
     <script src="{{ asset('/rokon/dist/js/select2.min.js')}}"></script>
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('///static/images/favicon.ico')}}"/>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('/rokon/static/images/favicon.ico')}}"/>
     
   </head>
 
