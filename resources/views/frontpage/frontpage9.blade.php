@@ -11,18 +11,18 @@
    <!-- <link rel="stylesheet" href ={{asset("css/bootstrap.min.css")}}>-->
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('rokon/bootstrap/bootstrap.min.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('rokon/static/css/style.css')}}"> 
-    <link rel="stylesheet" type="text/css" href="{{ asset('rokon/static/css/auth.css')}}"/>
-    <script src="{{ asset('rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/bootstrap/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/static/css/style.css')}}"> 
+    <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/static/css/auth.css')}}"/>
+    <script src="{{ asset('/rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
     
-    <link rel="stylesheet" type="text/css" href="{{ asset('rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css')}}"/> 
-    <link rel="stylesheet" type="text/css" href="{{ asset('rokon/static/css/notifications.css')}}"/>
-    <script src="{{ asset('rokon/static/js/notifications.var.js')}}" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('rokon/dist/css/select2.min.css')}}"/>
-    <script src="{{ asset('rokon/dist/js/select2.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css')}}"/> 
+    <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/static/css/notifications.css')}}"/>
+    <script src="{{ asset('/rokon/static/js/notifications.var.js')}}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/rokon/dist/css/select2.min.css')}}"/>
+    <script src="{{ asset('/rokon/dist/js/select2.min.js')}}"></script>
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('rokon/static/images/favicon.ico')}}"/>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('///static/images/favicon.ico')}}"/>
     
   </head>
 
@@ -201,11 +201,11 @@
  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ asset('rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="{{ asset('rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')}}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ asset('/rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{{ asset('/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')}}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- UIkit JS -->
-    <script src="{{ asset('rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js')}}"></script>
-    <script src="{{ asset('rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js')}}"></script>
+    <script src="{{ asset('/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js')}}"></script>
+    <script src="{{ asset('/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js')}}"></script>
     
     
     
