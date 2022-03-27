@@ -11,6 +11,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Exception;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Companytb;
 
     
 
@@ -51,6 +52,7 @@ class FacebookController extends Controller
     public function handleFacebookCallback()
 
     {
+        $CompanyNameData=Companytb::All();
 
         try {
 
@@ -72,7 +74,8 @@ class FacebookController extends Controller
 
         
 
-                return redirect()->intended('frontpage.socialreviews');
+                // return redirect()->intended('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('finduser','CompanyNameData'));
 
          
 
@@ -96,7 +99,8 @@ class FacebookController extends Controller
 
         
 
-                return redirect()->intended('frontpage.socialreviews');
+                // return redirect()->intended('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('newUser','CompanyNameData'));
 
             }
 
