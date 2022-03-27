@@ -75,7 +75,7 @@ class FacebookController extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('CompanyNameData'));
 
          
 
@@ -100,7 +100,7 @@ class FacebookController extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('CompanyNameData'));
 
             }
 
