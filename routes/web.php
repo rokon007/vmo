@@ -10,6 +10,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\Googlecontroller;
 
 /*
 |--------------------------------------------------------------------------
