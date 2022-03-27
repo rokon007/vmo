@@ -45,7 +45,8 @@ class User extends Authenticatable
            'contact',
            'level',
            'created_at',
-           'updated_at'
+           'updated_at',
+            'facebook_id'
 
     ];
 

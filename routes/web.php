@@ -9,6 +9,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\FacebookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,8 +47,12 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 // });
 Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
-Route::get('/auth/redirectfacebook',[App\Http\Controllers\WelcomeController::class,'redirectfacebook']);
-Route::get('/login/facebook/callback',[App\Http\Controllers\ReviewController::class,'facebookcallback']);
+// Route::get('/auth/redirectfacebook',[App\Http\Controllers\WelcomeController::class,'redirectfacebook']);
+// Route::get('/login/facebook/callback',[App\Http\Controllers\ReviewController::class,'facebookcallback']);
+
+Route::get('/auth/redirectfacebook', [FacebookController::class, 'redirectToFacebook']);
+
+Route::get('/login/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
