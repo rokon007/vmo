@@ -283,7 +283,7 @@
                         </div>
                       </div>
                     </div>
-                 
+                   @endforeach
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----END COMPANY----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->             
                   
                 </div>
