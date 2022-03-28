@@ -25,7 +25,7 @@
             <div class="col-lg-6 col-sm-12 m-lg-0 m-4" style="border:2px solid var(--red);border-radius:10px">
                 <h2 class="text-center p-3 "><strong>Give a review</strong></h2>
                 
-              <form action="{{route('reviews.give')}}" method="post" >
+              <form action="{{url('/give/reviews')}}" method="post" >
 					 @csrf				
                    <!--  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token() }}" > -->
                     <div class="form-group">
