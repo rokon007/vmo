@@ -41,7 +41,7 @@ Route::get('/login/facebook/callback', [FacebookController::class, 'handleFacebo
 
 Route::get('/auth/redirectgoogle', [Googlecontroller::class, 'redirectToGoogle']);
 
-Route::get('/login/google/callback', [Googlecontroller::class, 'handleGoogleCallback']);
+Route::get('/review/google/callback', [Googlecontroller::class, 'handleGoogleCallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
