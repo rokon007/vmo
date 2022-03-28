@@ -158,32 +158,10 @@
                       </form>
               </div>
 	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---END SEARCH---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
-	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---pagination---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
-                <div class="col-sm-12 col-lg-7 col-md-7 p-3 ">
-                  <div class="d-flex justify-content-center m-2">
-                        <ul class="pagination">
-						{{$RData1->links()}}
-                        <!--    <li class="disabled"><span>&laquo;</span></li>
-                              <li class="active"><span>1 <span class="sr-only">(current)</span></span></li>
-                              <li><a href="?page=2">2</a></li>
-                              <li><a href="?page=3">3</a></li>
-                              <li><a href="?page=4">4</a></li>
-                              <li><a href="?page=5">5</a></li>
-                              <li><a href="?page=6">6</a></li>
-                              <li><a href="?page=7">7</a></li>
-                              <li><a href="?page=8">8</a></li>
-                              <li><a href="?page=9">9</a></li>
-                              <li><a href="?page=10">10</a></li>
-                              <li><a href="?page=11">11</a></li>
-                              <li><a href="?page=12">12</a></li>
-                            <li><a href="?page=">&raquo;</a></li>  -->
-                        </ul>
-                  </div>  
-          <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----end pagination----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
-                  
+	  
           <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---COMPANY--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
                       @foreach($RData1 as $Data) 
-                          <div class="card mb-3" style="background-color:#e9e9ed;padding:0px !important
+                          <div class="card" style="background-color:#e9e9ed;padding:0px !important
 						                                  @if(round(($Data->totalratings)/($Data->count))==1) 
                                                             border: 5px solid #C70039;
 														@elseif(round(($Data->totalratings)/($Data->count))==2)
@@ -284,7 +262,17 @@
                       </div>
                     </div>
                    @endforeach
-     <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----END COMPANY----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->             
+     <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----END COMPANY----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->   
+
+       <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---pagination---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
+                <div class="col-sm-12 col-lg-7 col-md-7 p-3 ">
+                  <div class="d-flex justify-content-center m-2">
+                        <ul class="pagination">
+						{{$RData1->links()}}                       
+                        </ul>
+                  </div>  
+          <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----end pagination----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
+                  	 
                   
                 </div>
                     
