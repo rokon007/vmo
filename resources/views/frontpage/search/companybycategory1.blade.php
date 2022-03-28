@@ -158,24 +158,32 @@
                       </form>
               </div>
 	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---END SEARCH---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
-	  
+	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---pagination---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
+                <div class="col-sm-12 col-lg-7 col-md-7 p-3 ">
+                  <div class="d-flex justify-content-center m-2">
+                        <ul class="pagination">
+						{{$RData1->links()}}                       
+                        </ul>
+                  </div>  
+          <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----end pagination----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
+                  
           <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---COMPANY--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
                       @foreach($RData1 as $Data) 
-                          <div class="card" style="background-color:#e9e9ed;padding:0px !important
-						                                  @if(round(($Data->totalratings)/($Data->count))==1) 
-                                                            border: 5px solid #C70039;
-														@elseif(round(($Data->totalratings)/($Data->count))==2)
-														 border: 5px solid #FF5733;
-														 @elseif(round(($Data->totalratings)/($Data->count))==3)
-														  border: 5px solid #FFC300;
-														  @elseif(round(($Data->totalratings)/($Data->count))==4)
-														   border: 5px solid #00ff36;
-														   @elseif(round(($Data->totalratings)/($Data->count))==5)
-														    border: 5px solid #51a127;
-															@else
-																 border: 5px solid black;
-															 @endif
-                                                               ">
+					   @if(round(($Data->totalratings)/($Data->count))==1) 
+					  <div class="card mb-3 review-bad" style="background-color:#e9e9ed;padding:0px !important">
+				       @elseif(round(($Data->totalratings)/($Data->count))==2)
+					  <div class="card mb-3 review-bad" style="background-color:#e9e9ed;padding:0px !important">
+					   @elseif(round(($Data->totalratings)/($Data->count))==3)
+					  <div class="card mb-3 review-medium" style="background-color:#e9e9ed;padding:0px !important">
+					   @elseif(round(($Data->totalratings)/($Data->count))==4)
+					  <div class="card mb-3 review-good" style="background-color:#e9e9ed;padding:0px !important">
+					   @elseif(round(($Data->totalratings)/($Data->count))==5)
+					  <div class="card mb-3 review-good" style="background-color:#e9e9ed;padding:0px !important">
+					  @else
+					  <div class="card mb-3 review-bad" style="background-color:#e9e9ed;padding:0px !important">
+					   @endif
+					  
+                          
                       
                           
        <a href="/profile/{{$Data->company}}"> 
@@ -262,17 +270,7 @@
                       </div>
                     </div>
                    @endforeach
-     <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----END COMPANY----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->   
-
-       <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---pagination---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
-                <div class="col-sm-12 col-lg-7 col-md-7 p-3 ">
-                  <div class="d-flex justify-content-center m-2">
-                        <ul class="pagination">
-						{{$RData1->links()}}                       
-                        </ul>
-                  </div>  
-          <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----end pagination----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
-                  	 
+     <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----END COMPANY----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->             
                   
                 </div>
                     
