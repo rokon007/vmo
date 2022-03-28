@@ -26,8 +26,8 @@
                 <h2 class="text-center p-3 "><strong>Give a review</strong></h2>
                 
               <form action="{{route('reviews.give')}}" method="post" >
-									@csrf
-                    <input type="hidden" name="csrfmiddlewaretoken" value="lB6hTX7BPDoxyGkcanDqHJTLrOl1ZKiysBVUI5EuLhGxCIiDxvFx1JJwPdYURiU9">
+					 @csrf				
+                   <!--  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token() }}" > -->
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email or WhatsApp number</label>
                         <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" value="{{Auth::user()->email}}" required>
@@ -93,5 +93,42 @@
             </div>
         </div>
     </div>
-	 
+	  <script>
+        function unlistedcompany(){
+            console.log("unlistedCompany");
+            $("#company-dropdown").remove();
+            $("#company-block").append(`<div class="col-lg-4 pr-3 mb-3">
+                <label for="exampleInputPassword1">Company name</label>
+                <input type="text" class="form-control" id="unlistedcompany-name" name="unlistedcompany-name" placeholder="Company name" required>
+            </div>
+            <div class="col-lg-4 pr-3 mb-3">
+                <label for="exampleInputPassword1">Company email</label>
+                <input type="text" class="form-control" id="unlistedcompany-email" name="unlistedcompany-email" placeholder="Company email" required>
+            </div>
+            <div class="col-lg-4 pr-3 mb-3">
+                <label for="exampleInputPassword1">Company contact</label>
+                <input type="text" class="form-control" id="unlistedcompany-contact" name="unlistedcompany-contact" placeholder="Company contact">
+            </div>
+            <div class="col-lg-4 pr-3 mb-3">
+                <label for="exampleInputPassword1">Company country</label>
+                <input type="text" class="form-control" id="unlistedcompany-country" name="unlistedcompany-country" placeholder="Company country" required>
+            </div>
+            <div class="col-lg-4 pr-3 mb-3">
+                <label for="exampleInputPassword1">Company city</label>
+                <input type="text" class="form-control" id="unlistedcompany-city" name="unlistedcompany-city" placeholder="Company city" required>
+            </div>
+            <div class="col-lg-4 mb-3">
+                <label for="exampleInputPassword1">Company block address</label>
+                <input type="text" class="form-control" id="unlistedcompany-block" name="unlistedcompany-block" placeholder="Company block address">
+            </div>
+            <div class="col-lg-4 mb-3">
+                <label for="exampleInputPassword1">Company category</label>
+                <input type="text" class="form-control" id="unlistedcompany-category" name="unlistedcompany-category" placeholder="Company category">
+            </div>`)
+        }
+    </script>
+	 <script>
+        let notifier = new AWN({});
+        $('.js-example-basic-single').select2();
+      </script> 
 @endsection
