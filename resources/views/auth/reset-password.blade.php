@@ -1,6 +1,6 @@
 @extends('frontpage.frontpage')
 @section('title') 
- <title>Vimbiso | Create Business</title>
+ <title>Vimbiso | Reset password</title>
          <meta name="description" content="vary good">
      <meta name="keywords" content="vimbiso">
     
