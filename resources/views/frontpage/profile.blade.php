@@ -48,13 +48,12 @@
             </div>
         </div>
         
+         
         <div class="row">
-		     <div class="col-lg-1"><br></div>
-            <div class="col-lg-7">
+            <div class="d-flex flex-column col-lg-8 col-sm-12">
                 <div class="theme--light p-lg-5 p-0">
-                    <div class="comments">  
-
-                        <div class=" text-center m-lg-5 m-3"><h2><strong>Reviews Chart</strong></h2>
+                    <div class="comments">
+                        <div class=" text-center m-lg-5 m-3" ><h2><strong>Reviews Chart</strong></h2>
                             <!---->
                             </div>
                         <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
