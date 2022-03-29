@@ -18,7 +18,7 @@ class WelcomeController extends Controller
              
               ->whereNull('reviews.show')
             ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
-            ->get();
+            ->get('reviews.id','desc');
       
 
     $Allcategories=Category::All();
