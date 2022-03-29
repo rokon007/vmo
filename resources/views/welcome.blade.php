@@ -67,7 +67,7 @@
                 
                     
                      @foreach($reviewsdata as $reviews)
-                    <a href="/view-companies-description/6321/">
+                    <a href="/profile/{{$reviews->company}}"> 
                     
                         <div class="slide">
                             
