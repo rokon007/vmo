@@ -185,11 +185,11 @@ Route::post('import-company',[\App\Http\Controllers\CompanyController::class,'im
 Route::get('/upload-image',[\App\Http\Controllers\HomeController::class,'UploadImage'])->name('upload.image')->middleware('is_admin');
 
 // RESET PASSWORD
-Route::get('http://vimbisotest.herokuapp.com/forgot-password', function () {
+Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
 })->middleware('guest')->name('password.request');
 
-Route::post('http://vimbisotest.herokuapp.com/forgot-password', function (Request $request) {
+Route::post('/forgot-password', function (Request $request) {
     $request->validate(['email' => 'required|email']);
  
     $status = Password::sendResetLink(
@@ -197,19 +197,19 @@ Route::post('http://vimbisotest.herokuapp.com/forgot-password', function (Reques
     );
  
     return $status === Password::RESET_LINK_SENT
-                ? redirect()->view('auth.notis')
+                ? view('auth.notis')
                 // ? back()->with(['status' => __($status)])
                 : back()->withErrors(['email' => __($status)]);
 })->middleware('guest')->name('password.email');
 
 
 
-Route::get('http://vimbisotest.herokuapp.com/reset-password/{token}', function ($token) {
+Route::get('/reset-password/{token}', function ($token) {
     return view('auth.reset-password', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 
 
-Route::post('http://vimbisotest.herokuapp.com/reset-password', function (Request $request) {
+Route::post('/reset-password', function (Request $request) {
     $request->validate([
         'token' => 'required',
         'email' => 'required|email',
