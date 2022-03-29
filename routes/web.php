@@ -197,7 +197,8 @@ Route::post('http://vimbisotest.herokuapp.com/forgot-password', function (Reques
     );
  
     return $status === Password::RESET_LINK_SENT
-                ? back()->with(['status' => __($status)])
+                ? redirect()->view('auth.notis')
+                // ? back()->with(['status' => __($status)])
                 : back()->withErrors(['email' => __($status)]);
 })->middleware('guest')->name('password.email');
 
