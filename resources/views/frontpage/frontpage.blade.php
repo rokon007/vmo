@@ -66,11 +66,11 @@
                     </a>
                     <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         
-                            <a class="dropdown-item text-dark border-bottom border-dark" href="/accounts/password/reset/"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
+                            <a class="dropdown-item text-dark border-bottom border-dark" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
                             <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp {{ __('Login') }}</a>
 							 @endif
 							  @if (Route::has('register'))
-                            <a class="dropdown-item text-dark" href="{{ route('register') }}><i class="fas fa-user-plus"></i>&nbsp {{ __('Register') }}</a>
+                            <a class="dropdown-item text-dark" href="{{ route('register') }}"> <i class="fas fa-user-plus"></i>&nbsp {{ __('Register') }}</a>
                         
                     </div>
 					 @endif
@@ -82,7 +82,7 @@
                     </a>
              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         
-                            <a class="dropdown-item text-dark border-bottom border-dark" href="/accounts/password/reset/"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
+                            <a class="dropdown-item text-dark border-bottom border-dark" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
 							 <a class="dropdown-item text-dark border-bottom border-dark"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
 							  <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('settings') }}"><i class="fab fa-get-pocket">{{ __('Settings') }}</i></a>
                             <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('logout') }}"

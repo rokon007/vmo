@@ -66,7 +66,7 @@
                     </a>
                     <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         
-                            <a class="dropdown-item text-dark border-bottom border-dark" href="/accounts/password/reset/"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
+                            <a class="dropdown-item text-dark border-bottom border-dark" href="/forgot-password"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
                             <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp {{ __('Login') }}</a>
 							 @endif
 							  @if (Route::has('register'))

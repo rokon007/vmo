@@ -59,7 +59,7 @@ class Googlecontroller extends Controller
         
 
             $user = Socialite::driver('google')->user();
-
+            
          
 
             $finduser = User::where('username', $user->id)->first();
