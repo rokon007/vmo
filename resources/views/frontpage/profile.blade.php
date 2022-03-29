@@ -57,7 +57,7 @@
                         <div class=" text-center m-lg-5 m-3"><h2><strong>Reviews Chart</strong></h2>
                             <!---->
                             </div>
-                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2"style="border-radius: 25px; padding: 20px; border: 1px solid black;">
+                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
                         
                         <div class="flex-row m-2">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">Excellent . </span>
