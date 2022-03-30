@@ -68,18 +68,34 @@ class CompanyController extends Controller
    }
    public function store(Request $request)
    {
-     $data = array(
-        'email'=> $request->email,
-        'company'=> $request->company,
-        'country'=> $request->country,
-        'city'=> $request->city,
-        'block'=> $request->block,
-        'contact'=> $request->contact,
-        'category'=> $request->category,
-        'subcategory'=> $request->subcategory,
-        
-      );
-     $create=Companytb::create($data);
+    
+    $Companytb= new Companytb;
+      $Companytb->email=$request->input('email');
+      $Companytb->company=$request->input('company');
+      $Companytb->country=$request->input('country');
+      $Companytb->city=$request->input('city');
+      $Companytb->block=$request->input('block');
+      $Companytb->contact=$request->input('contact');
+      $Companytb->category=$request->input('category');
+      $Companytb->subcategory=$request->input('subcategory');
+      $Companytb->save();
+
+
+      
+       $business_profile= new business_profile;
+      $business_profile->email=$request->input('email');
+      $business_profile->description=$request->input('description');
+      if($request->hasfile('business_image'))
+        {
+            $file=$request->file('business_image');
+            $extention=$file->getClientOriginalExtension();
+            $filename= $request->input('email').'.'.$extention;
+            $file->move('uploads/image/',$filename);
+            $business_profile->image=$filename;
+        }
+         $business_profile->save();
+
+
      return redirect()->route('admin.companies')->with('success','Company added successfully');
    }
 

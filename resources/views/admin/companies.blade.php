@@ -2,7 +2,17 @@
  
 
 @section('body') 
-
+<script type="text/javascript">
+        function ImagePreview1(input) {
+            if (input.files && input.files[0]) {
+                var filedr = new FileReader();
+                filedr.onload = function (e) {
+                    $('#Image3').attr('src', e.target.result);
+                }
+                filedr.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 
 		<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -295,7 +305,8 @@
 									                  <i aria-hidden="true" class="ki ki-close"></i>
 									</button>
 								</div>
-								<form action="{{route('company.save')}}" method="post"  class="form">
+								
+								 <form action="{{route('company.save')}}" method="post" enctype="multipart/form-data"class="form">
 									@csrf
 									<div class="modal-body">
 										<div class="offset-xxl-0 col-xxl-12">
@@ -576,6 +587,15 @@
 														<label>City</label>
 			                                             <input   type="text" name="city"  class="form-control form-control-lg" placeholder="City name">
 													</div>
+													<div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" name="description" type="text" autofocus></textarea>
+                     
+            </div>
+													<div class="form-group ">
+                                                  <label> Business Image</label>
+                <input id="business_image" onchange="ImagePreview1(this);"  type="file" class="form-control form-control-lg"name="business_image" required autocomplete="new-password">
+                                                   </div>
 													
 												</div>												
 												
@@ -635,9 +655,9 @@
 															
 														</select>
 													</div>
-													<div class="form-group">
-														
-													</div>
+													 <div class="form-group">
+                <img id="Image3" style="height:225px;width: 250px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
+              </div>
 												</div>
 												
 													<!--begin: Code-->
