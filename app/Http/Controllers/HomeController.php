@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\reviews;
 use DB;
 use App\Models\Companytb;
+use App\Models\User;
 
 
 class HomeController extends Controller
@@ -57,9 +58,12 @@ class HomeController extends Controller
     {
         $usercount=DB::table('users')->count();
          $categoriescount=DB::table('categories')->count();
-         $reviewscount=DB::table('reviews')->count();
+         $reviewscount=DB::table('reviews')->whereNull('show')->count();
          $companycount=DB::table('companytbs')->count();
-        return view('admin.adminhome',compact('usercount','categoriescount','reviewscount','companycount'));
+
+         // $UserClaim=User::where('is_staff','1');
+         $UserClaim=DB::table('users')->where('is_staff',1)->get();
+        return view('admin.adminhome',compact('UserClaim','usercount','categoriescount','reviewscount','companycount'));
     }
     
     public function UploadImage()
