@@ -23,6 +23,13 @@
     <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="/rokon/static/images/favicon.ico"/>
+	<style>
+a.ex1:hover {
+ background-color: red; //add this of course....
+    color: green;
+}
+
+</style>
     
   </head>
 
@@ -43,49 +50,49 @@
             <ul class="navbar-nav mr-auto">
 			    
 				 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('/')}}">Home</a>
+                    <a class="nav-link ex1" href="{{url('/')}}">Home</a>
                 </li>		 
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('about')}}">About us</a>
+                    <a class="nav-link ex1" href="{{url('about')}}">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{url('categories')}}">View Companies</a>
+                    <a class="nav-link active ex1" href="{{url('categories')}}">View Companies</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('contactus')}}">Contact us</a>
+                    <a class="nav-link ex1" href="{{url('contactus')}}">Contact us</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('plans')}}">Plans</a>
+                    <a class="nav-link ex1" href="{{url('plans')}}">Plans</a>
                 </li>
                 
                 <li class="nav-item dropdown active">
 				 @guest
                             @if (Route::has('login'))
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle ex1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       For Businesses
                     </a>
                     <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         
-                            <a class="dropdown-item text-dark border-bottom border-dark" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
-                            <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp {{ __('Login') }}</a>
+                            <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
+                            <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp {{ __('Login') }}</a>
 							 @endif
 							  @if (Route::has('register'))
-                            <a class="dropdown-item text-dark" href="{{ route('register') }}"> <i class="fas fa-user-plus"></i>&nbsp {{ __('Register') }}</a>
+                            <a class="dropdown-item text-dark ex1" href="{{ route('register') }}"> <i class="fas fa-user-plus"></i>&nbsp {{ __('Register') }}</a>
                         
                     </div>
 					 @endif
                              @else
- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <a class="nav-link dropdown-toggle ex1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 							  <i class="fa fa-user" style="color:green;font-size:25px;"></i>
 							  &#160;
                       {{Auth::user()->company_name}}
                     </a>
              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         
-                            <a class="dropdown-item text-dark border-bottom border-dark" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
-							 <a class="dropdown-item text-dark border-bottom border-dark"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
-							  <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('settings') }}"><i class="fab fa-get-pocket">{{ __('Settings') }}</i></a>
-                            <a class="dropdown-item text-dark border-bottom border-dark"  href="{{ route('logout') }}"
+                            <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
+							 <a class="dropdown-item text-dark border-bottom border-dark ex1"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
+							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('settings') }}"><i class="fab fa-get-pocket">{{ __('Settings') }}</i></a>
+                            <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('logout') }}"
 							onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">					
 							<i class="fas fa-sign-in-alt"></i>&nbsp  {{ __('Logout') }}</a>
