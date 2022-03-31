@@ -18,7 +18,10 @@ class WelcomeController extends Controller
              
               ->whereNull('reviews.show')
             ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
-            ->get('reviews.id','desc');
+            // ->get('reviews.created_at','desc')->limit(5);
+            ->groupBy('reviews.id','companytbs.id','companytbs.email','companytbs.email','companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.created_at','companytbs.updated_at','reviews.name','reviews.contact','reviews.purchaseditem','reviews.itemcounter','reviews.dateofpurchase','reviews.branchlocation','reviews.review','reviews.ratings','reviews.typeofpurchase','reviews.resolved','reviews.response','reviews.isresolved','reviews.whatsappreview','reviews.company_id','reviews.unlistedcompany','reviews.show','reviews.created_at','reviews.updated_at')
+    ->orderBy('reviews.id', 'desc')
+    ->get();
       
 
     $Allcategories=Category::All();
