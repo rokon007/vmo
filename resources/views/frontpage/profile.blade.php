@@ -73,7 +73,7 @@
 								 @elseif(round($ratings/($reviewscount-1))==4)
 									 75%
 								  @elseif(round($ratings/($reviewscount-1))==5)
-									  95%
+									   100%
 								  @elseif(round($ratings/($reviewscount-1))>=5)
 									  100%
 								   @endif
@@ -93,7 +93,7 @@
 								 @elseif(round($ratings/($reviewscount-1))==4)
 									 75%
 								  @elseif(round($ratings/($reviewscount-1))==5)
-									  95%
+									  100%
 								  @elseif(round($ratings/($reviewscount-1))>=5)
 									  100%
 								   @endif
@@ -198,19 +198,19 @@
                                         </div>
 										@elseif($reviews->ratings ==4)
 										    <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+                                             <i class="fa fa-star" style="color:#135c13;"></i>
+                                             <i class="fa fa-star" style="color:#135c13;"></i>
+                                              <i class="fa fa-star" style="color:#135c13;"></i>
+                                              <i class="fa fa-star" style="color:#135c13;"></i>
                                               
                                         </div>
 										@elseif($reviews->ratings ==5)
 										      <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                             <i class="fa fa-star" style="color:#034a03;"></i>
+                                             <i class="fa fa-star" style="color:#034a03;"></i>
+                                              <i class="fa fa-star" style="color:#034a03;"></i>
+                                              <i class="fa fa-star" style="color:#034a03;"></i>
+                                              <i class="fa fa-star" style="color:#034a03;"></i>
                                         </div>
 										@else
 											<div class="tst-rating">
@@ -237,14 +237,15 @@
                             <!---->
 							
                              </div>
-							 @else
-								 <div>
-							 <center><h4 style="color:red;">No Review yeat !</h4></center>
-							 </div>
+							
 							 @endif
 							 <br>
                          @endforeach
-                                
+						  @if($reviewscount ==1)
+								 <div>
+							 <center><h4 style="color:red;">No Review yeat !</h4></center>
+							 </div>
+                          @endif      
                             
                             
                        

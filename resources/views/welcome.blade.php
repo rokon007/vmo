@@ -114,19 +114,19 @@
                                         </div>
 										@elseif($reviews->ratings ==4)
 										    <div class="flex-row">
-                                             <span class="fa fa-star" style="color:#00ff36;"></span>
-                                             <span class="fa fa-star" style="color:#00ff36;"></span>
-                                              <span class="fa fa-star" style="color:#00ff36;"></span>
-                                              <span class="fa fa-star" style="color:#00ff36;"></span>
+                                             <span class="fa fa-star" style="color:#135c13;"></span>
+                                             <span class="fa fa-star" style="color:#135c13;"></span>
+                                              <span class="fa fa-star" style="color:#135c13;"></span>
+                                              <span class="fa fa-star" style="color:#135c13;"></span>
                                               
                                         </div>
 										@elseif($reviews->ratings ==5)
 										      <div class="flex-row">
-                                             <span class="fa fa-star" style="color:#51a127;"></span>
-                                             <span class="fa fa-star" style="color:#51a127;"></span>
-                                              <span class="fa fa-star" style="color:#51a127;"></span>
-                                              <span class="fa fa-star" style="color:#51a127;"></span>
-                                              <span class="fa fa-star" style="color:#51a127;"></span>
+                                             <span class="fa fa-star" style="color:#034a03;"></span>
+                                             <span class="fa fa-star" style="color:#034a03;"></span>
+                                              <span class="fa fa-star" style="color:#034a03;"></span>
+                                              <span class="fa fa-star" style="color:#034a03;"></span>
+                                              <span class="fa fa-star" style="color:#034a03;"></span>
                                         </div>
 										@else
 											<div class="flex-row">

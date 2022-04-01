@@ -25,9 +25,10 @@
     <link rel="shortcut icon" type="image/png" href="/rokon/static/images/favicon.ico"/>
 	<style>
 a.ex1:hover {
- background-color: red; //add this of course....
-    color: green;
+ background-color: #008000; //add this of course....
+    color: #fdfcfb;
 }
+ 
 
 </style>
     
