@@ -198,10 +198,10 @@
                                         </div>
 										@elseif($reviews->ratings ==4)
 										    <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#135c13;"></i>
-                                             <i class="fa fa-star" style="color:#135c13;"></i>
-                                              <i class="fa fa-star" style="color:#135c13;"></i>
-                                              <i class="fa fa-star" style="color:#135c13;"></i>
+                                             <i class="fa fa-star" style="color:#008000;"></i>
+                                             <i class="fa fa-star" style="color:#008000;"></i>
+                                              <i class="fa fa-star" style="color:#008000;"></i>
+                                              <i class="fa fa-star" style="color:#008000;"></i>
                                               
                                         </div>
 										@elseif($reviews->ratings ==5)

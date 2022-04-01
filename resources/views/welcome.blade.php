@@ -114,10 +114,10 @@
                                         </div>
 										@elseif($reviews->ratings ==4)
 										    <div class="flex-row">
-                                             <span class="fa fa-star" style="color:#135c13;"></span>
-                                             <span class="fa fa-star" style="color:#135c13;"></span>
-                                              <span class="fa fa-star" style="color:#135c13;"></span>
-                                              <span class="fa fa-star" style="color:#135c13;"></span>
+                                             <span class="fa fa-star" style="color:#008000;"></span>
+                                             <span class="fa fa-star" style="color:#008000;"></span>
+                                              <span class="fa fa-star" style="color:#008000;"></span>
+                                              <span class="fa fa-star" style="color:#008000;"></span>
                                               
                                         </div>
 										@elseif($reviews->ratings ==5)
