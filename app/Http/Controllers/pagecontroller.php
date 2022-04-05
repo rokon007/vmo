@@ -12,6 +12,8 @@ use App\Models\Companytb;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\business_profile;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
 class pagecontroller extends Controller
 {
 
@@ -235,6 +237,17 @@ public function give(Request $request)
       $reviews->company_id=$request->input('company_id');
       $reviews->unlistedcompany=$request->input('unlistedcompany');
       $reviews->save();
+
+       $company=Companytb::where('id',[$request->input('company_id')])->first();
+        $deatils=[
+         'title'=>$request->input('name'),
+         'body'=>$request->input('review'),
+         'company'=>$company->company,
+         'ratings'=>$request->input('ratings')
+        ];
+        Mail::to("info@vimbiso.org")->send(new TestMail($deatils));
+        // return "Email Sent";
+    
      return redirect()->route('welcome')->with('success','Review aded Successfully');
    }
   

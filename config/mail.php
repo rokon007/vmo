@@ -34,6 +34,27 @@ return [
     */
 
     'mailers' => [
+
+        // 'smtp' => [
+        //     'transport' => 'smtp',
+        //     'host' =>'mailout.one.com',
+        //     'port' =>'587',
+        //     'encryption' =>'ssl',
+        //     'username' =>'info@vimbiso.org',
+        //     'password' =>'V!mb!so',
+        //     // 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+        //     // 'port' => env('MAIL_PORT', 587),
+        //     // 'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+        //     // 'username' => env('MAIL_USERNAME'),
+        //     // 'password' => env('MAIL_PASSWORD'),
+        //     'timeout' => null,
+        //     'auth_mode' => null,
+        // ],
+
+
+
+
+
         'smtp' => [
             'transport' => 'smtp',
             'host' =>'smtp.gmail.com',

@@ -17,6 +17,8 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Http\Controllers\FileManagerController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -239,5 +241,14 @@ Route::post('/reset-password', function (Request $request) {
 
 
 Route::get('filemanager', [FileManagerController::class, 'index'])->middleware('is_admin');
+
+
+//SENT EMAIL
+Route::get('/send-email', [MailController::class, 'sendEmail']);
+
+//CONTACT
+
+Route::post('/contact-form', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');
+
 
 

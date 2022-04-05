@@ -28,7 +28,8 @@
                         </div>
 
                         <div class="col-lg-6 col-sm-12">
-                                <form>
+                               <form method="POST" action="{{ route('contact-form.store') }}"> 
+                                @csrf
                                         <h2 class="text-center mb-4">Talk to Us</h2>
 
                                         <!-- Name -->
@@ -36,7 +37,7 @@
                                                 <label for="formName" class="d-block">
                                                 <i class="icon" data-feather="user"></i>
                                                 </label>
-                                                <input type="text" id="formName" class="form-control form-control-lg thick" placeholder="Name">
+                                                <input type="text" id="formName" name="name" class="form-control form-control-lg thick" placeholder="Name">
                                         </div>
 
                                         <!-- E-mail -->
@@ -44,12 +45,12 @@
                                                 <label for="formEmail" class="d-block">
                                                 <i class="icon" data-feather="mail"></i>
                                                 </label>
-                                                <input type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+                                                <input type="email" id="formEmail" name="email" class="form-control form-control-lg thick" placeholder="E-mail">
                                         </div>
 
                                         <!-- Message -->
                                         <div class="form-group message">
-                                                <textarea id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Your message ..."></textarea>
+                                                <textarea id="formMessage" name="message" class="form-control form-control-lg" rows="7" placeholder="Your message ..."></textarea>
                                         </div>
                                         
                                         <!-- Submit btn -->
