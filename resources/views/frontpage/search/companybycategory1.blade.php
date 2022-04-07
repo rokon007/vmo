@@ -162,7 +162,7 @@
                 <div class="col-sm-12 col-lg-7 col-md-7 p-3 ">
                   <div class="d-flex justify-content-center m-2">
                         <ul class="pagination">
-						{{$RData1->links()}}                       
+						{{$RData1->onEachSide(3)->links()}}                       
                         </ul>
                   </div>  
           <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----end pagination----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
