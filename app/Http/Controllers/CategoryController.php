@@ -33,7 +33,7 @@ public function viewcompany(Request $request,$name)
 ->select('companytbs.company as company','companytbs.email as email','companytbs.country as country','companytbs.city as city','companytbs.block as block','companytbs.contact as contact','companytbs.category as category','companytbs.subcategory as subcategory', DB::raw('count(reviews.id) as count'), DB::raw('SUM(reviews.ratings) as totalratings'),'business_profiles.image as image')
  ->where('companytbs.subcategory',[$name])
 ->groupBy('companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.email','reviews.id','reviews.ratings','business_profiles.image')
-->paginate(15);
+->paginate(10)->onEachSide(3);
 
     $RData = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
      ->select('companytbs.*','reviews.company_id as id','reviews.ratings','companytbs.id  as company_id')
@@ -68,7 +68,7 @@ public function viewcompany(Request $request,$name)
                ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
                  ->where('companytbs.subcategory',[$name])
             ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
-            ->paginate(15);
+            ->paginate(10)->onEachSide(3);
 
 
        // $joindata=companytb::where('subcategory',[$name])->paginate(4);
@@ -96,7 +96,7 @@ public function viewcompany(Request $request,$name)
                ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
                  ->where('companytbs.category',[$name])
             ->select('users.*', 'business_profiles.user_id as id', 'business_profiles.*','users.id as user_id','companytbs.*','users.email as email','reviews.*','companytbs.id  as company_id')
-            ->paginate(15);
+            ->paginate(10)->onEachSide(3);
 
             $reviewscount= Companytb::join('reviews','companytbs.id','=','reviews.company_id')
            ->where('companytbs.category',[$name])
@@ -110,7 +110,7 @@ public function viewcompany(Request $request,$name)
 ->select('companytbs.company as company','companytbs.email as email','companytbs.country as country','companytbs.city as city','companytbs.block as block','companytbs.contact as contact','companytbs.category as category','companytbs.subcategory as subcategory', DB::raw('count(reviews.id) as count'), DB::raw('SUM(reviews.ratings) as totalratings'),'business_profiles.image as image')
  ->where('companytbs.category',[$name])
 ->groupBy('companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.email','business_profiles.image')
-->paginate(15);
+->paginate(10)->onEachSide(3);
  
      // $joindata=companytb::where('category',[$name])->paginate(4);
       return view('frontpage.search.companybycategory1',compact('RData1','CompanyNameData','reviewscount','ratings')); 
@@ -195,7 +195,7 @@ public function viewcompany(Request $request,$name)
 ->select('companytbs.company as company','companytbs.email as email','companytbs.country as country','companytbs.city as city','companytbs.block as block','companytbs.contact as contact','companytbs.category as category','companytbs.subcategory as subcategory', DB::raw('count(reviews.id) as count'), DB::raw('sum(reviews.ratings) as Totalratings'),'business_profiles.image as image')
  ->where('company','LIKE','%'.$searchtext.'%')
 ->groupBy('companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.email','business_profiles.image')
-->paginate(15);
+->paginate(10)->onEachSide(3);
 
 
 
