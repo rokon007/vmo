@@ -61,6 +61,9 @@
                         </div>
                 </div>
         </div>
+
+        <!-- Modal -->
+         @include('frontpage.give_review');
 @endsection 
 
 

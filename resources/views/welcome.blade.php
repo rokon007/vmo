@@ -151,5 +151,6 @@
             
     </div>
     <!-- Review messages -->
-  
+  <!-- Modal -->
+         @include('frontpage.give_review');
 @endsection

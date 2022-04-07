@@ -56,6 +56,6 @@
 
     </div>
  <!-- Modal -->
-        
+         @include('frontpage.give_review');
      <!-- FOOTER -->
 @endsection

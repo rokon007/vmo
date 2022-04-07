@@ -142,8 +142,7 @@ a.ex1:hover {
      
    
     
-  <!-- Modal -->
-         @include('frontpage.give_review');
+  
     <!-- Site footer -->
     <footer class="footer-section">
         <div class="container">
