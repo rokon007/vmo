@@ -169,19 +169,24 @@
                   
           <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---COMPANY--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->              
                       @foreach($RData1 as $Data) 
-					   @if(round(($Data->totalratings)/($Data->count))==1) 
-					  <div class="card mb-3 review-bad" style="background-color:#e9e9ed;padding:0px !important">
-				       @elseif(round(($Data->totalratings)/($Data->count))==2)
-					  <div class="card mb-3 review-bad" style="background-color:#e9e9ed;padding:0px !important">
-					   @elseif(round(($Data->totalratings)/($Data->count))==3)
-					  <div class="card mb-3 review-medium" style="background-color:#e9e9ed;padding:0px !important">
-					   @elseif(round(($Data->totalratings)/($Data->count))==4)
-					  <div class="card mb-3 review-good" style="background-color:#e9e9ed;padding:0px !important">
-					   @elseif(round(($Data->totalratings)/($Data->count))==5)
-					  <div class="card mb-3 review-good" style="background-color:#e9e9ed;padding:0px !important">
-					  @else
-					  <div class="card mb-3 review-bad" style="background-color:#e9e9ed;padding:0px !important">
-					   @endif
+					   
+					   
+					   
+					    <div
+						 @if(round(($Data->totalratings)/($Data->count))==1) 
+						class="card mb-3 review-bad" 
+					     @elseif(round(($Data->totalratings)/($Data->count))==2)
+						 class="card mb-3 review-bad" 
+						  @elseif(round(($Data->totalratings)/($Data->count))==3)
+						   class="card mb-3 review-medium"
+						    @elseif(round(($Data->totalratings)/($Data->count))==4)
+							class="card mb-3 review-good"
+							 @elseif(round(($Data->totalratings)/($Data->count))==5)
+						class="card mb-3 review-good"
+						 @else
+							 class="card mb-3 review-bad"
+						 @endif
+						style="background-color:#e9e9ed;padding:0px !important">
 					  
                           
                       
@@ -277,5 +282,5 @@
         </div>
     </div>
 
-@include('frontpage.give_review');
+
 @endsection

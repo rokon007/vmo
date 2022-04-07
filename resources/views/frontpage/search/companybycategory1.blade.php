@@ -276,6 +276,8 @@
                     
         </div>
     </div>
+<script>
+            ''
+        </script>
 
-@include('frontpage.give_review');
 @endsection
