@@ -161,7 +161,7 @@
 	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---pagination---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    		  
                 <div class="col-sm-12 col-lg-7 col-md-7 p-3 ">
                   <div class="d-flex justify-content-center m-2">
-                        <ul class="pagination">
+                        <ul class="pagination col-lg-7">
 						{{$RData1->links()}}                       
                         </ul>
                   </div>  
