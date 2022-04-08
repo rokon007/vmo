@@ -132,7 +132,8 @@ class pagecontroller extends Controller
 			   $city = $request->input('city');
                $block = $request->input('block');
                $contact = $request->input('contact');
-			   $category = $request->input('category');         
+			   $category = $request->input('category');  
+               $subcategory = $request->input('subcategory'); 			   
         DB::update('update companytbs set company=?,country=?,city=?,block=?,contact=?,category=?,subcategory=? where email = ?',[$company,$country,$city,$block,$contact,$category,$subcategory,$email]);
 		
 
