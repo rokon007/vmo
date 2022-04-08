@@ -123,7 +123,7 @@ class pagecontroller extends Controller
    }
    //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    //USER company        
-            public function updatecompany_funtion(Request $request,$email)
+            public function updatecompany_funtion(Request $request,string $email)
           {
    
                
