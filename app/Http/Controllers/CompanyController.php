@@ -127,7 +127,7 @@ class CompanyController extends Controller
    
                
 		$COMPANY = Companytb::find($id);
-        $COMPANY->email = $request->input('email');
+        //$COMPANY->email = $request->input('email');
         $COMPANY->company = $request->input('company');
         $COMPANY->country = $request->input('country');
         $COMPANY->city = $request->input('city');

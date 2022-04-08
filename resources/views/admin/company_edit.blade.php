@@ -149,7 +149,7 @@
 												<div class="col-xl-6">
 												<div class="form-group">
 														<label>Company Email</label>
-			                                             <input   type="text" name="email"  class="form-control form-control-lg" value="{{$CompanyData->email}}">
+			                                             <input   type="text" name="email"  class="form-control form-control-lg" readonly value="{{$CompanyData->email}}">
 												</div>
 												<div class="form-group">
 														<label>Company name</label>
