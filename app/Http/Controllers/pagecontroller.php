@@ -110,14 +110,14 @@ class pagecontroller extends Controller
     return view('admin.userset',['UserData' => $UserData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
    }
    //company edit route
-   function editcompany($id)
+   function editcompany(string $email)
    {
      $Allcategories=Category::All();
     $categories=Category::whereNull('category_id')->get();
 
        $CompanyData = DB::table('companytbs')
      ->join('business_profiles', 'companytbs.email', '=', 'business_profiles.email')
-                 ->where('companytbs.id',[$id])
+                 ->where('companytbs.email',[$email])
                  ->first();
     return view('admin.company_edit',['CompanyData' => $CompanyData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
    }
@@ -205,7 +205,7 @@ class pagecontroller extends Controller
           return redirect()->route('admin.company_set')->with('success','Record updated successfully');
         
             }
-    //USER UPDATE        
+    //USER UPDATE  editcompany      
             public function updateuser_funtion(Request $request,string $email)
           {
    
