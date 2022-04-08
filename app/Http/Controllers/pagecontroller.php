@@ -14,6 +14,7 @@ use App\Models\Category;
 use App\Models\business_profile;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
+use File;
 class pagecontroller extends Controller
 {
 
