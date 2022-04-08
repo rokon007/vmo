@@ -135,7 +135,7 @@
 	<!--begin::Container-->
 		<div class="container">
 		<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-		 <form action="{{ url('/update_company/'.$CompanyData->id) }}" method="post" enctype="multipart/form-data"class="form">
+		 <form action="{{ url('/update_company/'.$CompanyData->email) }}" method="post" enctype="multipart/form-data"class="form">
 									@csrf
 									 @method('PUT')
 									<div class="modal-body">

@@ -263,7 +263,7 @@
 													<td>{{$data->contact}}</td>
 													<td>{{$data->category}}</td>
 													<td>{{$data->subcategory}}</td>
-													<td><a href="/edit_company/{{$data->id}}"><i class="fas fa-wrench icon-lg" style="color:black;">Edit</i></a></td>
+													<td><a href="/edit_company/{{$data->email}}"><i class="fas fa-wrench icon-lg" style="color:black;">Edit</i></a></td>
 													</tr>
 													@endforeach
 													

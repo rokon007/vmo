@@ -121,7 +121,45 @@ class pagecontroller extends Controller
                  ->first();
     return view('admin.company_edit',['CompanyData' => $CompanyData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
    }
- 
+   //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   //USER company        
+            public function updatecompany_funtion(Request $request,$email)
+          {
+   
+               
+               $company = $request->input('company');
+               $country = $request->input('country');
+			   $city = $request->input('city');
+               $block = $request->input('block');
+               $contact = $request->input('contact');
+			   $category = $request->input('category');         
+        DB::update('update companytbs set company=?,country=?,city=?,block=?,contact=?,category=?,subcategory=? where email = ?',[$company,$country,$city,$block,$contact,$category,$subcategory,$email]);
+		
+
+
+            $profile=DB::table('business_profiles')->where('email',$email)->first();
+               $description = $request->input('description');
+               $category = $request->input('category');
+              
+         if($request->hasfile('business_image'))         
+        {
+           $destination = 'uploads/image/'.$profile->image;
+   if(File::exists($destination))
+   {
+     File::delete($destination);   
+   }
+            $file=$request->file('business_image');
+            $extention=$file->getClientOriginalExtension();
+            $filename= $request->input('email').'.'.$extention;
+            $file->move('uploads/image/',$filename);
+            // $profile->image=$filename;
+        }
+                              
+              DB::update('update business_profiles set description = ?,category=? where email = ?',[$description,$category,$email]);                           
+       
+         return redirect()->route('admin-user')->with('success','User Updated Successfully');
+            }
+   //XXXXXXXXXXXXXXXXXXXXXXXXX
    
    
    

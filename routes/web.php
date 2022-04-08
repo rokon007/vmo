@@ -60,7 +60,7 @@ Route::post('/updateuser/{email}',[App\Http\Controllers\pagecontroller::class, '
 
 //CompanyController
 Route::get('edit_company/{id}', [App\Http\Controllers\pagecontroller::class, 'editcompany'])->name('edit.company')->middleware('is_admin');
-Route::put('/update_company/{id}',[App\Http\Controllers\CompanyController::class, 'updatecompany_funtion'])->name('updatecompany')->middleware('is_admin');	
+Route::put('/update_company/{email}',[App\Http\Controllers\pagecontroller::class, 'updatecompany_funtion'])->name('updatecompany')->middleware('is_admin');	
 
 
 
