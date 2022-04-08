@@ -12,6 +12,7 @@ use App\Models\reviews;
 use App\Models\business_profile;
 use App\Models\Category;
 use DB;
+use File;
 
 class CompanyController extends Controller
 {
@@ -119,4 +120,45 @@ class CompanyController extends Controller
       $joindata=Companytb::All();
           return view('frontpage.viewcompanies',compact('joindata','CompanyNameData'));
     } 
+	  //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   //USER company        
+            public function updatecompany_funtion(Request $request,$id)
+          {
+   
+               
+		$COMPANY = Companytb::find($id);
+        $COMPANY->email = $request->input('email');
+        $COMPANY->company = $request->input('company');
+        $COMPANY->country = $request->input('country');
+        $COMPANY->city = $request->input('city');
+		 $COMPANY->block = $request->input('block');
+        $COMPANY->contact = $request->input('contact');
+        $COMPANY->category = $request->input('category');
+        $COMPANY->subcategory = $request->input('subcategory');
+        $COMPANY->update();
+
+
+            $profile=DB::table('business_profiles')->where('email',$request->input('email'))->first();
+               $description = $request->input('description');
+               $category = $request->input('category');
+              
+         if($request->hasfile('business_image'))         
+        {
+           $destination = 'uploads/image/'.$profile->image;
+   if(File::exists($destination))
+   {
+     File::delete($destination);   
+   }
+            $file=$request->file('business_image');
+            $extention=$file->getClientOriginalExtension();
+            $filename= $request->input('email').'.'.$extention;
+            $file->move('uploads/image/',$filename);
+            // $profile->image=$filename;
+        }
+                              
+              DB::update('update business_profiles set description = ?,category=? where email = ?',[$description,$category,$request->input('email')]);                           
+       
+         return redirect()->back()->with('success','Record updated successfully');
+            }
+   //XXXXXXXXXXXXXXXXXXXXXXXXX
 }

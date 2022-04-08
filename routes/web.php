@@ -55,7 +55,12 @@ Route::get('/review/google/callback', [Googlecontroller::class, 'handleGoogleCal
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
 
 Route::get('userset/{id}', [App\Http\Controllers\pagecontroller::class, 'SetUser'])->name('user.set')->middleware('is_admin');
-Route::post('/updateuser/{email}',[App\Http\Controllers\pagecontroller::class, 'updateuser_funtion'])->name('updateuser')->middleware('is_admin');	
+Route::post('/updateuser/{email}',[App\Http\Controllers\pagecontroller::class, 'updateuser_funtion'])->name('updateuser')->middleware('is_admin');
+
+
+//CompanyController
+Route::get('edit_company/{id}', [App\Http\Controllers\pagecontroller::class, 'editcompany'])->name('edit.company')->middleware('is_admin');
+Route::put('/update_company/{id}',[App\Http\Controllers\CompanyController::class, 'updatecompany_funtion'])->name('updatecompany')->middleware('is_admin');	
 
 
 

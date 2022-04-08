@@ -7,9 +7,6 @@
      <meta name="keywords" content="vimbiso">
     
 @endsection 
- 
- 
-
 @section('body') 
 
 

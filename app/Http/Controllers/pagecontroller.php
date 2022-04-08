@@ -109,6 +109,25 @@ class pagecontroller extends Controller
                  ->first();
     return view('admin.userset',['UserData' => $UserData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
    }
+   //company edit route
+   function editcompany($id)
+   {
+     $Allcategories=Category::All();
+    $categories=Category::whereNull('category_id')->get();
+
+       $CompanyData = DB::table('companytbs')
+     ->join('business_profiles', 'companytbs.email', '=', 'business_profiles.email')
+                 ->where('companytbs.id',[$id])
+                 ->first();
+    return view('admin.company_edit',['CompanyData' => $CompanyData,'Allcategories'=> $Allcategories,'categories'=> $categories ]);
+   }
+ 
+   
+   
+   
+   
+   
+   
 
    public function adminlogin()
    {

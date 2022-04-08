@@ -2,21 +2,21 @@
  
 
 @section('body') 
-<script type="text/javascript">
-        function ImagePreview1(input) {
-            if (input.files && input.files[0]) {
-                var filedr = new FileReader();
-                filedr.onload = function (e) {
-                    $('#Image3').attr('src', e.target.result);
-                }
-                filedr.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
 
-		<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						<!--begin::Subheader-->
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     @if($message = Session::get('success'))
+		 <script>
+	          swal("Vimbiso Admin","{!!Session::get('success')!!}","success",{
+				  button:"OK",
+			  })
+	     </script>
+		  @endif
+
+
+
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content"> 
+    <!--begin::Subheader-->
 						<div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
 							<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
 								<!--begin::Info-->
@@ -24,15 +24,15 @@
 									<!--begin::Page Heading-->
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Companies</h5>
+										<h5 class="text-dark font-weight-bold my-1 mr-5"> Company Edit Page</h5>
 										<!--end::Page Title-->
 										<!--begin::Breadcrumb-->
 										<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
 											<li class="breadcrumb-item text-muted">
-												<a href="#" class="text-muted">Account</a>
+												<a href="#" class="text-muted">Vimbiso</a>
 											</li>
 											<li class="breadcrumb-item text-muted">
-												<a href="#" class="text-muted">Email</a>
+												<a href="#" class="text-muted"> Company Edit Page</a>
 											</li>
 											
 											
@@ -119,195 +119,25 @@
 								<!--end::Toolbar-->
 							</div>
 						</div>
-						<!--end::Subheader-->
-						<!--begin::Entry-->
-						<div class="d-flex flex-column-fluid">
-							<!--begin::Container-->
-							<div class="container">
-								
-								<!--end::Notice-->
-								<!--end::Notice-->
-								@if(count($errors)>0)
-                                   <div class="alert alert-danger">
-                                   	Upload Validetion Error!<br><br>
-                                   	<ul>
-                                       @foreach($errors->all() as $error)
-                                          <li>{{$error}}</li>
-                                       @endforeach 
-                                   	</ul>
-
-                                   </div>
-								@endif
-
-								@if($message = Session::get('success'))
-								<div class="alert alert-success alert-block">
-									<button type="button" class="close" data-dismiss="alert">x</button>
-									<strong>{{$message}}</strong>
-								</div>
-								@endif
-								<!--begin::Card-->
-								<div class="card card-custom">
-									<div class="card-header flex-wrap border-0 pt-6 pb-0">
-										<div class="card-title">
-											<h3 class="card-label">Company List 
-											<span class="d-block text-muted pt-2 font-size-sm">Select company to change</span></h3>
-										</div>
-										<div class="card-toolbar">
-										 <div>
-                                             <form method="post" enctype="multipart/form-data" action="{{route('import-company')}}">
-                                             	@csrf
-                                             	<input type="file" class="btn btn-success" name="file">
-                                             	<input type="submit" name="upload" value="Upload" class="btn btn-primary">
-
-                                             	<a href="{{route('export-company')}}" class="btn btn-primary">Export</a>
-
-
-                                             </form>
-                                            </div>
-											<!--begin::Dropdown-->
-											<div class="dropdown dropdown-inline mr-2">
-												
-												
-											</div>
-											<!--end::Dropdown-->
-											<!--begin::Button-->
-											<a data-toggle="modal" data-target="#exampleModalSizeLg" class="btn btn-primary font-weight-bolder">
-											<span class="svg-icon svg-icon-md">
-												<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->
-												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-														<rect x="0" y="0" width="24" height="24" />
-														<circle fill="#000000" cx="9" cy="15" r="6" />
-														<path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
-													</g>
-												</svg>
-												<!--end::Svg Icon-->
-											</span>Add Company</a>
-											<!--end::Button-->
-										</div>
-									</div>
-									<div class="card-body">
-										<!--begin: Search Form-->
-										<!--begin::Search Form-->
-										<div class="mb-7">
-											<div class="row align-items-center">
-												<div class="col-lg-9 col-xl-8">
-													<div class="row align-items-center">
-														<div class="col-md-4 my-2 my-md-0">
-															<div class="input-icon">
-																<input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
-																<span>
-																	<i class="flaticon2-search-1 text-muted"></i>
-																</span>
-															</div>
-														</div>
-														<div class="col-md-4 my-2 my-md-0">
-															<div class="d-flex align-items-center">
-																<label class="mr-3 mb-0 d-none d-md-block">Status:</label>
-																<select class="form-control" id="kt_datatable_search_status">
-																	<option value="">All</option>
-																	<option value="1">Pending</option>
-																	<option value="2">Delivered</option>
-																	<option value="3">Canceled</option>
-																	<option value="4">Success</option>
-																	<option value="5">Info</option>
-																	<option value="6">Danger</option>
-																</select>
-															</div>
-														</div>
-														<div class="col-md-4 my-2 my-md-0">
-															<div class="d-flex align-items-center">
-																<label class="mr-3 mb-0 d-none d-md-block">Type:</label>
-																<select class="form-control" id="kt_datatable_search_type">
-																	<option value="">All</option>
-																	<option value="1">Online</option>
-																	<option value="2">Retail</option>
-																	<option value="3">Direct</option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
-													<a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
-												</div>
-											</div>
-										</div>
-										<!--end::Search Form-->
-										<!--end: Search Form-->
-										<!--begin: Datatable-->
-										<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
-											<thead>
-												<tr>
-												<th>id</th>
-												     <th>Email</th>
-													<th>Company Name</th>
-													<th >Country</th>
-												    <th>City</th>		
-													<th>Contact</th>
-													<th>Category</th>
-													<th>Subcategory</th>
-													<th>Actions</th>
-												</tr>
-											</thead>
-											<tbody>
-												
-
-													@foreach($CompanyData as $data)
-                                                           <tr>
-														    <td>{{$data->id}}</td> 
-                                                     <td>{{$data->email}}</td>      	
-                                                    <td>{{$data->company}}</td>
-													<td>{{$data->country}}</td>
-													<td>{{$data->city}}</td>													
-													<td>{{$data->contact}}</td>
-													<td>{{$data->category}}</td>
-													<td>{{$data->subcategory}}</td>
-													<td><a href="/edit_company/{{$data->id}}"><i class="fas fa-wrench icon-lg" style="color:black;">Edit</i></a></td>
-													</tr>
-													@endforeach
-													
-													
-												
-												
-												
-											</tbody>
-										</table>
-										<!--end: Datatable-->
-									</div>
-								</div>
-								<!--end::Card-->
-							</div>
-							<!--end::Container-->
-						</div>
-						<!--end::Entry-->
-					</div>
-					<!--end::Content-->
-					</section>
-					 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     @if($message = Session::get('success'))
-		 <script>
-	          swal("Vimbiso Admin","{!!Session::get('success')!!}","success",{
-				  button:"OK",
-			  })
-	     </script>
-		 
-	 @endif
-
-                                                              <!--begin::Modal-->
-														<div class="modal fade" id="exampleModalSizeLg" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeLg" aria-hidden="true">
-															<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-																<div class="modal-content">
-									
-								<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Add Company</h5>
-	                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									                  <i aria-hidden="true" class="ki ki-close"></i>
-									</button>
-								</div>
-								
-								 <form action="{{route('company.save')}}" method="post" enctype="multipart/form-data"class="form">
+        <!-- Content -->
+   <div class="d-flex flex-column-fluid">
+    <script type="text/javascript">
+        function ImagePreview1(input) {
+            if (input.files && input.files[0]) {
+                var filedr = new FileReader();
+                filedr.onload = function (e) {
+                    $('#Image3').attr('src', e.target.result);
+                }
+                filedr.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+	<!--begin::Container-->
+		<div class="container">
+		<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+		 <form action="{{ url('/update_company/'.$CompanyData->id) }}" method="post" enctype="multipart/form-data"class="form">
 									@csrf
+									 @method('PUT')
 									<div class="modal-body">
 										<div class="offset-xxl-0 col-xxl-12">
 											
@@ -319,16 +149,16 @@
 												<div class="col-xl-6">
 												<div class="form-group">
 														<label>Company Email</label>
-			                                             <input   type="text" name="email"  class="form-control form-control-lg" placeholder="Email">
+			                                             <input   type="text" name="email"  class="form-control form-control-lg" value="{{$CompanyData->email}}">
 												</div>
 												<div class="form-group">
 														<label>Company name</label>
-			                                             <input   type="text" name="company"  class="form-control form-control-lg" placeholder="Company name">
+			                                             <input   type="text" name="company"  class="form-control form-control-lg" value="{{$CompanyData->company}}">
 												</div>
 												<div class="form-group">
 														<label for="exampleSelectl">Select Country</label>
 														<select name="country" class="form-control form-control-lg" id="exampleSelectl">
-															<option value="">Select Country</option>
+															<option value="{{$CompanyData->country}}">{{$CompanyData->country}}</option>
 															
                                                            <option value="AF">Afghanistan</option>
 																	<option value="Åland Islands">Åland Islands</option>
@@ -585,16 +415,16 @@
 													</div>
 													<div class="form-group">
 														<label>City</label>
-			                                             <input   type="text" name="city"  class="form-control form-control-lg" placeholder="City name">
+			                                             <input   type="text" name="city"  class="form-control form-control-lg" value="{{$CompanyData->city}}">
 													</div>
 													<div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" name="description" type="text" autofocus></textarea>
+                <textarea class="form-control" name="description" type="text" autofocus>{{$CompanyData->description}}</textarea>
                      
             </div>
 													<div class="form-group ">
                                                   <label> Business Image</label>
-                <input id="business_image" onchange="ImagePreview1(this);"  type="file" class="form-control form-control-lg"name="business_image" required autocomplete="new-password">
+                <input id="business_image" onchange="ImagePreview1(this);"  type="file" class="form-control form-control-lg"name="business_image" >
                                                    </div>
 													
 												</div>												
@@ -604,16 +434,16 @@
 												<div class="col-xl-6">
 												<div class="form-group">
 														<label>Block</label>
-			                                             <input   type="text" name="block"  class="form-control form-control-lg" placeholder="Block name">
+			                                             <input   type="text" name="block"  class="form-control form-control-lg" value="{{$CompanyData->block}}">
 													</div>
 												<div class="form-group">
 														<label>contact</label>
-			                                             <input   type="tel" name="contact"  class="form-control form-control-lg" placeholder="Contact">
+			                                             <input   type="tel" name="contact"  class="form-control form-control-lg" value="{{$CompanyData->contact}}">
 													</div>
 												<div class="form-group">
 														<label for="exampleSelectl">Select Parent catagori</label>
 														<select name="category" class="form-control form-control-lg" id="category" >
-															<option value="">Select Parent catagori</option>
+															<option value="{{$CompanyData->category}}">{{$CompanyData->category}}</option>
 															@foreach($categories as $NewcategoriData)
 															
                                                             <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->name}}</option>
@@ -621,22 +451,7 @@
 															@endforeach
 															
 														</select>
-														<script>
-														jQuery(document).ready(function(){
-															jQuery('#category').change(function(){
-																let cid=jQuery(this).val();
-																jQuery.ajax({
-																	url:'/getSubcate',
-																	type:'post',
-																	data:'cid='+cid+'&_token={{csrf_token()}}',
-																	success:function(result){
-																		jquery('#sub').html(result)
-																	}
-																});
-															});
-														});
 														
-														</script>
 														
 														
 														
@@ -645,7 +460,7 @@
 														<label>Subcategory</label>
 			                                             <select name="subcategory" class="form-control form-control-lg" id="sub">
 															
-															<option value="">Select Subcategoryi</option>
+															<option value="{{$CompanyData->subcategory}}">{{$CompanyData->subcategory}}</option>
                                                          @foreach($Allcategories as $NewcategoriData)
 														 @if($NewcategoriData->getAttribute('category_id')!=NULL)
                                                             <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->category_id }}-->{{$NewcategoriData->name }}</option>
@@ -656,7 +471,14 @@
 														</select>
 													</div>
 													 <div class="form-group">
-                <img id="Image3" style="height:225px;width: 250px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
+               
+				
+				 @if(File::exists("uploads/image/$CompanyData->email.jpg"))
+					  <img id="Image3" style="height:225px;width: 250px;float:right;" src="<?php echo asset("uploads/image/$CompanyData->email.jpg")?>">
+
+                          @else 
+  <img id="Image3" style="height:225px;width: 250px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
+                       @endif
               </div>
 												</div>
 												
@@ -670,18 +492,18 @@
 										</div>
 									</div>
 							<div class="modal-footer">
-		<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-		<input  name="submit" type="submit" class="btn btn-primary font-weight-bold" value="Submit">
+		<a href="{{url('/admin/companies')}}" type="button" class="btn btn-light-primary font-weight-bold" >Back</a>
+		<input  name="submit" type="submit" class="btn btn-primary font-weight-bold" value="Update">
 		             
 						</div>
 						 </form>
-					</div>
-				</div>
-			</div>
-														<!--end::Modal-->
+       <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+        <br>  
+          
+        </div>
+        <!-- END Content -->
+      
+      </div>
+	  </div>
 
-
-
-
-
-@endsection
+      @endsection
