@@ -214,25 +214,25 @@
                             <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
                             <p class="card-text">Total Reviews: <strong>{{$Data->count-1}}</strong>  &nbsp <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
-							    @if(round(($Data->totalratings)/($Data->count))==2) 
+							    @if(round(($Data->totalratings)/($Data->count-1))==1) 
 										<div class="tst-rating">
                                              <i class="fa fa-star" style="color:#C70039;"></i>
                                             
                                         </div>
-										@elseif(round(($Data->totalratings)/($Data->count))==3)
+										@elseif(round(($Data->totalratings)/($Data->count-1))==2)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                              <i class="fa fa-star" style="color:#FF5733;"></i>
                                               
                                         </div>
-										@elseif(round(($Data->totalratings)/($Data->count))==4)
+										@elseif(round(($Data->totalratings)/($Data->count-1))==3)
 										   <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                              <i class="fa fa-star" style="color:#FFC300;"></i>
                                               <i class="fa fa-star" style="color:#FFC300;"></i>
                                              
                                         </div>
-										@elseif(round(($Data->totalratings)/($Data->count))==5)
+										@elseif(round(($Data->totalratings)/($Data->count-1))==4)
 										    <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
                                              <i class="fa fa-star" style="color:#00ff36;"></i>
@@ -240,7 +240,7 @@
                                               <i class="fa fa-star" style="color:#00ff36;"></i>
                                               
                                         </div>
-										@elseif(round(($Data->totalratings)/($Data->count))==6)
+										@elseif(round(($Data->totalratings)/($Data->count))==5)
 										      <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#51a127;"></i>
                                              <i class="fa fa-star" style="color:#51a127;"></i>

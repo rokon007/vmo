@@ -114,7 +114,7 @@ public function viewcompany(Request $request,$name)
 ->simplePaginate(10);
  
      // $joindata=companytb::where('category',[$name])->paginate(4);
-      return view('frontpage.companybycategory2',compact('RData1','CompanyNameData','reviewscount','ratings')); 
+      return view('frontpage.companybycategory1',compact('RData1','CompanyNameData','reviewscount','ratings')); 
   }
 
    public function create()
@@ -207,7 +207,7 @@ public function viewcompany(Request $request,$name)
 
       // $RData1=Companytb::where('company','LIKE','%'.$searchtext.'%')->paginate(4);
 
-       return view('frontpage.companybycategory3',compact('RData1','CompanyNameData')); 
+       return view('frontpage.companybycategory1',compact('RData1','CompanyNameData')); 
     }
 }
 
