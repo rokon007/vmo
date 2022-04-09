@@ -33,7 +33,7 @@
                 <p> Avg ratings: <strong>
                     @if($ratings !=NULL)
 						@if(($reviewscount-1)!=0)
-                {{round($ratings/($reviewscount-1), 2)}}
+                {{round($ratings/($reviewscount-1))}}
 			@else
                 0
 			@endif
@@ -69,8 +69,7 @@
 									 55%
 								 @elseif(round($ratings/($reviewscount-1))==4)
 									 75%
-								  @elseif(round($ratings/($reviewscount-1))>=4)
-                                     90%								  
+								 								  
 								  @elseif(round($ratings/($reviewscount-1))==5)
 									   100%
 								  @elseif(round($ratings/($reviewscount-1))>=5)
@@ -91,8 +90,7 @@
 									 55%
 								 @elseif(round($ratings/($reviewscount-1))==4)
 									 75%
-								  @elseif(round($ratings/($reviewscount-1))>=4)
-                                     90%	 
+								  
 								  @elseif(round($ratings/($reviewscount-1))==5)
 									  100%
 								  @elseif(round($ratings/($reviewscount-1))>=5)
@@ -119,8 +117,7 @@
 									 60%
 								 @elseif(round($ratings/($reviewscount-1))==4)
 									 80%
-								  @elseif(round($ratings/($reviewscount-1))>=4)
-                                     90%	 
+								   
 								  @elseif(round($ratings/($reviewscount-1))==5)
 									  100%
 								  @elseif(round($ratings/($reviewscount-1))>=5)
@@ -141,8 +138,7 @@
 									 60%
 								 @elseif(round($ratings/($reviewscount-1))==4)
 									 80%
-								  @elseif(round($ratings/($reviewscount-1))>=4)
-                                     90%	 
+								 	 
 								  @elseif(round($ratings/($reviewscount-1))==5)
 									  100%
 								  @elseif(round($ratings/($reviewscount-1))>=5)
