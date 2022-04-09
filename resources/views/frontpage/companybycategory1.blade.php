@@ -214,8 +214,8 @@
                             <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
                             <p class="card-text">Total Reviews: <strong>{{$Data->count-1}}</strong>  &nbsp <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
-							   @if($ratings !=NULL)
-						@if(($reviewscount-1)!=0)
+							   
+						@if(($Data->count-1)!=0)
 							    @if(round(($Data->totalratings)/($Data->count-1))==1) 
 										<div class="tst-rating">
                                              <i class="fa fa-star" style="color:#C70039;"></i>
@@ -259,7 +259,7 @@
                             <p style="color:var(--red)" class="m-0">Not rated yet</p>
                             @endif
 							 @endif
-							  @endif
+							  
                               
                                      
                               
