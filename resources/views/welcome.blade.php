@@ -135,7 +135,7 @@
                                         </div>
 										@endif
                                 
-                                <span style="color:var(--blue);font-size:14px !important">{!! date('D, d, M, Y', strtotime($reviews->created_at)) !!}  <i class="fas fa-map-marker-alt text-success"></i> {{$reviews->branchlocation}}</span>
+                                <span style="color:var(--blue);font-size:14px !important">{!! date('D, d, M, Y', strtotime($reviews->dateofpurchase)) !!}  <i class="fas fa-map-marker-alt text-success"></i> {{$reviews->branchlocation}}</span>
                             </div>
                             <p class="review p-1 text">{{$reviews->review}}</p>
                             <p class="mb-0 mt-3"><i class="fas fa-building"></i> {{$reviews->company}}</p>
