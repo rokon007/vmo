@@ -240,7 +240,7 @@
                                               <i class="fa fa-star" style="color:#00ff36;"></i>
                                               
                                         </div>
-										@elseif(round(($Data->totalratings)/($Data->count))==5)
+										@elseif(round(($Data->totalratings)/($Data->count-1))==5)
 										      <div class="tst-rating">
                                              <i class="fa fa-star" style="color:#51a127;"></i>
                                              <i class="fa fa-star" style="color:#51a127;"></i>
