@@ -301,7 +301,7 @@ public function give(Request $request)
     $reviews= new reviews;
       $reviews->name=$request->input('name');
       $reviews->contact=$request->input('contact');
-      $reviews->whatsappreview=$request->input('reviewFrom');
+      
       $reviews->purchaseditem=$request->input('purchaseditem');
       $reviews->itemcounter=$request->input('itemcounter');
       $reviews->dateofpurchase=$request->input('dateofpurchase');
