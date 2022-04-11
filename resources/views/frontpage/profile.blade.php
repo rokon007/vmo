@@ -229,8 +229,13 @@
                                 <div class="wrapper comment">
                                 <p class="review">{{$reviews->review}}</p>
                                 
+								@if($reviews->whatsappreview ==1)
                                     <p class="bottomText mt-0 mb-0 pull-right">review on WhatsApp <a href="#" target="_blank"><i class="fab fa-whatsapp fa-2x ml-2"></i></a></p>   
-                                
+                                @elseif($reviews->whatsappreview ==2)
+                                    <p class="bottomText mt-0 mb-0 pull-right">review on FaceBook <a href="#" target="_blank"><i class="fab fa-facebook fa-2x ml-2"></i></a></p>
+								 @elseif($reviews->whatsappreview ==3)
+                                    <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-google-logo fa-2x ml-2"></i></a></p>
+								@endif	
                                 </div>
                                 
                                 <div class="v-dialog__container" style="display: block;"></div>
