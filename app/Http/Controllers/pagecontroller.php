@@ -15,6 +15,7 @@ use App\Models\business_profile;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 use File;
+use Redirect;
 class pagecontroller extends Controller
 {
 
@@ -198,7 +199,26 @@ class pagecontroller extends Controller
      //  $users = DB::select('select * from companytbs where id = ?',[$id]);
      //  return view('stud_update',['users'=>$users]);
      //   }
+       // info_funtion
+	    public function info_funtion($id)
+          
+			 {
+    	$info = Companytb::find($id);
+		$company=$info->company;
+        $email=$info->email;
+		$contact=$info->contact;
+	   return back()->with('success',( $email) );
+    }
+	 public function info_contact($id)
+          
+			 {
+    	$info = Companytb::find($id);
+		$company=$info->company;
         
+		$contact=$info->contact;
+	   return back()->with('contact',( $contact) );
+    }
+	   
          public function companyedit(Request $request, $cid)
           {
             $category = $request->input('category');

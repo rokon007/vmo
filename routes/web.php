@@ -254,6 +254,9 @@ Route::get('/send-email', [MailController::class, 'sendEmail']);
 //CONTACT
 
 Route::post('/contact-form', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');
+//INFO
+Route::get('/info/{id}', [App\Http\Controllers\pagecontroller::class, 'info_funtion'])->name('infoview');
+Route::get('/contact/{id}', [App\Http\Controllers\pagecontroller::class, 'info_contact'])->name('contactview');
 
 
 

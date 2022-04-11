@@ -50,6 +50,9 @@
   }
 </style>
 
+ 
+ 
+		 
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 pl-lg-5 pr-lg-5 p-3">
             <h2 class="col-12 d-flex justify-content-center p-3" style="color:var(--red);font-size: 2em;"><strong>Companies</strong></h1>
@@ -211,7 +214,7 @@
                               
                               </p>
                             <p class="card-text"><i class="fas fa-map-marker-alt"></i>  {{$Data->block}}, {{$Data->city}}, {{$Data->country}}</p>
-                            <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i> {{$Data->email}}</span></p>
+                            <p class="card-text"><i class="fas fa-phone"></i>  ***** {{ substr($Data->contact, -3);}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i>  ***** {{ substr($Data->email, -5);}}</span></p>
                             <p class="card-text">Total Reviews: <strong>{{$Data->count-1}}</strong>  &nbsp <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
 							   
@@ -271,10 +274,13 @@
                       </div>
                       </a>
                       <div style="width:25%;">
-                        <div class="d-flex flex-row">
-                        
-                        </div>
-                      </div>
+                      <div class="d-flex flex-row">
+                      
+                      <a href="/info/{{$Data->id}}"><p class="text-center btn btn-warning m-2" style="border-radius:12px;color:white"><i class="fas fa-envelope"></i> View Email</p></a> 
+                      <a href="/contact/{{$Data->id}}"><p class="text-center btn btn-warning m-2" style="border-radius:12px;color:white"><i class="fas fa-phone"></i> View Contact</p></a> 
+      
+					  </div>
+                    </div>
                     </div>
                    @endforeach
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----END COMPANY----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->             
@@ -334,5 +340,51 @@
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="details-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+</div>
 
+		 
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     @if($message = Session::get('success'))
+		 <script>
+	         
+			   swal({  title: "Email Info...",
+          text: "Email: {!!Session::get('success')!!}",
+          icon: "../uploads/image/email.jpg",
+         
+  });
+	     </script>
+		  @endif
+		   @if($message = Session::get('contact'))
+		 <script>
+	          swal({  title: "Contact Info...",
+          text: "Contact: {!!Session::get('contact')!!}",
+          icon: "../uploads/image/contact.png",
+         iconHeight: 80, 
+    iconWidth: 80,       
+    iconClass:'img-responsive rounded-circle',
+  });
+	     </script>
+		  @endif
+
+<style>
+.swal-icon img{
+  width: 120px;
+  height: 120px;
+  Class:'img-responsive rounded-circle';
+}
+</style>
 @endsection
