@@ -39,7 +39,7 @@ return [
 'facebook' => [
     'client_id' => '413235483803463',
     'client_secret' => '826c846b7a30eff16a63f7e45711b69f',
-    'redirect' => 'http://www.vimbiso.org/login/facebook/callback',
+    'redirect' => 'https://www.vimbiso.org/login/facebook/callback',
 ],
 
 ];
