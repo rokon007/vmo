@@ -19,7 +19,7 @@ use Redirect;
 class pagecontroller extends Controller
 {
 
-    //--------------------------------------Companytb
+    //--------------------------------------Companytb plans
      public function about()
     {
         $CompanyNameData=Companytb::All();
@@ -31,6 +31,18 @@ class pagecontroller extends Controller
     {
         $CompanyNameData=Companytb::All();
         return view('frontpage.plans',compact('CompanyNameData'));
+    }
+
+    public function terms_conditons()
+    {
+        $CompanyNameData=Companytb::All();
+        return view('frontpage.terms_conditons',compact('CompanyNameData'));
+    }
+
+    public function privacy_policy()
+    {
+        $CompanyNameData=Companytb::All();
+        return view('frontpage.privacy_policy',compact('CompanyNameData'));
     }
      
     public function contactus()

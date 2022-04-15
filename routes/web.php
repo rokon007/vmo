@@ -22,7 +22,7 @@ use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes   companies 
+| Web Routes   companies plan
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -83,6 +83,8 @@ Route::get("/plans",[pagecontroller::class,"plans"]);
 Route::get("/contactus",[pagecontroller::class,"contactus"]);
 //Route::get("/admin/dashboard",[pagecontroller::class,"dashboard"]);
 //Route::get("/admin/login",[pagecontroller::class,"adminlogin"]);
+Route::get("/terms_conditons",[pagecontroller::class,"terms_conditons"]);
+Route::get("/privacy_policy",[pagecontroller::class,"privacy_policy"]);
 
 //Title and Tag ..................................
 

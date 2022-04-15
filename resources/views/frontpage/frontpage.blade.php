@@ -210,6 +210,13 @@ a.ex1:hover {
                             <p>Copyright © 2022, All Rights Reserved Vimbiso</a></p>
                         </div>
                     </div>
+
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-right">
+                        <div class="copyright-text">
+                            <p><a href="{{url('terms_conditons')}}">Terms and conditons</a> | <a href="{{url('privacy_policy')}}">Privacy policy</a></p>
+                        </div>
+                    </div>
+
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                         
                     </div>
