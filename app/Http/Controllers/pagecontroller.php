@@ -19,7 +19,7 @@ use Redirect;
 class pagecontroller extends Controller
 {
 
-    //--------------------------------------Companytb plans
+    //--------------------------------------Companytb plans indexprofile
      public function about()
     {
         $CompanyNameData=Companytb::All();
@@ -66,7 +66,10 @@ class pagecontroller extends Controller
 
 
           try {
-       $CData = DB::table('companytbs')->where('company',$company)->first();
+			  $e=5;
+       $CData = DB::table('companytbs')
+	   ->join('business_profiles', 'companytbs.email', '=', 'business_profiles.email')
+	   ->where('company',$company)->first();
  $RData = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
            ->where('companytbs.company',[$company])
             ->get();
@@ -76,6 +79,27 @@ class pagecontroller extends Controller
     $ratings = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
            ->where('companytbs.company',[$company])
     ->sum('ratings');
+	
+	 $ratings1 = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+          ->where('companytbs.company',[$company])
+        ->where('reviews.ratings','1')
+    ->count();
+	$ratings2 = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.company',[$company])
+        ->where('reviews.ratings','2')
+    ->count();
+	$ratings3 = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.company',[$company])
+        ->where('reviews.ratings','3')
+    ->count();
+	$ratings4 = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+           ->where('companytbs.company',[$company])
+        ->where('reviews.ratings','4')
+    ->count();
+	$ratings5 = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+             ->where('companytbs.company',[$company])
+        ->where('reviews.ratings','5')
+    ->count();
     } catch (ModelNotFoundException $exception) {
         return back()->withError($exception->getMessage())->withInput();
     }
@@ -85,7 +109,7 @@ class pagecontroller extends Controller
 
 // return $CData;
  
-     return view('frontpage.profile',compact('CData','RData','reviewscount','ratings'));
+     return view('frontpage.profile',compact('CData','RData','reviewscount','ratings','ratings1','ratings2','ratings3','ratings4','ratings5'));
    }
 
      public function indexsettings()

@@ -60,45 +60,11 @@
                             <div class="progress w-75 float-right font-description-sm">
                                 <div class="bright-green-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
                                   @if($ratings !=NULL)
-									  @if(($reviewscount-1)!=0)
-									  @if(round($ratings/($reviewscount-1))==1)
-										  15%
-                                @elseif(round($ratings/($reviewscount-1))==2)
-									35%
-								 @elseif(round($ratings/($reviewscount-1))==3)
-									 55%
-								 @elseif(round($ratings/($reviewscount-1))==4)
-									 75%
-								 								  
-								  @elseif(round($ratings/($reviewscount-1))==5)
-									   100%
-								  @elseif(round($ratings/($reviewscount-1))>=5)
-									  100%
-								   @endif
-								    @endif
-                                 @else
-                                  0%
+								  {{$ratings5*5+$ratings4*4}}%
                                 @endif
                                 ">
                                   @if($ratings !=NULL)
-									  @if(($reviewscount-1)!=0)
-									  @if(round($ratings/($reviewscount-1))==1)
-										  15%
-                                @elseif(round($ratings/($reviewscount-1))==2)
-									35%
-								 @elseif(round($ratings/($reviewscount-1))==3)
-									 55%
-								 @elseif(round($ratings/($reviewscount-1))==4)
-									 75%
-								  
-								  @elseif(round($ratings/($reviewscount-1))==5)
-									  100%
-								  @elseif(round($ratings/($reviewscount-1))>=5)
-									  100%
-								   @endif
-								    @endif
-                                 @else
-                                  0%
+								  {{$ratings5*5+$ratings4*4}}
                                 @endif
                                 </div>
                             </div>
@@ -107,46 +73,12 @@
                             <span class="font-description-sm" style="float:left;">Average  . </span>
                             <div class="progress w-75 float-right">
                                 <div class="bright-yellow-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
-                                  @if($ratings !=NULL)
-									  @if(($reviewscount-1)!=0)
-									  @if(round($ratings/($reviewscount-1))==1)
-										  20%
-                                @elseif(round($ratings/($reviewscount-1))==2)
-									40%
-								 @elseif(round($ratings/($reviewscount-1))==3)
-									 60%
-								 @elseif(round($ratings/($reviewscount-1))==4)
-									 80%
-								   
-								  @elseif(round($ratings/($reviewscount-1))==5)
-									  100%
-								  @elseif(round($ratings/($reviewscount-1))>=5)
-									  100%
-								   @endif
-								   @endif
-                                 @else
-                                  0%
+                                   @if($ratings !=NULL)
+								   {{$ratings3*3}}%
                                 @endif
                                 ">
-                                @if($ratings !=NULL)
-									 @if(($reviewscount-1)!=0)
-									  @if(round($ratings/($reviewscount-1))==1)
-										  20%
-                                @elseif(round($ratings/($reviewscount-1))==2)
-									40%
-								 @elseif(round($ratings/($reviewscount-1))==3)
-									 60%
-								 @elseif(round($ratings/($reviewscount-1))==4)
-									 80%
-								 	 
-								  @elseif(round($ratings/($reviewscount-1))==5)
-									  100%
-								  @elseif(round($ratings/($reviewscount-1))>=5)
-									  100%
-								   @endif
-								    @endif
-                                 @else
-                                  0%
+                                 @if($ratings !=NULL)
+								  {{$ratings3*3}}
                                 @endif
                                 </div>
                             </div>
@@ -154,8 +86,18 @@
                         <div class="flex-row m-2">
                             <span class="font-description-sm" style="float:left;">Bad    ....  </span>
                             <div class="progress w-75 float-right">
-                                <div class="bright-red-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                0
+                                <div class="bright-red-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
+								 @if($ratings !=NULL)
+								  {{$ratings1-1+$ratings2*2}}%
+                                @endif
+								">
+                                @if($ratings !=NULL)
+									 @if($ratings1-1 !=NULL)
+								  {{$ratings1-1+$ratings1*2}}
+							  @else
+								  0
+                                @endif
+								 @endif
                                 </div>
                             </div>
                         </div>
@@ -277,6 +219,8 @@
                         
                     </div>
                     <ul class="list-group list-group-flush">
+					 
+					 <li class="list-group-item">{{$CData->description}}</li>
                         <li class="list-group-item"><i class="fas fa-map-marker-alt metallic-red">
                         </i>
                {{$CData->country}}, {{$CData->city}}, {{$CData->block}}
