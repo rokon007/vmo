@@ -64,7 +64,7 @@
                                 @endif
                                 ">
                                   @if($ratings !=NULL)
-								  {{$ratings5*5+$ratings4*4}}
+								  {{$ratings5+$ratings4}}
                                 @endif
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                 @endif
                                 ">
                                  @if($ratings !=NULL)
-								  {{$ratings3*3}}
+								  {{$ratings3}}
                                 @endif
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
 								">
                                 @if($ratings !=NULL)
 									 @if($ratings1-1 !=0)
-								  {{($ratings1-1+$ratings2)*2}}
+								  {{$ratings1-1+$ratings2}}
 							  @else
 								  0
                                 @endif
