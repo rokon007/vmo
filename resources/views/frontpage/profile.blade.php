@@ -56,7 +56,7 @@
                         <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
                         
                         <div class="flex-row m-2">
-                            <span class="text-lg-center text-left font-description-sm" style="float:left;">Excellent . </span>
+                            <span class="text-lg-center text-left font-description-sm" style="float:left;">Excellent  </span>
                             <div class="progress w-75 float-right font-description-sm">
                                 <div class="bright-green-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
                                   @if($ratings !=NULL)
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="flex-row m-2">
-                            <span class="font-description-sm" style="float:left;">Average  . </span>
+                            <span class="font-description-sm" style="float:left;">Average   </span>
                             <div class="progress w-75 float-right">
                                 <div class="bright-yellow-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
                                    @if($ratings !=NULL)
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="flex-row m-2">
-                            <span class="font-description-sm" style="float:left;">Bad    ....  </span>
+                            <span class="font-description-sm" style="float:left;">Bad      </span>
                             <div class="progress w-75 float-right">
                                 <div class="bright-red-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
 								 @if($ratings !=NULL)
