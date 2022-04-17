@@ -60,7 +60,7 @@
                             <div class="progress w-75 float-right font-description-sm">
                                 <div class="bright-green-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
                                   @if($ratings !=NULL)
-								  {{$ratings5*5+$ratings4*4}}%
+								  {{100/($reviewscount-1)*($ratings5+$ratings4)}}%
                                 @endif
                                 ">
                                   @if($ratings !=NULL)
@@ -74,7 +74,8 @@
                             <div class="progress w-75 float-right">
                                 <div class="bright-yellow-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
                                    @if($ratings !=NULL)
-								   {{$ratings3*3}}%
+									   {{100/($reviewscount-1)*$ratings3}}%
+								   
                                 @endif
                                 ">
                                  @if($ratings !=NULL)
@@ -88,12 +89,17 @@
                             <div class="progress w-75 float-right">
                                 <div class="bright-red-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:
 								 @if($ratings !=NULL)
-								  {{$ratings1-1+$ratings2*2}}%
+									 @if($ratings1-1 !=0)
+								  
+							  {{100/($reviewscount-1)*($ratings1+$ratings2)}}%
+							  @else
+								  0%
                                 @endif
+								 @endif
 								">
                                 @if($ratings !=NULL)
-									 @if($ratings1-1 !=NULL)
-								  {{$ratings1-1+$ratings1*2}}
+									 @if($ratings1-1 !=0)
+								  {{($ratings1-1+$ratings2)*2}}
 							  @else
 								  0
                                 @endif

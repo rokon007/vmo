@@ -70,7 +70,20 @@ class pagecontroller extends Controller
        $CData = DB::table('companytbs')
 	   ->join('business_profiles', 'companytbs.email', '=', 'business_profiles.email')
 	   ->where('company',$company)->first();
- $RData = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
+	
+     $RData = DB::table('companytbs')
+            ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+             
+               ->where('companytbs.company',[$company])
+            ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
+            // ->get('reviews.created_at','desc')->limit(5);
+            ->groupBy('reviews.id','companytbs.id','companytbs.email','companytbs.email','companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.created_at','companytbs.updated_at','reviews.name','reviews.contact','reviews.purchaseditem','reviews.itemcounter','reviews.dateofpurchase','reviews.branchlocation','reviews.review','reviews.ratings','reviews.typeofpurchase','reviews.resolved','reviews.response','reviews.isresolved','reviews.whatsappreview','reviews.company_id','reviews.unlistedcompany','reviews.show','reviews.created_at','reviews.updated_at')
+    ->orderBy('reviews.id', 'desc')
+    ->get();
+	
+	   
+	   
+ $RDataX = Companytb::join('reviews','companytbs.id','=','reviews.company_id')
            ->where('companytbs.company',[$company])
             ->get();
  $reviewscount= Companytb::join('reviews','companytbs.id','=','reviews.company_id')

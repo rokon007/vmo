@@ -70,6 +70,9 @@ Route::get('/categories',[CategoryController::class,"FrontCategory"]);
 Route::get('/search',[App\Http\Controllers\CategoryController::class, 'search'])->name('search'); 
 //Normal User
 Route::get('/profile/{company}', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
+//Route::get('/profile/search', [App\Http\Controllers\pagecontroller::class, 'search'])->name('search');
+
+
 Route::get('/settings', [App\Http\Controllers\pagecontroller::class, 'indexsettings'])->name('settings');
 
 //landing page Route
