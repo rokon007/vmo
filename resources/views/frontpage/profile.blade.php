@@ -219,7 +219,7 @@
                         
                     </div>
                     <ul class="list-group list-group-flush">
-					 <!--<li class="list-group-item">{{$ratings1}},{{$ratings2}},{{$ratings3}},{{$ratings4}},{{$ratings5}}</li> -->
+				
 					 <li class="list-group-item">{{$CData->description}}</li>
                         <li class="list-group-item"><i class="fas fa-map-marker-alt metallic-red">
                         </i>
