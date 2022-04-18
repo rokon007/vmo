@@ -28,8 +28,38 @@
            
             <div class="flex-column pl-4">
                 <h1 class="font-heading-sm">{{$CData->company}}</h1>
-                
+				
                 <p>Total Reviews:{{$reviewscount-1}}</p>
+				 @if($ratings !=NULL)
+						@if(($reviewscount-1)!=0)
+				  @if(round($ratings/($reviewscount-1)) ==1) 
+                <span class="fa fa-star checked" style="color:#C70039;"></span> 
+                  @elseif(round($ratings/($reviewscount-1)) ==2) 			
+                <span class="fa fa-star checked" style="color:#FF5733;"></span>
+               <span class="fa fa-star checked" style="color:#FF5733;"></span>
+				@elseif(round($ratings/($reviewscount-1)) ==3) 
+				<span class="fa fa-star checked" style="color:#FFC300;"></span>
+                <span class="fa fa-star checked" style="color:#FFC300;"></span>
+                <span class="fa fa-star checked" style="color:#FFC300;"></span>				
+				@elseif(round($ratings/($reviewscount-1)) ==4) 
+					
+				<span class="fa fa-star checked" style="color:#008000;"></span>
+				<span class="fa fa-star checked" style="color:#008000;"></span>
+				<span class="fa fa-star checked" style="color:#008000;"></span>
+				<span class="fa fa-star checked" style="color:#008000;"></span>
+					
+				@elseif(round($ratings/($reviewscount-1)) ==5) 
+					
+				<span class="fa fa-star checked" style="color:#034a03;"></span>
+				<span class="fa fa-star checked" style="color:#034a03;"></span>
+				<span class="fa fa-star checked" style="color:#034a03;"></span>
+				<span class="fa fa-star checked" style="color:#034a03;"></span>
+				<span class="fa fa-star checked" style="color:#034a03;"></span>
+					
+				
+					 @endif
+				  @endif
+				  @endif
                 <p> Avg ratings: <strong>
                     @if($ratings !=NULL)
 						@if(($reviewscount-1)!=0)
@@ -117,7 +147,20 @@
 						 @if($reviews->show !=1)
                         <div>
                             
-                                <div class="card review-card v-card v-sheet theme--light elevation-2 review-good mt-3" style="width: 100%;">
+                                <div class="card review-card v-card v-sheet theme--light elevation-2 mt-3
+                                @if($reviews->ratings ==1)								
+								review-bad
+							@elseif($reviews->ratings ==2)
+							    review-bad
+							@elseif($reviews->ratings ==3)
+							    review-medium 
+							@elseif($reviews->ratings ==4)
+							    review-good
+							@elseif($reviews->ratings ==5)
+								review-good
+								
+							@endif	
+								" style="width: 100%;">
                             
                             
                                 <div class="header">
@@ -289,4 +332,15 @@
     </div>
   </div>
 </div>
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".review").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
+
 @endsection

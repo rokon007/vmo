@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" >
     <link rel="stylesheet" href="/rokon/static/css/style.css"> 
     <link rel="stylesheet" href="/rokon/static/css/auth.css">
-    <script src="rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
     <link rel="stylesheet" href="/rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="" /> 
     <link rel="stylesheet" href="/rokon/static/css/notifications.css ">
     <script src="/rokon/static/js/notifications.var.js " type="text/javascript"></script>
@@ -227,12 +227,15 @@ a.ex1:hover {
  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
     <!-- UIkit JS -->
     <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
     <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
-    
+    <script>
+        let notifier = new AWN({});
+        $('.js-example-basic-single').select2();
+      </script>
     
     
   </body>
