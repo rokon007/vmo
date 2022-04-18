@@ -36,7 +36,7 @@
 			 @foreach ($viewcategoriesgroup as $category_id => $Category) 
                 <div class="d-flex row p-3 border-bottom justify-content-center">                   
                             <div class="d-flex justify-content-center col-12 align-items-center border-bottom pt-4">
-                                <a href="/view-companies/3/" style="text-decoration:none;color:black;font-size:16px;text-transform:capitalize"><h4 class="category-parent-sm"><strong>{{ $category_id}}</strong></h4></a>
+                                <a href="/viewcompany1/{{$categorie->name}}" style="text-decoration:none;color:black;font-size:16px;text-transform:capitalize"><h4 class="category-parent-sm"><strong>{{ $category_id}}</strong></h4></a>
                                 
                             </div>
                         
