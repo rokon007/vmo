@@ -33,7 +33,7 @@ window.location.href="/profile/{{Auth::user()->company_name}}"
 					 <div class="col-lg-12 col-sm-12 p-0 pr-3">
 					 <div class="form-group">
 					 <label>Replay</label>
-                     <textarea class="form-control" name="response" type="text" autofocus>Write here text {{$rview->id}}</textarea>
+                     <textarea class="form-control" name="response" type="text" autofocus></textarea>
 					 </div>
 						</div>
 						</div>
