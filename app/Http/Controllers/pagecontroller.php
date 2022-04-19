@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 use File;
 use Redirect;
+use Auth;
 class pagecontroller extends Controller
 {
 
@@ -25,6 +26,27 @@ class pagecontroller extends Controller
         $CompanyNameData=Companytb::All();
         return view('frontpage.about',compact('CompanyNameData'));
     }
+	 function put_replay($id)
+	 {
+		 $rview=DB::table('reviews')
+		  ->where('id',$id)->first();
+		  return view('frontpage.putreplay',compact('rview'));
+	 }
+	
+	  public function replay_save(Request $request,$id)
+	 {
+		 		
+		   	 
+		 
+		 
+		$replay = reviews::find($id);
+        $replay->response = $request->input('response');       
+        $replay->update();
+
+		 // return view('frontpage.profile/$company',compact('rview'));
+		 return back()->with('success','User Updated Successfully');
+		
+	 }
    
     
      public function plans()

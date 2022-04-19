@@ -5,17 +5,16 @@
  <title>Vimbiso | Profile</title>
          <meta name="description" content="vary good">
      <meta name="keywords" content="vimbiso">
-    
+   
 @endsection 
 @section('body') 
 
 
-@if($CData->email==NULL)
-<div class="container1-fluid1 m-0 p-0">
- <div class="flex-column pl-4">
-                <h1 class="font-heading-sm">Set up your company first</h1>
-            </div>
-</div>
+@if($CData==NULL)
+	<script>
+window.location.href = "{{ route('settings') }}"
+</script>
+
 
  @else
 <div class="container1-fluid1 m-0 p-0">
@@ -129,7 +128,7 @@
 								">
                                 @if($ratings !=NULL)
 									 @if($ratings1-1 !=0)
-								  {{$ratings1-1+$ratings2}}
+								  {{$ratings1+$ratings2}}
 							  @else
 								  0
                                 @endif
@@ -219,6 +218,9 @@
                                 <!---->
                                 <div class="wrapper comment">
                                 <p class="review">{{$reviews->review}}</p>
+								@if($reviews->response)
+								<p class="bottomText mt-0 mb-0 pull-right" style="float:right;"><i class="fa fa-user"></i>&#160;Reply by owner&#160;" {{$reviews->response}} "</p>
+							@endif
                                 
 								@if($reviews->whatsappreview ==1)
                                     <p class="bottomText mt-0 mb-0 pull-right">review on WhatsApp <a href="#" target="_blank"><i class="fab fa-whatsapp fa-2x ml-2"></i></a></p>   
@@ -227,6 +229,16 @@
 								 @elseif($reviews->whatsappreview ==3)
                                     <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-google-logo fa-2x ml-2"></i></a></p>
 								@endif	
+								
+								 @guest
+								 
+								 @else
+									 @if (Auth::user()->company_name==$CData->company)
+									 
+								 <p><a href="/put_replay/{{$reviews->id}}" class="dropdown-item"><i class="icon-pencil5"></i> Replay</a></p>
+								 
+								 @endif
+								  @endguest	
                                 </div>
                                 
                                 <div class="v-dialog__container" style="display: block;"></div>
@@ -237,6 +249,7 @@
 							
 							 @endif
 							 <br>
+
                          @endforeach
 						  @if($reviewscount ==1)
 								 <div>
@@ -332,6 +345,9 @@
     </div>
   </div>
 </div>
+
+
+
 <script>
     $(document).ready(function(){
       $("#myInput").on("keyup", function() {

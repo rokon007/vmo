@@ -3,57 +3,33 @@
 
 @section('body')  
 
-<link rel="stylesheet" href="css/regi1.css">
- <section id="courses">
-  <div style="">
- <div class="row">
-<div class="col-lg-2" >
-  <div class="form_container">
-<br></br>
-  </div>
-</div>
-
-
-<div class="form_container">
-                                 <div class="col-lg-3" >
-                              <div class="item">
-                                        <div class="courses-thumb">
-                                           <div class="courses-top">
-                        <div class="card-header div-1">
-                                                    <center>
-                          <h2 style="text-decoration:none;color: white;" class="card-title"></h1>
-                          </center>
-                                                </div>
-                                                <!---->
-                        <center>
-                                                      <hr style="height:50px">
-                                                              <a href=" " ><button style="color:black;font-size:20px;height:45px;width:80%;border: 2px;border-style: double;background-color: #fff;" class="btn btn-hover-text-primary form-control">Profile</button></a>
-                                                                 <hr> 
-                                                                 <a href=" " ><button style="color:black;font-size:20px;height:45px;width:80%;border: 2px;border-style: double;background-color: #fff;" class="btn btn-hover-text-primary form-control">Change Password</button></a>
-                                                                 <hr> 
-                                                                 <a href=" " ><button style="color:black;font-size:20px;height:45px;width:80%;border: 2px;border-style: double;background-color: #fff;" class="btn btn-hover-text-primary form-control">Payment Method</button></a>
-                                                                 <hr>
-                                                                <a href=" " ><button style="color:black;font-size:20px;height:45px;width:80%;border: 2px;border-style: double;background-color: #fff;" class="btn btn-hover-text-primary form-control">Sing Out</button></a>
-                                                                 <hr style="height:100px">
-
-                                                                             
-                                                </center>                            
-                                                  <!---->
-                                                  <div class="card-header div-1">
-                                                    <center>
-                          <h2 style="text-decoration:none;color: white;" class="card-title"></h1>
-                          </center>
-                                                </div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                 </div>
-                               </div> 
-
-
-
-
-
+<!-- Content -->
+    
+<style>
+    .list-group {
+        width:100%;
+    }
+    .list-group-item{
+        margin:10px 0px;
+        width:100%;
+        border-radius:1.25rem !important;
+    }
+    label {
+        font-size: 17px;
+        font-weight:bold;
+    }
+    .form-control-file, .form-control-range {
+        display: block;
+        width: 69% !important;
+    }
+    label{
+        font-weight:600;
+        font-size:18px;
+    }
+    .profile-image{
+        height:180px !important; border-radius:100px 100px 100px 100px;width:180px;
+    }
+</style>
 <script type="text/javascript">
         function ImagePreview1(input) {
             if (input.files && input.files[0]) {
@@ -65,70 +41,51 @@
             }
         }
     </script>
-
-<br>
-
-
-
-  
-     
-  <div class="col-sm-5">
-<div class="form_wrapper">
-        
-          <div class="form_container">
-    <div class="title_container">
-      <center><h2>Update Business Profile</h2></center>
-      @if(session('status'))
-        <h6 class="alart alart-success">{{session('status')}}</h6>
-      @endif
-      </div>
-      <div class="row clearfix">
-     
-       <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
+    <div class="container-fluid">
+        <div class="row d-flex align-items-start justify-content-center p-3">
+            <ul class="list-group col-lg-3 d-flex justify-content-left align-items-center">
+                <li class="list-group-item mt-0" id="profile-block-btn" onclick="showProfileblock();" style="cursor:pointer;background-color: #ededed;"><i class="fas fa-user-circle fa-1x"></i>&nbsp Profile</li>
+                <li class="list-group-item" id="change-password-block-btn" onclick="showPasswordblock();" style="cursor:pointer"><i class="fas fa-cog fa-1x"></i>&nbsp Change Password</li>
+                <li class="list-group-item"><i class="far fa-credit-card fa-1x"></i>&nbspPayment Method</li>
+                <li class="list-group-item"><i class="fas fa-sign-out-alt fa-1x"></i>&nbsp<a class="text-dark" href="/accounts/logout/">Sign Out</a></li>
+            </ul>
+            <div class="col-lg-8 col-sm-12 px-3" id="profile-block">
+                <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
          @csrf
-       <div class="col-md-6"> 
-	   <div class="form-group">
-                <label for="exampleInputEmail1">User Id</label>
-                 <input id="name" style="height:45px;font-size: 20px" type="text" class="form-control @error('name') is-invalid @enderror" name="userid" value="{{Auth::user()->id}}" readonly >
+                    <input type="hidden" name="csrfmiddlewaretoken" value="czS4JgoaxRihfyzpZAiYScTqufy9gGvxj82XGzXF2VOIYhOgb2BL4sprlC893dsI">
+                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Update Profile</b></h3>
+                    
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="d-flex flex-column align-items-center align-content-center mx-2">
+                            
+                            <!--    <img class="card-img-top profile-image" src="https://www.unityhighschool.org/wp-content/uploads/2014/08/default-placeholder.png" alt="Card image cap">
+                                <label>Profile Image</label> -->
+                            
+                        </div>
+                    </div>
+                    
+                    <label>Company Name</label>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-            </div>
-       <div class="form-group">
-                <label for="exampleInputEmail1">Company Name</label>
-                 <input id="name" style="height:45px;font-size: 20px" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
-                      @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-            </div>
-
-          <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                 <input id="email"style="height:45px;font-size: 20px" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" readonly >
+                    <br>
+                    <label>Email</label>
+                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" readonly >
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Description</label>
-                <textarea class="form-control" name="description" type="text" autofocus></textarea>
-                     
-            </div>
-           
-        </div> 
-
-         <div class="col-md-6">  
-               
-                <div class="form-group">
-                <label for="exampleInputEmail1">Country</label>
-               <select name="country" style="height:45px;font-size: 20px"class="form-control form-control-lg" id="exampleSelectl">
+                    <br>
+                    <label>Description</label>
+                     <textarea class="form-control" name="description" type="text" autofocus></textarea>
+                    <br>
+                    <label>Country</label>
+                     <select name="country" class="form-control" id="exampleSelectl">
                               <option value="">Select Country</option>
                               
                                                            <option value="AF">Afghanistan</option>
@@ -383,25 +340,18 @@
                               
                               
                             </select>
-                     
-            </div>
-           
+                    <br>
+                    <label>City</label>
+                    <input class="form-control" id="city" name="city" type="text" >
+                    <br>
+                    <label>Block</label>
+                    <input class="form-control"  id="block" name="block" type="text">
+                    <br>
+                    
 
-           <div class="form-group">
-                <label for="exampleInputEmail1">City</label>
-                <input type="text" style="height:45px;font-size: 20px" id="city" name="city" class="form-control" >
-                      
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Block</label>
-                <input type="text"style="height:45px;font-size: 20px"  id="block" name="block" class="form-control" >
-                      
-            </div>
-            
-        </div>
-<br>
-          
-            <div class="col-lg-6" style="float:right;">
+                
+                <h3 class="py-3 text-center" style="color:var(--color1)"><b>Add More Images</b></h3>
+                <div class="col-lg-6" style="float:right;">
               <div class="form-group">
                 <img id="Image3" style="height:120px;width: 175px;float:right;" src="">
               </div>
@@ -410,24 +360,60 @@
                 <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
             </div>
           </div>
-        
-         <div class="col-lg-12">
-           <center><input class="btn btn-primary" type="submit" value="Register" /></center>
-         </div>
-        
-         
-        </form>
-       
+		  <br>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </form>
+            </div>
+            <div class="col-lg-8 p-3 d-flex align-items-center justify-content-center" style="display:none !important" id="change-password-block">
+                <form method="POST" action="/change-password/" style="width:inherit;">
+                    <h3 class="pt-3 pb-5 text-center" style="color:var(--color1)">Change Password</h3>
+                    <input type="hidden" name="csrfmiddlewaretoken" value="czS4JgoaxRihfyzpZAiYScTqufy9gGvxj82XGzXF2VOIYhOgb2BL4sprlC893dsI">
+                    
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" id="c_pwd" name="oldpassword" class="form-control" placeholder="Current Password" value="" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" id="pass1" name="password1" class="form-control" placeholder="Enter Password" value="" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="pass2" name="password2" class="form-control" placeholder="Confirm Password" value="" required/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-        </div>
-        </div>
 
+    <script>
+        function showPasswordblock(){
+            $('#profile-block').attr('style','display:none !important');
+            $("#change-password-block-btn").css("background-color", "#ededed");
+            $("#profile-block-btn").css("background-color", "");
+            $('#change-password-block').show();
+        }
+        function showProfileblock(){
+            $('#change-password-block').attr('style','display:none !important');
+            $("#profile-block-btn").css("background-color", "#ededed");
+            $("#change-password-block-btn").css("background-color", "");
+            $('#profile-block').show();
+        }
+        function submitImageform(id){
+            console.log("form submit"+id);
+            document.getElementById("ImageForm"+id).submit();
+        }
+        function submitmoreImagesform(){
+            document.getElementById("moreImagesform").submit();
+        }
+    </script>
 
-
-</div>
-</div>
-</section>
+    
+    
+        <script>
+            ''
+        </script>
 
 
 
