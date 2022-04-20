@@ -216,10 +216,36 @@ window.location.href = "{{ route('settings') }}"
                                 <br>
                                 </div>
                                 <!---->
+								<div class="row">
+								<div class="col-lg-12">
                                 <div class="wrapper comment">
                                 <p class="review">{{$reviews->review}}</p>
 								@if($reviews->response)
-								<p class="bottomText mt-0 mb-0 pull-right" style="float:right;"><i class="fa fa-user"></i>&#160;Reply by owner&#160;" {{$reviews->response}} "</p>
+									<div class="v-dialog__container col-lg-1" style="display: block;">
+								<br>
+								</div>
+									 <div class="v-dialog__container col-lg-12" style="display: block;float:right;">
+								
+								
+							
+							
+							</div>
+							 <div class="v-dialog__container col-lg-8" style="display: block;float:right;">
+							 <p class="bottomText mt-0 mb-0 pull-right"style="float:left;font:bold"  >
+							 @if(File::exists("uploads/image/$CData->email.jpg"))
+   <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+                          @else 
+  <img src="<?php echo asset("uploads/image/non.jpg")?>"  class="v-avatar avatar" style="height: 30px; width: 30px;">
+                       @endif
+							&#160;Replied by {{$CData->company}}</p>
+							 <br>
+							 <p class="displayName caption" style="font-size: 10px;float:right;">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->updated_at)) !!} </p>
+							<p><br></p>
+							 <p class="bottomText mt-0 mb-0 pull-right" style="font-size: 10px" >{{$reviews->response}} </p>
+							 </div>
+							 <div class="v-dialog__container col-lg-2" style="display: block;">
+								<br>
+								</div>
 							@endif
                                 
 								@if($reviews->whatsappreview ==1)
@@ -240,6 +266,12 @@ window.location.href = "{{ route('settings') }}"
 								 @endif
 								  @endguest	
                                 </div>
+								 </div>
+								  </div>
+								
+								
+								
+								
                                 
                                 <div class="v-dialog__container" style="display: block;"></div>
                             </div>
