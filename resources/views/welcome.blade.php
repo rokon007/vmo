@@ -77,9 +77,9 @@
 								@elseif($reviews->ratings ==2)
 								    <div  class="reviewcard review-bad">
 								@elseif($reviews->ratings ==3)
-								     <div  class="reviewcard review-bad">
+								     <div  class="reviewcard review-medium">
 								@elseif($reviews->ratings ==4)
-								      <div  class="reviewcard review-medium">
+								      <div  class="reviewcard review-good">
 								@elseif($reviews->ratings ==5)
                                        <div  class="reviewcard review-good">								
 								@else
