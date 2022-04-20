@@ -33,6 +33,15 @@ class CompanyController extends Controller
 
   //     return view('frontpage.viewcompanies',compact('joindata','CompanyNameData'));
   // }
+  
+  
+   public function delete_company($id)
+     {
+      DB::delete('delete from companytbs where id=?',[$id]);
+     
+	  return redirect()->back()->with('success','Company deleted Successfully');
+     }
+	 
     public function companyshow()
    {
     

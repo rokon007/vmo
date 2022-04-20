@@ -22,7 +22,7 @@ use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes   companies plan
+| Web Routes   companies plan 
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -135,6 +135,7 @@ Route::put('companyedite/{cid}',[App\Http\Controllers\pagecontroller::class,'com
 //ADMIN COMPANY companies
 Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'admincompanyshow'])->name('admin.companies')->middleware('is_admin');
 Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
+Route::get('company_delete/{id}', [App\Http\Controllers\CompanyController::class, 'delete_company'])->name('company.delete')->middleware('is_admin');
 
 Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
 //For Review Saverecord
