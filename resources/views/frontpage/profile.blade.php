@@ -237,7 +237,7 @@ window.location.href = "{{ route('settings') }}"
                           @else 
   <img src="<?php echo asset("uploads/image/non.jpg")?>"  class="v-avatar avatar" style="height: 30px; width: 30px;">
                        @endif
-							&#160;Replied by {{$CData->company}}</p>
+							&#160;{{$CData->company}}</p>
 							 <br>
 							 <p class="displayName caption" style="font-size: 10px;float:right;">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->updated_at)) !!} </p>
 							<p><br></p>
