@@ -15,25 +15,24 @@
 					 <div class="col-lg-12 col-sm-12 p-0 pr-3">
 					 <div class="form-group">
 					 <a href="/auth/redirectgoogle"><button class="btn  form-control"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/> Continue with Google</button></a>
-					 </div>
-						</div>
-						</div>
-		 <div class="form-group d-flex flex-row">				
-						
-						 <div class="col-lg-12 col-sm-12 p-0 pr-3">
-					 <div class="form-group">
 					  <a href="/auth/redirectfacebook"><button class="btn  form-control"> <img src="https://img.icons8.com/cute-clipart/48/000000/facebook.png"/> Continue with FaceBook</button></a>
+					   <a href="#"><button class="btn  form-control"> <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/> Continue with Instagram</button></a>
+					   <a href="#"><button class="btn  form-control"> <img src="https://img.icons8.com/fluency/48/000000/twitter.png"/> Continue with Twitter</button></a>
+					    <a href="#"><button class="btn  form-control"> <img src="https://img.icons8.com/color/48/000000/linkedin-circled--v1.png"/> Continue with Linkedin</button></a>
+						 <a href="/review"><button class="btn  form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with Vimbiso</button></a>
 					 </div>
 						</div>
 						</div>
+		
 						
-			 <div class="form-group d-flex flex-row">			
-                         <div class="col-lg-12 col-sm-12 p-0 pr-3">
-                     <div class="form-group">
-                      <a href="/review"><button class="btn  form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with Vimbiso</button></a>
-                     </div>
-                        </div>
-						</div>
+						
+						
+						
+						
+						
+						
+						
+			
 						
 					 
                     
