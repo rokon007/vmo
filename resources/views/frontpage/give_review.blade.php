@@ -16,8 +16,8 @@
 					 <div class="form-group">
 					 <a href="/auth/redirectgoogle"><button class="btn  form-control"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/> Continue with Google</button></a>
 					  <a href="/auth/redirectfacebook"><button class="btn  form-control"> <img src="https://img.icons8.com/cute-clipart/48/000000/facebook.png"/> Continue with FaceBook</button></a>
-					   <a href="#"><button class="btn  form-control"> <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/> Continue with Instagram</button></a>
-					   <a href="#"><button class="btn  form-control"> <img src="https://img.icons8.com/fluency/48/000000/twitter.png"/> Continue with Twitter</button></a>
+					   <a href="https://www.vimbiso.org/auth/redirectinstagram"><button class="btn  form-control"> <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/> Continue with Instagram</button></a>
+					   <a href="{"text":"chirp chirp 🐦"}"><button class="btn  form-control"> <img src="https://img.icons8.com/fluency/48/000000/twitter.png"/> Continue with Twitter</button></a>
 					    <a href="#"><button class="btn  form-control"> <img src="https://img.icons8.com/color/48/000000/linkedin-circled--v1.png"/> Continue with Linkedin</button></a>
 						 <a href="/review"><button class="btn  form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with Vimbiso</button></a>
 					 </div>
