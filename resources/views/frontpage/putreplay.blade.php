@@ -18,7 +18,7 @@ window.location.href="/profile/{{Auth::user()->company_name}}"
     <div class="modal-content">
      <div class="modal-header metallic-red-bg">
                 <div class="d-flex justify-content-center ">
-                    <h3 class="modal-title text-white text-center " id="exampleModalLongTitle">Replay to {{$rview->name}}'s review</h3>
+                    <h3 class="modal-title text-white text-center " id="exampleModalLongTitle">Reply to {{$rview->name}}'s review</h3>
                 </div>
              <a href="/profile/{{Auth::user()->company_name}}">   <button type="button" class="close"  aria-label="Close"></a>
                 <span aria-hidden="true" class="text-white">&times;</span>
@@ -32,7 +32,7 @@ window.location.href="/profile/{{Auth::user()->company_name}}"
        <div class="form-group d-flex flex-row">
 					 <div class="col-lg-12 col-sm-12 p-0 pr-3">
 					 <div class="form-group">
-					 <label>Replay</label>
+					 <label>Reply</label>
                      <textarea class="form-control" name="response" type="text" autofocus></textarea>
 					 </div>
 						</div>

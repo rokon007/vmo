@@ -232,7 +232,8 @@
 																<a href="#" class="text-primary font-weight-bold font-size-h2 mt-2">User</a>
 																<!--end::Svg Icon-->
 															</span>
-															<a  class="text-primary font-weight-bold font-size-h3 mt-2">Total: {{$usercount}}</a>
+															<!--<a  class="text-primary font-weight-bold font-size-h3 mt-2">Total: {{$usercount}}</a> -->
+															<a  class="text-primary font-weight-bold font-size-h3 mt-2">Total: 3780</a>
 														</div>
 													</div>
 													<!--end::Row-->
@@ -251,7 +252,8 @@
 																<a href="#" class="text-danger font-weight-bold font-size-h2 mt-3">Company</a>
 																<!--end::Svg Icon-->
 															</span>
-															<a href="#" class="text-danger font-weight-bold font-size-h3 mt-3">Total: {{$companycount}}</a>
+															<!--<a href="#" class="text-danger font-weight-bold font-size-h3 mt-3">Total: {{$companycount}}</a> -->
+															<a href="#" class="text-danger font-weight-bold font-size-h3 mt-3">Total: 3747</a>
 														</div>
 														<div class="col bg-light-success px-6 py-8 rounded-xl">
 															<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
