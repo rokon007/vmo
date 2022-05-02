@@ -50,6 +50,10 @@ Route::get('/login/facebook/callback', [FacebookController::class, 'handleFacebo
 Route::get('/auth/redirectgoogle', [Googlecontroller::class, 'redirectToGoogle']);
 
 Route::get('/review/google/callback', [Googlecontroller::class, 'handleGoogleCallback']);
+//Instafram
+Route::get('/auth/redirectinstagram', [FacebookController::class, 'redirectToInstagram']);
+
+Route::get('/login/instagram/callback', [FacebookController::class, 'handleInstagramCallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);

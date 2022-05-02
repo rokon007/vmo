@@ -36,6 +36,14 @@ class FacebookController extends Controller
         return Socialite::driver('facebook')->redirect();
 
     }
+	
+	public function redirectToInstagram()
+
+    {
+
+        return Socialite::driver('instagram')->redirect();
+
+    }
 
           
 
@@ -59,6 +67,71 @@ class FacebookController extends Controller
         
 
             $user = Socialite::driver('facebook')->user();
+
+         
+
+            $finduser = User::where('username', $user->id)->first();
+
+        
+
+            if($finduser){
+
+         
+
+                Auth::login($finduser);
+
+        
+
+                // return redirect()->intended('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('CompanyNameData'));
+
+         
+
+            }else{
+
+                $newUser = User::create([
+
+                    'first_name' => $user->name,
+                     'company_name' => $user->name,
+                    'email' => $user->email,
+
+                    'username'=> $user->id,
+
+                    'password' => encrypt('123456dummy')
+
+                ]);
+
+        
+
+                Auth::login($newUser);
+
+        
+
+                // return redirect()->intended('frontpage.socialreviews');
+                return view('frontpage.socialreviews',compact('CompanyNameData'));
+
+            }
+
+        
+
+        } catch (Exception $e) {
+
+            dd($e->getMessage());
+
+        }
+
+    }
+	
+	 public function handleInstagramCallback()
+
+    {
+        $CompanyNameData=Companytb::All();
+
+        try {
+
+        
+
+            $user = Socialite::driver('instagram')->user();
 
          
 
