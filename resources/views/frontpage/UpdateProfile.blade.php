@@ -65,7 +65,7 @@
                     </div>
                     
                     <label>Company Name</label>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$CompanyData->company}}" readonly >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@
                                 @enderror
                     <br>
                     <label>Email</label>
-                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" readonly >
+                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$CompanyData->email}}" readonly >
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -82,13 +82,13 @@
                                 @enderror
                     <br>
                     <label>Description</label>
-                     <textarea class="form-control" name="description" type="text" autofocus></textarea>
+                     <textarea class="form-control" name="description" type="text" autofocus>{{$profile->description}}</textarea>
                     <br>
                     <label>Country</label>
                      <select name="country" class="form-control" id="exampleSelectl">
-                              <option value="">Select Country</option>
+                              <option value="{{$CompanyData->country}}" selected="selected">{{$CompanyData->country}}</option>
                               
-                                                           <option value="AF">Afghanistan</option>
+                                                           <option value="Afghanistan">Afghanistan</option>
                                   <option value="Åland Islands">Åland Islands</option>
                                   <option value="Albania">Albania</option>
                                   <option value="Algeria">Algeria</option>
@@ -323,7 +323,7 @@
                                   <option value="Ukraine">Ukraine</option>
                                   <option value="United Arab Emirates">United Arab Emirates</option>
                                   <option value="United Kingdom">United Kingdom</option>
-                                  <option value="United States" selected="selected">United States</option>
+                                  <option value="United States" >United States</option>
                                   <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
                                   <option value="Uruguay">Uruguay</option>
                                   <option value="Uzbekistan">Uzbekistan</option>
@@ -342,22 +342,52 @@
                             </select>
                     <br>
                     <label>City</label>
-                    <input class="form-control" id="city" name="city" type="text" >
+                    <input class="form-control" id="city" name="city" type="text" value="{{$CompanyData->city}}">
                     <br>
                     <label>Street Address and Door Number</label>
-                    <input class="form-control"  id="block" name="block" type="text">
+                    <input class="form-control"  id="block" name="block" type="text" value="{{$CompanyData->block}}">
                     <br>
+					<label>Select Parent catagori</label>
+					<select name="category" class="form-control" id="category" >
+															<option value="{{$CompanyData->category}}" selected="selected">{{$CompanyData->category}}</option>
+															
+															@foreach($categories as $NewcategoriData)
+															
+                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->name}}</option>
+														   	
+															@endforeach
+															
+														</select>
+														<br>
+														<label>Subcategory</label>
+														<select name="subcategory" class="form-control" id="sub">
+														<option value="{{$CompanyData->subcategory}}">Select Product{{$CompanyData->subcategory}}</option>
+															<option value="{{$CompanyData->subcategory}}" selected="selected">{{$CompanyData->subcategory}}</option>
+															
+                                                         @foreach($Allcategories as $NewcategoriData)
+														 @if($NewcategoriData->getAttribute('category_id')!=NULL)
+                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->category_id }}-->{{$NewcategoriData->name }}</option>
+														      @endif
+															@endforeach
+															
+															
+														</select>
                     
 
                 
                 <h3 class="py-3 text-center" style="color:var(--color1)"><b>Add More Images</b></h3>
                 <div class="col-lg-6" style="float:right;">
               <div class="form-group">
-                <img id="Image3" style="height:120px;width: 175px;float:right;" src="">
+			  @if(File::exists("uploads/image/$profile->image"))
+   <img id="Image3" style="height:120px;width: 175px;float:right;" src="<?php echo asset("uploads/image/$profile->image")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+                          @else 
+  <img id="Image3" style="height:120px;width: 175px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>"  class="v-avatar avatar" style="height: 30px; width: 30px;">
+                       @endif
+               <!-- <img id="Image3" style="height:120px;width: 175px;float:right;" src=""> -->
               </div>
         <div class="form-group ">
                 <label for="exampleInputPassword1"> Business Image</label>
-                <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
+                <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" >
             </div>
           </div>
 		  <br>

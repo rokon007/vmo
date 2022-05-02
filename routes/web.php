@@ -76,6 +76,7 @@ Route::get('/put_replay/{id}', [App\Http\Controllers\pagecontroller::class, 'put
 
 
 Route::get('/settings', [App\Http\Controllers\pagecontroller::class, 'indexsettings'])->name('settings');
+Route::get('/update_profile/{email}', [App\Http\Controllers\pagecontroller::class, 'indexupdate_profile'])->name('update_profile');
 
 //landing page Route
 //Route::get("/home",[HomeController::class,"index"]);

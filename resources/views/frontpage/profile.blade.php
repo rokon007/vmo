@@ -261,7 +261,7 @@ window.location.href = "{{ route('settings') }}"
 								 @else
 									 @if (Auth::user()->company_name==$CData->company)
 									 
-								 <p><a href="/put_replay/{{$reviews->id}}" class="dropdown-item"><i class="icon-pencil5"></i> Replay</a></p>
+								 <p><a href="/put_replay/{{$reviews->id}}" class="dropdown-item"><i class="icon-pencil5"></i> Reply</a></p>
 								 
 								 @endif
 								  @endguest	

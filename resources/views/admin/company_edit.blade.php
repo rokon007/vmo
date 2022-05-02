@@ -433,7 +433,7 @@
 									<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>			
 												<div class="col-xl-6">
 												<div class="form-group">
-														<label>Block</label>
+														<label>Street Address and Door Number</label>
 			                                             <input   type="text" name="block"  class="form-control form-control-lg" value="{{$CompanyData->block}}">
 													</div>
 												<div class="form-group">

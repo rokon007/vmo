@@ -20,7 +20,7 @@ use Auth;
 class pagecontroller extends Controller
 {
 
-    //--------------------------------------Companytb plans indexprofile
+    //--------------------------------------Companytb plans indexprofile indexsettings
      public function about()
     {
         $CompanyNameData=Companytb::All();
@@ -146,6 +146,36 @@ class pagecontroller extends Controller
  
      return view('frontpage.profile',compact('CData','RData','reviewscount','ratings','ratings1','ratings2','ratings3','ratings4','ratings5'));
    }
+   
+   
+    function indexupdate_profile($email)
+	{
+		
+		$CompanyData= Companytb::where('companytbs.email',$email)->first();
+		               
+                       
+		$profile= DB::table('business_profiles')
+                  ->where('email',$email)
+                       ->first();
+					   
+		$Allcategories=Category::All();
+        $categories=Category::whereNull('category_id')->get();
+		$CompanyNameData=Companytb::All();
+
+		
+     if($CompanyData=== null)
+     {
+		  return view('frontpage.settings',compact('CompanyNameData'));
+	 }	
+    else
+	{
+		return view('frontpage.UpdateProfile',compact('CompanyData','profile','Allcategories','categories'));
+	}		
+             
+              
+            
+    
+	}
 
      public function indexsettings()
     {

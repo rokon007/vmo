@@ -103,7 +103,7 @@ a.ex1:hover {
                         
                             <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
 							 <a class="dropdown-item text-dark border-bottom border-dark ex1"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
-							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('settings') }}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Settings') }}</a>
+							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="/update_profile/{{Auth::user()->email}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Settings') }}</a>
                             <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('logout') }}"
 							onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">					
