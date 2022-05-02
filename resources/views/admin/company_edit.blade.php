@@ -441,7 +441,7 @@
 			                                             <input   type="tel" name="contact"  class="form-control form-control-lg" value="{{$CompanyData->contact}}">
 													</div>
 												<div class="form-group">
-														<label for="exampleSelectl">Select Parent categori</label>
+														<label for="exampleSelectl">Select Parent category</label>
 														<select name="category" class="form-control form-control-lg" id="category" >
 															<option value="{{$CompanyData->category}}">{{$CompanyData->category}}</option>
 															@foreach($categories as $NewcategoriData)

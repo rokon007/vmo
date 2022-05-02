@@ -347,7 +347,7 @@
                     <label>Street Address and Door Number</label>
                     <input class="form-control"  id="block" name="block" type="text" value="{{$CompanyData->block}}">
                     <br>
-					<label>Select Parent categori</label>
+					<label>Select Parent category</label>
 					<select name="category" class="form-control" id="category" >
 															<option value="{{$CompanyData->category}}" selected="selected">{{$CompanyData->category}}</option>
 															
