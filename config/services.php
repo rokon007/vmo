@@ -45,7 +45,7 @@ return [
 'instagram' => [
     'client_id' => '738763927486216',
     'client_secret' => '61e4262a6476cfb8eb41cdbc73f2aa4e',
-    'redirect' => 'https://www.vimbiso.org/auth/redirectinstagram',
+    'redirect' => 'https://www.vimbiso.org/login/instagram/callback',
 ],
 
 ];
