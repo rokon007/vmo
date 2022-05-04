@@ -51,26 +51,7 @@ class linkedincontroller extends Controller
 
             }else{
 
-                $newUser = User::create([
-
-                    'first_name' => $user->name,
-                     'company_name' => $user->name,
-                    'email' => $user->email,
-
-                    'username'=> $user->id,
-
-                    'password' => encrypt('123456dummy')
-
-                ]);
-
-        
-
-                Auth::login($newUser);
-
-        
-
-                // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
 
             }
 
