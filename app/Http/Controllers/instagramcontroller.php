@@ -16,7 +16,10 @@ class instagramcontroller extends Controller
 
     {
 
-        return Socialite::driver('instagram')->redirect();
+        //return Socialite::driver('instagram')->redirect();
+		return Socialite::driver('instagram')
+    ->setScopes(['user_profile'])
+    ->redirect();
 
     }
 	 public function handleInstagramCallback()
@@ -40,37 +43,18 @@ class instagramcontroller extends Controller
 
          
 
-                Auth::login($finduser);
+              // Auth::login($finduser);
 
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
 
          
 
-            }else{
+             }else{
 
-                $newUser = User::create([
-
-                    'first_name' => $user->name,
-                     'company_name' => $user->name,
-                    'email' => $user->email,
-
-                    'username'=> $user->id,
-
-                    'password' => encrypt('123456dummy')
-
-                ]);
-
-        
-
-                Auth::login($newUser);
-
-        
-
-                // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
 
             }
 
