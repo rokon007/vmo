@@ -48,4 +48,10 @@ return [
     'redirect' => 'https://www.vimbiso.org/login/instagram/callback',
 ],
 
+'linkedin' => [
+    'client_id' => '78helxuzlej4n9',
+    'client_secret' => '4LoJtQcMtsTUO7RM',
+    'redirect' => 'https://www.vimbiso.org/login/linkedin/callback',
+],
+
 ];

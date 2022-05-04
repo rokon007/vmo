@@ -19,6 +19,8 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\linkedincontroller;
+use App\Http\Controllers\instagramcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,9 +53,12 @@ Route::get('/auth/redirectgoogle', [Googlecontroller::class, 'redirectToGoogle']
 
 Route::get('/review/google/callback', [Googlecontroller::class, 'handleGoogleCallback']);
 //Instafram
-Route::get('/auth/redirectinstagram', [FacebookController::class, 'redirectToInstagram']);
+Route::get('/auth/redirectinstagram', [instagramcontroller::class, 'redirectToInstagram']);
 
-Route::get('/login/instagram/callback', [FacebookController::class, 'handleInstagramCallback']);
+Route::get('/login/instagram/callback', [instagramcontroller::class, 'handleInstagramCallback']);
+//linkedin
+Route::get('/auth/redirectlinkedin', [linkedincontroller::class, 'redirectTolinkedin']);
+Route::get('/login/linkedin/callback', [linkedincontroller::class, 'handlelinkedinCallback']);
 
 
 Route::get('/subcategory/get',[App\Http\Controllers\CategoryController::class,'subcat']);
