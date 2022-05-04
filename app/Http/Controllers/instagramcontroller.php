@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Request;
+
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
 use App\Models\User;
@@ -16,7 +16,7 @@ class instagramcontroller extends Controller
 
     {
 
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('instagram')->redirect();
 
     }
 	 public function handleInstagramCallback()
@@ -28,7 +28,7 @@ class instagramcontroller extends Controller
 
         
 
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('instagram')->user();
 
          
 
