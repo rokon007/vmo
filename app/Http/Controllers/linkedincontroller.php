@@ -32,7 +32,7 @@ class linkedincontroller extends Controller
 
          
 
-            $finduser = User::where('username', $user->id)->first();
+            $finduser = User::where('email', $user->id)->first();
 
         
 
@@ -40,12 +40,12 @@ class linkedincontroller extends Controller
 
          
 
-                Auth::login($finduser);
+               // Auth::login($finduser);
 
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
 
          
 
