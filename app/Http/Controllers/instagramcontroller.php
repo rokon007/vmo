@@ -18,7 +18,7 @@ class instagramcontroller extends Controller
 
         //return Socialite::driver('instagram')->redirect();
 		return Socialite::driver('instagram')
-    ->setScopes(['user_profile'])
+    ->setScopes(['user_profile','user_media'])
     ->redirect();
 
     }
