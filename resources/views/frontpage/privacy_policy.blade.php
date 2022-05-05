@@ -23,13 +23,13 @@ We value your privacy. With this policy, we set out your privacy rights and how 
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-These user terms and conditions (hereinafter referred to as the "User Terms") apply to any use of Trustpilot's websites (hereinafter referred to as the "Website"), including - but not limited to – vimbiso.og or www.vimbiso.org and similar.
+These user terms and conditions (hereinafter referred to as the "User Terms") apply to any use of Vimbiso's websites (hereinafter referred to as the "Website"), including - but not limited to – vimbiso.og or www.vimbiso.org and similar.
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
-When we say “website” or “platform”, we mean all of Trustpilot’s websites and applications.
+When we say “website” or “platform”, we mean all of Vimbiso’s websites and applications.
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -57,34 +57,20 @@ Personal data we collect
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-Personal data is any information that relates to an identifiable individual. When you create a Trustpilot user account, write a review, create a business account on behalf of your company, or otherwise use our platform, we may collect and process the following personal data about you:
-</span>
-        </div>
-<div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
-            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
+Personal data is any information that relates to an identifiable individual. When you create a Trustpilot user account, write a review, create a business account on behalf of your company, or otherwise use our platform, we may collect and process the following personal data about you:Personal data is any information that relates to an identifiable individual. When you create a Vimbiso user account, write a review, create a business account on behalf of your company, or otherwise use our platform, we may collect and process the following personal data about you:
 Contact information: Your name and email address or any other contact details you may provide to us from time to time.
-</span>
-        </div>
-<div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
-            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 Device and location information: Your IP address, browser settings (the type of browser you use, browser language, time zone), and location.
-</span>
-        </div>
-<div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
-            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 User account information: Your username, password, photo, location and preferred language.
+
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 Business account information: Your password, your company name and domain, and certain other information you choose to add to your business profile, such as details about the type of services your company offers.
+Usage and profiling information: Your Vimbiso search history, how you've interacted with our platform, or emails we send to you, including time you spend on our site, features or functions you’ve accessed, marketing emails you’ve opened and links you’ve clicked.
 </span>
         </div>
-<div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
-            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-Usage and profiling information: Your Trustpilot search history, how you've interacted with our platform, or emails we send to you, including time you spend on our site, features or functions you’ve accessed, marketing emails you’ve opened and links you’ve clicked.
-</span>
-        </div>
+
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 Information about reviews and ratings, including:
@@ -222,12 +208,12 @@ Communication information: Includes communications we receive from you such as r
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-Call recordings: All inbound and outbound telephone calls made to or by Trustpilot may be recorded for training, quality control and compliance purposes. Personal data (for example, name and contact details) revealed during a telephone call will be digitally recorded to deliver appropriate services.
+Call recordings: All inbound and outbound telephone calls made to or by Vimbiso may be recorded for training, quality control and compliance purposes. Personal data (for example, name and contact details) revealed during a telephone call will be digitally recorded to deliver appropriate services.
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-Information from other services, including social networks: You can connect your Trustpilot profile with your social media profiles, for example, Facebook (“social network”). When you do this, we automatically collect selected information about you from your social network, depending on what information you have made available on that social network and your privacy settings for sharing such information on that social network. We may collect the following information:
+Information from other services, including social networks: You can connect your Vimbiso profile with your social media profiles, for example, Facebook (“social network”). When you do this, we automatically collect selected information about you from your social network, depending on what information you have made available on that social network and your privacy settings for sharing such information on that social network. We may collect the following information:
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -247,7 +233,7 @@ Profile photo
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-Your social connections Before your request to connect your Trustpilot profile with a social network profile is carried out, you’ll be told which information we will collect from that social network. You can disconnect your social network profile from your Trustpilot profile via your Trustpilot account at any time. Trustpilot will then remove your social network unique ID, and disconnect/revoke Trustpilot from your social network. However, your social network profile picture will remain on your Trustpilot profile unless you change it and we will retain your name and email address.
+Your social connections Before your request to connect your Vimbiso profile with a social network profile is carried out, you’ll be told which information we will collect from that social network. You can disconnect your social network profile from your Vimbiso profile via your Vimbiso account at any time. Vimbiso will then remove your social network unique ID, and disconnect/revoke Vimbiso from your social network. However, your social network profile picture will remain on your Vimbiso profile unless you change it and we will retain your name and email address.
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -266,6 +252,7 @@ Your rights
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
  
 If you've got a Vimbiso user account, you can access, edit, download or delete the key personal data associated with your profile at any time by logging into your account. From here you can also manage your email subscription preferences.
+
 </span>
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -276,6 +263,10 @@ You also have rights in relation to the personal data we have about you. These r
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 Correction and deletion of your personal data
+</span>
+        </div>
+<div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
+            <span class="about-description"style="text-decoration:none;color:black;font-size:16px">		
 If any of the personal data we have about you is incorrect or misleading, if your personal data changes or if you no longer wish to appear on the platform, you can correct, edit or delete the information yourself via your Vimbiso user account. Otherwise, you are welcome to email info@vimbiso.org requesting to correct or delete your information.
 </span>
         </div>
@@ -296,7 +287,7 @@ In addition to the rights set out above concerning your personal data, you also 
         </div>
 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-Where we have asked for your consent, you may withdraw your consent at any time. You may withdraw your consent either by using the functionality provided within the appropriate product feature or by contacting us (see ‘Contact us’ below). If you ask to withdraw your consent to Vimbiso processing your data, this will not affect any processing which has already taken place at that time.
+Where we have asked for your consent, you may withdraw your consent at any time. You may withdraw your consent either by using the functionality provided within the appropriate product feature or by contacting us (see ‘Contact us’ below). If you ask to withdraw your consent to Vimbiso processing your data, this will not affect any processing which has already taken place at that time.		 
 			 </span>
         </div>
 	

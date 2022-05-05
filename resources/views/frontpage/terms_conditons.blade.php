@@ -18,7 +18,7 @@
         </div> -->
         <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-			These user terms and conditions (hereinafter referred to as the "User Terms") apply to any use of Trustpilot's websites (hereinafter referred to as the "Website"), including - but not limited to – vimbiso.og or www.vimbiso.org and similar.
+			These user terms and conditions (hereinafter referred to as the "User Terms") apply to any use of Vimbiso's websites (hereinafter referred to as the "Website"), including - but not limited to – vimbiso.org or www.vimbiso.org and similar.
 		 </span>
         </div>	
 			
@@ -44,6 +44,7 @@ In the event of any conflict between the terms contained herein and those of the
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 By using the Website, you accept to be subject to the User Terms, including the User Guidelines. If you do not accept these User Terms, you are kindly requested not to use the Website any further. The registration as a user requires your express acceptance of these User Terms.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -68,6 +69,7 @@ The services on the website
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 1.3 You are only permitted to register one profile per person on the Website. The profile is personal and you must not transfer it to others.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -86,12 +88,14 @@ The services on the website
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 1.6 We are entitled at any time, without notice and without prejudice, to delete, suspend or change your profile in the event of your violation or suspected violation of these User Terms or applicable law. When deleting your profile, you will no longer have access to services on the Website which require your registration and/or login as a Registered User. When deleting your profile, we reserve the right to delete the user-generated content (see 2.1) you have made on the Website.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 1.7 Furthermore, we reserve the right, at any time and without notice or explanation, to delete your profile and user-generated content (see 2.1). In this case, our disclaimer applies without limitations.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -108,7 +112,7 @@ The services on the website
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
-2.1 To the fullest extent permitted by law, the rights (including all intellectual property rights) in any material, information, notifications, reviews, articles or other types of communication (hereinafter referred to as the "User-Generated Content" or "UGC") created on the Website by Registered Users are licensed to Trustpilot for its non-exclusive use. The Registered User is not entitled to royalty payments or any other compensation or fee related to such UGC. We may freely use and transfer the UGC. Our non-exclusive access to freely use the UGC applies irrevocably without any time limitation and without territorial limitations.
+2.1 To the fullest extent permitted by law, the rights (including all intellectual property rights) in any material, information, notifications, reviews, articles or other types of communication (hereinafter referred to as the "User-Generated Content" or "UGC") created on the Website by Registered Users are licensed to Vimbiso for its non-exclusive use. The Registered User is not entitled to royalty payments or any other compensation or fee related to such UGC. We may freely use and transfer the UGC. Our non-exclusive access to freely use the UGC applies irrevocably without any time limitation and without territorial limitations.
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -135,7 +139,6 @@ The services on the website
 
 2.5 Registered Users must not publish UGC on the website which
 
-
 is of a marketing nature or marketing purposes,
 is unlawful, deceptive, misleading, fraudulent, threatening, abusive, harassing, libelous, defamatory, tortious, obscene, pornographic or profane,
 has sexist, political or racial character,
@@ -150,6 +153,7 @@ is technically harmful (including without limitation computer viruses, logic bom
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 2.6 Contributors of UGC warrant in every context that the UGC is lawful and in compliance with the User Terms. If we receive notice or otherwise become aware that UGC violates current legislation and/or the User Terms, we may delete the UGC without any notice, and we - dependent on the character of the violation - may inform the violated party and/or the authorities of the violation. Our right to delete will not be conditioned on an explanation, although we will strive to inform the Registered User about the deletion and the reason hereof.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -171,6 +175,7 @@ is technically harmful (including without limitation computer viruses, logic bom
 
 
 2.9 We may at any time request information about the UGC from the Registered User, including documentation supporting the information included in the UGC. The Registered User must e.g. document that the UGC is based on an actual buying or service experience in an actual customer relation to the company to which the UGC relates.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -271,7 +276,7 @@ By accepting these User Terms, you confirm to have read and accepted our Privacy
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 
-5.4 Recommendations, reviews, comments, etc. of specific companies, services, e-businesses, etc. on the Website are only guidelines. We are in no case liable for the content of the Website. The use of Trustpilot is in any respect the sole responsibility of the Registered Users. We are not liable for the availability of the Website.
+5.4 Recommendations, reviews, comments, etc. of specific companies, services, e-businesses, etc. on the Website are only guidelines. We are in no case liable for the content of the Website. The use of Vimbiso is in any respect the sole responsibility of the Registered Users. We are not liable for the availability of the Website.
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -319,6 +324,7 @@ By accepting these User Terms, you confirm to have read and accepted our Privacy
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
 7.1 We may terminate your right to access and use the services offered on the Website at any time for any reason without liability. If we do so, or if you elect to delete your profile, any rights granted to you herein will immediately cease. Section 2-8 will survive any termination of the User Terms.
+
 </span>
         </div>
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
@@ -331,7 +337,7 @@ By accepting these User Terms, you confirm to have read and accepted our Privacy
 		 <div class="col-sm-12 col-md-6 col-lg-10 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
 
-8.1 The User Terms are subject to Danish law, and, unless otherwise stated, the general rules of UK law apply in all relations between us and the Registered Users and the users of the Website. Any disputes must be brought before the court of Vimbiso’s UK jurisdiction unless this violates the mandatory jurisdiction rules. (1)
+8.1 The User Terms are subject to Danish law, and, unless otherwise stated, the general rules of UK law apply in all relations between us and the Registered Users and the users of the Website. Any disputes must be brought before the court of Vimbiso’s UK jurisdiction unless this violates the mandatory jurisdiction rules.		 
 			 </span>
         </div>
 	
