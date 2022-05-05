@@ -285,7 +285,7 @@ window.location.href = "{{ route('settings') }}"
                          @endforeach
 						  @if($reviewscount ==1)
 								 <div>
-							 <center><h4 style="color:red;">No Review yeat !</h4></center>
+							 <center><h4 style="color:red;">No Review Yet !</h4></center>
 							 </div>
                           @endif      
                             
