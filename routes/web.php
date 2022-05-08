@@ -54,8 +54,8 @@ Route::get('/auth/redirectgoogle', [Googlecontroller::class, 'redirectToGoogle']
 Route::get('/review/google/callback', [Googlecontroller::class, 'handleGoogleCallback']);
 //Instafram
 Route::get('/auth/redirectinstagram', [instagramcontroller::class, 'redirectToInstagram']);
-
 Route::get('/login/instagram/callback', [instagramcontroller::class, 'handleInstagramCallback']);
+
 //linkedin
 Route::get('/auth/redirectlinkedin', [linkedincontroller::class, 'redirectTolinkedin']);
 Route::get('/login/linkedin/callback', [linkedincontroller::class, 'handlelinkedinCallback']);
