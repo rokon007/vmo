@@ -29,18 +29,18 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link rel="stylesheet" href={{asset("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700")}} />
 		<!--end::Fonts-->
 		<!--begin::Page Custom Styles(used by this page)-->
-		<link href={{asset("../../theme/html/demo1/dist/assets/css/pages/login/classic/login-35883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/css/pages/login/classic/login-35883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
 		<!--end::Page Custom Styles-->
 		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href={{asset("../../theme/html/demo1/dist/assets/plugins/global/plugins.bundle5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
-		<link href={{asset("../../theme/html/demo1/dist/assets/plugins/custom/prismjs/prismjs.bundle5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/plugins/global/plugins.bundle5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/plugins/custom/prismjs/prismjs.bundle5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
 		<link href={{asset("/theme/html/demo1/dist/assets/css/style.bundle5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
 		<!--end::Global Theme Styles-->
 		<!--begin::Layout Themes(used by all pages)-->
-		<link href={{asset("../../theme/html/demo1/dist/assets/css/themes/layout/header/base/light5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
-		<link href={{asset("../../theme/html/demo1/dist/assets/css/themes/layout/header/menu/light5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
-		<link href={{asset("../../theme/html/demo1/dist/assets/css/themes/layout/brand/dark5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
-		<link href={{asset("../../theme/html/demo1/dist/assets/css/themes/layout/aside/dark5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/css/themes/layout/header/base/light5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/css/themes/layout/header/menu/light5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/css/themes/layout/brand/dark5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
+		<link href={{asset("/theme/html/demo1/dist/assets/css/themes/layout/aside/dark5883.css?v=7.2.9")}} rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" type="image/png" href="/rokon/static/images/favicon.ico"/>
 		<!-- Hotjar Tracking Code for keenthemes.com -->
@@ -179,13 +179,13 @@ License: You must have a valid license purchased only from themeforest(the above
 		
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
-		<script src={{asset("../../theme/html/demo1/dist/assets/plugins/global/plugins.bundle5883.js?v=7.2.9")}}></script>
-		<script src={{asset("../../theme/html/demo1/dist/assets/plugins/custom/prismjs/prismjs.bundle5883.js?v=7.2.9")}}></script>
+		<script src={{asset("/theme/html/demo1/dist/assets/plugins/global/plugins.bundle5883.js?v=7.2.9")}}></script>
+		<script src={{asset("/theme/html/demo1/dist/assets/plugins/custom/prismjs/prismjs.bundle5883.js?v=7.2.9")}}></script>
 		<script src={{asset("/theme/html/demo1/dist/assets/js/scripts.bundle5883.js?v=7.2.9")}}></script>
-		<script src={{asset("../../theme/html/demo1/dist/assets/js/engage_code.js")}}></script>
+		<script src={{asset("/theme/html/demo1/dist/assets/js/engage_code.js")}}></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
-		<script src={{asset("../../theme/html/demo1/dist/assets/js/pages/custom/login/login-general5883.js?v=7.2.9")}}></script>
+		<script src={{asset("/theme/html/demo1/dist/assets/js/pages/custom/login/login-general5883.js?v=7.2.9")}}></script>
 		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->
