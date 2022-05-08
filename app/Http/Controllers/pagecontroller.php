@@ -273,7 +273,7 @@ class pagecontroller extends Controller
 
    public function adminlogin()
    {
-      return view('adminlogin');
+      return view('admin.adminlogin');
    }
 
   

@@ -126,7 +126,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::get('adminlogin',[App\Http\Controllers\pagecontroller::class,"adminlogin"])->name('adminlogin');
+Route::get('/adminlogin',[App\Http\Controllers\pagecontroller::class,"adminlogin"])->name('adminlogin');
 
 //admin aria
 
