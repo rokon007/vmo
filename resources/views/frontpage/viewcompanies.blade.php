@@ -199,19 +199,19 @@
                                         </div>
 										@elseif($Data->ratings ==4)
 										    <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                             <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
-                                              <i class="fa fa-star" style="color:#00ff36;"></i>
+                                             <i class="fa fa-star" style="color:#008000;"></i>
+                                             <i class="fa fa-star" style="color:#008000;"></i>
+                                              <i class="fa fa-star" style="color:#008000;"></i>
+                                              <i class="fa fa-star" style="color:#008000;"></i>
                                               
                                         </div>
 										@elseif($Data->ratings ==5)
 										      <div class="tst-rating">
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                             <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
-                                              <i class="fa fa-star" style="color:#51a127;"></i>
+                                             <i class="fa fa-star" style="color:#034a03;"></i>
+                                             <i class="fa fa-star" style="color:#034a03;"></i>
+                                              <i class="fa fa-star" style="color:#034a03;"></i>
+                                              <i class="fa fa-star" style="color:#034a03;"></i>
+                                              <i class="fa fa-star" style="color:#034a03;"></i>
                                         </div>
 										@else
 											<div class="tst-rating">
