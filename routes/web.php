@@ -279,6 +279,7 @@ Route::get('/info/{id}', [App\Http\Controllers\pagecontroller::class, 'info_funt
 Route::get('/contact/{id}', [App\Http\Controllers\pagecontroller::class, 'info_contact'])->name('contactview');
 
 Route::get('/genrate-sitemap', [App\Http\Controllers\sitemapcontroller::class, 'set_sitemap'])->name('sitemap');
+Route::get('/sitemap', [App\Http\Controllers\sitemapcontroller::class, 'set_sitemap2'])->name('sitemap2');
 
 
 

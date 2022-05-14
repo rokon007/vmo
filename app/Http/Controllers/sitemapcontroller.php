@@ -36,4 +36,8 @@ class sitemapcontroller extends Controller
 	$sitemap->store('xml','sitemap');
 	return redirect(url('sitemap.xml'));
     }
+	public function set_sitemap2()
+    {
+		return redirect(url('sitemap(1).xml'));
+	}
 }
