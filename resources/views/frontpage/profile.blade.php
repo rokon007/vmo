@@ -222,7 +222,7 @@ window.location.href = "{{ route('settings') }}"
                                 <p class="review">{{$reviews->review}}</p>
 								
 								 <div class="v-dialog__container " style="display: block;">
-								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">Sl # {{$reviews->id}}</p> 
+								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">RI # {{$reviews->id}}</p> 
 								</div>
 								
 								@if($reviews->response)
