@@ -139,6 +139,11 @@
                             </div>
                             <p class="review p-1 text">{{$reviews->review}}</p>
                             <p class="mb-0 mt-3"><i class="fas fa-building"></i> {{$reviews->company}}</p>
+							
+
+                              <div class="v-dialog__container " style="display: block;">
+								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">Sl # {{$reviews->id}}</p> 
+								</div>							 
                             
                             </div>
                         </div>
