@@ -416,6 +416,7 @@ public function give(Request $request)
       $reviews->whatsappreview=$request->input('whatsappreview');
       $reviews->company_id=$request->input('company_id');
       $reviews->unlistedcompany=$request->input('unlistedcompany');
+	  $reviews->whatsappreview=$request->input('reviewfrom');
       $reviews->save();
 
        $company=Companytb::where('id',[$request->input('company_id')])->first();

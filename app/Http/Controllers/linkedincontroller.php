@@ -23,6 +23,7 @@ class linkedincontroller extends Controller
 
     {
         $CompanyNameData=Companytb::All();
+		$reviewfrom=4;
 
         try {
 
@@ -51,7 +52,7 @@ class linkedincontroller extends Controller
 
             }else{
 
-                return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
+                return view('frontpage.socialreviews1',compact('CompanyNameData','user','reviewfrom'));
 
             }
 

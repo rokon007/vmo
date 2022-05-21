@@ -62,7 +62,7 @@ class FacebookController extends Controller
 
             $user = Socialite::driver('facebook')->user();
 
-         
+            $reviewfrom=2;
 
             $finduser = User::where('username', $user->id)->first();
 
@@ -78,7 +78,7 @@ class FacebookController extends Controller
 
                
               //  return view('frontpage.socialreviews',compact('CompanyNameData'));
-			   return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
+			   return view('frontpage.socialreviews1',compact('CompanyNameData','user','reviewfrom'));
 
          
 

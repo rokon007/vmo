@@ -53,6 +53,7 @@ class Googlecontroller extends Controller
 
     {
         $CompanyNameData=Companytb::All();
+		$reviewfrom=3;
 
         try {
 
@@ -75,7 +76,7 @@ class Googlecontroller extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews',compact('CompanyNameData','reviewfrom'));
 
          
 
@@ -100,7 +101,7 @@ class Googlecontroller extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews',compact('CompanyNameData'));
+                return view('frontpage.socialreviews',compact('CompanyNameData','reviewfrom'));
 
             }
 
