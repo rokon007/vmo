@@ -23,12 +23,23 @@
                         </div>
             
             <div class="col-lg-6 col-sm-12 m-lg-0 m-4" style="border:2px solid var(--red);border-radius:10px">
-                <h2 class="text-center p-3 "><strong>Give a review</strong></h2>
+                <h2 class="text-center p-3 "><strong>
+				Give a review
+				@if($reviewfrom ==1)
+                                   with <i class="fab fa-whatsapp fa-2x ml-2"></i>  
+                                @elseif($reviewfrom ==2)
+                                    with <i class="fab fa-facebook fa-2x ml-2"></i>
+								 @elseif($reviewfrom ==3)
+                                    with <i class="fab fa-google fa-2x ml-2"></i>
+									@elseif($reviewfrom ==4)
+                                    with <i class="fab fa-linkedin fa-2x ml-2"></i>
+								@endif	
+				</strong></h2>
                 
               <form action="http://www.vimbiso.org/give/reviews" method="post" >
 					 @csrf				
                    <!--  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token() }}" > -->
-				   <input  name="reviewfrom" value="{{$reviewfrom}}" >
+				   <input type="hidden" name="reviewfrom" value="{{$reviewfrom}}" >
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email or WhatsApp number</label>
                         <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" value="{{$user->email}}" required>

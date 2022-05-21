@@ -261,7 +261,7 @@ window.location.href = "{{ route('settings') }}"
 								 @elseif($reviews->whatsappreview ==3)
                                     <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-google fa-2x ml-2"></i></a></p>
 									@elseif($reviews->whatsappreview ==4)
-                                    <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-linkedin fa-2x ml-2"></i></a></p>
+                                    <p class="bottomText mt-0 mb-0 pull-right">review on Linkedin <a href="#" target="_blank"><i class="fab fa-linkedin fa-2x ml-2"></i></a></p>
 								@endif	
 								
 								 @guest
