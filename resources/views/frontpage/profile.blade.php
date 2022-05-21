@@ -163,10 +163,9 @@ window.location.href = "{{ route('settings') }}"
                             
                             
                                 <div class="header">
-                               <!-- <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
-                                </div> -->
-								<div class="v-avatar avatar" style="height: 50px; width: 50px;"><img src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">
-                                </div>
+                                <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
+                                </div> 
+								
                                 <span class="displayName title metallic-red">{{$reviews->name}}</span> <span class="displayName caption">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->dateofpurchase)) !!}</span> &nbsp;<span><i class="fas fa-map-marker-alt"></i> {{$reviews->branchlocation}}</span>
                                 <div class="pull-right" style="padding-top:10px">
                                     
