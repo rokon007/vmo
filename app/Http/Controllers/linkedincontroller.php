@@ -46,7 +46,7 @@ class linkedincontroller extends Controller
         
 
                 // return redirect()->intended('frontpage.socialreviews');
-                return view('frontpage.socialreviews1',compact('CompanyNameData','user'));
+                return view('frontpage.socialreviews1',compact('CompanyNameData','user','reviewfrom'));
 
          
 
