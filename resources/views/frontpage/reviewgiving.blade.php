@@ -28,6 +28,7 @@
               <form action="{{route('reviews.give')}}" method="post" >
 									@csrf
                     <input type="hidden" name="csrfmiddlewaretoken" value="lB6hTX7BPDoxyGkcanDqHJTLrOl1ZKiysBVUI5EuLhGxCIiDxvFx1JJwPdYURiU9">
+					<input type="hidden" name="reviewfrom" value="0" >
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email or WhatsApp number</label>
                         <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" placeholder="Enter Email or WhatsApp number" required>

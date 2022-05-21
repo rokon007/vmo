@@ -163,7 +163,9 @@ window.location.href = "{{ route('settings') }}"
                             
                             
                                 <div class="header">
-                                <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
+                               <!-- <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
+                                </div> -->
+								<div class="v-avatar avatar" style="height: 50px; width: 50px;"><img src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">
                                 </div>
                                 <span class="displayName title metallic-red">{{$reviews->name}}</span> <span class="displayName caption">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->dateofpurchase)) !!}</span> &nbsp;<span><i class="fas fa-map-marker-alt"></i> {{$reviews->branchlocation}}</span>
                                 <div class="pull-right" style="padding-top:10px">
@@ -258,7 +260,9 @@ window.location.href = "{{ route('settings') }}"
                                 @elseif($reviews->whatsappreview ==2)
                                     <p class="bottomText mt-0 mb-0 pull-right">review on FaceBook <a href="#" target="_blank"><i class="fab fa-facebook fa-2x ml-2"></i></a></p>
 								 @elseif($reviews->whatsappreview ==3)
-                                    <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-google-logo fa-2x ml-2"></i></a></p>
+                                    <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-google fa-2x ml-2"></i></a></p>
+									@elseif($reviews->whatsappreview ==4)
+                                    <p class="bottomText mt-0 mb-0 pull-right">review on Google <a href="#" target="_blank"><i class="fab fa-linkedin fa-2x ml-2"></i></a></p>
 								@endif	
 								
 								 @guest
