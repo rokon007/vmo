@@ -28,6 +28,7 @@
               <form action="http://www.vimbiso.org/give/reviews" method="post" >
 					 @csrf				
                    <!--  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token() }}" > -->
+				   <input  name="reviewfrom" value="{{$reviewfrom}}" >
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email or WhatsApp number</label>
                         <input type="text" class="form-control" name="contact" aria-describedby="emailHelp" value="{{$user->email}}" required>
