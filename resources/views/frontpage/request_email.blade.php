@@ -148,7 +148,7 @@
                     <label for="message">Message</label>
                     <textarea name="message" class="form-control" required></textarea>
                 </div>  -->
-				<input type="hidden" name="company_email" value="{{Session::get('success')}}">
+				<input type="hidden" name="company_email" value="{{Session::get('email')}}">
                 <div class="d-flex align-items-center flex-wrap justify-content-between pt-4">
                     <div class="form-group pt-lg-2 pt-3">
                         <label for="name">Your Name</label>

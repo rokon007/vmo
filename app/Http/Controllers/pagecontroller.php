@@ -315,9 +315,9 @@ class pagecontroller extends Controller
 			 {
     	$info = Companytb::find($id);
 		$company=$info->company;
-        
+        $email=$info->email;
 		$contact=$info->contact;
-	   return back()->with('contact',( $contact) );
+	   return back()->with('contact',( $email) );
     }
 	   
          public function companyedit(Request $request, $cid)
