@@ -271,8 +271,9 @@ Route::get('filemanager', [FileManagerController::class, 'index'])->middleware('
 //SENT EMAIL
 Route::get('/send-email', [MailController::class, 'sendEmail']);
 
+//RequestFor contact
+Route::post('/request-contact', [App\Http\Controllers\ContactController::class, 'RequestForcontact'])->name('request-contact');
 //RequestForEmail
-
 Route::post('/request-email', [App\Http\Controllers\ContactController::class, 'RequestForEmail'])->name('request-email');
 
 //CONTACT

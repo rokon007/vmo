@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail; 
 use App\Mail\Request_email; 
+use App\Mail\Request_contact;
 
 class ContactController extends Controller
 {
@@ -35,9 +36,26 @@ class ContactController extends Controller
          'subject' => 'Request For Contact Email',
          'message'=>$request->input('message')
         ];
-        Mail::to($request->input('company_email'))->send(new Request_email($deatils));
+        Mail::to($request->input('company_email'))->cc("info@vimbiso.org")->send(new Request_email($deatils));
         // return "Email Sent";
         return redirect()->back()->with(['success' => 'Request For Contact Email Submited Successfully']); 
+
+    } 
+	
+	//RequestForcontact
+	public function RequestForcontact(Request $request) 
+
+    {          
+        $deatils=[
+         'name'=>$request->input('name'),
+         'email'=>$request->input('email'),
+         'subject' => 'Request For Contact Email',
+         'message'=>$request->input('message')
+        ];
+        Mail::to($request->input('company_email'))->cc("info@vimbiso.org")->send(new Request_contact($deatils));
+		
+        // return "Email Sent";
+        return redirect()->back()->with(['success2' => 'Request For Contact Number Submited Successfully']); 
 
     } 
 }

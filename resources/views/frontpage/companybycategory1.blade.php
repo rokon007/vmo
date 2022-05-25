@@ -295,6 +295,7 @@
         </script>
 		
 		 @include('frontpage.request_email');
+		 @include('frontpage.request_contact');
 		  @include('frontpage.give_review');
 <!-- Modal 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -361,7 +362,7 @@
 		 
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     @if($message = Session::get('success'))
+     @if($message = Session::get('email'))
 		 
 	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -381,9 +382,29 @@ $(function() {
 	     </script>
 		  @endif
 		   @if($message = Session::get('contact'))
+		 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+			 <script>
+$(function() {
+    $('#request_contact_Modal').modal('show');
+});
+</script>
+		 <script>
+		  @endif
+		   @if($message = Session::get('success'))
+		 <script>
+	          swal({  title: "Email Info...",
+          text: "{!!Session::get('success')!!}",
+          icon: "../uploads/image/email.jpg",
+         
+  });
+	     </script>
+		  @endif
+		  @if($message = Session::get('success2'))
 		 <script>
 	          swal({  title: "Contact Info...",
-          text: "Contact: {!!Session::get('contact')!!}",
+          text: "{!!Session::get('success2')!!}",
           icon: "../uploads/image/contact.png",
          iconHeight: 80, 
     iconWidth: 80,       

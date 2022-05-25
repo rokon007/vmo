@@ -20,7 +20,7 @@ use Auth;
 class pagecontroller extends Controller
 {
 
-    //--------------------------------------Companytb plans indexprofile indexsettings
+    //--------------------------------------Companytb plans indexprofile indexsettings  info_funtion
      public function about()
     {
         $CompanyNameData=Companytb::All();
@@ -308,7 +308,7 @@ class pagecontroller extends Controller
 		$company=$info->company;
         $email=$info->email;
 		$contact=$info->contact;
-	   return back()->with('success',( $email) );
+	   return back()->with('email',( $email) );
     }
 	 public function info_contact($id)
           
