@@ -55,7 +55,14 @@
 		 
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 pl-lg-5 pr-lg-5 p-3">
-            <h2 class="col-12 d-flex justify-content-center p-3" style="color:var(--red);font-size: 2em;"><strong>Companies</strong></h1>
+            <h2 class="col-12 d-flex justify-content-center p-3" style="color:var(--red);font-size: 2em;">
+			<strong> List of '{{$sub_name}}' in Zimbabwe.</strong></h1>
+			<div class="col-12 d-flex justify-content-center p-3" style="color:var(--greem);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top 10 '{{$sub_name}}' of Harare.
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Business list of '{{$sub_name}}' over Zimbabwe.
+  <br> Zimbabwe's Best bisuness directory of '{{$sub_name}}.
+</div>
+			
 			  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--SEARCH--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    
               <div class="col-sm-12 col-lg-3 col-md-3">
                     <h3 class="text-center"><b>Filter By</b></h3>

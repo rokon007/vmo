@@ -25,7 +25,7 @@ public function viewcompany(Request $request,$name)
       // ->with('reviews')
       // ->get();
      
-  
+  $sub_name=$name;
 
          $RData1 = DB::table('companytbs')
 ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
@@ -76,7 +76,7 @@ public function viewcompany(Request $request,$name)
      
          
    
-      return view('frontpage.companybycategory1',compact('RData1','CompanyNameData','reviewscount','ratings')); 
+      return view('frontpage.companybycategory1',compact('RData1','CompanyNameData','reviewscount','ratings','sub_name')); 
   }
 
 
@@ -90,6 +90,7 @@ public function viewcompany(Request $request,$name)
     public function viewcompany1(Request $request,$name)
   {
    $CompanyNameData=Companytb::All();
+   $sub_name=$name;
     $joindata = DB::table('users')
             // ->join('business_profiles', 'users.id', '=', 'business_profiles.user_id')
      ->join('business_profiles', 'users.email', '=', 'business_profiles.email')
@@ -114,7 +115,7 @@ public function viewcompany(Request $request,$name)
 ->simplePaginate(10);
  
      // $joindata=companytb::where('category',[$name])->paginate(4);
-      return view('frontpage.companybycategory1',compact('RData1','CompanyNameData','reviewscount','ratings')); 
+      return view('frontpage.companybycategory1',compact('RData1','CompanyNameData','reviewscount','ratings','sub_name')); 
   }
 
    public function create()
@@ -183,6 +184,7 @@ public function viewcompany(Request $request,$name)
 
     public function search(Request $request)
     {
+		$sub_name='Company';
       $CompanyNameData=Companytb::All();
       $searchtext= $request->search1;
     //   $reviewscount= Companytb::join('reviews','companytbs.id','=','reviews.company_id')
@@ -209,7 +211,7 @@ public function viewcompany(Request $request,$name)
 
       // $RData1=Companytb::where('company','LIKE','%'.$searchtext.'%')->paginate(4);
 
-       return view('frontpage.companybycategory1',compact('RData1','CompanyNameData')); 
+       return view('frontpage.companybycategory1',compact('RData1','CompanyNameData','sub_name')); 
     }
 }
 
