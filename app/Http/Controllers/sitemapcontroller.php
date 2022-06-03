@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Companytb;
+use App\Models\Category;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
 use DB;
@@ -14,6 +15,15 @@ class sitemapcontroller extends Controller
     {
         //creat new sitemap object
 	$sitemap =App::make("sitemap");
+
+	//get all post from categories
+	$categories=Category::whereNotNull('category_id')->get();
+	//add every post to the sitepmap
+	foreach($categories as $categories)
+	{
+		//https://vimbiso.org/viewcompany/Hair%20Care%20&%20Styling
+		$sitemap->add(URL::to('viewcompany/'.$categories->category_id.'/'),$categories->created_at,'1.0','daily');	
+	}
 	
 	//add items to the sitemap(url,date,priority,freq)
 	$sitemap->add(URL::to('home'),'2022-05-25T20:10:00+02:00','1.0','daily');
@@ -32,6 +42,9 @@ class sitemapcontroller extends Controller
 	{
 		$sitemap->add(URL::to('profile/'.$company->company.'/'),$company->created_at,'1.0','daily');
 	}
+	
+	
+	
 	//generete your sitemap(format,filename)
 	$sitemap->store('xml','sitemap');
 	return redirect(url('sitemap.xml'));
