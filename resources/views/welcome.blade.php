@@ -6,8 +6,15 @@
      //$title = DB::table('titetle_and_tags')->first(); ?>
 
       <title> Vimbiso </title>
-    <meta  name="keywords" content=" ">
-    <meta name="description" content="">
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="
+    Vimbiso is a free independent & transparent customer assurance platform. At Vimbiso we believe the key to unlocking business success starts by listening to your customers.
+    ">
+    <meta name="keywords" content="Vimbiso,how grow business,12/04">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
 
 @endsection

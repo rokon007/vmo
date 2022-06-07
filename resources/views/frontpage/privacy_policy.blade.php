@@ -2,8 +2,13 @@
 @extends('frontpage.frontpage')
  @section('title') 
  <title>Vimbiso|Privacy And Policy</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+        <meta charset="utf-8">
+    <meta name="description" content="We value your privacy. With this policy, we set out your privacy rights and how we collect, use, disclose, transfer and store your personal data.">
+        <meta name="keywords" content="vimbiso">
+        <!-- Required meta tags -->
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         
     
 @endsection 
 @section('body') 

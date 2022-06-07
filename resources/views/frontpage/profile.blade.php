@@ -5,8 +5,11 @@
  <title>
  The best {{$CData->subcategory}} provider Harare, Zimbabwe | Find and Compare - Vimbiso
 </title>
-         <meta name="description" content="The best {{$CData->subcategory}} provider Harare, Zimbabwe .">
-     <meta name="keywords" content="The best {{$CData->subcategory}} provider Harare, Zimbabwe .">
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+         <meta name="description" content="This is why public schools enjoy virtually free education. Most of the rich people send their children to private universities. Zimbabwe is one of the best ...">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
 @endsection 
 @section('body') 

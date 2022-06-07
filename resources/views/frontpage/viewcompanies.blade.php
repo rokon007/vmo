@@ -1,5 +1,17 @@
 @extends('frontpage.frontpage')
- 
+ @section('title') 
+ <title>
+    Listed Companies - Zimbabwe | Vimbiso
+
+</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Zimbabwe: Number of companies listed on the stock exchange: For that indicator, we provide data for Zimbabwe from 1993 to 1999. The average value for ...">
+    <meta name="keywords" content=" Listed Companies in Zimbabwe">
+        <!-- Required meta tags -->
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+@endsection 
 
 @section('body')
 

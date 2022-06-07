@@ -3,8 +3,13 @@
  <title>
  The best {{$sub_name}} provider Harare, Zimbabwe | Vimbiso
 </title>
-         <meta name="description" content="The best {{$sub_name}} provider Harare, Zimbabwe.">
+      <!-- Required meta tags -->
+        <meta charset="utf-8">
+    <meta name="description" content="The most popular Zimbabwe {$sub_name}} classifieds by far. 500000 visitors per month and over 30000 adverts.">
      <meta name="keywords" content="The best {{$sub_name}} provider Harare, Zimbabwe .">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         
     
 @endsection 
 @section('body') 

@@ -1,7 +1,7 @@
 @extends('frontpage.frontpage')
  @section('title') 
  <title>Vimbiso|Review</title>
-         <meta name="description" content="vary good">
+         <meta name="description" content="Review">
      <meta name="keywords" content="vimbiso">
     
 @endsection 

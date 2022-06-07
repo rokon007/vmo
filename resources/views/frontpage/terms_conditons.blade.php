@@ -2,8 +2,13 @@
 @extends('frontpage.frontpage')
  @section('title') 
  <title>Vimbiso|Terms And Conditons</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="These user terms and conditions (hereinafter referred to as the User Terms) apply to any use of Vimbiso's websites (hereinafter referred to as the Website), including - but not limited to – vimbiso.org or www.vimbiso.org and similar. ">
+    <meta name="keywords" content="Terms And Conditons">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     
 @endsection 
 @section('body') 

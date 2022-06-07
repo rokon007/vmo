@@ -13,12 +13,7 @@
 </script>
 
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-	<meta name="description" content="Vimbiso is a free independent & transparent customer assurance platform.">
-    <meta name="keywords" content="Vimbiso, vimbiso,how grow business,12/04">
-    <meta name="author" content="Tanaka Karumazondo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
      @yield('title')
    <!-- <title>Vimbiso - Home</title> -->
 
