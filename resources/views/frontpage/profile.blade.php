@@ -2,9 +2,11 @@
 
 
 @section('title') 
- <title>Vimbiso | Profile</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+ <title>
+ The best {{$CData->subcategory}} provider Harare, Zimbabwe | Find and Compare - Vimbiso
+</title>
+         <meta name="description" content="The best {{$CData->subcategory}} provider Harare, Zimbabwe .">
+     <meta name="keywords" content="The best {{$CData->subcategory}} provider Harare, Zimbabwe .">
    
 @endsection 
 @section('body') 

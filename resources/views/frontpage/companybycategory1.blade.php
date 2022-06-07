@@ -1,8 +1,10 @@
 @extends('frontpage.frontpage')
 @section('title') 
- <title>Vimbiso | Company</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+ <title>
+ The best {{$sub_name}} provider Harare, Zimbabwe | Vimbiso
+</title>
+         <meta name="description" content="The best {{$sub_name}} provider Harare, Zimbabwe.">
+     <meta name="keywords" content="The best {{$sub_name}} provider Harare, Zimbabwe .">
     
 @endsection 
 @section('body') 
