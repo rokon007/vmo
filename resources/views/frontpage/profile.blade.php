@@ -3,7 +3,7 @@
 
 @section('title') 
  <title>
- The best {{$CData->subcategory}} provider Harare, Zimbabwe | Find and Compare - Vimbiso
+ {{$CData->company}}
 </title>
         <!-- Required meta tags -->
     <meta charset="utf-8">
