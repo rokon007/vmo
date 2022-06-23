@@ -11,8 +11,10 @@
 
   gtag('config', 'UA-225043657-1');
 </script>
-
-
+<!--Add-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598584479139935"
+     crossorigin="anonymous"></script>
+<!--/Add-->
     
      @yield('title')
    <!-- <title>Vimbiso - Home</title> -->
