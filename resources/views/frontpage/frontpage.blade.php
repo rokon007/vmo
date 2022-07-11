@@ -73,9 +73,9 @@ a.ex1:hover {
                 <li class="nav-item active">
                     <a class="nav-link ex1" href="{{url('contactus')}}">Contact us</a>
                 </li>
-                <li class="nav-item active">
+            <!--    <li class="nav-item active">
                     <a class="nav-link ex1" href="{{url('plans')}}">Plans</a>
-                </li>
+                </li> -->
                 
                 <li class="nav-item dropdown active">
 				 @guest
@@ -114,6 +114,19 @@ a.ex1:hover {
             </div>		
           @endguest			
                   </li>
+				  
+				   <li class="nav-item dropdown active">
+				      <a class="nav-link dropdown-toggle ex1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      More
+                    </a>
+					<div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
+					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="#"><i class='fas fa-pencil-alt'></i> &nbsp {{ __('Updates') }}</a>
+                       <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="#"><i class='fa fa-volume-up'></i>&nbsp {{ __('Announcement') }}</a>
+					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="#"><i class='fa fa-sign-language'></i>&nbsp {{ __('Rewards') }}</a>
+                       <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('plans')}}"><i class='fas fa-donate'></i>&nbsp {{ __('plan e') }}</a>			
+					</div>
+				   </li>
+				  
                 <li class="nav-item">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn" style="margin-top: 20px;background:linear-gradient(to right, #cb2d3e, #ef473a);color:white" data-toggle="modal" data-target="#exampleModalCenter">
