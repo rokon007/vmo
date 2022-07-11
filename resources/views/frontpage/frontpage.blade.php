@@ -122,7 +122,7 @@ a.ex1:hover {
 					<div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
 					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="#"><i class='fas fa-pencil-alt'></i> &nbsp {{ __('Updates') }}</a>
                        <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="#"><i class='fa fa-volume-up'></i>&nbsp {{ __('Announcement') }}</a>
-					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="#"><i class='fa fa-sign-language'></i>&nbsp {{ __('Rewards') }}</a>
+					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{url('/rewards')}}"><i class='fa fa-sign-language'></i>&nbsp {{ __('Rewards') }}</a>
                        <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('plans')}}"><i class='fas fa-donate'></i>&nbsp {{ __('plan e') }}</a>			
 					</div>
 				   </li>

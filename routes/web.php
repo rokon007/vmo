@@ -45,6 +45,18 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 // Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
 
+//Rewards
+Route::get('/rewards', function () {
+    return view('frontpage.rewards');
+});
+///download
+Route::get('/download', function () {
+    $file=public_path()."/inputgrup.pdf";
+	$headers=array(
+	'content-Type:application/pdf',
+	);
+	return Response::download($file,"Rewards Guide.pdf",$headers);
+});
 
 Route::get('/auth/redirectfacebook', [FacebookController::class, 'redirectToFacebook']);
 
