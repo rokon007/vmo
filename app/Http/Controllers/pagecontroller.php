@@ -20,7 +20,7 @@ use Auth;
 class pagecontroller extends Controller
 {
 
-    //--------------------------------------Companytb plans indexprofile indexsettings  info_funtion
+    //--------------------------------------Companytb plans indexprofile indexsettings  info_funtion give/reviews
      public function about()
     {
         $CompanyNameData=Companytb::All();
@@ -426,8 +426,9 @@ public function give(Request $request)
          'company'=>$company->company,
          'ratings'=>$request->input('ratings')
         ];
-       // Mail::to("info@vimbiso.org")->send(new TestMail($deatils));
-		 Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
+       // Mail::to("info@vimbiso.org")->send(new TestMail($deatils)); 
+		// Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
+		  Mail::to("tanaka.karumazondo0@gmail.com")->cc($company->email)->send(new TestMail($deatils));
         // return "Email Sent";
     
      return redirect()->route('welcome')->with('success','Review aded Successfully');
