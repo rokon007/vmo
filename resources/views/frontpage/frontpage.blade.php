@@ -63,7 +63,10 @@ a.ex1:hover {
 			    
 				 <li class="nav-item active">
                     <a class="nav-link ex1" href="{{url('/')}}">Home</a>
-                </li>		 
+                </li>	
+                     <li class="nav-item active">
+                    <a class="nav-link ex1" href="{{url('/blog')}}">Blog</a>
+                </li> 				
                 <li class="nav-item active">
                     <a class="nav-link ex1" href="{{url('about')}}">About us</a>
                 </li>
@@ -73,9 +76,7 @@ a.ex1:hover {
                 <li class="nav-item active">
                     <a class="nav-link ex1" href="{{url('contactus')}}">Contact us</a>
                 </li>
-            <!--    <li class="nav-item active">
-                    <a class="nav-link ex1" href="{{url('plans')}}">Plans</a>
-                </li> -->
+           
                 
                 <li class="nav-item dropdown active">
 				 @guest

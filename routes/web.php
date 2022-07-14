@@ -22,6 +22,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\linkedincontroller;
 use App\Http\Controllers\instagramcontroller;
 use App\Http\Controllers\sitemapcontroller;
+use App\Http\Controllers\Blog_categoryController;
+use App\Http\Controllers\FrontEndController;
 
 
 /*
@@ -45,6 +47,21 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 // Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
 
+
+//Route::get('/blog',[HomeController::class,"index"])->name('blog');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+// Front End Routes
+Route::get('/blog',[FrontEndController::class,"home"])->name('website');
+//Route::get('/', 'FrontEndController@home')->name('website');
+Route::get('/category/{slug}',[FrontEndController::class,"category"])->name('website.category');
+//Route::get('/category/{slug}', 'FrontEndController@category')->name('website.category');
+Route::get('/tag/{slug}',[FrontEndController::class,"tag"])->name('website.tag');
+//Route::get('/tag/{slug}', 'FrontEndController@tag')->name('website.tag');
+Route::get('/post/{slug}',[FrontEndController::class,"post"])->name('website.post');
+//Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
+
+//Route::post('/contact', 'FrontEndController@send_message')->name('website.contact');
 //Rewards
 Route::get('/rewards', function () {
     return view('frontpage.rewards');
@@ -143,6 +160,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/adminlogin',[App\Http\Controllers\pagecontroller::class,"adminlogin"])->name('adminlogin');
 
 //admin aria
+
+//Blog
+Route::get('/admin/blog/category', [App\Http\Controllers\Blog_categoryController::class, 'index'])->name('category.index')->middleware('is_admin');
+Route::get('/admin/blog/tag', [App\Http\Controllers\TagController::class, 'index'])->name('tag.index')->middleware('is_admin');
+Route::get('/admin/blog/post', [App\Http\Controllers\PostController::class, 'index'])->name('post.index')->middleware('is_admin');
+// Admin Panel Routes
+Route::group(['prefix' => 'admin', 'middleware' => ['is_admin']], function () {
+   
+
+    Route::resource('category', 'App\Http\Controllers\Blog_categoryController');
+    Route::resource('tag', 'App\Http\Controllers\TagController');
+    Route::resource('post', 'App\Http\Controllers\PostController');
+    
+});
 
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminindex'])->name('admin.home')->middleware('is_admin');
 
