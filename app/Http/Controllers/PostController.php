@@ -57,6 +57,7 @@ class PostController extends Controller
             'image' => 'image.jpg',
             'description' => $request->description,
             'category_id' => $request->category,
+			'category' => $request->category,
             'user_id' => auth()->user()->id,
             'published_at' => Carbon::now(),
         ]);
