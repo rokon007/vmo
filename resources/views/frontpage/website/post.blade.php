@@ -1,6 +1,6 @@
 @extends('frontpage.frontpage')
 @section('title') 
- <title>Vimbiso | Blog Category</title>
+ <title>{{ $post->title }}</title>
          <meta name="description" content="vary good">
      <meta name="keywords" content="vimbiso">
     
@@ -8,6 +8,8 @@
  
 
 @section('body') 
+<div class="container-fluid">
+
 <div class="site-cover site-cover-sm same-height overlay single-page"
     style="background-image: url('{{ $post->image }}');">
     <div class="container">
@@ -197,7 +199,7 @@
                 <!-- END sidebar-box -->
                 <div class="sidebar-box">
                     <div class="bio text-center">
-                        <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('website/images/user.png') }} @endif" alt="Image Placeholder"
+                        <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('uploads/image/non.jpg') }} @endif" alt="Image Placeholder"
                             class="img-fluid mb-5">
                         <div class="bio-body">
                             <h2>{{ $post->user->name }}</h2>
@@ -221,7 +223,7 @@
                             <li>
                                 <a href="">
                                     <img src="{{ $post->image }}" alt="Image placeholder"
-                                        class="mr-4">
+                                         class="img-fluid mb-5"
                                     <div class="text">
                                         <h4> {{ $post->title }} </h4>
                                         <div class="post-meta">
@@ -309,13 +311,14 @@
                     </a>
                     @endforeach
                 </div>
+				<br>
             </div>
         </div>
 
     </div>
 </div>
 
-
+</div>
 @endsection
 
 @section('script')

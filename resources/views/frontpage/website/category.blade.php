@@ -8,6 +8,9 @@
  
 
 @section('body') 
+<div class="container-fluid">
+
+
     <div class="py-5 bg-light">
       <div class="container">
         <div class="row">
@@ -55,5 +58,7 @@
       </div>
     </div>
     </div>
+	
+	</div>
 @endsection
     

@@ -13,6 +13,7 @@
  
 
 @section('body') 
+<div class="container-fluid">
 <div class="site-section bg-light">
     <div class="container">
         <div class="row align-items-stretch retro-layout-2">
@@ -38,12 +39,13 @@
                     <div class="text">
 					 <span ><img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;"></span>
                         <div class="post-categories mb-3">
-                            <span class="post-category bg-danger">{{ $post->category}}</span>
+                            <span class="post-category bg-danger">{{ $post->category->name }}</span>
                         </div>
                         <h2>{{ $post->title }}</h2>
                         <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
                     </div>
                 </a>
+				<hr>
                 @endforeach
             </div>
             <div class="col-md-4">
@@ -56,6 +58,7 @@
                         <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
                     </div>
                 </a>
+				<hr>
                 @endforeach
             </div>
         </div>
@@ -74,10 +77,10 @@
             <div class="col-lg-4 mb-4">
                 <div class="entry2">
 				 
-                  <!--  <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
-                            alt="Image" class="img-fluid rounded"></a> -->
-					<a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
-                            alt="Image" style="max-height: 70px;max-width: 70px;"></a>		
+                   <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+                            alt="Image"  class="img-fluid mb-5" style="max-height: 200px;max-width: 250px;"></a> 
+					<!-- <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+                            alt="Image" style="max-height: 70px;max-width: 70px;"></a>	-->	
                     <div class="excerpt">
                         <span class="post-category text-white bg-secondary mb-3">{{ $post->category }}</span>
 
@@ -111,7 +114,7 @@
       </div> --}}
         </div>
     </div>
-</div>
+
 <div class="site-section bg-light">
     <div class="container">
         <div class="row align-items-stretch retro-layout">
@@ -156,6 +159,6 @@
         </div>
     </div>
 </div>
-
+</div>
 
 @endsection
