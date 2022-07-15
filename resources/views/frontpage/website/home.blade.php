@@ -39,7 +39,7 @@
                     <div class="text">
 					 <span ><img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;"></span>
                         <div class="post-categories mb-3">
-                            <span class="post-category bg-danger">{{ $post->category->name }}</span>
+                            <span class="post-category bg-danger">{{ $post->category}}</span>
                         </div>
                         <h2>{{ $post->title }}</h2>
                         <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
