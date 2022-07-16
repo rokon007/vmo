@@ -8,8 +8,10 @@
         <!-- Required meta tags -->
     <meta charset="utf-8">
          <meta name="description" content="This is why public schools enjoy virtually free education. Most of the rich people send their children to private universities. Zimbabwe is one of the best ...">
-    <meta name="author" content="Tanaka Karumazondo">
+     <meta name="keywords" content="Vimbiso">
+	<meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
    
 @endsection 
 @section('body') 
@@ -312,7 +314,7 @@ window.location.href = "{{ route('settings') }}"
                     
                      
 					 @if(File::exists("uploads/image/$CData->email.jpg"))
-          <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="card-img-top" alt="Card image cap" style="max-height:350px">
+          <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="card-img-top" alt="Card image cap"alt="Card image cap" style="max-height:350px">
                           @else 
           <img src="<?php echo asset("uploads/image/non.jpg")?>"class="card-img-top" alt="Card image cap" style="max-height:350px">
                        @endif
