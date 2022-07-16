@@ -1,7 +1,6 @@
 <!doctype html>
 
 <html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225043657-1"></script>
@@ -23,18 +22,18 @@
     
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('rokon') }}/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" >
-    <link rel="stylesheet" href="{{ asset('rokon') }}/static/css/style.css"> 
-    <link rel="stylesheet" href="{{ asset('rokon') }}/static/css/auth.css">
-    <script src="{{ asset('rokon') }}/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" >
+    <link rel="stylesheet" href="/rokon/static/css/style.css"> 
+    <link rel="stylesheet" href="/rokon/static/css/auth.css">
+    <script src="/rokon/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-    <link rel="stylesheet" href="{{ asset('rokon') }}/pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="" /> 
-    <link rel="stylesheet" href="{{ asset('rokon') }}/static/css/notifications.css ">
-    <script src="{{ asset('rokon') }}/static/js/notifications.var.js " type="text/javascript"></script>
-    <link href="{{ asset('rokon') }}/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="{{ asset('rokon') }}/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="/rokon/pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="" /> 
+    <link rel="stylesheet" href="/rokon/static/css/notifications.css ">
+    <script src="/rokon/static/js/notifications.var.js " type="text/javascript"></script>
+    <link href="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('rokon') }}/static/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="/rokon/static/images/favicon.ico"/>
 	<style>
 a.ex1:hover {
  background-color: #008000; //add this of course....
@@ -242,11 +241,11 @@ a.ex1:hover {
  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ asset('rokon') }}/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
-    <script src="{{ asset('rokon') }}/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
     <!-- UIkit JS -->
-    <script src="{{ asset('rokon') }}/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
-    <script src="{{ asset('rokon') }}/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="/rokon/cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
     <script>
         let notifier = new AWN({});
         $('.js-example-basic-single').select2();
