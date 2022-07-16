@@ -60,7 +60,7 @@ Route::get('/category/{slug}',[FrontEndController::class,"category"])->name('web
 Route::get('/tag/{slug}',[FrontEndController::class,"tag"])->name('website.tag');
 //Route::get('/tag/{slug}', 'FrontEndController@tag')->name('website.tag');
 Route::get('/post/{slug}',[FrontEndController::class,"post"])->name('website.post');
-Route::get('/post/{slug}',[FrontEndController::class,"announcement_post"])->name('announcement.post');
+Route::get('/announcement/{slug}',[FrontEndController::class,"announcement_post"])->name('announcement.post');
 //Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
 
 //Route::post('/contact', 'FrontEndController@send_message')->name('website.contact');
