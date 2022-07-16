@@ -35,63 +35,54 @@
 							-->
                             
 							 @foreach($firstPosts2 as $post)
-                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
-                        
-                        <div class="flex-row m-2">
-						<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+							 <a href="{{ route('website.post', ['slug' => $post->slug]) }}">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
 							</span>
 							 </a>
                             <div class=" font-description-sm">
 							<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
-                                <h6>{{ $post->title }}</h6>
-                                <span class="date">{{ $post->created_at->format('M d, Y')}}</span> 
+                                <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
+                                 <p style="font-size:80%;">&nbsp;{{ $post->created_at->format('M d, Y')}}</p> 
 								 </a>
                                 </div>
-                            </div>
-                        </div>
-						<br>
+								
+								
+								<hr>
                         @endforeach
 						<br>
 						@foreach($middlePost as $post)
-                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
-                        
-                        <div class="flex-row m-2">
-						<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                        <a href="{{ route('website.post', ['slug' => $post->slug]) }}">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
 							</span>
 							 </a>
                             <div class=" font-description-sm">
 							<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
-                                <h6>{{ $post->title }}</h6>
-                                <span class="date">{{ $post->created_at->format('M d, Y')}}</span> 
+                                <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
+                                 <p style="font-size:80%;">&nbsp;{{ $post->created_at->format('M d, Y')}}</p> 
 								 </a>
                                 </div>
-                            </div>
-                        </div>
-						<br>
+								
+								
+								<hr>
                         @endforeach
 						<br>
 						@foreach($lastPosts as $post)
-                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
-                        
-                        <div class="flex-row m-2">
-						<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                       <a href="{{ route('website.post', ['slug' => $post->slug]) }}">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
 							</span>
 							 </a>
-                            <div class="  font-description-sm">
+                            <div class=" font-description-sm">
 							<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
-                                <h6><strong>{{ $post->title }}</strong></h6>
-                                <p style="font-size:80%;">{{ $post->created_at->format('M d, Y')}}</p> 
+                                <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
+                                 <p style="font-size:80%;">&nbsp;{{ $post->created_at->format('M d, Y')}}</p> 
 								 </a>
                                 </div>
-                            </div>
-                        </div>
-						<br>
+								
+								
+								<hr>
                         @endforeach
                        
                         </div>
@@ -122,21 +113,20 @@
                     <ul class="list-group list-group-flush">
 					@foreach($recentPosts as $post)
 					 <li class="list-group-item">
-                      <a href="{{ route('website.post', ['slug' => $post->slug]) }}">
-                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
+                      <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
-							</span>
+							
 							 </a>
 					<div class="font-description-sm">
 							
-                                &nbsp;<h6> <strong>{{ $post->title }}</strong></h6>
+                               <h6> <strong>{{ $post->title }}</strong></h6>
                 
                                
                                 </div>
                     <p style="font-size:60%;">&nbsp;&nbsp;{{ $post->created_at->format('M d, Y')}}</p> 
 								 
 								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p><a href="{{ route('website.post', ['slug' => $post->slug]) }}">Read More</a></p>								
+                        <p style="font-size:70%;"><a href="{{ route('website.post', ['slug' => $post->slug]) }}">Read More</a></p>								
 					 </li>
 					  @endforeach
                     </ul>
