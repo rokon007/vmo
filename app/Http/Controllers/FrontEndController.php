@@ -6,8 +6,10 @@ use Session;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Announcement;
 use App\Models\Blog_Category;
 use Illuminate\Http\Request;
+use DB;
 
 class FrontEndController extends Controller
 {
@@ -27,7 +29,25 @@ class FrontEndController extends Controller
     }
 
    
-   
+   //Announcement_show
+   public function Announcement_show(){
+	   $posts = DB::table('announcements')->orderBy('created_at', 'DESC')->take(5)->get();
+        //$posts = Announcement::All()->orderBy('created_at', 'DESC')->take(5)->get();
+        $firstPosts2 = $posts->splice(0, 2);
+        $middlePost = $posts->splice(0, 1);
+        $lastPosts = $posts->splice(0);
+
+        //$footerPosts = Announcement::All()->inRandomOrder()->limit(4)->get();
+		 $footerPosts = DB::table('announcements')->inRandomOrder()->limit(4)->get();
+        $firstFooterPost = $footerPosts->splice(0, 1);
+        $firstfooterPosts2 = $footerPosts->splice(0, 2);
+        $lastFooterPost = $footerPosts->splice(0, 1);
+
+        //$recentPosts = Announcement::All()->orderBy('created_at', 'DESC')->paginate(9);
+		$recentPosts = DB::table('announcements')->orderBy('created_at', 'DESC')->paginate(9);
+        return view('frontpage.announcement.home', compact(['posts', 'recentPosts', 'firstPosts2', 'middlePost', 'lastPosts', 'firstFooterPost', 'firstfooterPosts2', 'lastFooterPost']));
+    }
+	
     public function category($slug){
         $category = Blog_Category::where('slug', $slug)->first();
         if($category){
@@ -67,6 +87,23 @@ class FrontEndController extends Controller
 
         if($post){
             return view('frontpage.website.post', compact(['post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
+        }else {
+            return redirect('/');
+        }
+    }
+	//announcement_post
+	 public function announcement_post($slug){
+        $post = DB::table('announcements')->where('slug', $slug)->first();
+        $posts = DB::table('announcements')->inRandomOrder()->limit(3)->get();
+
+        // More related posts
+        
+
+        $categories = Blog_Category::all();
+        $tags = Tag::all();
+
+        if($post){
+            return view('frontpage.announcement.post', compact(['post', 'posts', 'categories', 'tags']));
         }else {
             return redirect('/');
         }

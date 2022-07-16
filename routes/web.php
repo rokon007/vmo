@@ -53,12 +53,14 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 
 // Front End Routes
 Route::get('/blog',[FrontEndController::class,"home"])->name('website');
+Route::get('/announcement',[FrontEndController::class,"Announcement_show"])->name('announcement');
 //Route::get('/', 'FrontEndController@home')->name('website');
 Route::get('/category/{slug}',[FrontEndController::class,"category"])->name('website.category');
 //Route::get('/category/{slug}', 'FrontEndController@category')->name('website.category');
 Route::get('/tag/{slug}',[FrontEndController::class,"tag"])->name('website.tag');
 //Route::get('/tag/{slug}', 'FrontEndController@tag')->name('website.tag');
 Route::get('/post/{slug}',[FrontEndController::class,"post"])->name('website.post');
+Route::get('/post/{slug}',[FrontEndController::class,"announcement_post"])->name('announcement.post');
 //Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
 
 //Route::post('/contact', 'FrontEndController@send_message')->name('website.contact');
@@ -165,6 +167,7 @@ Route::get('/adminlogin',[App\Http\Controllers\pagecontroller::class,"adminlogin
 Route::get('/admin/blog/category', [App\Http\Controllers\Blog_categoryController::class, 'index'])->name('category.index')->middleware('is_admin');
 Route::get('/admin/blog/tag', [App\Http\Controllers\TagController::class, 'index'])->name('tag.index')->middleware('is_admin');
 Route::get('/admin/blog/post', [App\Http\Controllers\PostController::class, 'index'])->name('post.index')->middleware('is_admin');
+Route::get('/admin/announcement', [App\Http\Controllers\AnnouncementController::class, 'index'])->name('announcement.index')->middleware('is_admin');
 // Admin Panel Routes
 Route::group(['prefix' => 'admin', 'middleware' => ['is_admin']], function () {
    
@@ -172,6 +175,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin']], function () {
     Route::resource('category', 'App\Http\Controllers\Blog_categoryController');
     Route::resource('tag', 'App\Http\Controllers\TagController');
     Route::resource('post', 'App\Http\Controllers\PostController');
+	Route::resource('announcement', 'App\Http\Controllers\AnnouncementController');
     
 });
 

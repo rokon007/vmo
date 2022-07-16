@@ -1,8 +1,13 @@
 @extends('frontpage.frontpage')
 @section('title') 
  <title>{{ $post->title }}</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+        <meta charset="utf-8">
+    <meta name="description" content="
+    Vimbiso is a free independent & transparent customer assurance platform. At Vimbiso we believe the key to unlocking business success starts by listening to your customers.
+    ">
+    <meta name="keywords" content="Vimbiso,how grow business,12/04">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
 @endsection 
  
@@ -12,6 +17,7 @@
 
 <div class="site-cover site-cover-sm same-height overlay single-page"
     style="background-image: url('{{ $post->image }}');">
+	
     <div class="container">
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
@@ -30,7 +36,7 @@
         </div>
     </div>
 </div>
-
+<br>
 <section class="site-section py-lg">
     <div class="container">
         <div class="row blog-entries element-animate">
