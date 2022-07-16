@@ -1,164 +1,199 @@
 @extends('frontpage.frontpage')
+
+
 @section('title') 
  <title>Vimbiso | Blog</title>
          <meta name="description" content="vary good">
      <meta name="keywords" content="vimbiso">
-	  <link rel="stylesheet" href="/rokon/blog/bootstrap.css"> 
-	   <link rel="stylesheet" href="/rokon/blog/bootstrap.min.css"> 
-	    <link rel="stylesheet" href="/rokon/blog/bootstrap-grid.css"> 
-		 <link rel="stylesheet" href="/rokon/blog/bootstrap-reboot.css"> 
-	 
     
 @endsection 
- 
-
 @section('body') 
-<div class="container-fluid">
-<div class="site-section bg-light">
-    <div class="container">
-        <div class="row align-items-stretch retro-layout-2">
-            <div class="col-md-4">
-                @foreach($firstPosts2 as $post)
-                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="h-entry mb-30 v-height gradient"
-                    style="background-image: url('{{ $post->image }}');">
-					
 
-                    <div class="text">
-					 <span ><img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;"></span>
-                        <h2>{{ $post->title }}</h2>
-                        <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
-                    </div>
-                </a>
-				<hr>
-                @endforeach
-            </div>
-            <div class="col-md-4">
-                @foreach($middlePost as $post)
-                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="h-entry img-5 h-100 gradient"
-                    style="background-image: url('{{ $post->image }}'">
-                    <div class="text">
-					 <span ><img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;"></span>
-                        <div class="post-categories mb-3">
-                            <span class="post-category bg-danger">{{ $post->category}}</span>
-                        </div>
-                        <h2>{{ $post->title }}</h2>
-                        <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
-                    </div>
-                </a>
-				<hr>
-                @endforeach
-            </div>
-            <div class="col-md-4">
-                @foreach($lastPosts as $post)
-                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="h-entry mb-30 v-height gradient"
-                    style="background-image: url('{{ $post->image }}');">
-                    <div class="text">
-					 <span ><img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;"></span>
-                        <h2>{{ $post->title }}</h2>
-                        <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
-                    </div>
-                </a>
-				<hr>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="site-section">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2>Recent Posts</h2>
-            </div>
+
+<div class="container1-fluid1 m-0 p-0">
+        <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
+                <div class="flex-column pl-4">
+                        <h6 class="font-heading-sm">Blog</h6>
+                   
+                </div> 
         </div>
+                
+                   
+           
+                
+            
+        
+         
         <div class="row">
-            @foreach($recentPosts as $post)
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-				 
-                   <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
-                            alt="Image"  class="img-fluid mb-5" style="max-height: 200px;max-width: 250px;"></a> 
-					<!-- <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
-                            alt="Image" style="max-height: 70px;max-width: 70px;"></a>	-->	
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-secondary mb-3">{{ $post->category }}</span>
-
-                        <h2><a href="{{ route('website.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img
-                                    src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('website/images/user.png') }} @endif"
-                                    alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">{{ $post->user->name }}</a></span>
-                            <span>&nbsp;-&nbsp; {{ $post->created_at->format('M d, Y') }} </span>
+            <div class="d-flex flex-column col-lg-7 col-sm-12">
+                <div class="theme--light p-lg-5 p-0">
+                    <div class="comments">
+                        
+                            <!--<div class=" text-center m-lg-5 m-3" ><h2><strong>Blog Post</strong></h2>
+							</div>
+							-->
+                            
+							 @foreach($firstPosts2 as $post)
+                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
+                        
+                        <div class="flex-row m-2">
+						<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
+							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
+							</span>
+							 </a>
+                            <div class=" font-description-sm">
+							<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                                <h6>{{ $post->title }}</h6>
+                                <span class="date">{{ $post->created_at->format('M d, Y')}}</span> 
+								 </a>
+                                </div>
+                            </div>
                         </div>
-                        <p> {{ Str::limit($post->description, 100) }} </p>
-                        <p><a href="{{ route('website.post', ['slug' => $post->slug]) }}">Read More</a></p>
+						<br>
+                        @endforeach
+						<br>
+						@foreach($middlePost as $post)
+                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
+                        
+                        <div class="flex-row m-2">
+						<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
+							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
+							</span>
+							 </a>
+                            <div class=" font-description-sm">
+							<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                                <h6>{{ $post->title }}</h6>
+                                <span class="date">{{ $post->created_at->format('M d, Y')}}</span> 
+								 </a>
+                                </div>
+                            </div>
+                        </div>
+						<br>
+                        @endforeach
+						<br>
+						@foreach($lastPosts as $post)
+                        <div class="card v-card v-sheet theme--light elevation-2 text-center pt-2" >
+                        
+                        <div class="flex-row m-2">
+						<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
+							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
+							</span>
+							 </a>
+                            <div class="  font-description-sm">
+							<a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                                <h6><strong>{{ $post->title }}</strong></h6>
+                                <p style="font-size:80%;">{{ $post->created_at->format('M d, Y')}}</p> 
+								 </a>
+                                </div>
+                            </div>
+                        </div>
+						<br>
+                        @endforeach
+                       
+                        </div>
+                       
+                        
+							
+							  
+                            
+                            
+                       
                     </div>
                 </div>
-            </div>
-            @endforeach
-        </div>
-        <div class="row text-center pt-5 border-top">
-            {{ $recentPosts->links() }}
-            {{-- <div class="col-md-12">
-          <div class="custom-pagination">
-            <span>1</span>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <span>...</span>
-            <a href="#">15</a>
-          </div>
-        </div>
-      </div> --}}
-        </div>
-    </div>
+            
+            <div class="d-flex flex-column col-lg-5 col-sm-12 pt-5 align-items-center pb-5">
+                <div class="card" style="width: 18rem;">
+                    
+                     
+					 
+					 
+                      
+                    
+                    
+                    <div class="card-body">
+                        <h5 class="card-title metallic-red text-center">Recent Posts</h5>
+                        
+                        
+                    </div>
+                    <ul class="list-group list-group-flush">
+					@foreach($recentPosts as $post)
+					 <li class="list-group-item">
+                      <a href="{{ route('website.post', ['slug' => $post->slug]) }}">
+                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
+							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;">
+							</span>
+							 </a>
+					<div class="font-description-sm">
+							
+                                &nbsp;<h6> <strong>{{ $post->title }}</strong></h6>
+                
+                               
+                                </div>
+                    <p style="font-size:60%;">&nbsp;&nbsp;{{ $post->created_at->format('M d, Y')}}</p> 
+								 
+								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
+                        <p><a href="{{ route('website.post', ['slug' => $post->slug]) }}">Read More</a></p>								
+					 </li>
+					  @endforeach
+                    </ul>
 
-<div class="site-section bg-light">
-    <div class="container">
-        <div class="row align-items-stretch retro-layout">
-            @foreach($lastFooterPost as $post)
-            <div class="col-md-5 order-md-2">
-                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="hentry img-1 h-100 gradient"
-                    style="background-image: url('{{ $post->image }}');">
-                    <span class="post-category text-white bg-danger">{{ $post->category}}</span>
-                    <div class="text">
-                        <h2>{{ $post->title }}</h2>
-                        <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-            <div class="col-md-7">
-                @foreach($firstFooterPost as $post)
-                <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
-                    class="hentry img-2 v-height mb30 gradient"
-                    style="background-image: url('{{ $post->image }}');">
-                    <span class="post-category text-white bg-success">{{ $post->category }}</span>
-                    <div class="text text-sm">
-                        <h2>{{ $post->title }}</h2>
-                        <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
-                    </div>
-                </a>
-                @endforeach
-                <div class="two-col d-block d-md-flex justify-content-between">
-                    @foreach($firstfooterPosts2 as $post)
-                    <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
-                        class="hentry v-height img-2 gradient" style="background-image: url('{{ $post->image }}');">
-                        <span class="post-category text-white bg-primary">{{ $post->category }}</span>
-                        <div class="text text-sm">
-                            <h2>{{ $post->title }}</h2>
-                            <span class="date">{{ $post->created_at->format('M d, Y')}}</span>
-                        </div>
-                    </a>
-                    @endforeach
                 </div>
-				<br>
             </div>
         </div>
-    </div>
-</div>
-</div>
 
+    </div>
+
+
+ 
+ <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header metallic-red-bg">
+                <div class="d-flex justify-content-center ">
+                    <h3 class="modal-title text-white text-center " id="exampleModalLongTitle">Give a review</h3>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="text-white">&times;</span>
+                </button>
+            </div>
+      <div class="modal-body">
+       <div class="form-group d-flex flex-row">
+					 <div class="col-lg-12 col-sm-12 p-0 pr-3">
+					 <div class="form-group">
+					 <a href="/auth/redirectgoogle"><button class="btn  form-control"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/> Continue with Google</button></a>
+					 </div>
+						</div>
+						</div>
+		 <div class="form-group d-flex flex-row">				
+						
+						 <div class="col-lg-12 col-sm-12 p-0 pr-3">
+					 <div class="form-group">
+					  <a href="/auth/redirectfacebook"><button class="btn  form-control"> <img src="https://img.icons8.com/cute-clipart/48/000000/facebook.png"/> Continue with FaceBook</button></a>
+					 </div>
+						</div>
+						</div>
+						
+			 <div class="form-group d-flex flex-row">			
+                         <div class="col-lg-12 col-sm-12 p-0 pr-3">
+                     <div class="form-group">
+                      <a href="/review"><button class="btn  form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with Vimbiso</button></a>
+                     </div>
+                        </div>
+						</div>
+						
+					 
+                    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
