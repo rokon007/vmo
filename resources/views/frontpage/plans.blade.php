@@ -98,7 +98,7 @@
                     <div class="card-body">
                         <div class="card-header justify-content-center text-center align-items-center">
                             <h3 style="font-weight:700"></strong>Premium Plan</h3>
-                            <span class=""><strong>From</strong></span>
+                            <span class=""><strong>For</strong></span>
                             <h5 class="card-title mt-1">
                            <blockquote class=" pl-2" style="display:inline-block"><p><strong>Free when you claim your profile!</strong></p></blockquote>
                             </h5>
@@ -114,8 +114,9 @@
                             <li class="list-group-item">Respond to reviews</li>
                             <li class="list-group-item">All reviews verified </li>
                         </ul>
-
-                        <button type="button" onclick="submitForm('price_1K2lRqB4k1y3jDV8MCSrIfMw');" class="card-link btn btn-primary card-btn border-0 bright-green-bg">Subscribe</button>
+                       
+                        <a type="button"  href="{{route('password.request')}}" class=" btn btn-primary card-btn border-0 ">Claim Now</a>
+                        <!-- <button type="button" onclick="submitForm('price_1K2lRqB4k1y3jDV8MCSrIfMw');" class="card-link btn btn-primary card-btn border-0 bright-green-bg">Claim Now</button> -->
                     </div>
                 </div>
             </div>

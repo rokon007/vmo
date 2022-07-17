@@ -2,7 +2,7 @@
 
 
 @section('title') 
- <title>Vimbiso | Blog</title>
+ <title>Vimbiso | Rewards</title>
         <meta charset="utf-8">
     <meta name="description" content="
     Vimbiso is a free independent & transparent customer assurance platform. At Vimbiso we believe the key to unlocking business success starts by listening to your customers.
@@ -19,7 +19,7 @@
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
                 <div class="flex-column pl-4">
-                        <h6 class="font-heading-sm"><strong>Announcement</strong></h6>
+                        <h5 class="font-heading-sm"><strong>Rewards</strong></h5>
                    
                 </div> 
         </div>
@@ -40,19 +40,19 @@
 							-->
                             
 							 @foreach($firstPosts2 as $post)
-							 <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
+							 <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
 							</span>
 							 </a>
                             <div class=" font-description-sm">
-							<a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
+							<a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
                                 <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
                                  <p style="font-size:80%;">&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!}</p> 
 								 </a>
 								 <br>
 								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">Read More</a></p>								
+                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
 					
                                 </div>
 								
@@ -61,19 +61,19 @@
                         @endforeach
 						<br>
 						@foreach($middlePost as $post)
-                        <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
+                        <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
 							</span>
 							 </a>
                             <div class=" font-description-sm">
-							<a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
+							<a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
                                 <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
                                  <p style="font-size:80%;">&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!}</p> 
 								 </a>
 								 <br>
 								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">Read More</a></p>								
+                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
 					
                                 </div>
 								
@@ -82,19 +82,19 @@
                         @endforeach
 						<br>
 						@foreach($lastPosts as $post)
-                       <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
+                       <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
                             <span class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
 							</span>
 							 </a>
                             <div class=" font-description-sm">
-							<a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
+							<a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
                                 <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
                                  <p style="font-size:80%;">&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!}</p> 
 								 </a>
 								 <br>
 								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">Read More</a></p>								
+                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
 					
                                 </div>
 								
@@ -123,14 +123,14 @@
                     
                     
                     <div class="card-body">
-                        <h5 class="card-title metallic-red text-center">Recent Announcement</h5>
+                        <h5 class="card-title metallic-red text-center">Recent Rewards</h5>
                         
                         
                     </div>
                     <ul class="list-group list-group-flush">
 					@foreach($recentPosts as $post)
 					 <li class="list-group-item">
-                      <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}" class="text-lg-center text-left font-description-sm" style="float:left;">
+                      <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}" class="text-lg-center text-left font-description-sm" style="float:left;">
 							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
 							
 							 </a>
@@ -143,7 +143,7 @@
                     <p style="font-size:60%;">&nbsp;&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!} </p> 
 								 
 								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">Read More</a></p>								
+                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
 					 </li>
 					  @endforeach
                     </ul>

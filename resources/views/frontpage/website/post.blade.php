@@ -229,7 +229,7 @@
                             <li>
                                 <a href="{{ route('website.post', ['slug' => $post->slug]) }}">
                                     <img src="{{ $post->image }}" alt="Image placeholder"
-                                         class="img-fluid mb-5"
+                                         class="img-fluid mb-5" onerror="this.onerror=null;this.src='uploads/image/non.jpg';"/>
                                     <div class="text">
                                         <h4> {{ $post->title }} </h4>
                                         <div class="post-meta">

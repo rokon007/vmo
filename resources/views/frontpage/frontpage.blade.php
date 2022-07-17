@@ -87,6 +87,7 @@ a.ex1:hover {
                     <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         
                             <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
+							<a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('plans')}}"><i class='fas fa-donate'></i>&nbsp {{ __('Plan') }}</a>
                             <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp {{ __('Login') }}</a>
 							 @endif
 							  @if (Route::has('register'))
@@ -105,6 +106,7 @@ a.ex1:hover {
                             <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
 							 <a class="dropdown-item text-dark border-bottom border-dark ex1"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
 							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="/update_profile/{{Auth::user()->email}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Settings') }}</a>
+							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('plans')}}"><i class='fas fa-donate'></i>&nbsp {{ __('Plan') }}</a>
                             <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('logout') }}"
 							onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">					
@@ -124,7 +126,7 @@ a.ex1:hover {
 					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="#"><i class='fas fa-pencil-alt'></i> &nbsp {{ __('Updates') }}</a>
                        <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('/announcement')}}"><i class='fa fa-volume-up'></i>&nbsp {{ __('Announcement') }}</a>
 					   <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{url('/rewards')}}"><i class='fa fa-sign-language'></i>&nbsp {{ __('Rewards') }}</a>
-                       <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('plans')}}"><i class='fas fa-donate'></i>&nbsp {{ __('plan e') }}</a>			
+                       			
 					</div>
 				   </li>
 				  

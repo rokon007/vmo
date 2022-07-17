@@ -47,6 +47,24 @@ class FrontEndController extends Controller
 		$recentPosts = DB::table('announcements')->orderBy('created_at', 'DESC')->paginate(9);
         return view('frontpage.announcement.home', compact(['posts', 'recentPosts', 'firstPosts2', 'middlePost', 'lastPosts', 'firstFooterPost', 'firstfooterPosts2', 'lastFooterPost']));
     }
+	//rewards_show
+	 public function rewards_show(){
+	   $posts = DB::table('rewards')->orderBy('created_at', 'DESC')->take(5)->get();
+        //$posts = Announcement::All()->orderBy('created_at', 'DESC')->take(5)->get();
+        $firstPosts2 = $posts->splice(0, 2);
+        $middlePost = $posts->splice(0, 1);
+        $lastPosts = $posts->splice(0);
+
+        //$footerPosts = Announcement::All()->inRandomOrder()->limit(4)->get();
+		 $footerPosts = DB::table('rewards')->inRandomOrder()->limit(4)->get();
+        $firstFooterPost = $footerPosts->splice(0, 1);
+        $firstfooterPosts2 = $footerPosts->splice(0, 2);
+        $lastFooterPost = $footerPosts->splice(0, 1);
+
+        //$recentPosts = Announcement::All()->orderBy('created_at', 'DESC')->paginate(9);
+		$recentPosts = DB::table('rewards')->orderBy('created_at', 'DESC')->paginate(9);
+        return view('frontpage.rewards.home', compact(['posts', 'recentPosts', 'firstPosts2', 'middlePost', 'lastPosts', 'firstFooterPost', 'firstfooterPosts2', 'lastFooterPost']));
+    }
 	
     public function category($slug){
         $category = Blog_Category::where('slug', $slug)->first();
@@ -109,6 +127,22 @@ class FrontEndController extends Controller
         }
     }
 
-    
+   //rewards_post 
+    public function rewards_post($slug){
+        $post = DB::table('rewards')->where('slug', $slug)->first();
+        $posts = DB::table('rewards')->inRandomOrder()->limit(3)->get();
+
+        // More related posts
+        
+
+        $categories = Blog_Category::all();
+        $tags = Tag::all();
+
+        if($post){
+            return view('frontpage.rewards.post', compact(['post', 'posts', 'categories', 'tags']));
+        }else {
+            return redirect('/');
+        }
+    }
 }
 

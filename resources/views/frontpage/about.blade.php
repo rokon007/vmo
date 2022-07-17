@@ -41,9 +41,19 @@
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-5 pl-lg-5 pt-lg-5 pb-lg-5 pr-lg-0 pl-5 align-items-center">
-            <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpeg">
+            
+            <div   class="row justify-content-center align-items-center">
+                <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpeg">
+                <h6><strong>Tanaka Karumazondo</strong></h6>
+                <br>Founder and Managing Director, Vimbiso.
+            </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
+       
+        <div   class="row justify-content-center align-items-center">
+                <h4><strong>Why I started Vimbiso?</strong></h4>
+                
+            </div>
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
                 The concept for Vimbiso came to me in November 2020, it was triggered by a moment of reflection.
                 There is an undeniably negative perception of Zimbabwean owned businesses, public institutions, parastatals, NGO’s & civil society organisation.<br><br>

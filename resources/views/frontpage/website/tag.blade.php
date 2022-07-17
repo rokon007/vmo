@@ -1,8 +1,14 @@
 @extends('frontpage.frontpage')
 @section('title') 
  <title>Vimbiso | Blog Category</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+ <meta charset="utf-8">
+    <meta name="description" content="
+    Vimbiso
+    ">
+    <meta name="keywords" content="Vimbiso">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     
 @endsection 
  

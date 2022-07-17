@@ -24,6 +24,7 @@ use App\Http\Controllers\instagramcontroller;
 use App\Http\Controllers\sitemapcontroller;
 use App\Http\Controllers\Blog_categoryController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\RewardsController;
 
 
 /*
@@ -54,20 +55,22 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 // Front End Routes
 Route::get('/blog',[FrontEndController::class,"home"])->name('website');
 Route::get('/announcement',[FrontEndController::class,"Announcement_show"])->name('announcement');
+Route::get('/rewards',[FrontEndController::class,"rewards_show"])->name('rewards');
 //Route::get('/', 'FrontEndController@home')->name('website');
 Route::get('/category/{slug}',[FrontEndController::class,"category"])->name('website.category');
 //Route::get('/category/{slug}', 'FrontEndController@category')->name('website.category');
 Route::get('/tag/{slug}',[FrontEndController::class,"tag"])->name('website.tag');
 //Route::get('/tag/{slug}', 'FrontEndController@tag')->name('website.tag');
 Route::get('/post/{slug}',[FrontEndController::class,"post"])->name('website.post');
+Route::get('/rewards_post/{slug}',[FrontEndController::class,"rewards_post"])->name('rewards.post');
 Route::get('/announcement/{slug}',[FrontEndController::class,"announcement_post"])->name('announcement.post');
 //Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
 
 //Route::post('/contact', 'FrontEndController@send_message')->name('website.contact');
 //Rewards
-Route::get('/rewards', function () {
-    return view('frontpage.rewards');
-});
+//Route::get('/rewards', function () {
+   // return view('frontpage.rewards');
+//});
 ///download
 Route::get('/download', function () {
     $file=public_path()."/inputgrup.pdf";
@@ -176,6 +179,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin']], function () {
     Route::resource('tag', 'App\Http\Controllers\TagController');
     Route::resource('post', 'App\Http\Controllers\PostController');
 	Route::resource('announcement', 'App\Http\Controllers\AnnouncementController');
+	Route::resource('rewards', 'App\Http\Controllers\RewardsController');
     
 });
 
