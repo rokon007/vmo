@@ -14,7 +14,7 @@ class Post extends Model
         'published_at',
     ];
 
-    public function Blog_Category(){
+    public function blog_category(){
         return $this->belongsTo('App\Models\Blog_Category');
     }
 

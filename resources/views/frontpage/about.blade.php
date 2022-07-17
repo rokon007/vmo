@@ -41,7 +41,7 @@
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-5 pl-lg-5 pt-lg-5 pb-lg-5 pr-lg-0 pl-5 align-items-center">
-            <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpg">
+            <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpeg">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">

@@ -82,7 +82,7 @@ class AnnouncementController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(announcement $post)
     {
         return view('admin.announcement.show', compact('post'));
     }
@@ -93,11 +93,18 @@ class AnnouncementController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    //public function edit(Announcement $post)
+    //{
+      //  $tags = Tag::all();
+      //  $categories = Blog_Category::all();
+     //   return view('admin.announcement.edit', compact(['post', 'categories', 'tags']));
+   // }
+	
+	 public function edit( $post)
     {
-        $tags = Tag::all();
-        $categories = Blog_Category::all();
-        return view('admin.snnouncement.edit', compact(['post', 'categories', 'tags']));
+        $Announcement = Announcement::find($post);
+       // $categories = Blog_Category::all();
+        return view('admin.announcement.edit', compact(['post', 'Announcement']));
     }
 
     /**
@@ -107,17 +114,17 @@ class AnnouncementController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, announcement $announcement)
     {
         $this->validate($request, [
-            'title' => "required|unique:posts,title, $post->id",
+           // 'title' => "required|unique:announcements,title, $announcement->id",
             'description' => 'required',
             //'category' => 'required',
         ]);
         
-        $post->title = $request->title;
-        $post->slug = Str::slug($request->title);
-        $post->description = $request->description;
+        $announcement->title = $request->title;
+        $announcement->slug = Str::slug($request->title);
+        $announcement->description = $request->description;
        // $post->category_id = $request->category;
 
         //$post->tags()->sync($request->tags);
@@ -126,13 +133,31 @@ class AnnouncementController extends Controller
             $image = $request->image;
             $image_new_name = time() . '.' . $image->getClientOriginalExtension();
             $image->move('storage/announcement/', $image_new_name);
-            $post->image = '/storage/announcement/' . $image_new_name;
+            $announcement->image = '/storage/announcement/' . $image_new_name;
         }
 
-        $post->save();
+        $announcement->save();
 
         Session::flash('success', 'Announcement updated successfully');
         return redirect()->back();
+
+    // $announcements = Announcement::find($post);
+
+    //      $announcements->title = $request->title;
+    //      $announcements->slug = Str::slug($request->title);
+    //      $announcements->description = $request->description;
+    //          if($request->hasFile('image')){
+    //         $image = $request->image;
+    //         $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+    //         $image->move('storage/announcement/', $image_new_name);
+    //         $announcements->image = '/storage/announcement/' . $image_new_name;
+    //     }
+    //     $announcements->save();
+    //     Session::flash('success', 'Announcement updated successfully');
+    //     return redirect()->back();
+        
+        
+        
     }
 
     /**
@@ -141,14 +166,14 @@ class AnnouncementController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(announcement $announcement)
     {
-        if($post){
-            if(file_exists(public_path($post->image))){
-                unlink(public_path($post->image));
+        if($announcement){
+            if(file_exists(public_path($announcement->image))){
+                unlink(public_path($announcement->image));
             }
 
-            $post->delete();
+            $announcement->delete();
             Session::flash('Announcement deleted successfully');
         }
 

@@ -24,6 +24,18 @@ setTimeout(function() {
 
 </script> -->
 <script>
+    var timeleft = 59;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining Preparing Download";
+  }
+  timeleft -= 1;
+}, 1000);
+</script>
+<script>
     setTimeout(function() {
     $('#timer').fadeOut('fast');
 	 $('#dload').fadeIn('fast');
@@ -54,7 +66,7 @@ setTimeout(function() {
 	<br>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<div id="timer"  class="row justify-content-center align-items-center">
-	 <p id="countdown" style="background:#333ab7;color:#fff;padding:12px;text-decoration:none;display:block">Preparing download please wait 60 seconds</p>
+	 <p id="countdown" style="background:#333ab7;color:#fff;padding:12px;text-decoration:none;display:block"></p>
 	 <script>
 const startingMinutes=10;
 let time = startingMinutes * 60;

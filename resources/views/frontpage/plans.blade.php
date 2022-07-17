@@ -51,7 +51,7 @@
 		<div class="col-lg-1 col-sm-12 mb-4">
                 <br>
             </div>
-            <div class="col-lg-3 col-sm-12 mb-4">
+            <!-- <div class="col-lg-3 col-sm-12 mb-4">
                 <div class="card card1">
 				 <div class="card">
                     <div class="card-body">
@@ -70,8 +70,8 @@
                     </div>
 					</div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-12 mb-4">
+            </div> -->
+            <!-- <div class="col-lg-3 col-sm-12 mb-4">
                 <div class="card card2">
                     <div class="card-body">
                         <div class="card-header">
@@ -92,16 +92,20 @@
                         <button type="button" onclick="submitForm('price_1K9qTqB4k1y3jDV8ZjJGXsPU');" class="card-link btn btn-primary card-btn border-0 bright-yellow-bg">Subscribe</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-12 mb-4">
+            </div> -->
+            <div class="col-lg-4 col-sm-12 mb-4">
                 <div class="card card3">
                     <div class="card-body">
-                        <div class="card-header">
+                        <div class="card-header justify-content-center text-center align-items-center">
                             <h3 style="font-weight:700"></strong>Premium Plan</h3>
                             <span class=""><strong>From</strong></span>
                             <h5 class="card-title mt-1">
-                            $20 <blockquote class=" pl-2" style="display:inline-block"><p><strong>per month</strong><br> Paid annually</p></blockquote>
+                           <blockquote class=" pl-2" style="display:inline-block"><p><strong>Free when you claim your profile!</strong></p></blockquote>
                             </h5>
+                            <!-- <h5 class="card-title mt-1">
+                        
+                            $20 <blockquote class=" pl-2" style="display:inline-block"><p><strong>per month</strong><br> Paid annually</p></blockquote>
+                            </h5> -->
                             <p class="text-subheading">All reviews verified <i class="fas fa-check-circle "></i> for authenticity in your marketing.</p>
                         </div>
                         <ul class="list-group">

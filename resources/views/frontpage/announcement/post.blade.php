@@ -3,9 +3,9 @@
  <title>{{ $post->title }}</title>
         <meta charset="utf-8">
     <meta name="description" content="
-    Vimbiso is a free independent & transparent customer assurance platform. At Vimbiso we believe the key to unlocking business success starts by listening to your customers.
+    {{ Str::limit($post->description, 100) }} ...
     ">
-    <meta name="keywords" content="Vimbiso,how grow business,12/04">
+    <meta name="keywords" content="{{ $post->title }}">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -72,7 +72,7 @@
                         <ul>
                             @foreach($posts as $post)
                             <li>
-                                <a href="">
+                                <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">
                                     <img src="{{ $post->image }}" alt="Image placeholder"
                                          class="img-fluid mb-5"/>
                                     <div class="text">
