@@ -82,9 +82,10 @@ class AnnouncementController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(announcement $post)
+    public function show($post)
     {
-        return view('admin.announcement.show', compact('post'));
+		$Announcement = Announcement::find($post);
+        return view('admin.announcement.show', compact('Announcement'));
     }
 
     /**

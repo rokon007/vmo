@@ -83,9 +83,10 @@ class RewardsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(rewards $post)
+    public function show($post)
     {
-        return view('admin.rewards.show', compact('post'));
+		 $Rewards = Rewards::find($post);
+        return view('admin.rewards.show', compact('Rewards'));
     }
 
     /**
@@ -115,18 +116,19 @@ class RewardsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rewards $rewards)
+   
+	 public function update(Request $request, rewards $reward)
     {
         $this->validate($request, [
-           // 'title' => "required|unique:announcements,title, $announcement->id",
+           // 'title' => "required|unique:announcements,title, $rewards->id",
             'description' => 'required',
             //'category' => 'required',
         ]);
         
-        $rewards->title = $request->title;
-		$rewards->dlink = $request->dlink;
-        $rewards->slug = Str::slug($request->title);
-        $rewards->description = $request->description;
+        $reward->title = $request->title;
+		$reward->dlink = $request->dlink;
+        $reward->slug = Str::slug($request->title);
+        $reward->description = $request->description;
        // $post->category_id = $request->category;
 
         //$post->tags()->sync($request->tags);
@@ -135,15 +137,28 @@ class RewardsController extends Controller
             $image = $request->image;
             $image_new_name = time() . '.' . $image->getClientOriginalExtension();
             $image->move('storage/rewards/', $image_new_name);
-            $rewards->image = '/storage/rewards/' . $image_new_name;
+            $reward->image = '/storage/rewards/' . $image_new_name;
         }
 
-        $rewards->save();
+        $reward->save();
 
         Session::flash('success', 'Rewards updated successfully');
         return redirect()->back();
 
-   
+    // $announcements = Announcement::find($post);
+
+    //      $announcements->title = $request->title;
+    //      $announcements->slug = Str::slug($request->title);
+    //      $announcements->description = $request->description;
+    //          if($request->hasFile('image')){
+    //         $image = $request->image;
+    //         $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+    //         $image->move('storage/announcement/', $image_new_name);
+    //         $announcements->image = '/storage/announcement/' . $image_new_name;
+    //     }
+    //     $announcements->save();
+    //     Session::flash('success', 'Announcement updated successfully');
+    //     return redirect()->back();
         
         
         
@@ -155,14 +170,14 @@ class RewardsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rewards $rewards)
+    public function destroy(rewards $reward)
     {
-        if($rewards){
-            if(file_exists(public_path($rewards->image))){
-                unlink(public_path($rewards->image));
+        if($reward){
+            if(file_exists(public_path($reward->image))){
+                unlink(public_path($reward->image));
             }
 
-            $rewards->delete();
+            $reward->delete();
             Session::flash('Rewards deleted successfully');
         }
 

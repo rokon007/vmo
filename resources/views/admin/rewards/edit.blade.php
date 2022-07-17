@@ -70,7 +70,7 @@
                                                 </div>
                                                 <div class="col-4 text-right">
                                                     <div style="max-width: 100px; max-height: 100px;overflow:hidden; margin-left: auto">
-                                                        <img src="{{ asset($Announcement->image) }}" class="img-fluid" alt="">
+                                                        <img src="{{ asset($Rewards->image) }}" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </div>

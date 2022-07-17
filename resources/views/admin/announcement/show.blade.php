@@ -40,20 +40,20 @@
                                     <th style="width: 200px">Image</th>
                                     <td>
                                         <div style="max-width: 300px; max-height:300px;overflow:hidden">
-                                            <img src="{{ asset($post->image) }}" class="img-fluid" alt="">
+                                            <img src="{{ asset($Announcement->image) }}" class="img-fluid" alt="">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th style="width: 200px">Title</th>
-                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $Announcement->title }}</td>
                                 </tr>
                                
                                
                                
                                 <tr>
                                     <th style="width: 200px">Description</th>
-                                    <td>{!! $post->description !!}</td>
+                                    <td>{!! $Announcement->description !!}</td>
                                 </tr>
                             </tbody>
                         </table>

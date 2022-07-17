@@ -40,23 +40,23 @@
                                     <th style="width: 200px">Image</th>
                                     <td>
                                         <div style="max-width: 300px; max-height:300px;overflow:hidden">
-                                            <img src="{{ asset($post->image) }}" class="img-fluid" alt="">
+                                            <img src="{{ asset($Rewards->image) }}" class="img-fluid" alt="">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th style="width: 200px">Title</th>
-                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $Rewards->title }}</td>
                                 </tr>
                                
                                 <tr>
                                     <th style="width: 200px">Link</th>
-                                    <td>{{ $post->link }}</td>
+                                    <td>{{ $Rewards->dlink }}</td>
                                 </tr>
                                
                                 <tr>
                                     <th style="width: 200px">Description</th>
-                                    <td>{!! $post->description !!}</td>
+                                    <td>{!! $Rewards->description !!}</td>
                                 </tr>
                             </tbody>
                         </table>
