@@ -45,7 +45,10 @@
             <div   class="row justify-content-center align-items-center">
                 <img class="ceo-img img-thumbnail" src="../static/images/ceo.jpeg">
                 <h6><strong>Tanaka Karumazondo</strong></h6>
-                <br>Founder and Managing Director, Vimbiso.
+                
+            </div>
+            <div   class="row justify-content-center align-items-center">
+            <p style="font-size:12px;"><strong>Founder and Managing Director, Vimbiso.</strong></p>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
