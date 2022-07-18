@@ -180,7 +180,7 @@
                                     <p class="bottomText mt-0 mb-0 pull-right">review on Linkedin <a href="#" target="_blank"><i class="fab fa-linkedin fa-2x ml-2"></i></a></p>
 								@endif	
 								 <div class="v-dialog__container " style="display: block;">
-								<p class="dropdown-item"><i class="fas fa-share fa-1x ml-2">Share on Social Midea</i></p>
+								<p class="dropdown-item"><i class="fas fa-share fa-1x ml-2">Share on Social Media</i></p>
 								 	
                                 <tr>
                                     @foreach($socialShare as $key =>$value)

@@ -271,7 +271,7 @@ window.location.href = "{{ route('settings') }}"
                                     <p class="bottomText mt-0 mb-0 pull-right">review on Linkedin <a href="#" target="_blank"><i class="fab fa-linkedin fa-2x ml-2"></i></a></p>
 								@endif	
 								
-								 <p><a href="/review_display/{{$reviews->id}}" class="dropdown-item"><i class="fas fa-share fa-1x ml-2">Share on Social Midea</i></a></p>
+								 <p><a href="/review_display/{{$reviews->id}}" class="dropdown-item"><i class="fas fa-share fa-1x ml-2">Share on Social Media</i></a></p>
 								 @guest
 								 
 								 @else
