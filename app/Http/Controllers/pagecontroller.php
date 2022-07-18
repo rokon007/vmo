@@ -427,7 +427,7 @@ public function give(Request $request)
          'ratings'=>$request->input('ratings')
         ];
       
-		// Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
+		 Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
 		
        
     
