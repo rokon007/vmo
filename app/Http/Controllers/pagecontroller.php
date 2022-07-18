@@ -176,7 +176,7 @@ class pagecontroller extends Controller
     ->get();
 	
 	   
-	 $socialShare=Share::page('https://vimbiso.org/review_display/$rd','$company')
+	 $socialShare=Share::page('https://vimbiso.org/review_display/'"$rd","$company")
         ->facebook()
         ->twitter()
         ->linkedin()
