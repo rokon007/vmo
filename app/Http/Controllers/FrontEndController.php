@@ -105,7 +105,7 @@ class FrontEndController extends Controller
         $categories = Blog_Category::all();
         $tags = Tag::all();
 		
-		 $socialShare=Share::page('https://vimbiso.org/post/'"$slug","$title")
+		 $socialShare=Share::page("https://vimbiso.org/post/$slug","$title")
         ->facebook()
         ->twitter()
         ->linkedin()
@@ -130,7 +130,7 @@ class FrontEndController extends Controller
         $categories = Blog_Category::all();
         $tags = Tag::all();
 		$title= $post->title;
-		 $socialShare=Share::page('https://vimbiso.org/announcement/'"$slug","$title")
+		 $socialShare=Share::page("https://vimbiso.org/announcement/$slug","$title")
         ->facebook()
         ->twitter()
         ->linkedin()
@@ -157,7 +157,7 @@ class FrontEndController extends Controller
         $tags = Tag::all();
 		
 		$title= $post->title;
-		 $socialShare=Share::page('https://vimbiso.org/rewards_post/'"$slug","$title")
+		 $socialShare=Share::page("https://vimbiso.org/rewards_post/$slug","$title")
         ->facebook()
         ->twitter()
         ->linkedin()
