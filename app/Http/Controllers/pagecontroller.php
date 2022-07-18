@@ -17,10 +17,11 @@ use App\Mail\TestMail;
 use File;
 use Redirect;
 use Auth;
+use Share;
 class pagecontroller extends Controller
 {
 
-    //--------------------------------------Companytb plans indexprofile indexsettings  info_funtion give/reviews
+    //--------------------------------------Companytb plans indexprofile indexsettings  info_funtion give/reviews  
      public function about()
     {
         $CompanyNameData=Companytb::All();
@@ -145,6 +146,61 @@ class pagecontroller extends Controller
 // return $CData;
  
      return view('frontpage.profile',compact('CData','RData','reviewscount','ratings','ratings1','ratings2','ratings3','ratings4','ratings5'));
+   }
+   //review_display
+   function review_display($rd)
+    {
+
+
+          try {
+			 
+	 $CData = DB::table('reviews')
+            //->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+            ->join('companytbs', 'reviews.company_id', '=', 'companytbs.id')
+			  ->join('business_profiles', 'companytbs.email', '=', 'business_profiles.email')
+              // ->where('companytbs.company',[$company])
+			  ->where('reviews.id',[$rd])
+            ->select('business_profiles.description','companytbs.id','companytbs.email','companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.created_at','companytbs.updated_at')
+            
+    ->first();
+	$company=$CData->company;
+     $RData = DB::table('reviews')
+            //->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+            ->join('companytbs', 'reviews.company_id', '=', 'companytbs.id')
+              // ->where('companytbs.company',[$company])
+			  ->where('reviews.id',[$rd])
+            ->select('companytbs.*','reviews.company_id as id','reviews.*','companytbs.id  as company_id')
+            // ->get('reviews.created_at','desc')->limit(5);
+            ->groupBy('reviews.id','companytbs.id','companytbs.email','companytbs.email','companytbs.company','companytbs.country','companytbs.city','companytbs.block','companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.created_at','companytbs.updated_at','reviews.name','reviews.contact','reviews.purchaseditem','reviews.itemcounter','reviews.dateofpurchase','reviews.branchlocation','reviews.review','reviews.ratings','reviews.typeofpurchase','reviews.resolved','reviews.response','reviews.isresolved','reviews.whatsappreview','reviews.company_id','reviews.unlistedcompany','reviews.show','reviews.created_at','reviews.updated_at')
+    ->orderBy('reviews.id', 'desc')
+    ->get();
+	
+	   
+	 $socialShare=Share::page('https://vimbiso.org/review_display/$rd','$company')
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->telegram()
+        ->getRawLinks();		
+ 
+ 
+  
+	
+	
+	
+	
+	
+    } catch (ModelNotFoundException $exception) {
+        return back()->withError($exception->getMessage())->withInput();
+    }
+    
+
+
+
+// return $CData;
+ 
+     return view('frontpage.share.review_display',compact('RData','CData','socialShare'));
    }
    
    

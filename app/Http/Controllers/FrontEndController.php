@@ -10,6 +10,7 @@ use App\Models\Announcement;
 use App\Models\Blog_Category;
 use Illuminate\Http\Request;
 use DB;
+use Share;
 
 class FrontEndController extends Controller
 {
@@ -93,6 +94,7 @@ class FrontEndController extends Controller
     public function post($slug){
         $post = Post::with('Blog_Category', 'user')->where('slug', $slug)->first();
         $posts = Post::with('Blog_Category', 'user')->inRandomOrder()->limit(3)->get();
+		$title=$post->title;
 
         // More related posts
         $relatedPosts = Post::orderBy('category_id', 'desc')->inRandomOrder()->take(4)->get();
@@ -102,9 +104,17 @@ class FrontEndController extends Controller
 
         $categories = Blog_Category::all();
         $tags = Tag::all();
+		
+		 $socialShare=Share::page('https://vimbiso.org/post/$slug','$title')
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->telegram()
+        ->getRawLinks();	
 
         if($post){
-            return view('frontpage.website.post', compact(['post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
+            return view('frontpage.website.post', compact(['socialShare','post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
         }else {
             return redirect('/');
         }
@@ -113,15 +123,23 @@ class FrontEndController extends Controller
 	 public function announcement_post($slug){
         $post = DB::table('announcements')->where('slug', $slug)->first();
         $posts = DB::table('announcements')->inRandomOrder()->limit(3)->get();
-
+        
         // More related posts
         
 
         $categories = Blog_Category::all();
         $tags = Tag::all();
+		$title= $post->title;
+		 $socialShare=Share::page('https://vimbiso.org/announcement/$slug','$title')
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->telegram()
+        ->getRawLinks();
 
         if($post){
-            return view('frontpage.announcement.post', compact(['post', 'posts', 'categories', 'tags']));
+            return view('frontpage.announcement.post', compact(['socialShare','post', 'posts', 'categories', 'tags']));
         }else {
             return redirect('/');
         }
@@ -137,9 +155,18 @@ class FrontEndController extends Controller
 
         $categories = Blog_Category::all();
         $tags = Tag::all();
+		
+		$title= $post->title;
+		 $socialShare=Share::page('https://vimbiso.org/rewards_post/$slug','$title')
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->telegram()
+        ->getRawLinks();
 
         if($post){
-            return view('frontpage.rewards.post', compact(['post', 'posts', 'categories', 'tags']));
+            return view('frontpage.rewards.post', compact(['socialShare','post', 'posts', 'categories', 'tags']));
         }else {
             return redirect('/');
         }

@@ -45,7 +45,15 @@
                 <div class="post-content-body">
                     {!! $post->description !!}
                 </div>
-                
+                 <div class="post-content-body">
+                    <p class="dropdown-item"><i class="fas fa-share fa-1x ml-2">Share on Social Midea</i></p>
+								 	
+                                <tr>
+                                    @foreach($socialShare as $key =>$value)
+                                    <th><a href="{{$value}}"><i class="fab fa-{{$key}} fa-2x ml-2"></i>&#160;&#160;</a></th>
+                                     @endforeach
+                                </tr>
+                </div>
                
 
             </div>

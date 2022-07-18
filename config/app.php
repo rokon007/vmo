@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         \Maatwebsite\Excel\ExcelServiceProvider::class,
+		
 
         /*
          * Package Service Providers...
@@ -178,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 		//Socialite Provider',
 		\SocialiteProviders\Manager\ServiceProvider::class,
+		Jorenvh\Share\Providers\ShareServiceProvider::class,
 
         
 
@@ -237,6 +239,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         
         'Excel' => \Maatwebsite\Excel\Facades\Excel::class,
+		'Share' => Jorenvh\Share\ShareFacade::class,
 
     ],
 

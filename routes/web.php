@@ -115,6 +115,12 @@ Route::get('/categories',[CategoryController::class,"FrontCategory"]);
 Route::get('/search',[App\Http\Controllers\CategoryController::class, 'search'])->name('search'); 
 //Normal User
 Route::get('/profile/{company}', [App\Http\Controllers\pagecontroller::class, 'indexprofile'])->name('profile');
+//review_display
+Route::get('/review_display/{rd}', [App\Http\Controllers\pagecontroller::class, 'review_display'])->name('review_display');
+//Route::get('warden/building/{buildingId}/employee/{employeeId}',[
+   // 'uses'=>'WardenController@deleteWarden',
+   // 'as'=>'delete-warden'
+//]);{id}/{ticketid}
 Route::put('/replay/{id}', [App\Http\Controllers\pagecontroller::class, 'replay_save'])->name('replay.save');
 Route::get('/put_replay/{id}', [App\Http\Controllers\pagecontroller::class, 'put_replay'])->name('replay.view');
 //put_replay
