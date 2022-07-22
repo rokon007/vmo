@@ -66,7 +66,7 @@ class AnnouncementController extends Controller
 
         if($request->hasFile('image')){
             $image = $request->image;
-            $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+            $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
             $image->move('storage/announcement/', $image_new_name);
             $post->image = '/storage/announcement/' . $image_new_name;
             $post->save();
@@ -132,7 +132,7 @@ class AnnouncementController extends Controller
 
         if($request->hasFile('image')){
             $image = $request->image;
-            $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+            $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
             $image->move('storage/announcement/', $image_new_name);
             $announcement->image = '/storage/announcement/' . $image_new_name;
         }

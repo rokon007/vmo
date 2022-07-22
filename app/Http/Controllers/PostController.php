@@ -56,7 +56,7 @@ class PostController extends Controller
             'slug' => Str::slug($request->title),
             'image' => 'image.jpg',
             'description' => $request->description,
-            'category_id' => $request->category,
+            'category_id' => $request->sub,
 			'category' => $request->category,
             'user_id' => auth()->user()->id,
             'published_at' => Carbon::now(),
@@ -119,8 +119,9 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = Str::slug($request->title);
         $post->description = $request->description;
-        $post->category_id = $request->category;
-
+        $post->category_id = $request->sub;
+		$post->category = $request->category;
+        
         $post->tags()->sync($request->tags);
 
         if($request->hasFile('image')){

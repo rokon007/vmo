@@ -58,30 +58,55 @@
                                             <select name="category" id="category" class="form-control">
                                                 <option value="" style="display: none" selected>Select Category</option>
                                                 @foreach($categories as $c)
-                                                <option value="{{ $c->id }}">
-												{{ $c->name }} 
-												
-												</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-										<script>
-														jQuery(document).ready(function(){
-															jQuery('#category').change(function(){
-																let cid=jQuery(this).val();
-																jQuery.ajax({
-																	url:'/getcategory',
-																	type:'post',
-																	data:'cid='+cid+'&_token={{csrf_token()}}',
-																	success:function(result){
-																		jquery('#sub').html(result)
-																	}
-																});
-															});
-														});
-														
-														</script>
-                    <input type="name" name="sub" id="sub" value="" class="form-control" >
+                                                <option value="{ $c->name }}" data-price="{{ $c->id }}">{{ $c->name }} </option>
+												 @endforeach
+											 </select>	
+										  </div>		
+										 <script  type="text/javascript">    
+                                           let sel = document.getElementById('category');
+                                               sel.addEventListener('click', function (e) {
+                                          let price = e.srcElement.selectedOptions['0'].dataset.price;
+                                          document.getElementById('sub').value = price;
+                                            });
+
+                                           </script> 
+										   
+										    <!--   <script  type="text/javascript"> 
+                                              // let orderButton = document.getElementById("category");
+let itemList = document.getElementById("category");
+let outputBox = document.getElementById("sub");
+
+itemList.addEventListener("click", function() {
+  let collection = itemList.selectedOptions;
+  let output = "";
+
+  for (let i=0; i<collection.length; i++) {
+    if (output === "") {
+      output = "Your order for the following items has been placed: ";
+    }
+    output += collection[i].label;
+
+    if (i === (collection.length - 2) && (collection.length < 3)) {
+      output +=  " and ";
+    } else if (i < (collection.length - 2)) {
+      output += ", ";
+    } else if (i === (collection.length - 2)) {
+      output += ", and ";
+    }
+  }
+
+  if (output === "") {
+    output = "You didn't order anything!";
+  }
+
+  outputBox.innerHTML = output;
+}, false);
+                                            </script>		-->								   
+										
+                                        <div class="form-group">
+                                            <label for="category">Post Category Id</label>
+											 <input type="name" name="sub" id="sub"  class="form-control" autocomplete="off" readonly >
+											 </div>
                                         <div class="form-group">
                                             <label for="image">Image</label>
                                             <div class="custom-file">

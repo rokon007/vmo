@@ -59,10 +59,22 @@
                                             <select name="category" id="category" class="form-control">
                                                 <option value="" style="display: none" selected>Select Category</option>
                                                 @foreach($categories as $c)
-                                                <option value="{{ $c->id }}" @if($post->category_id == $c->id) selected @endif> {{ $c->name }} </option>
+                                                <option value="{{ $c->name }}" data-price="{{ $c->id }}" @if($post->category_id == $c->id) selected @endif> {{ $c->name }} </option>
                                                 @endforeach
                                             </select>
                                         </div>
+										<script  type="text/javascript">    
+                                           let sel = document.getElementById('category');
+                                               sel.addEventListener('click', function (e) {
+                                          let price = e.srcElement.selectedOptions['0'].dataset.price;
+                                          document.getElementById('sub').value = price;
+                                            });
+
+                                           </script> 
+										    <div class="form-group">
+                                            <label for="category">Post Category Id</label>
+											 <input type="name" name="sub" id="sub" value="{{ $post->category_id }}" class="form-control" autocomplete="off" readonly >
+											 </div>
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-8">

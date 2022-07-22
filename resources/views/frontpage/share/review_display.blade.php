@@ -6,12 +6,15 @@
 {{$CData->company}}'s Reviews share
 </title>
         <!-- Required meta tags -->
+		 
     <meta charset="utf-8">
-         <meta name="description" content="This is why public schools enjoy virtually free education. Most of the rich people send their children to private universities. Zimbabwe is one of the best ...">
-     <meta name="keywords" content="Vimbiso">
+	@foreach($RData as $reviews)
+         <meta name="description" content="{{$reviews->review}}">
+	@endforeach
+     <meta name="keywords" content="{{$CData->company}}">
 	<meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+	 
    
 @endsection 
 @section('body') 
