@@ -34,7 +34,7 @@ use App\Http\Controllers\RewardsController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create something great! 
 |
 */    
 /*   
@@ -53,7 +53,9 @@ Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
 //Route::get('/home', 'HomeController@index')->name('home');
 
 // Front End Routes
+Route::get('/category/{slug}',[FrontEndController::class,"category"])->name('website.category');
 Route::get('/blog',[FrontEndController::class,"home"])->name('website');
+Route::post('/comment/save', [App\Http\Controllers\FrontEndController::class, 'comment_save'])->name('comment.save');
 Route::get('/announcement',[FrontEndController::class,"Announcement_show"])->name('announcement');
 Route::get('/rewards',[FrontEndController::class,"rewards_show"])->name('rewards');
 //Route::get('/', 'FrontEndController@home')->name('website');
@@ -205,7 +207,8 @@ Route::put('companyedite/{cid}',[App\Http\Controllers\pagecontroller::class,'com
 Route::get('/admin/companies',[App\Http\Controllers\CompanyController::class,'admincompanyshow'])->name('admin.companies')->middleware('is_admin');
 Route::post('/admin/company', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.save')->middleware('is_admin');
 Route::get('company_delete/{id}', [App\Http\Controllers\CompanyController::class, 'delete_company'])->name('company.delete')->middleware('is_admin');
-
+//getcategory
+Route::post('/getcategory', [App\Http\Controllers\FrontEndController::class, 'getcategory']);
 Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
 //For Review Saverecord
 

@@ -8,9 +8,12 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Announcement;
 use App\Models\Blog_Category;
+use App\Models\PostComment;
 use Illuminate\Http\Request;
 use DB;
 use Share;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class FrontEndController extends Controller
 {
@@ -32,11 +35,11 @@ class FrontEndController extends Controller
    
    //Announcement_show
    public function Announcement_show(){
-	   $posts = DB::table('announcements')->orderBy('created_at', 'DESC')->take(5)->get();
+	   $posts = DB::table('announcements')->orderBy('created_at', 'DESC')->take(3)->get();
         //$posts = Announcement::All()->orderBy('created_at', 'DESC')->take(5)->get();
-        $firstPosts2 = $posts->splice(0, 2);
+        $firstPosts2 = $posts->splice(0, 1);
         $middlePost = $posts->splice(0, 1);
-        $lastPosts = $posts->splice(0);
+        $lastPosts = $posts->splice(0,1);
 
         //$footerPosts = Announcement::All()->inRandomOrder()->limit(4)->get();
 		 $footerPosts = DB::table('announcements')->inRandomOrder()->limit(4)->get();
@@ -50,11 +53,11 @@ class FrontEndController extends Controller
     }
 	//rewards_show
 	 public function rewards_show(){
-	   $posts = DB::table('rewards')->orderBy('created_at', 'DESC')->take(5)->get();
+	   $posts = DB::table('rewards')->orderBy('created_at', 'DESC')->take(3)->get();
         //$posts = Announcement::All()->orderBy('created_at', 'DESC')->take(5)->get();
-        $firstPosts2 = $posts->splice(0, 2);
+        $firstPosts2 = $posts->splice(0, 1);
         $middlePost = $posts->splice(0, 1);
-        $lastPosts = $posts->splice(0);
+        $lastPosts = $posts->splice(0,1);
 
         //$footerPosts = Announcement::All()->inRandomOrder()->limit(4)->get();
 		 $footerPosts = DB::table('rewards')->inRandomOrder()->limit(4)->get();
@@ -68,7 +71,7 @@ class FrontEndController extends Controller
     }
 	
     public function category($slug){
-        $category = Blog_Category::where('slug', $slug)->first();
+        $category = Blog_Category::where('id', $slug)->first();
         if($category){
             $posts = Post::where('category_id', $category->id)->paginate(9);
 
@@ -77,6 +80,20 @@ class FrontEndController extends Controller
             return redirect()->route('website');
         }
     }
+	 public function getcategory(Request $request)
+   { 
+          $cid=$request->post('cid');
+		  $category = Blog_Category::where('id', $cid)->first();
+          //$subcste=companytb::where('subcategory',[$cid])->get();
+      //  $subcste=DB::table('categories')->where('subcategory',$cid)->get();
+        // $html='<option value="">Select Subcatagory</option>';
+		// $html='<input   type="text" value="'.$category->name'">' ;
+        // foreach($subcste as $list){
+        //  $html='<option value="'.$list->name.'">'.$list->name.'</option>';
+        //  echo $html;
+        // }
+		 echo $html;
+   }
    
     public function tag($slug){
         $tag = Tag::where('slug', $slug)->first();
@@ -92,10 +109,10 @@ class FrontEndController extends Controller
     
    
     public function post($slug){
-        $post = Post::with('Blog_Category', 'user')->where('slug', $slug)->first();
-        $posts = Post::with('Blog_Category', 'user')->inRandomOrder()->limit(3)->get();
+        $post = Post::with('blog_category', 'user')->where('slug', $slug)->first();
+        $posts = Post::with('blog_category', 'user')->inRandomOrder()->limit(3)->get();
 		$title=$post->title;
-
+        $PostId=$post->id;
         // More related posts
         $relatedPosts = Post::orderBy('category_id', 'desc')->inRandomOrder()->take(4)->get();
         $firstRelatedPost = $relatedPosts->splice(0, 1);
@@ -104,6 +121,9 @@ class FrontEndController extends Controller
 
         $categories = Blog_Category::all();
         $tags = Tag::all();
+		$comment= PostComment::where('post_id',$PostId)->get();
+		$commentcount= PostComment::where('post_id',$PostId)->count();
+           
 		
 		 $socialShare=Share::page("https://vimbiso.org/post/$slug","$title")
         ->facebook()
@@ -114,7 +134,7 @@ class FrontEndController extends Controller
         ->getRawLinks();	
 
         if($post){
-            return view('frontpage.website.post', compact(['socialShare','post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
+            return view('frontpage.website.post', compact(['commentcount','comment','socialShare','post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
         }else {
             return redirect('/');
         }
@@ -171,5 +191,24 @@ class FrontEndController extends Controller
             return redirect('/');
         }
     }
+	
+	public function comment_save(Request $request)
+    {
+        
+          
+        $post = PostComment::create([
+            'name' => $request->name,
+			'post_id' => $request->post_id,
+            'slug' => Str::slug($request->name),        
+            'email' => $request->email,
+            'company' => $request->company,
+			'message' => $request->message,          
+            'published_at' => Carbon::now(),
+        ]);
+		 $post->save();
+        Session::flash('success', 'Comment created successfully');
+        return redirect()->back()->with('success','Comment created successfully');
+    }
+
 }
 

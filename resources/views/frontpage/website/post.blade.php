@@ -8,6 +8,7 @@
     <meta name="keywords" content="{{ $post->title }}">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/rokon/static/css/blogstyle.css"> 
     
 @endsection 
  
@@ -17,12 +18,14 @@
 
 <div class="site-cover site-cover-sm same-height overlay single-page"
     style="background-image: url('{{ $post->image }}');">
+<!--	<div class="site-cover site-cover-sm same-height overlay single-page" > -->
+   
 	
     <div class="container">
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="post-entry text-center">
-                    <span class="post-category text-white bg-success mb-3">{{ $post->category_id }}</span>
+                    <span class="post-category text-white bg-success mb-3">{{ $post->category }}</span>
                     <h1 class="mb-4"><a href="javascript:void()">{{ $post->title }}</a></h1>
                     <div class="post-meta align-items-center text-center">
                         <figure class="author-figure mb-0 mr-3 d-inline-block">
@@ -39,6 +42,7 @@
 <br>
 <section class="site-section py-lg">
     <div class="container">
+	
         <div class="row blog-entries element-animate">
             <div class="col-md-12 col-lg-8 main-content">
                 <div class="post-content-body">
@@ -55,7 +59,7 @@
                 </div>
                 <div class="pt-5">
                     <p>
-                        Categories: <a href="#">{{ $post->category_id }}</a> 
+                        Categories: <a href="{{ route('website.category', ['slug' => $post->category_id]) }}">{{ $post->category }}</a> 
                         @if($post->tags()->count() > 0)
                         Tags: 
                             @foreach($post->tags as $tag)
@@ -65,28 +69,27 @@
                     </p>
                 </div>
                 <div class="pt-5">
-                    <h3 class="mb-5" id="dsq-count-scr">6 Comments</h3>
+                    <h5 class="mb-5" id="dsq-count-scr">{{$commentcount}} Comments</h5>
                     <a href="{{ route('website.post', ['slug' => $post->slug]) }}#disqus_thread">Comments</a>
                     
                     <div id="disqus_thread"></div>
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
 
-
-                    {{-- <ul class="comment-list">
+                    <ul class="comment-list">
+					@foreach($comment as $comments)
                         <li class="comment">
                             <div class="vcard">
-                                <img src="{{ asset('website/images/user.png') }}" alt="Image placeholder">
+                                <img src="{{ asset('images/user.png') }}" alt="Image placeholder">
                             </div>
                             <div class="comment-body">
-                                <h3>Jean Doe</h3>
-                                <div class="meta">January 9, 2018 at 2:21pm</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum
-                                    necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente
-                                    iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                <h3>{{ $comments->name }}</h3>
+                                <div class="meta">{{ $comments->created_at->format('M d, Y') }}</div>
+                                <p>{{ $comments->message }}</p>
                                 <p><a href="#" class="reply rounded">Reply</a></p>
                             </div>
                         </li>
-
-                        <li class="comment">
+                       @endforeach
+					   {{--      <li class="comment">
                             <div class="vcard">
                                 <img src="{{ asset('website/images/user.png') }}" alt="Image placeholder">
                             </div>
@@ -166,36 +169,40 @@
                                     iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
                                 <p><a href="#" class="reply rounded">Reply</a></p>
                             </div>
-                        </li>
+					   </li> --}}
                     </ul>
                     <!-- END comment-list -->
 
                     <div class="comment-form-wrap pt-5">
                         <h3 class="mb-5">Leave a comment</h3>
-                        <form action="#" class="p-5 bg-light">
+						 <form action="{{route('comment.save')}}" method="post" class="p-5 bg-light" >
+									@csrf
+                      <!--  <form action="#" class="p-5 bg-light"> -->
                             <div class="form-group">
                                 <label for="name">Name *</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" name="name" id="name">
                             </div>
+							<input type="hidden" class="form-control" value="{{ $post->id }}" name="post_id" id="post_id">
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" name="email" id="email">
                             </div>
                             <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
+                                <label for="website">Company</label>
+                                <input type="text" class="form-control" name="company" id="company">
                             </div>
 
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                                <textarea name="message" id="message"  cols="30" rows="10" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Post Comment" class="btn btn-primary">
                             </div>
 
                         </form>
-                    </div> --}}
+                    </div> 
+					<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
                 </div>
 
             </div>
@@ -214,10 +221,10 @@
                 <!-- END sidebar-box -->
                 <div class="sidebar-box">
                     <div class="bio text-center">
-                        <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('uploads/image/non.jpg') }} @endif" alt="Image Placeholder"
+                        <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('images/user.png') }} @endif" alt="Image Placeholder"
                             class="img-fluid mb-5">
                         <div class="bio-body">
-                            <h2>{{ $post->user->name }}</h2>
+                            <h2>Admin</h2>
                             <p class="mb-4">{{ $post->user->description }}</p>
                             <p><a href="#" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
                             <p class="social">
@@ -257,7 +264,7 @@
                     <h3 class="heading">Categories</h3>
                     <ul class="categories">
                         @foreach($categories as $category)
-                        <li><a href="#">{{ $category->name }} <span>(12)</span> </a></li>
+                        <li><a href="{{ route('website.category', ['slug' => $category->id]) }}">{{ $category->name }} <span>(12)</span> </a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -291,7 +298,7 @@
 
             <div class="col-md-5 order-md-2">
                 @foreach($lastRelatedPost as $post)
-                <a href="single.html" class="hentry img-1 h-100 gradient"
+                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="hentry img-1 h-100 gradient"
                     style="background-image: url('{{ $post->image }}');">
                     <span class="post-category text-white bg-danger">{{ $post->category }}</span>
                     <div class="text">
@@ -304,7 +311,7 @@
 
             <div class="col-md-7">
                 @foreach($firstRelatedPost as $post)
-                <a href="single.html" class="hentry img-2 v-height mb30 gradient"
+                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="hentry img-2 v-height mb30 gradient"
                     style="background-image: url('{{ $post->image }}');">
                     <span class="post-category text-white bg-success">{{ $post->category}}</span>
                     <div class="text text-sm">
@@ -334,6 +341,7 @@
 </div>
 
 </div>
+ @include('frontpage.give_review');
 @endsection
 
 @section('script')

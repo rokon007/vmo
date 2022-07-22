@@ -19,7 +19,27 @@
 
 @endsection
 @section('body')  
+ 
+ <?php
+        $Show = Session::get('Show');
+        if($Show)
+        {
+			?>
+			<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+			 <script>
+$(function() {
+    $('#shareModalCenter').modal('show');
+});
+</script>
 
+		  <?php
+          
+
+        }
+        ?>
+   
 
     <!-- Navbar -->
     
@@ -164,5 +184,6 @@
     </div>
     <!-- Review messages -->
   <!-- Modal -->
+          @include('frontpage.model.shareModalCenter');
          @include('frontpage.give_review');
 @endsection

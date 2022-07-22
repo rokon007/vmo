@@ -482,12 +482,26 @@ public function give(Request $request)
          'company'=>$company->company,
          'ratings'=>$request->input('ratings')
         ];
+		 $RV= DB::table('reviews')
+		 ->orderBy('reviews.id', 'desc')
+		 ->limit(1)->first();
+		 $RVID=$RV->id;
+		 $Show=1;
+		 $socialShare=Share::page("https://vimbiso.org/review_display/$RVID","$company->company")
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->telegram()
+        ->getRawLinks();
       
-		 Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
+	 Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
 		
        
     
-     return redirect()->route('welcome')->with('success','Review aded Successfully');
+     //return redirect()->route('welcome')->with('success','Review aded Successfully');
+	 
+	 return redirect()->route('welcome')->with(['socialShare' => $socialShare,'Show' => $Show]);
    }
   
 

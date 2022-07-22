@@ -46,7 +46,7 @@
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
-    </div>
+    </div>                           
 @endif
                                         <div class="form-group">
                                             <label for="title">Post title</label>
@@ -58,11 +58,30 @@
                                             <select name="category" id="category" class="form-control">
                                                 <option value="" style="display: none" selected>Select Category</option>
                                                 @foreach($categories as $c)
-                                                <option value="{{ $c->id }}"> {{ $c->name }} </option>
+                                                <option value="{{ $c->id }}">
+												{{ $c->name }} 
+												
+												</option>
                                                 @endforeach
                                             </select>
                                         </div>
-
+										<script>
+														jQuery(document).ready(function(){
+															jQuery('#category').change(function(){
+																let cid=jQuery(this).val();
+																jQuery.ajax({
+																	url:'/getcategory',
+																	type:'post',
+																	data:'cid='+cid+'&_token={{csrf_token()}}',
+																	success:function(result){
+																		jquery('#sub').html(result)
+																	}
+																});
+															});
+														});
+														
+														</script>
+                    <input type="name" name="sub" id="sub" value="" class="form-control" >
                                         <div class="form-group">
                                             <label for="image">Image</label>
                                             <div class="custom-file">

@@ -1,206 +1,164 @@
 @extends('frontpage.frontpage')
-
-
 @section('title') 
- <title>Vimbiso | Rewards</title>
+   <title>Vimbiso | Rewards</title>
         <meta charset="utf-8">
     <meta name="description" content="
-    Vimbiso is a free independent & transparent customer assurance platform. At Vimbiso we believe the key to unlocking business success starts by listening to your customers.
+    
     ">
-    <meta name="keywords" content="Vimbiso,how grow business,12/04">
+    <meta name="keywords" content="">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/rokon/static/css/blogstyle.css"> 
     
 @endsection 
 @section('body') 
-
-
-
-<div class="container1-fluid1 m-0 p-0">
-        <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
-                <div class="flex-column pl-4">
-                        <h5 class="font-heading-sm"><strong>Rewards</strong></h5>
-                   
-                </div> 
+<div class="site-section bg-light">
+    <div class="container">
+	<div class="row mb-5">
+            <div class="col-12">
+                <h2>Rewards</h2>
+            </div>
         </div>
+        <div class="row align-items-stretch retro-layout-2">
+           <div class="col-md-4">
+                @foreach($firstPosts2 as $post)
                 
-                   
+                <div class="entry2">
+                    <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+                            alt="Image" class="img-fluid rounded"></a>
+                    <div class="excerpt">
+                        
+
+                        <h2><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
+                        <div class="post-meta align-items-center text-left clearfix">
+                            <figure class="author-figure mb-0 mr-3 float-left"><img
+                                    src="@if($post->image) {{ $post->image }} @else {{ asset('website/images/user.png') }} @endif"
+                                    alt="Image" class="img-fluid"></figure>
+                           
+                            <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
+                        </div>
+                        <p> {{ Str::limit($post->description, 100) }} </p>
+                        <p><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>
+                    </div>
+                </div>
            
+                @endforeach
+             </div>
+			
+			
+			
+			
+			
+			
+            <div class="col-md-4">
+                @foreach($middlePost as $post)
                 
-            
-        
-         
-        <div class="row">
-            <div class="d-flex flex-column col-lg-7 col-sm-12">
-                <div class="theme--light p-lg-5 p-0">
-                    <div class="comments">
+                <div class="entry2">
+                    <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+                            alt="Image" class="img-fluid rounded"></a>
+                    <div class="excerpt">
                         
-                            <!--<div class=" text-center m-lg-5 m-3" ><h2><strong>Blog Post</strong></h2>
-							</div>
-							-->
-                            
-							 @foreach($firstPosts2 as $post)
-							 <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
-							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
-							</span>
-							 </a>
-                            <div class=" font-description-sm">
-							<a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                                <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
-                                 <p style="font-size:80%;">&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!}</p> 
-								 </a>
-								 <br>
-								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
-					
-                                </div>
-								
-								
-								<hr>
-                        @endforeach
-						<br>
-						@foreach($middlePost as $post)
-                        <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
-							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
-							</span>
-							 </a>
-                            <div class=" font-description-sm">
-							<a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                                <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
-                                 <p style="font-size:80%;">&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!}</p> 
-								 </a>
-								 <br>
-								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
-					
-                                </div>
-								
-								
-								<hr>
-                        @endforeach
-						<br>
-						@foreach($lastPosts as $post)
-                       <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                            <span class="text-lg-center text-left font-description-sm" style="float:left;">
-							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
-							</span>
-							 </a>
-                            <div class=" font-description-sm">
-							<a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                                <h5>&nbsp;<strong>{{ $post->title }}</strong></h5>
-                                 <p style="font-size:80%;">&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!}</p> 
-								 </a>
-								 <br>
-								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
-					
-                                </div>
-								
-								
-								<hr>
-                        @endforeach
-                       
-                        </div>
-                       
-                        
-							
-							  
-                            
-                            
-                       
-                    </div>
-                </div>
-            
-            <div class="d-flex flex-column col-lg-5 col-sm-12 pt-5 align-items-center pb-5">
-                <div class="card" style="width: 18rem;">
-                    
-                     
-					 
-					 
-                      
-                    
-                    
-                    <div class="card-body">
-                        <h5 class="card-title metallic-red text-center">Recent Rewards</h5>
-                        
-                        
-                    </div>
-                    <ul class="list-group list-group-flush">
-					@foreach($recentPosts as $post)
-					 <li class="list-group-item">
-                      <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}" class="text-lg-center text-left font-description-sm" style="float:left;">
-							<img src="<?php echo asset("$post->image")?>"  class="border border-dark" style="max-height: 70px;max-width: 70px;" onerror="this.onerror=null;this.src='uploads/image/non.jpg';">
-							
-							 </a>
-					<div class="font-description-sm">
-							
-                               <h6> <strong>{{ $post->title }}</strong></h6>
-                
-                               
-                                </div>
-                    <p style="font-size:60%;">&nbsp;&nbsp;{!! date('D, d, M, Y', strtotime($post->created_at)) !!} </p> 
-								 
-								 <p style="font-size:80%;"> {{ Str::limit($post->description, 100) }} </p>
-                        <p style="font-size:70%;"><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>								
-					 </li>
-					  @endforeach
-                    </ul>
 
+                        <h2><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
+                        <div class="post-meta align-items-center text-left clearfix">
+                            <figure class="author-figure mb-0 mr-3 float-left"><img
+                                    src="@if($post->image) {{ $post->image }} @else {{ asset('website/images/user.png') }} @endif"
+                                    alt="Image" class="img-fluid"></figure>
+                           
+                            <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
+                        </div>
+                        <p> {{ Str::limit($post->description, 100) }} </p>
+                        <p><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>
+                    </div>
                 </div>
+            
+                @endforeach
+            </div>
+            <div class="col-md-4">
+                @foreach($lastPosts as $post)
+               
+                <div class="entry2">
+                    <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+                            alt="Image" class="img-fluid rounded"></a>
+                    <div class="excerpt">
+                        
+
+                        <h2><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
+                        <div class="post-meta align-items-center text-left clearfix">
+                            <figure class="author-figure mb-0 mr-3 float-left"><img
+                                    src="@if($post->image) {{ $post->image }} @else {{ asset('website/images/user.png') }} @endif"
+                                    alt="Image" class="img-fluid"></figure>
+                           
+                            <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
+                        </div>
+                        <p> {{ Str::limit($post->description, 100) }} </p>
+                        <p><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>
+                    </div>
+                </div>
+            
+                @endforeach
             </div>
         </div>
-
     </div>
-
-
- 
- <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-     <div class="modal-header metallic-red-bg">
-                <div class="d-flex justify-content-center ">
-                    <h3 class="modal-title text-white text-center " id="exampleModalLongTitle">Give a review</h3>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" class="text-white">&times;</span>
-                </button>
-            </div>
-      <div class="modal-body">
-       <div class="form-group d-flex flex-row">
-					 <div class="col-lg-12 col-sm-12 p-0 pr-3">
-					 <div class="form-group">
-					 <a href="/auth/redirectgoogle"><button class="btn  form-control"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/> Continue with Google</button></a>
-					 </div>
-						</div>
-						</div>
-		 <div class="form-group d-flex flex-row">				
-						
-						 <div class="col-lg-12 col-sm-12 p-0 pr-3">
-					 <div class="form-group">
-					  <a href="/auth/redirectfacebook"><button class="btn  form-control"> <img src="https://img.icons8.com/cute-clipart/48/000000/facebook.png"/> Continue with FaceBook</button></a>
-					 </div>
-						</div>
-						</div>
-						
-			 <div class="form-group d-flex flex-row">			
-                         <div class="col-lg-12 col-sm-12 p-0 pr-3">
-                     <div class="form-group">
-                      <a href="/review"><button class="btn  form-control"><img <img src="https://vimbisotest.herokuapp.com/static/images/favicon.ico"/> Continue with Vimbiso</button></a>
-                     </div>
-                        </div>
-						</div>
-						
-					 
-                    
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       
-      </div>
-    </div>
-  </div>
 </div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2>Recent Rewards</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach($recentPosts as $post)
+            <div class="col-lg-4 mb-4">
+                <div class="entry2">
+                    <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+                            alt="Image" class="img-fluid rounded"></a>
+                    <div class="excerpt">
+					{{-- <span class="post-category text-white bg-secondary mb-3">{{ $post->category }}</span>--}}
+
+                        <h2><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
+                        <div class="post-meta align-items-center text-left clearfix">
+                            <figure class="author-figure mb-0 mr-3 float-left"><img
+                                    src="@if($post->image) {{ $post->image }} @else {{ asset('website/images/user.png') }} @endif"
+                                    alt="Image" class="img-fluid"></figure>
+									{{--  <span class="d-inline-block mt-1">By <a href="#">{{ $post->user->name }}</a></span>--}}
+                            <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
+                        </div>
+                        <p> {{ Str::limit($post->description, 100) }} </p>
+                        <p><a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+		 <div class="d-flex justify-content-center m-2">
+                        <ul class="pagination">
+						{{$recentPosts->links()}}                       
+                        </ul>
+                  </div>  
+		{{-- <div class="row text-center pt-5 border-top">
+            {{ $recentPosts->links() }}
+            
+			<div class="col-md-12">
+          <div class="custom-pagination">
+            <span>1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <span>...</span>
+            <a href="#">15</a>
+          </div>
+        </div>
+		</div> --}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+ @include('frontpage.give_review');
 @endsection

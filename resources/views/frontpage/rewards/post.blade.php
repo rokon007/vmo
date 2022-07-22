@@ -152,6 +152,7 @@ var downloadTimer = setInterval(function(){
 
 
 </div>
+ @include('frontpage.give_review');
 @endsection
 
 @section('script')

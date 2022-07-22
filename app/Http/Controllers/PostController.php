@@ -66,7 +66,8 @@ class PostController extends Controller
 
         if($request->hasFile('image')){
             $image = $request->image;
-            $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+           // $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+		    $image_new_name =  Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
             $image->move('storage/post/', $image_new_name);
             $post->image = '/storage/post/' . $image_new_name;
             $post->save();
@@ -124,7 +125,8 @@ class PostController extends Controller
 
         if($request->hasFile('image')){
             $image = $request->image;
-            $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+           // $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+		   $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
             $image->move('storage/post/', $image_new_name);
             $post->image = '/storage/post/' . $image_new_name;
         }

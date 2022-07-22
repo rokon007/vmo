@@ -8,6 +8,7 @@
     <meta name="keywords" content="Vimbiso,how grow business,12/04">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/rokon/static/css/blogstyle.css"> 
     
 @endsection 
  
@@ -38,7 +39,7 @@
             <div class="entry2">
               <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}" alt="Image" class="img-fluid rounded"></a>
               <div class="excerpt">
-              <span class="post-category text-white bg-secondary mb-3">{{ $post->category->name}}</span>
+              <span class="post-category text-white bg-secondary mb-3">{{ $post->category}}</span>
 
               <h2><a href="{{ route('website.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
               <div class="post-meta align-items-center text-left clearfix">
@@ -65,5 +66,6 @@
     </div>
 	
 	</div>
+	 @include('frontpage.give_review');
 @endsection
     
