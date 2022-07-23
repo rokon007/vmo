@@ -153,7 +153,7 @@
     </div>
 </div>
 
-<div class="site-section bg-lightx">
+{{--<div class="site-section bg-lightx">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-md-5">
@@ -169,6 +169,6 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
  @include('frontpage.give_review');
 @endsection

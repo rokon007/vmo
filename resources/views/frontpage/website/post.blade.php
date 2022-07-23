@@ -29,9 +29,9 @@
                     <h1 class="mb-4"><a href="javascript:void()">{{ $post->title }}</a></h1>
                     <div class="post-meta align-items-center text-center">
                         <figure class="author-figure mb-0 mr-3 d-inline-block">
-                            <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('website/images/user.png') }} @endif" alt="Image" class="img-fluid">
+                            <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('images/user.png') }} @endif" alt="Image" class="img-fluid">
                         </figure>
-                        <span class="d-inline-block mt-1">By {{ $post->user->name }}</span>
+                        <span class="d-inline-block mt-1">By Admin</span>
                         <span>&nbsp;-&nbsp; {{ $post->created_at->format('M d, Y') }}</span>
                     </div>
                 </div>
@@ -70,8 +70,11 @@
                 </div>
                 <div class="pt-5">
                     <h5 class="mb-5" id="dsq-count-scr">{{$commentcount}} Comments</h5>
+					@if($commentcount!=0)
                     <a href="{{ route('website.post', ['slug' => $post->slug]) }}#disqus_thread">Comments</a>
-                    
+                   @endif
+						
+					
                     <div id="disqus_thread"></div>
 <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
 
@@ -263,8 +266,8 @@
                 <div class="sidebar-box">
                     <h3 class="heading">Categories</h3>
                     <ul class="categories">
-                        @foreach($categories as $category)
-                        <li><a href="{{ route('website.category', ['slug' => $category->id]) }}">{{ $category->name }} <span>(12)</span> </a></li>
+                        @foreach($blog_category as $category)
+                        <li><a href="{{ route('website.category', ['slug' => $category->category_id]) }}">{{ $category->category }} <span>({{ $category->total }})</span> </a></li>
                         @endforeach
                     </ul>
                 </div>

@@ -43,7 +43,32 @@ class sitemapcontroller extends Controller
 		$sitemap->add(URL::to('profile/'.$company->company.'/'),$company->created_at,'1.0','daily');
 	}
 	
+	//get all Blogpost from db
+	$post=DB::table('posts')->orderBy('created_at','desc')->get();
 	
+	//add every Blogpost to the sitepmap
+	foreach($post as $Blogpost)
+	{
+		$sitemap->add(URL::to('post/'.$Blogpost->slug.'/'),$Blogpost->created_at,'1.0','daily');
+	}
+	
+	///get all announcements from db
+	$announcement=DB::table('announcements')->orderBy('created_at','desc')->get();
+	
+	//add every announcements to the sitepmap
+	foreach($announcement as $Announce)
+	{
+		$sitemap->add(URL::to('announcement/'.$Announce->slug.'/'),$Announce->created_at,'1.0','daily');
+	}
+	
+	///get all rewards from db
+	$reward=DB::table('rewards')->orderBy('created_at','desc')->get();
+	
+	//add every rewards to the sitepmap
+	foreach($reward as $re)
+	{
+		$sitemap->add(URL::to('rewards_post/'.$re->slug.'/'),$re->created_at,'1.0','daily');
+	}
 	
 	//generete your sitemap(format,filename)
 	$sitemap->store('xml','sitemap');

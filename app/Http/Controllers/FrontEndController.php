@@ -123,6 +123,12 @@ class FrontEndController extends Controller
         $tags = Tag::all();
 		$comment= PostComment::where('post_id',$PostId)->get();
 		$commentcount= PostComment::where('post_id',$PostId)->count();
+		
+		$blog_category = DB::table('posts')
+                 ->select('category_id','category', DB::raw('count(category_id) as total'))
+                 ->groupBy('category_id','category')
+                 ->get();
+		
            
 		
 		 $socialShare=Share::page("https://vimbiso.org/post/$slug","$title")
@@ -134,7 +140,7 @@ class FrontEndController extends Controller
         ->getRawLinks();	
 
         if($post){
-            return view('frontpage.website.post', compact(['commentcount','comment','socialShare','post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
+            return view('frontpage.website.post', compact(['blog_category','commentcount','comment','socialShare','post', 'posts', 'categories', 'tags', 'firstRelatedPost', 'firstRelatedPosts2', 'lastRelatedPost']));
         }else {
             return redirect('/');
         }
