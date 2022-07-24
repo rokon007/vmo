@@ -19,7 +19,12 @@
 @endsection 
 @section('body') 
 
-
+<style>
+#image {
+  position: absolute;
+  
+}
+</style>
 
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
@@ -82,7 +87,10 @@
                             
                             
                                 <div class="header">
-                                <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
+                                <div class=" text-center "  style="height:100%; width: 100%;">
+								@if($reviews->itemcounter==1)							
+                                <iframe id="image" src="<?php echo asset("images/giphy1.gif")?>" width="225" height="225" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+								@endif
                                 </div> 
 								
                                 <span class="displayName title metallic-red">{{$reviews->name}}</span> <span class="displayName caption">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->dateofpurchase)) !!}</span> &nbsp;<span><i class="fas fa-map-marker-alt"></i> {{$reviews->branchlocation}}</span>
@@ -140,7 +148,9 @@
 								<div class="col-lg-12">
                                 <div class="wrapper comment">
                                 <p class="review">{{$reviews->review}}</p>
-								
+								@if($reviews->itemcounter==1)
+								<center><img src="<?php echo asset("images/selected.png")?>" width="100" height="100" /></center>
+							    @endif
 								 <div class="v-dialog__container " style="display: block;">
 								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">RI # {{$reviews->id}}</p> 
 								</div>

@@ -7,8 +7,8 @@
 </title>
         <!-- Required meta tags -->
     <meta charset="utf-8">
-         <meta name="description" content="This is why public schools enjoy virtually free education. Most of the rich people send their children to private universities. Zimbabwe is one of the best ...">
-     <meta name="keywords" content="Vimbiso">
+         <meta name="description" content="{{$CData->description}}">
+     <meta name="keywords" content="{{$CData->company}}">
 	<meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -24,6 +24,13 @@ window.location.href = "{{ route('settings') }}"
 
 
  @else
+	 
+ <style>
+#image {
+  position: absolute;
+  
+}
+</style>
 <div class="container1-fluid1 m-0 p-0">
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
                  @if(File::exists("uploads/image/$CData->email.jpg"))
@@ -170,7 +177,10 @@ window.location.href = "{{ route('settings') }}"
                             
                             
                                 <div class="header">
-                                <div class="v-avatar avatar" style="height: 5px; width: 5px;"><img src="">
+                               <div class=" text-center "  style="height:100%; width: 100%;">
+								@if($reviews->itemcounter==1)							
+                                <iframe id="image" src="<?php echo asset("images/giphy1.gif")?>" width="225" height="225" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+								@endif
                                 </div> 
 								
                                 <span class="displayName title metallic-red">{{$reviews->name}}</span> <span class="displayName caption">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->dateofpurchase)) !!}</span> &nbsp;<span><i class="fas fa-map-marker-alt"></i> {{$reviews->branchlocation}}</span>
@@ -228,7 +238,9 @@ window.location.href = "{{ route('settings') }}"
 								<div class="col-lg-12">
                                 <div class="wrapper comment">
                                 <p class="review">{{$reviews->review}}</p>
-								
+								@if($reviews->itemcounter==1)
+								<center><img src="<?php echo asset("images/selected.png")?>" width="100" height="100" /></center>
+							    @endif
 								 <div class="v-dialog__container " style="display: block;">
 								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">RI # {{$reviews->id}}</p> 
 								</div>

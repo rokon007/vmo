@@ -219,6 +219,15 @@ Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getS
     ->name('export-profile')->middleware('is_admin');  
 
 
+
+//Giveaway
+Route::get('/admin/giveaway', [App\Http\Controllers\GiveawayController::class, 'index'])->name('giveaway.index')->middleware('is_admin');
+Route::get('giveaway_edit/{id}', [App\Http\Controllers\GiveawayController::class, 'edit'])->name('giveaway.edit')->middleware('is_admin');
+Route::put('/updategiveaway/{id}',[App\Http\Controllers\GiveawayController::class, 'updategiveaway'])->name('updategiveaway')->middleware('is_admin');
+
+
+
+
 //For Review Saverecord
 Route::get('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'create'])->name('reviews.create')->middleware('is_admin');
 Route::post('/admin/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store')->middleware('is_admin');
