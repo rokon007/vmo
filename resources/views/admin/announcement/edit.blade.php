@@ -80,7 +80,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Description</label>
 											<textarea name="description" id="kt-ckeditor-1" rows="4" class="form-control"
-                                                >{{ $post->description }}</textarea>	
+                                                >{{ $Announcement->description }}</textarea>	
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-lg btn-primary">Update Announcement</button>
