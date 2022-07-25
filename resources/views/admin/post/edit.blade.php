@@ -33,6 +33,12 @@
                             <a href="{{ route('post.index') }}" class="btn btn-primary">Go Back to Post List</a>
                         </div>
                     </div>
+					@if($message = Session::get('success'))
+								<div class="alert alert-success alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<strong>{{$message}}</strong>
+								</div>
+								@endif
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-12 col-lg-8 offset-lg-2 col-md-8 offset-md-2">
@@ -108,8 +114,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Description</label>
-                                            <textarea name="description" id="description" rows="4" class="form-control"
-                                                placeholder="Enter description">{{ $post->description }}</textarea>
+                                           
+											<textarea name="description" id="kt-ckeditor-1" rows="4" class="form-control"
+                                                >{{ $post->description }}</textarea>	
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-lg btn-primary">Update Post</button>
@@ -126,17 +133,9 @@
 </div>
 @endsection
 
-@section('style')
-    <link rel="stylesheet" href="{{ asset('/admin/css/summernote-bs4.min.css') }}">
-@endsection
 
-@section('script')
-    <script src="{{ asset('/admin/js/summernote-bs4.min.js') }}"></script>
-    <script>
-        $('#description').summernote({
-            placeholder: 'Hello Bootstrap 4',
-            tabsize: 2,
-            height: 300
-        });
-    </script>
+
+@section('footerlink') 
+   <script src={{asset("../../theme/html/demo1/dist/assets/plugins/custom/ckeditor/ckeditor-classic.bundle5883.js?v=7.2.9")}}></script>
+   <script src={{asset("../../theme/html/demo1/dist/assets/js/pages/crud/forms/editors/ckeditor-classic5883.js?v=7.2.9")}}></script>
 @endsection

@@ -27,7 +27,13 @@ window.location.href = "{{ route('settings') }}"
 	 
  <style>
 #image {
+  display: block;
+  width: 55%;
+  height: auto;
   position: absolute;
+  bottom: 0;
+  transition: .10s ease;
+}
   
 }
 </style>
@@ -179,7 +185,7 @@ window.location.href = "{{ route('settings') }}"
                                 <div class="header">
                                <div class=" text-center "  style="height:100%; width: 100%;">
 								@if($reviews->itemcounter==1)							
-                                <iframe id="image" src="<?php echo asset("images/giphy1.gif")?>" width="225" height="225" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                                <img id="image" src="<?php echo asset("images/giphy1.gif")?>" width="225" height="225" frameBorder="0" class="giphy-embed" allowFullScreen />
 								@endif
                                 </div> 
 								
@@ -238,11 +244,15 @@ window.location.href = "{{ route('settings') }}"
 								<div class="col-lg-12">
                                 <div class="wrapper comment">
                                 <p class="review">{{$reviews->review}}</p>
-								@if($reviews->itemcounter==1)
-								<center><img src="<?php echo asset("images/selected.png")?>" width="100" height="100" /></center>
-							    @endif
+								
 								 <div class="v-dialog__container " style="display: block;">
-								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">RI # {{$reviews->id}}</p> 
+								 <p class="bottomText mt-0 mb-0 pull-right" style="float:right;font:bold">
+								 RI # {{$reviews->id}}
+								 
+								 @if($reviews->itemcounter==1)
+								<img src="<?php echo asset("images/selected.png")?>" width="50" height="50" />
+							    @endif
+								 </p> 
 								</div>
 								
 								@if($reviews->response)

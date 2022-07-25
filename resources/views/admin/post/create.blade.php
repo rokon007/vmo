@@ -1,7 +1,71 @@
 @extends('admin.app')
- 
+
 
 @section('body') 
+<script>
+
+
+// Class definition
+var KTQuilDemos = function() {
+
+    // Private functions
+    var demo2 = function() {
+        var Delta = Quill.import('delta');
+        var quill = new Quill('#kt_quil_2', {
+            modules: {
+                toolbar: true
+            },
+            placeholder: 'Type your text here...',
+            theme: 'snow'
+        });
+
+        // Store accumulated changes
+        var change = new Delta();
+        quill.on('text-change', function(delta) {
+            change = change.compose(delta);
+        });
+
+        // Save periodically
+        setInterval(function() {
+            if (change.length() > 0) {
+                console.log('Saving changes', change);
+                /*
+                Send partial changes
+                $.post('/your-endpoint', {
+                partial: JSON.stringify(change)
+                });
+
+                Send entire document
+                $.post('/your-endpoint', {
+                doc: JSON.stringify(quill.getContents())
+                });
+                */
+                change = new Delta();
+            }
+        }, 5 * 1000);
+
+        // Check for unsaved data
+        window.onbeforeunload = function() {
+            if (change.length() > 0) {
+                return 'There are unsaved changes. Are you sure you want to leave?';
+            }
+        }
+    }
+
+    return {
+        // public functions
+        init: function() {
+            demo2();
+        }
+    };
+}();
+
+jQuery(document).ready(function() {
+    KTQuilDemos.init();
+});
+
+
+</script>
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -33,6 +97,12 @@
                             <a href="{{ route('post.index') }}" class="btn btn-primary">Go Back to Post List</a>
                         </div>
                     </div>
+					@if($message = Session::get('success'))
+								<div class="alert alert-success alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<strong>{{$message}}</strong>
+								</div>
+								@endif
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-12 col-lg-8 offset-lg-2 col-md-8 offset-md-2">
@@ -58,7 +128,7 @@
                                             <select name="category" id="category" class="form-control">
                                                 <option value="" style="display: none" selected>Select Category</option>
                                                 @foreach($categories as $c)
-                                                <option value="{ $c->name }}" data-price="{{ $c->id }}">{{ $c->name }} </option>
+                                                <option value="{{ $c->name }}" data-price="{{ $c->id }}">{{ $c->name }} </option>
 												 @endforeach
 											 </select>	
 										  </div>		
@@ -127,7 +197,7 @@ itemList.addEventListener("click", function() {
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Description</label>
-                                            <textarea name="description" id="description" rows="4" class="form-control"
+                                            <textarea name="description" id="kt-ckeditor-1" rows="4" class="form-control"
                                                 placeholder="Enter description">{{ old('description') }}</textarea>
                                         </div>
                                     </div>
@@ -146,17 +216,7 @@ itemList.addEventListener("click", function() {
 </div>
 @endsection
 
-@section('style')
-    <link rel="stylesheet" href="{{ asset('/admin/css/summernote-bs4.min.css') }}">
-@endsection
-
-@section('script')
-    <script src="{{ asset('/admin/js/summernote-bs4.min.js') }}"></script>
-    <script>
-        $('#description').summernote({
-            placeholder: 'Hello Bootstrap 4',
-            tabsize: 2,
-            height: 300
-        });
-    </script>
+@section('footerlink') 
+   <script src={{asset("../../theme/html/demo1/dist/assets/plugins/custom/ckeditor/ckeditor-classic.bundle5883.js?v=7.2.9")}}></script>
+   <script src={{asset("../../theme/html/demo1/dist/assets/js/pages/crud/forms/editors/ckeditor-classic5883.js?v=7.2.9")}}></script>
 @endsection

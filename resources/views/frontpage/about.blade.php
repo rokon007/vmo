@@ -25,7 +25,7 @@
     <div class="row justify-content-center align-items-center">
 
         <div class="col-sm-12 col-md-8 col-lg-8 pl-5 pr-3 p-lg-5  align-items-center text-left">
-            <h1 class="about-heading pb-lg-5 pb-sm-2">WHAT IS VIMBISO</h1>
+            <h1 class="about-heading pb-lg-5 pb-sm-2">WHAT IS VIMBISO ?</h1>
             <span class="about-description" style="text-decoration:none;color:black;font-size:16px">
                 Vimbiso is a free independent & transparent customer assurance platform.
                 At Vimbiso we believe the key to unlocking business success starts by listening to your customers.<br><br>
