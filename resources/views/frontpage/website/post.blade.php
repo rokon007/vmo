@@ -227,14 +227,15 @@
                         <img src="@if($post->user->image) {{ $post->user->image }} @else {{ asset('images/admin.jpg') }} @endif" alt="Image Placeholder"
                             class="img-fluid mb-5">
                         <div class="bio-body">
-                            <h2>Admin</h2>
-                            <p class="mb-4">{{ $post->user->description }}</p>
-                            <p><a href="#" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
+                            <h3><strong>Admin</strong></h3>
+                            <p class="mb-4"><strong>Tanaka Karumazondo</strong><br>Founder and Managing Director, Vimbiso.</p>
+                            <p><a href="{{url('about')}}" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
                             <p class="social">
-                                <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-                                <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-                                <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
-                                <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+                                <a href="https://hi-in.facebook.com/vimbiso.org/posts/137764792096405" class="p-2"><span class="fab fa-facebook fa-2x ml-2"></span></a>
+                                <a href="https://twitter.com/vimbiso_reviews?lang=en" class="p-2"><span class="fab fa-twitter fa-2x ml-2"></span></a>
+                                <a href="https://www.instagram.com/vimbiso_reviews/" class="p-2"><span class="fab fa-instagram fa-2x ml-2"></span></a>
+                                <a href="#" class="p-2"><span class="fab fa-youtube fa-2x ml-2"></span></a>
+								
                             </p>
                         </div>
                     </div>
