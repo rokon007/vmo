@@ -13,7 +13,23 @@
  
 
 @section('body') 
-
+<style>
+.maxWidth200{
+	max-width:500px;
+}
+.videoWrapper{
+	position:ralative;
+	padding-bottom:56.25%;
+	height:0;
+}
+.videoWrapper iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%
+}
+</style>
 
 <!--  About -->
       <section id="team">
@@ -53,10 +69,20 @@
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 pl-lg-1 pr-lg-5 pl-5 pr-5 pt-3 align-items-lg-start text-left">
        
-        <div   class="row justify-content-center align-items-center">
+             <div class="row justify-content-center align-items-center ">
                 <h4><strong>Why I started Vimbiso?</strong></h4>
-                
-            </div>
+				<br>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/y91ViaVen2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <!--<div class="maxWidth200">
+				<div class="videoWrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0L8cQ9nRtuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
+              </div>
+			</div>--> 				
+			</div>
+				 
+			
+			<br><br>
             <span class="about-description"style="text-decoration:none;color:black;font-size:16px">
                 The concept for Vimbiso came to me in November 2020, it was triggered by a moment of reflection.
                 There is an undeniably negative perception of Zimbabwean owned businesses, public institutions, parastatals, NGO’s & civil society organisation.<br><br>

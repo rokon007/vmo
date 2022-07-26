@@ -3,7 +3,7 @@
  <title>{{ $post->title }}</title>
         <meta charset="utf-8">
     <meta name="description" content="
-    {{ Str::limit($post->description, 100) }} ...
+    {!! Str::limit($post->description, 100) !!} ...
     ">
     <meta name="keywords" content="{{ $post->title }}">
     <meta name="author" content="Tanaka Karumazondo">
@@ -57,8 +57,8 @@ var downloadTimer = setInterval(function(){
         <div class="row blog-entries element-animate">
             <div class="col-md-12 col-lg-8 main-content">
 			 <span class="text-lg-center text-left font-description-sm" >
-							 <img src="{{ $post->image }}" alt="Image placeholder"
-                                         class="img-fluid mb-5" onerror="this.onerror=null;this.src='uploads/image/non.jpg';"/>
+							 <img src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';" alt="Image placeholder"
+                                         class="img-fluid mb-5" />
 							</span>
                 <div class="post-content-body">
                     {!! $post->description !!}
@@ -122,8 +122,8 @@ var downloadTimer = setInterval(function(){
                             @foreach($posts as $post)
                             <li>
                                 <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                                    <img src="{{ $post->image }}" alt="Image placeholder"
-                                         class="img-fluid mb-5" onerror="this.onerror=null;this.src='uploads/image/non.jpg';"/>
+                                    <img src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';" alt="Image placeholder"
+                                         class="img-fluid mb-5" />
                                     <div class="text">
                                         <h4> {{ $post->title }} </h4>
                                         <div class="post-meta">

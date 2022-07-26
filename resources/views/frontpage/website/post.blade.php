@@ -3,7 +3,7 @@
  <title>{{ $post->title }}</title>
         <meta charset="utf-8">
     <meta name="description" content="
-    {{ Str::limit($post->description, 100) }} ...
+    {!! Str::limit($post->description, 100) !!} ...
     ">
     <meta name="keywords" content="{{ $post->title }}">
     <meta name="author" content="Tanaka Karumazondo">
