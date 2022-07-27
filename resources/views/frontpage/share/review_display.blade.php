@@ -14,7 +14,8 @@
      <meta name="keywords" content="{{$CData->company}}">
 	<meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	 
+	<link rel="stylesheet" href="/rokon/static/css/review.css"> 
+    <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>	
    
 @endsection 
 @section('body') 

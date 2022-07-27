@@ -34,9 +34,9 @@
                         <h2><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
                         <div class="post-meta align-items-center text-left clearfix">
                             <figure class="author-figure mb-0 mr-3 float-left"><img
-                                    src="@if($post->image) {{ $post->image }} @else {{ asset('images/admin.jpg') }} @endif"
+                                   src="{{ asset('images/admin.jpg') }}"
                                     alt="Image" class="img-fluid"></figure>
-                           
+                           <span class="d-inline-block mt-1">By <a href="#">Admin</a></span>
                             <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
                         </div>
                         <p> {!! Str::limit($post->description, 100) !!} </p>
@@ -65,9 +65,9 @@
                         <h2><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
                         <div class="post-meta align-items-center text-left clearfix">
                             <figure class="author-figure mb-0 mr-3 float-left"><img
-                                    src="@if($post->image) {{ $post->image }} @else {{ asset('images/admin.jpg') }} @endif"
+                                    src="{{ asset('images/admin.jpg') }}"
                                     alt="Image" class="img-fluid"></figure>
-                           
+                           <span class="d-inline-block mt-1">By <a href="#">Admin</a></span>
                             <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
                         </div>
                         <p> {!! Str::limit($post->description, 100) !!} </p>
@@ -90,9 +90,9 @@
                         <h2><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
                         <div class="post-meta align-items-center text-left clearfix">
                             <figure class="author-figure mb-0 mr-3 float-left"><img
-                                    src="@if($post->image) {{ $post->image }} @else {{ asset('images/admin.jpg') }} @endif"
+                                   src="{{ asset('images/admin.jpg') }}"
                                     alt="Image" class="img-fluid"></figure>
-                           
+                           <span class="d-inline-block mt-1">By <a href="#">Admin</a></span>
                             <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
                         </div>
                         <p> {!! Str::limit($post->description, 100) !!} </p>
@@ -121,14 +121,14 @@
 					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
-					{{-- <span class="post-category text-white bg-secondary mb-3">{{ $post->category }}</span>--}}
+					
 
                         <h2><a href="{{ route('announcement.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
                         <div class="post-meta align-items-center text-left clearfix">
                             <figure class="author-figure mb-0 mr-3 float-left"><img
-                                    src="@if($post->image) {{ $post->image }} @else {{ asset('images/admin.jpg') }} @endif"
+                                   src="{{ asset('images/admin.jpg') }}"
                                     alt="Image" class="img-fluid"></figure>
-									{{--  <span class="d-inline-block mt-1">By <a href="#">{{ $post->user->name }}</a></span>--}}
+									<span class="d-inline-block mt-1">By <a href="#">Admin</a></span>
                             <span>&nbsp;-&nbsp; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
                         </div>
                         <p> {!! Str::limit($post->description, 100) !!} </p>

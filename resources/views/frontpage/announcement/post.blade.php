@@ -8,7 +8,7 @@
     <meta name="keywords" content="{{ $post->title }}">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="stylesheet" href="/rokon/static/css/blogstyle.css"> 
 @endsection 
  
 
@@ -86,9 +86,9 @@
 									alt="Image placeholder"
                                          class="img-fluid mb-5"/>
                                     <div class="text">
-                                        <h4> {{ $post->title }} </h4>
+                                        <h4>&#160; {{ $post->title }} </h4>
                                         <div class="post-meta">
-                                            <span class="mr-2"> {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
+                                            <span class="mr-2">&#160;&#160; {!! date('D, d, M, Y', strtotime($post->created_at)) !!} </span>
                                         </div>
                                     </div>
                                 </a>

@@ -12,7 +12,9 @@
 	<meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-   
+   <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+   <link rel="stylesheet" href="/rokon/static/css/review.css"> 
+     
 @endsection 
 @section('body') 
 
@@ -37,8 +39,8 @@ window.location.href = "{{ route('settings') }}"
   
 }
 </style>
-<div class="container1-fluid1 m-0 p-0">
-        <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
+ <div class="container-fluid m-0 p-0">
+        <div class="bg-white row d-flex justify-content-center text-center align-items-center">
                  @if(File::exists("uploads/image/$CData->email.jpg"))
    <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
                           @else 
