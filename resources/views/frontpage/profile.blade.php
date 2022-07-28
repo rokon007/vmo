@@ -278,7 +278,7 @@ window.location.href = "{{ route('settings') }}"
 							 <br>
 							 <p class="displayName caption" style="font-size: 10px;float:right;">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->updated_at)) !!} </p>
 							<p><br></p>
-							 <p class="bottomText mt-0 mb-0 pull-right" style="font-size: 10px" >{{$reviews->response}} </p>
+							 <p class="bottomText mt-0 mb-0 pull-right" style="font-size: 14px" >{{$reviews->response}} </p>
 							 </div>
 							 <div class="v-dialog__container col-lg-2" style="display: block;">
 								<br>
@@ -359,7 +359,8 @@ window.location.href = "{{ route('settings') }}"
                         </i>
                {{$CData->country}}, {{$CData->city}}, {{$CData->block}}
                        </li>
-                        <li class="list-group-item"><i class="fas fa-phone-square metallic-red"></i>{{$CData->contact}}</li>
+					   {{--<li class="list-group-item"><i class="fas fa-phone-square metallic-red"></i><a href="/contact/{{$CData->id}}"> ***** {{ substr($CData->contact, -3);}}</a></li>--}}
+                        <li class="list-group-item"><i class="fas fa-phone-square metallic-red"></i><a href="/contact/{{$CData->id}}">{{$CData->contact}}</a></li>						 
                     </ul>
 
                 </div>
@@ -371,6 +372,48 @@ window.location.href = "{{ route('settings') }}"
 
  @endif
  <!-- Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ @if($message = Session::get('email'))	 
+	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+			 <script>
+$(function() {
+    $('#request_email_Modal').modal('show');
+});
+</script>
+		
+		  @endif
+		  @if($message = Session::get('contact'))
+			 <script>
+$(function() {
+    $('#request_contact_Modal').modal('show');
+});
+</script>  
+		  
+		  @endif
+		  
+		  @if($message = Session::get('success'))
+		 <script>
+	          swal({  title: "Email Info...",
+          text: "{!!Session::get('success')!!}",
+         
+         
+  });
+	     </script>
+		@endif
+
+         @if($message = Session::get('success2'))
+		 <script>
+	          swal({  title: "Contact Info...",
+          text: "{!!Session::get('success2')!!}",
+         
+  });
+	     </script>
+		  @endif		
+		 
+ @include('frontpage.request_email');		  
+ @include('frontpage.request_contact');
  @include('frontpage.give_review');
 
 

@@ -12,7 +12,7 @@
 
 
 
-.wrapper {
+.wrapper1 {
     max-width: 850px;
     margin: 50px auto;
     height: 600px;
@@ -21,7 +21,7 @@
     box-shadow: 5px 25px 35px #3535356b;
 }
 
-.wrapper .bg-bllue {
+.wrapper1 .bg-bllue {
     background-color: #61a2f2;
     height: 100%;
     width: 40%;
@@ -31,39 +31,39 @@
 }
 
 
-.wrapper .bg-bllue .text-white {
+.wrapper1 .bg-bllue .text-white {
     font-size: 3rem;
 }
 
-.wrapper .bg-bllue .cursive {
+.wrapper1 .bg-bllue .cursive {
     font-family: 'Kalam', cursive;
     font-size: 1rem;
     font-weight: 600;
 
 }
 
-.wrapper .contact-form {
+.wrapper1 .contact-form {
     width: 100%;
     padding: 40px 80px 40px 50px;
 }
 
-.wrapper .contact-form .h3 {
+.wrapper1 .contact-form .h3 {
     padding-top: 15px;
     font-weight: 700;
 }
 
-.wrapper .contact-form label {
+.wrapper1 .contact-form label {
     font-size: 0.9rem;
     color: #555;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-.wrapper .contact-form textarea {
+.wrapper1 .contact-form textarea {
     height: 120px;
 }
 
-.wrapper .contact-form .form-control {
+.wrapper1 .contact-form .form-control {
     background-color: #e7e7e7;
     box-shadow: none;
     font-weight: 600;
@@ -73,24 +73,24 @@
 }
 
 
-.wrapper .contact-form .btn {
+.wrapper1 .contact-form .btn {
     font-size: 1.2rem;
     font-weight: 700;
 }
 
-.wrapper .contact-form .btn.btn-default {
+.wrapper1 .contact-form .btn.btn-default {
     color: #F50057;
 }
 
 
-.wrapper .contact-form .btn.btn-primary {
+.wrapper1 .contact-form .btn.btn-primary {
     background: #F50057;
     border: none;
     padding: 8px 18px;
     box-shadow: 0 8px 12px #3535356b;
 }
 
-.wrapper .contact-form .btn.btn-primary:hover {
+.wrapper1 .contact-form .btn.btn-primary:hover {
     background-color: #f50056e5;
 }
 
@@ -99,25 +99,25 @@
 }
 
 @media(max-width: 900.5px) {
-    .wrapper {
+    .wrapper1 {
         margin: 20px;
     }
 }
 
 @media(max-width: 575.5px) {
 
-    .wrapper .contact-form {
+    .wrapper1 .contact-form {
         padding: 40px;
     }
 
-    .wrapper .bg-bllue {
+    .wrapper1 .bg-bllue {
         padding-left: 30px;
     }
 }
 
 @media(max-width: 496px) {
 
-    .wrapper .bg-bllue {
+    .wrapper1 .bg-bllue {
         display: none;
     }
 
@@ -128,7 +128,7 @@
 <div class="modal fade" id="request_contact_Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
  <!-- <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content"> -->
-   <div class="wrapper rounded d-flex align-items-stretch">
+   <div class="wrapper1 rounded d-flex align-items-stretch">
         <div class="bg-bllue">
             <div class="text-white">
                 <span class="far fa-phone"></span>
@@ -181,7 +181,7 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="thankyou" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

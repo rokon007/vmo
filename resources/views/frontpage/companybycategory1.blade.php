@@ -228,7 +228,8 @@
                               
                               </p>
                             <p class="card-text"><i class="fas fa-map-marker-alt"></i>  {{$Data->block}}, {{$Data->city}}, {{$Data->country}}</p>
-                            <p class="card-text"><i class="fas fa-phone"></i>  ***** {{ substr($Data->contact, -3);}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i>  ***** {{ substr($Data->email, -5);}}</span></p>
+								{{--<p class="card-text"><i class="fas fa-phone"></i>  ***** {{ substr($Data->contact, -3);}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i>  ***** {{ substr($Data->email, -5);}}</span></p>--}}
+								 <p class="card-text"><i class="fas fa-phone"></i> {{$Data->contact}} &nbsp <span class="pull-right"><i class="fas fa-envelope"></i>{{$Data->email}}</span></p>
                             <p class="card-text">Total Reviews: <strong>{{$Data->count-1}}</strong>  &nbsp <span class="float-right">VimbisoScore: <strong>0</strong></span></p>
                               <p class="text-center">
 							   
