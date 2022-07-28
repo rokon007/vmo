@@ -63,13 +63,15 @@ class PostController extends Controller
         ]);
 
         $post->tags()->attach($request->tags);
-
+        //uploads\image
         if($request->hasFile('image')){
             $image = $request->image;
            // $image_new_name = time() . '.' . $image->getClientOriginalExtension();
 		    $image_new_name =  Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $image->move('storage/post/', $image_new_name);
-            $post->image = '/storage/post/' . $image_new_name;
+           // $image->move('storage/post/', $image_new_name);
+           // $post->image = '/storage/post/' . $image_new_name;
+		    $image->move('uploads/image/post/', $image_new_name);
+            $post->image = '/uploads/image/post/' . $image_new_name;
             $post->save();
         }
 
@@ -128,8 +130,11 @@ class PostController extends Controller
             $image = $request->image;
            // $image_new_name = time() . '.' . $image->getClientOriginalExtension();
 		   $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $image->move('storage/post/', $image_new_name);
-            $post->image = '/storage/post/' . $image_new_name;
+           // $image->move('storage/post/', $image_new_name);
+           // $post->image = '/storage/post/' . $image_new_name;
+			
+			$image->move('uploads/image/post/', $image_new_name);
+            $post->image = '/uploads/image/post/' . $image_new_name;
         }
 
         $post->save();

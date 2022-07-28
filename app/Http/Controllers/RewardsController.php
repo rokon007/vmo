@@ -64,12 +64,15 @@ class RewardsController extends Controller
         ]);
 
        // $post->tags()->attach($request->tags);
-
+            
         if($request->hasFile('image')){
             $image = $request->image;
             $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $image->move('storage/rewards/', $image_new_name);
-            $post->image = '/storage/rewards/' . $image_new_name;
+            //$image->move('storage/rewards/', $image_new_name);
+            //$post->image = '/storage/rewards/' . $image_new_name;
+			
+			$image->move(' uploads/image/rewards/', $image_new_name);
+            $post->image = '/ uploads/image/rewards/' . $image_new_name;
             $post->save();
         }
 
@@ -136,8 +139,8 @@ class RewardsController extends Controller
         if($request->hasFile('image')){
             $image = $request->image;
             $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $image->move('storage/rewards/', $image_new_name);
-            $reward->image = '/storage/rewards/' . $image_new_name;
+            $image->move('uploads/image/rewards/', $image_new_name);
+            $reward->image = '/uploads/image/rewards/' . $image_new_name;
         }
 
         $reward->save();

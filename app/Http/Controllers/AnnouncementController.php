@@ -63,12 +63,15 @@ class AnnouncementController extends Controller
         ]);
 
        // $post->tags()->attach($request->tags);
-
+        
         if($request->hasFile('image')){
             $image = $request->image;
             $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $image->move('storage/announcement/', $image_new_name);
-            $post->image = '/storage/announcement/' . $image_new_name;
+            //$image->move('storage/announcement/', $image_new_name);
+           // $post->image = '/storage/announcement/' . $image_new_name;
+			
+			$image->move('uploads/image/announcement/', $image_new_name);
+            $post->image = '/uploads/image/announcement/' . $image_new_name;
             $post->save();
         }
 
@@ -129,12 +132,15 @@ class AnnouncementController extends Controller
        // $post->category_id = $request->category;
 
         //$post->tags()->sync($request->tags);
-
+         
         if($request->hasFile('image')){
             $image = $request->image;
             $image_new_name = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $image->move('storage/announcement/', $image_new_name);
-            $announcement->image = '/storage/announcement/' . $image_new_name;
+           // $image->move('storage/announcement/', $image_new_name);
+           // $announcement->image = '/storage/announcement/' . $image_new_name;
+			
+			$image->move('uploads/image/announcement/', $image_new_name);
+            $announcement->image = '/uploads/image/announcement/' . $image_new_name;
         }
 
         $announcement->save();
