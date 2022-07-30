@@ -849,7 +849,7 @@
 										<div class="card card-custom card-stretch gutter-b">
 											<!--begin::Header-->
 											<div class="card-header border-0 pt-5">
-												<h3 class="card-title font-weight-bolder">Action Needed</h3>
+												<h3 class="card-title font-weight-bolder">Newsletter Subscribers</h3>
 												<div class="card-toolbar">
 													<div class="dropdown dropdown-inline">
 														<a href="#" class="btn btn-clean btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -930,13 +930,60 @@
 											<!--end::Header-->
 											<!--begin::Body-->
 											<div class="card-body d-flex flex-column">
+											
+											
+											<!--
 												<div class="flex-grow-1">
 													<div id="kt_mixed_widget_14_chart" style="height: 200px"></div>
 												</div>
+												-->
+												<div class="tab-content">
+													<!--begin::Table-->
+													<div class="table-responsive">
+													<table class="table table-head-custom table-head-bg table-borderless table-vertical-center">
+															<thead>
+																<tr class="text-left text-uppercase">
+																	<th style="min-width: 250px" class="pl-7">
+																		<span class="text-dark-75">Subscribers ({{$subscriberCount}})</span>
+																	</th>
+																	
+																	
+																</tr>
+															</thead>
+															<tbody>
+															@if($nSubscriber->count())
+                                                            @foreach ($nSubscriber as $ns)
+																<tr>
+																	<td class="pl-0 py-8">
+																		<div class="d-flex align-items-center">
+																			<div class="symbol symbol-50 symbol-light mr-4">
+																				 <span class="far fa-envelope fa-5x ml-2"></span>
+																			</div>
+																			<div>
+																				<a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{$ns->email}}</a>
+																				<span class="text-muted font-weight-bold d-block">{!! date('D, d, M, Y', strtotime($ns->created_at)) !!}</span>
+																				<span class="text-muted font-weight-bold">{{$ns->status}}</span>
+																			</div>
+																		</div>
+																	</td>
+																</tr>
+																@endforeach
+                                                                @else   
+                                                                <tr>
+                                                                <td colspan="6">
+                                                                 <h5 class="text-center">No posts found.</h5>
+                                                               </td>
+                                                               </tr>
+                                                              @endif
+																</tbody>
+														</table>
+																
+													</div>
+												</div>
+												
 												<div class="pt-5">
-													<p class="text-center font-weight-normal font-size-lg pb-7">Notes: Current sprint requires stakeholders 
-													<br />to approve newly amended policies</p>
-													<a href="#" class="btn btn-success btn-shadow-hover font-weight-bolder w-100 py-3">Generate Report</a>
+													
+													<a href="{{url('/admin/NewsLetter')}}" class="btn btn-success btn-shadow-hover font-weight-bolder w-100 py-3">Send Newsletter</a>
 												</div>
 											</div>
 											<!--end::Body-->

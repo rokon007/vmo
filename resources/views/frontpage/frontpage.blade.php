@@ -20,7 +20,7 @@
    <!-- <title>Vimbiso - Home</title> -->
 
     
-    
+   <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/rokon/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" >
     <link rel="stylesheet" href="/rokon/static/css/style.css"> 
@@ -34,6 +34,9 @@
     <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="/rokon/static/images/favicon.ico"/>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  
 	<style>
 a.ex1:hover {
  background-color: #008000; //add this of course....
@@ -145,9 +148,25 @@ a.ex1:hover {
 
      @if($message = Session::get('success'))
 		 <script>
-	          swal("Thanks for your contribution","{!!Session::get('success')!!}","success",{
-				  button:"OK",
-			  })
+	          Swal.fire(
+  "{!!Session::get('success')!!}",
+  'Thanks for your contribution',
+  'success'
+)
+	         
+	     </script>
+		 
+	 @endif
+	  @if($message = Session::get('erorr'))
+		  
+	  
+		 <script>
+	        Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: "{!!Session::get('erorr')!!}",
+  footer: 'vimbiso.org'
+})
 	     </script>
 		 
 	 @endif
@@ -207,11 +226,15 @@ a.ex1:hover {
                             <div class="footer-text mb-25">
                                 <p style="color:black;font-size:14px">Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
                                 <div class="subscribe-form">
-                                    <form action="#">
-                                        <input type="text" placeholder="Email Address">
-                                        <button class="m-0"><i class="fab fa-telegram-plane"></i></button>
+                                     <form action="{{ route('StoreSubscriber') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                       <input type="email" id="subscriber_email" name="subscriber_email" placeholder="Email Address">
+                                        <button  type="submit"><i class="fab fa-telegram-plane"></i></button>
                                     </form>
+                                        
+                                    
                                 </div>
+                               
                             </div>                                
                         </div>
                     </div>
@@ -252,6 +275,9 @@ a.ex1:hover {
         let notifier = new AWN({});
         $('.js-example-basic-single').select2();
       </script>
+     
+
+  
     
     
   </body>

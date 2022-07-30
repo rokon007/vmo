@@ -29,7 +29,7 @@ use App\Http\Controllers\RewardsController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes   companies plan 
+| Web Routes   companies plan UploadImage
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -43,7 +43,8 @@ Route::get('/', function () {
 });
 */
 Route::get('/review',[App\Http\Controllers\WelcomeController::class,'givshow']);
-
+//Add Subscriber
+Route::post('/add_subscriber', [App\Http\Controllers\NewsLetterController::class,'addSubscriber'])->name('StoreSubscriber');
 // Route::get('/auth/redirect',[App\Http\Controllers\WelcomeController::class,'redirect']);
 // Route::get('/review/google/callback',[App\Http\Controllers\ReviewController::class,'googlecallback']);
 
@@ -191,7 +192,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin']], function () {
     
 });
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminindex'])->name('admin.home')->middleware('is_admin');
+Route::get('/admin/home', [App\Http\Controllers\dassbord\dassbordController::class, 'adminindex'])->name('admin.home')->middleware('is_admin');
+Route::get('/admin/NewsLetter', [App\Http\Controllers\dassbord\dassbordController::class, 'NewsLetterIndex'])->name('NewsLetterIndex')->middleware('is_admin');
+Route::post('users-send-email', [UserController::class, 'sendEmail'])->name('ajax.send.email');
+Route::post('/admin-NewsLetter-send-email', [App\Http\Controllers\MailController::class, 'sendNewsLetterEmail'])->name('sendNewsLetterEmail')->middleware('is_admin');
 
 Route::get('/admin/page', [App\Http\Controllers\pagecontroller::class, 'pagesetting'])->name('admin.page')->middleware('is_admin');
 
@@ -317,7 +321,9 @@ Route::post('/reset-password', function (Request $request) {
         $request->only('email', 'password', 'password_confirmation', 'token'),
         function ($user, $password) {
             $user->forceFill([
-                'password' => Hash::make($password)
+                'password' => Hash::make($password),
+				//Its for Claim Status
+				'is_staff' =>1
             ]);
  
             $user->save();

@@ -242,11 +242,11 @@
 											</li>
 											
 											<li class="menu-item" aria-haspopup="true">
-												<a href="#" class="menu-link">
+												<a href="{{url('/admin/NewsLetter')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
-													<span class="menu-text">Subscriptions</span>
+													<span class="menu-text">NewsLetter Subscriptions</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">

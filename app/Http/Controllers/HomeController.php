@@ -53,21 +53,9 @@ class HomeController extends Controller
     {
         return view('login');
     }
- 
-    public function adminIndex()
-    {
-        $usercount=DB::table('users')->count();
-         $categoriescount=DB::table('categories')->count();
-         $reviewscount=DB::table('reviews')->whereNull('show')->count();
-         $companycount=DB::table('companytbs')->count();
-
-         // $UserClaim=User::where('is_staff','1');
-         $UserClaim=DB::table('users')->where('is_staff',1)->get();
-        return view('admin.adminhome',compact('UserClaim','usercount','categoriescount','reviewscount','companycount'));
-    }
-    
     public function UploadImage()
     {
         return view('admin.uploadimage');
     }
+   
 }
