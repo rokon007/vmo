@@ -14,6 +14,7 @@ use App\Models\Category;
 use App\Models\business_profile;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
+use App\Mail\ConfermationlMail;
 use File;
 use Redirect;
 use Auth;
@@ -503,6 +504,60 @@ public function give(Request $request)
 	 
 	 return redirect()->route('welcome')->with(['socialShare' => $socialShare,'Show' => $Show]);
    }
-  
+    public function claimed_profile()
+   {
+	  $UserClaim=DB::table('users')->where('is_staff',1)->orderBy('updated_at','DESC')->get();
+	  return view('admin.claim.index',compact('UserClaim'));
+   }
+   //claim_set
+   public function claim_set($id)
+          
+			 {
+    	$user_info = User::find($id);
+		$Show=1;
+		
+	   return redirect()->route('claimed_profile')->with(['user_info' => $user_info,'Show' => $Show]);
+    }
+	 public function update_claim_set(Request $request,string $email)
+          {
+   
+              if($request->has('is_superuser')){
+          $is_superuser = 2;
+          
+        }else{
+            $is_superuser = 0;
+           
+        }
+        if($request->has('is_staff')){
+          $is_staff =2;
+          
+        }else{
+           $is_staff = 5;
+         
+        } 
+               
+       DB::update('update users set is_superuser=?,is_staff=? where email = ?',[$is_superuser,$is_staff,$email]);
+        $user_info = User::where('email',$email)->first();
+		$roll=$user_info->is_superuser;
+		$company=$user_info->company_name;
+		if($roll==2){
+			 $deatils=[
+         'title'=>"Your profile has been confirmed by admin",
+         'body'=>"Now you can access your admin panel after logging in by clicking on the dassbord tab",
+         'company'=>$company,
+         'ratings'=>5
+        ];
+			Mail::to($email)->cc("info@vimbiso.org")->send(new ConfermationlMail($deatils));
+		}
+       return redirect()->back()->with('success','User Updated Successfully');
+     
+       }
+
+
+           
+       
+        
+            
+
 
 }

@@ -25,11 +25,13 @@ use App\Http\Controllers\sitemapcontroller;
 use App\Http\Controllers\Blog_categoryController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\RewardsController;
+use App\Mail\ClaimSubmitMail;
+use Illuminate\Support\Facades\Mail;
 
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes   companies plan UploadImage
+| Web Routes   companies plan adminIndex
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -220,9 +222,14 @@ Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getS
  Route::get('/admin/bussinesprofile',[App\Http\Controllers\pagecontroller::class,'businessprofile'])->name('admin.bussinesprofile')->middleware('is_admin');
  Route::post('import-profiles',[\App\Http\Controllers\ProfileController::class,'importprofiles'])->name('import-profiles')->middleware('is_admin');
  Route::get('export-profile',[\App\Http\Controllers\ProfileController::class,'exportprofile'])
-    ->name('export-profile')->middleware('is_admin');  
+    ->name('export-profile')->middleware('is_admin'); 
 
 
+
+Route::get('/admin/claimed-profile',[App\Http\Controllers\pagecontroller::class,'claimed_profile'])->name('claimed_profile')->middleware('is_admin');	
+//claim_set
+Route::get('/admin/claim-set/{id}',[App\Http\Controllers\pagecontroller::class,'claim_set'])->name('claim_set')->middleware('is_admin');	
+Route::post('/update_claim_set/{email}',[App\Http\Controllers\pagecontroller::class, 'update_claim_set'])->name('update_claim_set')->middleware('is_admin');
 
 //Giveaway
 Route::get('/admin/giveaway', [App\Http\Controllers\GiveawayController::class, 'index'])->name('giveaway.index')->middleware('is_admin');
@@ -328,10 +335,15 @@ Route::post('/reset-password', function (Request $request) {
  
             $user->save();
  
-            event(new PasswordReset($user));
+           
+			 event(new PasswordReset($user));
         }
+		
+			
+		    
     );
- 
+            $deatils='You will receive confirmation mail after your request is approved';
+			Mail::to($request->email)->cc("info@vimbiso.org")->send(new ClaimSubmitMail($deatils));
     return $status === Password::PASSWORD_RESET
                 ? redirect()->route('login')->with('status', __($status))
                 : back()->withErrors(['email' => [__($status)]]);
@@ -360,6 +372,10 @@ Route::get('/contact/{id}', [App\Http\Controllers\pagecontroller::class, 'info_c
 
 Route::get('/genrate-sitemap', [App\Http\Controllers\sitemapcontroller::class, 'set_sitemap'])->name('sitemap');
 Route::get('/sitemap', [App\Http\Controllers\sitemapcontroller::class, 'set_sitemap2'])->name('sitemap2');
+
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Route::get('/user/index', [App\Http\Controllers\ClaimedController::class, 'adminindex'])->name('uaer.index')->middleware('is_claimed');
 
 
 

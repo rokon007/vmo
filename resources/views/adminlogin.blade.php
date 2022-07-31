@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Bootstrap 4 HTML, React, Angular 11 & VueJS Admin Dashboard Theme
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: https://1.envato.market/EA4JP
-Renew Support: https://1.envato.market/EA4JP
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
+
 <html lang="en">
 	<!--begin::Head-->
 	
-<!-- Mirrored from preview.keenthemes.com/metronic/demo1/custom/pages/login/classic/login-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Feb 2022 17:35:42 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+
 <head>
 		<!-- Google Tag Manager -->
 		
@@ -190,5 +179,5 @@ License: You must have a valid license purchased only from themeforest(the above
 	</body>
 	<!--end::Body-->
 
-<!-- Mirrored from preview.keenthemes.com/metronic/demo1/custom/pages/login/classic/login-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Feb 2022 17:35:44 GMT -->
+
 </html>

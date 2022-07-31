@@ -762,9 +762,9 @@
 																		<td class="text-right">
 																		@if(($user->is_active)==2)
 																		<!--	<span class="label label-lg label-light-success label-inline">Success</span>  -->
-																	     <span class="label label-lg label-light-warning label-inline">In Progress</span>
+																	     <span class="label label-lg label-light-warning label-inline">Rejected</span>
 																		 @elseif(($user->is_active)==0)
-																		 <span class="label label-lg label-light-danger label-inline">Rejected</span>
+																		 <span class="label label-lg label-light-danger label-inline">Pending</span>
 																		 @elseif(($user->is_active)==1)
 																		 <span class="label label-lg label-light-primary label-inline">Approved</span>
 																		 @endif

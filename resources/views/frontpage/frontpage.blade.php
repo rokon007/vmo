@@ -105,11 +105,15 @@ a.ex1:hover {
                       {{Auth::user()->company_name}}
                     </a>
              <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
-                        
+                         @if (Auth::user()->is_superuser ==1)
+                             <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('admin.home')}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Dassbord') }}</a>
+						 @elseif(Auth::user()->is_superuser ==2)
+							 <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('uaer.index')}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Dassbord') }}</a>
+					    @endif
                             <a class="dropdown-item text-dark border-bottom border-dark ex1" href="{{route('password.request')}}"><i class="fab fa-get-pocket"></i>&nbsp Claim Profile</a>
 							 <a class="dropdown-item text-dark border-bottom border-dark ex1"href="/profile/{{Auth::user()->company_name}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Profile') }}</a>
 							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="/update_profile/{{Auth::user()->email}}"><i class="fab fa-get-pocket"></i>&nbsp {{ __('Settings') }}</a>
-							  <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{url('plans')}}"><i class='fas fa-donate'></i>&nbsp {{ __('Plan') }}</a>
+							   
                             <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('logout') }}"
 							onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">					

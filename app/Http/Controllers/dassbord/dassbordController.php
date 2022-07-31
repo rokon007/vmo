@@ -21,7 +21,7 @@ public function adminIndex()
          $companycount=DB::table('companytbs')->count();
 
          // $UserClaim=User::where('is_staff','1');
-         $UserClaim=DB::table('users')->where('is_staff',1)->get();
+         $UserClaim=DB::table('users')->where('is_staff',1)->orderBy('updated_at','DESC')->simplePaginate(5);
 		 $nSubscriber=DB::table('newsletter_subscribers')
 		  ->select('id','email','status','created_at')
 		 ->orderBy('id','DESC')->simplePaginate(5);
