@@ -1,13 +1,10 @@
 @extends('frontpage.frontpage')
         <title>Vimbiso | Create Business</title>
          <meta charset="utf-8">
-         <meta name="description" content="Create Business">
-     <meta name="keywords" content="Create Business">
-	<meta name="author" content="Tanaka Karumazondo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-   <script src="/rokon/cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-   <link rel="stylesheet" href="/rokon/static/css/review.css"> 
+    <meta name="description" content="Create Business">
+    <meta name="keywords" content="Vimbiso">
+    <meta name="author" content="Tanaka Karumazondo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
 
 @section('body')  
 
@@ -51,17 +48,12 @@
     </script>
     <div class="container-fluid">
         <div class="row d-flex align-items-start justify-content-center p-3">
-            <ul class="list-group col-lg-3 d-flex justify-content-left align-items-center">
-                <li class="list-group-item mt-0" id="profile-block-btn" onclick="showProfileblock();" style="cursor:pointer;background-color: #ededed;"><i class="fas fa-user-circle fa-1x"></i>&nbsp Profile</li>
-                <li class="list-group-item" id="change-password-block-btn" onclick="showPasswordblock();" style="cursor:pointer"><i class="fas fa-cog fa-1x"></i>&nbsp Change Password</li>
-                <li class="list-group-item"><i class="far fa-credit-card fa-1x"></i>&nbspPayment Method</li>
-                <li class="list-group-item"><i class="fas fa-sign-out-alt fa-1x"></i>&nbsp<a class="text-dark" href="/accounts/logout/">Sign Out</a></li>
-            </ul>
+           
             <div class="col-lg-8 col-sm-12 px-3" id="profile-block">
                 <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
          @csrf
-                    <input type="hidden" name="csrfmiddlewaretoken" value="czS4JgoaxRihfyzpZAiYScTqufy9gGvxj82XGzXF2VOIYhOgb2BL4sprlC893dsI">
-                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Update Profile</b></h3>
+                   
+                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Create Business Account</b></h3>
                     
                     <div class="d-flex flex-row justify-content-center">
                         <div class="d-flex flex-column align-items-center align-content-center mx-2">
@@ -73,7 +65,7 @@
                     </div>
                     
                     <label>Company Name</label>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -81,7 +73,7 @@
                                 @enderror
                     <br>
                     <label>Email</label>
-                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" readonly >
+                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  >
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -331,7 +323,7 @@
                                   <option value="Ukraine">Ukraine</option>
                                   <option value="United Arab Emirates">United Arab Emirates</option>
                                   <option value="United Kingdom">United Kingdom</option>
-                                  <option value="United States" selected="selected">United States</option>
+                                  <option value="United States" >United States</option>
                                   <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
                                   <option value="Uruguay">Uruguay</option>
                                   <option value="Uzbekistan">Uzbekistan</option>
@@ -344,7 +336,7 @@
                                   <option value="Western Sahara">Western Sahara</option>
                                   <option value="Yemen">Yemen</option>
                                   <option value="Zambia">Zambia</option>
-                                  <option value="Zimbabwe">Zimbabwe</option>
+                                  <option value="Zimbabwe" selected="selected">Zimbabwe</option>
                               
                               
                             </select>
@@ -361,45 +353,18 @@
                 <h3 class="py-3 text-center" style="color:var(--color1)"><b>Add More Images</b></h3>
                 <div class="col-lg-6" style="float:right;">
               <div class="form-group">
-			     @if(File::exists("uploads/image/{{Auth::user()->email}}.jpg"))
-                <img id="Image3" style="height:120px;width: 175px;float:right;" src="uploads/image/{{Auth::user()->email}}.jpg">
-				@elseif(File::exists("uploads/image/{{Auth::user()->email}}.png")) 
-				<img id="Image3" style="height:120px;width: 175px;float:right;" src="uploads/image/{{Auth::user()->email}}.png">
-				@elseif(File::exists("uploads/image/{{Auth::user()->email}}.webp"))
-				<img id="Image3" style="height:120px;width: 175px;float:right;" src="uploads/image/{{Auth::user()->email}}.webp">
-				@else
-				<img id="Image3" style="height:120px;width: 175px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
-                @endif
-			  </div>
+                <img id="Image3" style="height:120px;width: 175px;float:right;" src="">
+              </div>
         <div class="form-group ">
                 <label for="exampleInputPassword1"> Business Image</label>
                 <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
             </div>
           </div>
 		  <br>
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Next</button>
                 </form>
             </div>
-            <div class="col-lg-8 p-3 d-flex align-items-center justify-content-center" style="display:none !important" id="change-password-block">
-                <form method="POST" action="/change-password/" style="width:inherit;">
-                    <h3 class="pt-3 pb-5 text-center" style="color:var(--color1)">Change Password</h3>
-                    <input type="hidden" name="csrfmiddlewaretoken" value="czS4JgoaxRihfyzpZAiYScTqufy9gGvxj82XGzXF2VOIYhOgb2BL4sprlC893dsI">
-                    
-                    <div class="form-group">
-                        <label>Current Password</label>
-                        <input type="password" id="c_pwd" name="oldpassword" class="form-control" placeholder="Current Password" value="" required/>
-                    </div>
-                    <div class="form-group">
-                        <label>New Password</label>
-                        <input type="password" id="pass1" name="password1" class="form-control" placeholder="Enter Password" value="" required/>
-                    </div>
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" id="pass2" name="password2" class="form-control" placeholder="Confirm Password" value="" required/>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Change Password</button>
-                </form>
-            </div>
+           
         </div>
     </div>
 

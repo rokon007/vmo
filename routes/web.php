@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes   companies plan adminIndex
+| Web Routes   companies plan adminIndex bussinesprofile.save
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -217,7 +217,7 @@ Route::get('company_delete/{id}', [App\Http\Controllers\CompanyController::class
 Route::post('/getcategory', [App\Http\Controllers\FrontEndController::class, 'getcategory']);
 Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
 //For Review Saverecord
-
+ Route::get('/register/1stpage', [App\Http\Controllers\JoinInsertControler::class, 'view_register'])->name('register.settings');
  Route::post('/bussinesprofile/save', [App\Http\Controllers\JoinInsertControler::class, 'Saverecord'])->name('bussinesprofile.save');
  Route::get('/admin/bussinesprofile',[App\Http\Controllers\pagecontroller::class,'businessprofile'])->name('admin.bussinesprofile')->middleware('is_admin');
  Route::post('import-profiles',[\App\Http\Controllers\ProfileController::class,'importprofiles'])->name('import-profiles')->middleware('is_admin');

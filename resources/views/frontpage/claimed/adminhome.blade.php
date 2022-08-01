@@ -279,9 +279,13 @@
 												<center>
 												@if(File::exists("uploads/image/$CData->email.jpg"))
    <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="border border-dark" style="max-height: 200px;max-width: 250px;">
-                          @else 
+                                                  @elseif(File::exists("uploads/image/$CData->email.png"))
+   <img src="<?php echo asset("uploads/image/$CData->email.png")?>"  class="border border-dark" style="max-height: 200px;max-width: 250px;">
+                                                  @elseif(File::exists("uploads/image/$CData->email.webp"))
+   <img src="<?php echo asset("uploads/image/$CData->email.webp")?>"  class="border border-dark" style="max-height: 200px;max-width: 250px;">
+												 @else 
   <img src="<?php echo asset("uploads/image/non.jpg")?>"   class="border border-dark" style="max-height: 200px;max-width: 250px;">
-                       @endif
+                                                  @endif
 												</center>
 													<div class="bgi-no-repeat bgi-position-center bgi-size-cover h-50px h-md-auto h-lg-50px h-xxl-auto mw-100 w-150px" style="background-image: "></div>										
 												<!--end::Image-->

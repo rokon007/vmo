@@ -212,7 +212,11 @@
                           
                            @if(File::exists("uploads/image/$Data->email.jpg"))
    <img src="<?php echo asset("uploads/image/$Data->email.jpg")?>"  class="card-img" alt="..." width="80" height="90" >
-                          @else 
+                          @elseif(File::exists("uploads/image/$Data->email.png")) 
+  <img src="<?php echo asset("uploads/image/$Data->email.png")?>"  class="card-img" alt="..." width="80" height="90" >
+                          @elseif(File::exists("uploads/image/$Data->email.webp"))
+   <img src="<?php echo asset("uploads/image/$Data->email.webp")?>"  class="card-img" alt="..." width="80" height="90" >	
+                           @else
   <img src="<?php echo asset("uploads/image/non.jpg")?>"  class="card-img" alt="..." width="80" height="90" >
                        @endif
                           

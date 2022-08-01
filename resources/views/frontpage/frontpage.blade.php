@@ -94,7 +94,7 @@ a.ex1:hover {
                             <a class="dropdown-item text-dark border-bottom border-dark ex1"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp {{ __('Login') }}</a>
 							 @endif
 							  @if (Route::has('register'))
-                            <a class="dropdown-item text-dark ex1" href="{{ route('register') }}"> <i class="fas fa-user-plus"></i>&nbsp {{ __('Register') }}</a>
+                            <a class="dropdown-item text-dark ex1" href="{{ route('register.settings') }}"> <i class="fas fa-user-plus"></i>&nbsp {{ __('Register') }}</a>
                         
                     </div>
 					 @endif

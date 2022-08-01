@@ -36,7 +36,12 @@
         <div class="bg-white row1 d-flex justify-content-center text-center align-items-center">
                 @if(File::exists("uploads/image/$CData->email.jpg"))
    <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
-                          @else 
+                @elseif(File::exists("uploads/image/$CData->email.png"))
+   <img src="<?php echo asset("uploads/image/$CData->email.png")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+                 @elseif(File::exists("uploads/image/$CData->email.webp"))
+   <img src="<?php echo asset("uploads/image/$CData->email.webp")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+                                        
+						  @else 
   <img src="<?php echo asset("uploads/image/non.jpg")?>"   class="border border-dark" style="max-height: 149px;max-width: 198px;">
                        @endif
            
@@ -176,12 +181,16 @@
 							
 							</div>
 							 <div class="v-dialog__container col-lg-8" style="display: block;float:right;">
-							 <p class="bottomText mt-0 mb-0 pull-right"style="float:left;font:bold"  >
-							 @if(File::exists("uploads/image/$CData->email.jpg"))
-   <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
-                          @else 
-  <img src="<?php echo asset("uploads/image/non.jpg")?>"  class="v-avatar avatar" style="height: 30px; width: 30px;">
-                       @endif
+							<p class="bottomText mt-0 mb-0 pull-right"style="float:left;font:bold"  >
+							  @if(File::exists("uploads/image/$CData->email.jpg"))
+                             <img src="<?php echo asset("uploads/image/$CData->email.jpg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+                             @elseif(File::exists("uploads/image/$CData->email.png")) 
+                             <img src="<?php echo asset("uploads/image/$CData->email.png")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+                             @elseif(File::exists("uploads/image/$CData->email.webp")) 
+                             <img src="<?php echo asset("uploads/image/$CData->email.webp")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+                            @else
+                            <img src="<?php echo asset("uploads/image/$CData->non.jpg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+                            @endif
 							&#160;{{$CData->company}}</p>
 							 <br>
 							 <p class="displayName caption" style="font-size: 10px;float:right;">&nbsp;{!! date('D, d, M, Y', strtotime($reviews->updated_at)) !!} </p>

@@ -1,11 +1,9 @@
 @extends('frontpage.frontpage')
 @section('title') 
- <title>Vimbiso | Create Business</title>
+ <title>Vimbiso | Create Business Account</title>
          <meta charset="utf-8">
-    <meta name="description" content="
-    Vimbiso is a free independent & transparent customer assurance platform. At Vimbiso we believe the key to unlocking business success starts by listening to your customers.
-    ">
-    <meta name="keywords" content="Vimbiso,how grow business,12/04">
+    <meta name="description" content="Create Business">
+    <meta name="keywords" content="Vimbiso">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -25,15 +23,15 @@
         <div class="col-lg-5 col-sm-6">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1"  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  autofocus placeholder="Enter a valid email address">
+                <input type="email" class="form-control" id="exampleInputEmail1"  @error('email') is-invalid @enderror" name="email" value="{{ $email }}" readonly >
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Company Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="company_name" placeholder="Enter unique company name">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="company_name" value="{{ $company }}" readonly>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="address" placeholder="Enter your company address">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="address" value="{{ $block }}" readonly>
             </div>
         </div>
         <div class="col-lg-5 col-sm-6">

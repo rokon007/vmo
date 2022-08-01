@@ -42,8 +42,12 @@ if ($Company === null) {
             $business_profile->image=$filename;
         }
          $business_profile->save();
+		 $email=$request->input('email');
+		 $company=$request->input('name');
+		 $block=$request->input('block');
 
-        return redirect()->back()->with('status','Business Profile Updated Successfully');
+       // return redirect()->back()->with('status','Business Profile Updated Successfully');
+	   return view('auth.register',compact('email','company','block')); 
 }
 else{
        // $Companytb = Student::find($id);
@@ -87,4 +91,10 @@ else{
 
   
    }
+   
+   //view_register
+    public function view_register()
+	{
+		 return view('auth.settings'); 
+	}
 }
