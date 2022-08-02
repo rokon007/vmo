@@ -1,10 +1,13 @@
 @extends('frontpage.frontpage')
-        <title>Vimbiso | Create Business</title>
+@section('title')
+ <title>Vimbiso |Create Business Account</title>
          <meta charset="utf-8">
-    <meta name="description" content="Create Business">
+    <meta name="description" content="Create Business Account">
     <meta name="keywords" content="Vimbiso">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+@endsection
+        
 
 @section('body')  
 
@@ -47,32 +50,72 @@
         }
     </script>
     <div class="container-fluid">
-        <div class="row d-flex align-items-start justify-content-center p-3">
+       <div class="row d-flex align-items-start justify-content-center p-3">
+            <div class="col-lg-4 col-sm-12 ">
+			 <div   class="row justify-content-center align-items-center">
+			 <br></div>
+			 
+			 <br><br><br><br><br>
+			
+			   <div   class="row justify-content-center align-items-center">
+			  
+                 <img style="max-height: 149px;max-width: 198px;" src="../static/images/logo-no-bg-2.png"></div>
+				 <br><br><br>
+				  <div   class="row justify-content-center align-items-center">
+                <span class="about-description" style="text-decoration:none;color:black;font-size:16px">
+				<strong> Vimbiso is a free independent &</strong>
+                </span>
+				<span class="about-description " style="text-decoration:none;color:black;font-size:16px">
+				<strong>   </strong>
+                </span>
+				<span class="about-description" style="text-decoration:none;color:black;font-size:16px">
+				<strong>transparent customer assurance</strong>
+                </span>
+				<span class="about-description" style="text-decoration:none;color:black;font-size:16px">
+				<strong>platform.</strong>
+                </span>
+				</div>
+            </div>
+			
            
             <div class="col-lg-8 col-sm-12 px-3" id="profile-block">
-                <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
+                <form action="{{route('register_1stpage.save')}}" method="post" enctype="multipart/form-data"class="form">
          @csrf
                    
                     <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Create Business Account</b></h3>
                     
                     <div class="d-flex flex-row justify-content-center">
                         <div class="d-flex flex-column align-items-center align-content-center mx-2">
-                            
-                            <!--    <img class="card-img-top profile-image" src="https://www.unityhighschool.org/wp-content/uploads/2014/08/default-placeholder.png" alt="Card image cap">
-                                <label>Profile Image</label> -->
+                           @if($message = Session::get('success'))
+								<div class="alert alert-success alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<strong>{{$message}}</strong>
+								</div>
+						@endif
+						@if($message = Session::get('erorr'))
+								<div class="alert alert-success alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<strong>{{$message}}</strong>
+								</div>
+						@endif		
                             
                         </div>
                     </div>
-                    
-                    <label>Company Name</label>
+                     <div class="row d-flex align-items-start justify-content-center p-3">
+					 
+					  <div class="col-lg-6 col-sm-12 px-3">
+					   <div class="form-group ">
+					   <label>Company Name</label>
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                    <br>
-                    <label>Email</label>
+					   </div>
+                    
+                    <div class="form-group ">
+						<label>Email</label>
                      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  >
 
                                 @error('email')
@@ -80,13 +123,21 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                    <br>
-                    <label>Description</label>
-                     <textarea class="form-control" name="description" type="text" autofocus></textarea>
-                    <br>
-                    <label>Country</label>
+					   </div>
+                    
+                    <div class="form-group ">
+						<label>Description</label>
+                     <textarea class="form-control"style="height: 139px;" name="description" type="text" autofocus></textarea>
+					   </div>
+					  
+					    
+					   
+					   </div>
+                    <div class="col-lg-6 col-sm-12 px-3"> 
+                   <div class="form-group ">
+						 <label>Country</label>
                      <select name="country" class="form-control" id="exampleSelectl">
-                              <option value="">Select Country</option>
+                              <option value="" selected="selected">Select Country</option>
                               
                                                            <option value="AF">Afghanistan</option>
                                   <option value="Åland Islands">Åland Islands</option>
@@ -336,32 +387,43 @@
                                   <option value="Western Sahara">Western Sahara</option>
                                   <option value="Yemen">Yemen</option>
                                   <option value="Zambia">Zambia</option>
-                                  <option value="Zimbabwe" selected="selected">Zimbabwe</option>
+                                  <option value="Zimbabwe" >Zimbabwe</option>
                               
                               
                             </select>
-                    <br>
-                    <label>City</label>
+					   </div>
+                   
+                   <div class="form-group ">
+						<label>City</label>
                     <input class="form-control" id="city" name="city" type="text" >
-                    <br>
-                    <label>Street Address and Door Number</label>
-                    <input class="form-control"  id="block" name="block" type="text">
-                    <br>
+					   </div>
                     
-
+                   <div class="form-group ">
+						<label>Street Address and Door Number</label>
+                    <input class="form-control"  id="block" name="block" type="text">
+					   </div>
+                  <div class="row d-flex align-items-start justify-content-center p-3"> 
+				  <div class="col-lg-6 col-sm-12 px-3"> 
+				    <div class="form-group ">
+                     <label for="exampleInputPassword1"> Business Image</label>
+                     <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
+                    </div>
+				  </div>
+				  <div class="col-lg-6 col-sm-12 px-3"> 
+                  <div class="form-group justify-content-cente">
+                           <img id="Image3" style="height:100px;width: 120px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
+                  </div>
+                   </div>  
+                 </div>
+				  </div>
+				  </div> 
                 
-                <h3 class="py-3 text-center" style="color:var(--color1)"><b>Add More Images</b></h3>
-                <div class="col-lg-6" style="float:right;">
-              <div class="form-group">
-                <img id="Image3" style="height:120px;width: 175px;float:right;" src="">
-              </div>
-        <div class="form-group ">
-                <label for="exampleInputPassword1"> Business Image</label>
-                <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
-            </div>
-          </div>
-		  <br>
+               
+                 <div class="row d-flex align-items-start justify-content-center p-3">
                     <button type="submit" class="btn btn-success">Next</button>
+                </div>
+		
+                   
                 </form>
             </div>
            

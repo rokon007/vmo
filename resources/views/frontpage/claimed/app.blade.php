@@ -129,7 +129,7 @@
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
 							<li class="menu-item menu-item-active" aria-haspopup="true">
-									<a href="https://vimbisotest.herokuapp.com/" class="menu-link">
+									<a href="https://www.vimbiso.org/" class="menu-link">
 
 
 										<span class="svg-icon menu-icon">

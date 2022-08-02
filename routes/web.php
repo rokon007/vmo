@@ -218,6 +218,7 @@ Route::post('/getcategory', [App\Http\Controllers\FrontEndController::class, 'ge
 Route::post('/getSubcate', [App\Http\Controllers\CompanyController::class, 'getSubcate']);
 //For Review Saverecord
  Route::get('/register/1stpage', [App\Http\Controllers\JoinInsertControler::class, 'view_register'])->name('register.settings');
+  Route::post('/register/1stpage', [App\Http\Controllers\JoinInsertControler::class, 'register_1stpage'])->name('register_1stpage.save');
  Route::post('/bussinesprofile/save', [App\Http\Controllers\JoinInsertControler::class, 'Saverecord'])->name('bussinesprofile.save');
  Route::get('/admin/bussinesprofile',[App\Http\Controllers\pagecontroller::class,'businessprofile'])->name('admin.bussinesprofile')->middleware('is_admin');
  Route::post('import-profiles',[\App\Http\Controllers\ProfileController::class,'importprofiles'])->name('import-profiles')->middleware('is_admin');

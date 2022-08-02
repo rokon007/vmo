@@ -1,13 +1,12 @@
 @extends('frontpage.frontpage')
 @section('title')
-<title>Vimbiso |Update Profile</title>
+ <title>Vimbiso |Create Business Account</title>
          <meta charset="utf-8">
     <meta name="description" content="Create Business Account">
     <meta name="keywords" content="Vimbiso">
     <meta name="author" content="Tanaka Karumazondo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
 @endsection
-        
 
 @section('body')  
 
@@ -50,41 +49,20 @@
         }
     </script>
     <div class="container-fluid">
-       <div class="row d-flex align-items-start justify-content-center p-3">
-            <div class="col-lg-4 col-sm-12 ">
-			 <div   class="row justify-content-center align-items-center">
-			 <br></div>
-			 
-			 <br><br><br><br><br>
-			
-			   <div   class="row justify-content-center align-items-center">
-			  
-                 <img style="max-height: 149px;max-width: 198px;" src="../static/images/logo-no-bg-2.png"></div>
-				 <br><br><br>
-				  <div   class="row justify-content-center align-items-center">
-                <span class="about-description" style="text-decoration:none;color:black;font-size:16px">
-				<strong> Vimbiso is a free independent &</strong>
-                </span>
-				<span class="about-description " style="text-decoration:none;color:black;font-size:16px">
-				<strong>   </strong>
-                </span>
-				<span class="about-description" style="text-decoration:none;color:black;font-size:16px">
-				<strong>transparent customer assurance</strong>
-                </span>
-				<span class="about-description" style="text-decoration:none;color:black;font-size:16px">
-				<strong>platform.</strong>
-                </span>
-				</div>
-            </div>
-			
-           
+        <div class="row d-flex align-items-start justify-content-center p-3">
+            <ul class="list-group col-lg-3 d-flex justify-content-left align-items-center">
+                <li class="list-group-item mt-0" id="profile-block-btn" onclick="showProfileblock();" style="cursor:pointer;background-color: #ededed;"><i class="fas fa-user-circle fa-1x"></i>&nbsp Profile</li>
+                <li class="list-group-item" id="change-password-block-btn" onclick="showPasswordblock();" style="cursor:pointer"><i class="fas fa-cog fa-1x"></i>&nbsp Change Password</li>
+                <li class="list-group-item"><i class="far fa-credit-card fa-1x"></i>&nbspPayment Method</li>
+                <li class="list-group-item"><i class="fas fa-sign-out-alt fa-1x"></i>&nbsp<a class="text-dark" href="/accounts/logout/">Sign Out</a></li>
+            </ul>
             <div class="col-lg-8 col-sm-12 px-3" id="profile-block">
-               <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
+                <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
          @csrf
-                   
-                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Create Business Account</b></h3>
+                    <input type="hidden" name="csrfmiddlewaretoken" value="czS4JgoaxRihfyzpZAiYScTqufy9gGvxj82XGzXF2VOIYhOgb2BL4sprlC893dsI">
+                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Update Profile</b></h3>
                     
-                    <div class="d-flex flex-row justify-content-center">
+                   <div class="d-flex flex-row justify-content-center">
                         <div class="d-flex flex-column align-items-center align-content-center mx-2">
                            @if($message = Session::get('success'))
 								<div class="alert alert-success alert-block">
@@ -101,76 +79,30 @@
                             
                         </div>
                     </div>
-                     <div class="row d-flex align-items-start justify-content-center p-3">
-					 
-					  <div class="col-lg-6 col-sm-12 px-3">
-					   <div class="form-group ">
-					   <label>Company Name</label>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$CompanyData->company}}" readonly >
+                    
+                    <label>Company Name</label>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->company_name}}" readonly >
                       @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-					   </div>
-                    
-                    <div class="form-group ">
-						<label>Email</label>
-                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$CompanyData->email}}" readonly >
+                    <br>
+                    <label>Email</label>
+                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" readonly >
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-					   </div>
-                    
-                    <div class="form-group ">
-						<label>Description</label>
-                     <textarea class="form-control"style="height: 70px;" name="description" type="text" autofocus>{{$profile->description}}</textarea>
-					   </div>
-					  
-					     <div class="row d-flex align-items-start justify-content-center p-3"> 
-				  <div class="col-lg-6 col-sm-12 px-3">
-				   <div class="form-group ">
-				   <label>category</label>
-					<select name="category" class="form-control" id="category" >
-															<option value="{{$CompanyData->category}}" selected="selected">{{$CompanyData->category}}</option>
-															
-															@foreach($categories as $NewcategoriData)
-															
-                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->name}}</option>
-														   	
-															@endforeach
-															
-														</select>
-				   </div>
-				  </div>
-				  <div class="col-lg-6 col-sm-12 px-3">
-				   <div class="form-group ">
-				   <label>Subcategory</label>
-														<select name="subcategory" class="form-control" id="sub">
-														<option value="{{$CompanyData->subcategory}}">Select Product{{$CompanyData->subcategory}}</option>
-															<option value="{{$CompanyData->subcategory}}" selected="selected">{{$CompanyData->subcategory}}</option>
-															
-                                                         @foreach($Allcategories as $NewcategoriData)
-														 @if($NewcategoriData->getAttribute('category_id')!=NULL)
-                                                            <option value="{{$NewcategoriData->name}}" >{{$NewcategoriData->category_id }}-->{{$NewcategoriData->name }}</option>
-														      @endif
-															@endforeach
-															
-															
-														</select>
-				   </div>
-				  </div>
-				  </div>
-					   
-					   </div>
-                    <div class="col-lg-6 col-sm-12 px-3"> 
-                   <div class="form-group ">
-						 <label>Country</label>
+                    <br>
+                    <label>Description</label>
+                     <textarea class="form-control" name="description" type="text" autofocus></textarea>
+                    <br>
+                    <label>Country</label>
                      <select name="country" class="form-control" id="exampleSelectl">
-                              <option value="{{$CompanyData->country}}" selected="selected">{{$CompanyData->country}}</option>
+                              <option value=""selected="selected">Select Country</option>
                               
                                                            <option value="AF">Afghanistan</option>
                                   <option value="Åland Islands">Åland Islands</option>
@@ -420,58 +352,108 @@
                                   <option value="Western Sahara">Western Sahara</option>
                                   <option value="Yemen">Yemen</option>
                                   <option value="Zambia">Zambia</option>
-                                  <option value="Zimbabwe" >Zimbabwe</option>
+                                  <option value="Zimbabwe">Zimbabwe</option>
                               
                               
                             </select>
-					   </div>
-                   
-                   <div class="form-group ">
-						<label>City</label>
-                    <input class="form-control" id="city" name="city" type="text" value="{{$CompanyData->city}}" >
-					   </div>
+                    <br>
+                    <label>City</label>
+                    <input class="form-control" id="city" name="city" type="text" >
+                    <br>
+                    <label>Street Address and Door Number</label>
+                    <input class="form-control"  id="block" name="block" type="text">
+                    <br>
                     
-                   <div class="form-group ">
-						<label>Street Address and Door Number</label>
-                    <input class="form-control"  id="block" name="block" type="text"  value="{{$CompanyData->block}}">
-					   </div>
-                 
-				 
-				   <div class="row d-flex align-items-start justify-content-center p-3"> 
-				  <div class="col-lg-6 col-sm-12 px-3"> 
-				    <div class="form-group ">
-                     <label for="exampleInputPassword1"> Business Image</label>
-                     <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
-                    </div>
-				  </div>
-				  <div class="col-lg-6 col-sm-12 px-3"> 
-                  <div class="form-group justify-content-cente">
-				  @if(File::exists("uploads/image/$CompanyData->email.jpg"))
-                <img id="Image3" style="height:100px;width: 120px;float:right;" src="<?php echo asset("uploads/image/$CompanyData->email.jpg")?>">
-				@elseif(File::exists("uploads/image/$CompanyData->email.png")) 
-				<img id="Image3"style="height:100px;width: 120px;float:right;" src="<?php echo asset("uploads/image/$CompanyData->email.png")?>">
-				@elseif(File::exists("uploads/image/$CompanyData->email.webp"))
-				<img id="Image3" style="height:100px;width: 120px;float:right;" src="<?php echo asset("uploads/image/$CompanyData->email.webp")?>">
-				@else
-				<img id="Image3"style="height:100px;width: 120px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
-                @endif
-                           
-                  </div>
-                   </div>  
-                 </div>
-				  </div> 
+
                 
-               
-                 <div class="row d-flex align-items-start justify-content-center p-3">
-                    <button type="submit" class="btn btn-success">Next</button>
-                </div>
-		
-                   
+                <h3 class="py-3 text-center" style="color:var(--color1)"><b>Add More Images</b></h3>
+                <div class="col-lg-6" style="float:right;">
+              <div class="form-group">
+			     @if(File::exists("uploads/image/{{Auth::user()->email}}.jpg"))
+                <img id="Image3" style="height:120px;width: 175px;float:right;" src="uploads/image/{{Auth::user()->email}}.jpg">
+				@elseif(File::exists("uploads/image/{{Auth::user()->email}}.png")) 
+				<img id="Image3" style="height:120px;width: 175px;float:right;" src="uploads/image/{{Auth::user()->email}}.png">
+				@elseif(File::exists("uploads/image/{{Auth::user()->email}}.webp"))
+				<img id="Image3" style="height:120px;width: 175px;float:right;" src="uploads/image/{{Auth::user()->email}}.webp">
+				@else
+				<img id="Image3" style="height:120px;width: 175px;float:right;" src="<?php echo asset("uploads/image/non.jpg")?>">
+                @endif
+			  </div>
+        <div class="form-group ">
+                <label for="exampleInputPassword1"> Business Image</label>
+                <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
+            </div>
+          </div>
+		  <br>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </form>
             </div>
-           
+            <div class="col-lg-8 p-3 d-flex align-items-center justify-content-center" style="display:none !important" id="change-password-block">
+                <form method="POST" action="/change-password/" style="width:inherit;">
+                    <h3 class="pt-3 pb-5 text-center" style="color:var(--color1)">Change Password</h3>
+                    <input type="hidden" name="csrfmiddlewaretoken" value="czS4JgoaxRihfyzpZAiYScTqufy9gGvxj82XGzXF2VOIYhOgb2BL4sprlC893dsI">
+                    
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" id="c_pwd" name="oldpassword" class="form-control" placeholder="Current Password" value="" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" id="pass1" name="password1" class="form-control" placeholder="Enter Password" value="" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="pass2" name="password2" class="form-control" placeholder="Confirm Password" value="" required/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                </form>
+            </div>
         </div>
     </div>
+
+    <script>
+        function showPasswordblock(){
+            $('#profile-block').attr('style','display:none !important');
+            $("#change-password-block-btn").css("background-color", "#ededed");
+            $("#profile-block-btn").css("background-color", "");
+            $('#change-password-block').show();
+        }
+        function showProfileblock(){
+            $('#change-password-block').attr('style','display:none !important');
+            $("#profile-block-btn").css("background-color", "#ededed");
+            $("#change-password-block-btn").css("background-color", "");
+            $('#profile-block').show();
+        }
+        function submitImageform(id){
+            console.log("form submit"+id);
+            document.getElementById("ImageForm"+id).submit();
+        }
+        function submitmoreImagesform(){
+            document.getElementById("moreImagesform").submit();
+        }
+    </script>
+
+    
+    
+        <script>
+            ''
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Modal -->
          @include('frontpage.give_review');  
+ 
+
 @endsection
