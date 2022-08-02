@@ -441,7 +441,7 @@
 				  <div class="col-lg-6 col-sm-12 px-3"> 
 				    <div class="form-group ">
                      <label for="exampleInputPassword1"> Business Image</label>
-                     <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" required autocomplete="new-password">
+                     <input id="business_image" onchange="ImagePreview1(this);" style="height:45px;font-size: 18px;" type="file" class="" name="business_image" >
                     </div>
 				  </div>
 				  <div class="col-lg-6 col-sm-12 px-3"> 
