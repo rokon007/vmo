@@ -234,7 +234,7 @@
                                 <a href="https://hi-in.facebook.com/vimbiso.org/posts/137764792096405" class="p-2"><span class="fab fa-facebook fa-2x ml-2"></span></a>
                                 <a href="https://twitter.com/vimbiso_reviews?lang=en" class="p-2"><span class="fab fa-twitter fa-2x ml-2"></span></a>
                                 <a href="https://www.instagram.com/vimbiso_reviews/" class="p-2"><span class="fab fa-instagram fa-2x ml-2"></span></a>
-                                <a href="#" class="p-2"><span class="fab fa-youtube fa-2x ml-2"></span></a>
+                                <a href="https://www.youtube.com/channel/UCdVRRFdysLHPenjHSICvenw" class="p-2"><span class="fab fa-youtube fa-2x ml-2"></span></a>
 								
                             </p>
                         </div>

@@ -58,17 +58,17 @@
 
 <div class="site-section">
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-8">
             <div class="col-12">
                 <h2>Recent Posts</h2>
             </div>
         </div>
         <div class="row">
             @foreach($recentPosts as $post)
-            <div class="col-lg-4 ">
+            <div class="col-lg-4 mb-4">
                 <div class="entry2">
                     <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
-					onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
+					onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
                         <span class="post-category text-white bg-secondary mb-3">{{ $post->category }}</span>
@@ -81,8 +81,10 @@
                             <span class="d-inline-block mt-1">By <a href="#">Admin</a></span>
                             <span>&nbsp;-&nbsp; {{ $post->created_at->format('M d, Y') }} </span>
                         </div>
-                        <p> {!! Str::limit($post->description, 100) !!} </p>
-                        <p><a href="{{ route('website.post', ['slug' => $post->slug]) }}">Read More</a></p>
+                        <p> {{Str::limit(strip_tags($post->description, 10))}} </p>
+							
+
+                        <p><a href="{{route('website.post',['slug' => $post->slug])}}">Read More</a></p>
                     </div>
                 </div>
             </div>
@@ -109,7 +111,7 @@
 		</div> --}}
         </div>
     </div>
-</div>
+
 <div class="site-section bg-light">
     <div class="container">
         <div class="row align-items-stretch retro-layout">
@@ -154,22 +156,6 @@
     </div>
 </div>
 
-{{--<div class="site-section bg-lightx">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-md-5">
-                <div class="subscribe-1 ">
-                    <h2>Subscribe to our newsletter</h2>
-                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nesciunt error
-                        illum a explicabo, ipsam nostrum.</p>
-                    <form action="#" class="d-flex">
-                        <input type="text" class="form-control" placeholder="Enter your email address">
-                        <input type="submit" class="btn btn-primary" value="Subscribe">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>--}}
+
  @include('frontpage.give_review');
 @endsection

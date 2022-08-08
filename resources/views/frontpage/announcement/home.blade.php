@@ -26,7 +26,7 @@
                 <div class="entry2">
                     <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}"><img
 					
-					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
+					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
                         
@@ -57,7 +57,7 @@
                 
                 <div class="entry2">
                     <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}"><img 
-					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
+					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
                         
@@ -82,7 +82,7 @@
                
                 <div class="entry2">
                     <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}"><img 
-					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
+					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
                         
@@ -118,7 +118,7 @@
             <div class="col-lg-4 mb-4">
                 <div class="entry2">
                     <a href="{{ route('announcement.post', ['slug' => $post->slug]) }}"><img 
-					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
+					src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
 					

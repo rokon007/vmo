@@ -58,7 +58,7 @@ var downloadTimer = setInterval(function(){
         <div class="row blog-entries element-animate">
             <div class="col-md-12 col-lg-8 main-content">
 			 <span class="text-lg-center text-left font-description-sm" >
-							 <img src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';" alt="Image placeholder"
+							 <img src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';" alt="Image placeholder"
                                          class="img-fluid mb-5" />
 							</span>
                 <div class="post-content-body">
@@ -123,7 +123,7 @@ var downloadTimer = setInterval(function(){
                             @foreach($posts as $post)
                             <li>
                                 <a href="{{ route('rewards.post', ['slug' => $post->slug]) }}">
-                                    <img src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';" alt="Image placeholder"
+                                    <img src="{{ $post->image }}"onerror="this.onerror=null;this.src='{{ asset('images/No_image.jpg') }}';" alt="Image placeholder"
                                          class="img-fluid mb-5" />
                                     <div class="text">
                                         <h4>&#160; {{ $post->title }} </h4>
