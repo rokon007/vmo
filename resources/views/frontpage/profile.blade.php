@@ -47,6 +47,12 @@ window.location.href = "{{ route('settings') }}"
    <img src="<?php echo asset("uploads/image/$CData->email.png")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
     @elseif(File::exists("uploads/image/$CData->email.webp"))
     <img src="<?php echo asset("uploads/image/$CData->email.webp")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+	@elseif(File::exists("uploads/image/$CData->email.jpeg"))
+    <img src="<?php echo asset("uploads/image/$CData->email.jpeg")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+	@elseif(File::exists("uploads/image/$CData->email.gif"))
+    <img src="<?php echo asset("uploads/image/$CData->email.gif")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
+	@elseif(File::exists("uploads/image/$CData->email.svg"))
+    <img src="<?php echo asset("uploads/image/$CData->email.svg")?>"  class="border border-dark" style="max-height: 149px;max-width: 198px;">
    @else
     <img src="<?php echo asset("uploads/image/non.jpg")?>"   class="border border-dark" style="max-height: 149px;max-width: 198px;">
    @endif
@@ -279,6 +285,12 @@ window.location.href = "{{ route('settings') }}"
                              <img src="<?php echo asset("uploads/image/$CData->email.png")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
                              @elseif(File::exists("uploads/image/$CData->email.webp")) 
                              <img src="<?php echo asset("uploads/image/$CData->email.webp")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+							 @elseif(File::exists("uploads/image/$CData->email.jpeg")) 
+                             <img src="<?php echo asset("uploads/image/$CData->email.jpeg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+							 @elseif(File::exists("uploads/image/$CData->email.gif")) 
+                             <img src="<?php echo asset("uploads/image/$CData->email.gif")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
+							 @elseif(File::exists("uploads/image/$CData->email.svg")) 
+                             <img src="<?php echo asset("uploads/image/$CData->email.svg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
                             @else
                             <img src="<?php echo asset("uploads/image/$CData->non.jpg")?>" class="v-avatar avatar" style="height: 30px; width: 30px;">
                             @endif

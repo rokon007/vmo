@@ -215,7 +215,13 @@
                           @elseif(File::exists("uploads/image/$Data->email.png")) 
   <img src="<?php echo asset("uploads/image/$Data->email.png")?>"  class="card-img" alt="..." width="80" height="90" >
                           @elseif(File::exists("uploads/image/$Data->email.webp"))
-   <img src="<?php echo asset("uploads/image/$Data->email.webp")?>"  class="card-img" alt="..." width="80" height="90" >	
+   <img src="<?php echo asset("uploads/image/$Data->email.webp")?>"  class="card-img" alt="..." width="80" height="90" >
+   @elseif(File::exists("uploads/image/$Data->email.jpeg"))
+   <img src="<?php echo asset("uploads/image/$Data->email.jpeg")?>"  class="card-img" alt="..." width="80" height="90" >
+   @elseif(File::exists("uploads/image/$Data->email.gif"))
+   <img src="<?php echo asset("uploads/image/$Data->email.gif")?>"  class="card-img" alt="..." width="80" height="90" >
+   @elseif(File::exists("uploads/image/$Data->email.svg"))
+   <img src="<?php echo asset("uploads/image/$Data->email.svg")?>"  class="card-img" alt="..." width="80" height="90" >   
                            @else
   <img src="<?php echo asset("uploads/image/non.jpg")?>"  class="card-img" alt="..." width="80" height="90" >
                        @endif

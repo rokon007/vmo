@@ -463,7 +463,7 @@
                 
                
                  <div class="row d-flex align-items-start justify-content-center p-3">
-                    <button type="submit" class="btn btn-success">Next</button>
+                    <button type="submit" class="btn btn-success">Update</button>
                 </div>
 		
                    
