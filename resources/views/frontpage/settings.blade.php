@@ -82,7 +82,7 @@
                <form action="{{route('bussinesprofile.save')}}" method="post" enctype="multipart/form-data"class="form">
          @csrf
                    
-                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Create Business Account</b></h3>
+                    <h3 class="pb-5 text-center" style="color:var(--color1)"><b>Update Business Account</b></h3>
                     
                     <div class="d-flex flex-row justify-content-center">
                         <div class="d-flex flex-column align-items-center align-content-center mx-2">
@@ -429,7 +429,7 @@
                 
                
                  <div class="row d-flex align-items-start justify-content-center p-3">
-                    <button type="submit" class="btn btn-success">Next</button>
+                    <button type="submit" class="btn btn-success">Update</button>
                 </div>
 		
                    

@@ -65,9 +65,10 @@
         </div>
         <div class="row">
             @foreach($recentPosts as $post)
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 ">
                 <div class="entry2">
                     <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}"
+					onerror="this.onerror=null;this.src='{{ asset('images/No_image.png') }}';"
                             alt="Image" class="img-fluid rounded"></a>
                     <div class="excerpt">
                         <span class="post-category text-white bg-secondary mb-3">{{ $post->category }}</span>
