@@ -43,9 +43,9 @@ public function adminIndex()
                  ->groupBy('companytbs.id','companytbs.company','companytbs.country','companytbs.city','companytbs.block',
                  'companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.email',
 				 'business_profiles.image')
-                 ->orderByDesc('totalratings')
-                 ->simplePaginate(10);
-		  
+                 //->orderByDesc('totalratings')
+                 //->limit(10);
+		          ->limit(10)->offset(10)->orderByDesc('totalratings')->get();
 		  
 		  
         return view('admin.adminhome',compact('company','comment','subscriberCount','nSubscriber','UserClaim','usercount','categoriescount','reviewscount','companycount'));
