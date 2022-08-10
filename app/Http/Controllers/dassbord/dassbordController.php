@@ -45,6 +45,8 @@ public function adminIndex()
 				 'business_profiles.image')
                  //->orderByDesc('totalratings')
                  //->limit(10);
+				 // ->limit(10)->offset(10)->orderBy('bar', 'asc')->get();
+				 ->where('ratings', '>=', 4)
 		          ->limit(10)->offset(10)->orderByDesc('totalratings')->get();
 		  
 		  
