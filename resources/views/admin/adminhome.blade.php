@@ -237,6 +237,7 @@
 														</div>
 													</div>
 													<!--end::Row-->
+													<!---->
 													<!--begin::Row-->
 													<div class="row m-0">
 														<div class="col bg-light-danger px-6 py-8 rounded-xl mr-7">
