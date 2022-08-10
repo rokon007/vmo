@@ -19,6 +19,8 @@ use File;
 use Redirect;
 use Auth;
 use Share;
+use App\Models\Comment;
+use Illuminate\Support\Str;
 class pagecontroller extends Controller
 {
 
@@ -495,6 +497,18 @@ public function give(Request $request)
         ->whatsapp()
         ->telegram()
         ->getRawLinks();
+		
+		//insert in to comments table
+		$w=$request->input('name');
+		$ratings=$request->input('ratings');
+		$comments = new Comment();
+		$comments->comment_subject ="Review aded by  $w  with $ratings star ratings";
+        $comments->comment_text = Str::limit(strip_tags($request->input('review'), 10));                
+        $comments->comment_status = 1;
+        //$comments->user_id = Auth::user()->id;              
+        $comments->link ="https://vimbiso.org/review_display/$RVID";  
+        //'slug' => Str::slug($request->title),             
+        $comments->save();
       
 	 Mail::to("info@vimbiso.org")->cc($company->email)->send(new TestMail($deatils));
 		

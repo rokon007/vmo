@@ -285,8 +285,10 @@
 											<!--begin::Header-->
 											<div class="card-header align-items-center border-0 mt-4">
 												<h3 class="card-title align-items-start flex-column">
-													<span class="font-weight-bolder text-dark">My Activity</span>
-													<span class="text-muted mt-3 font-weight-bold font-size-sm">890,344 Sales</span>
+													<span class="font-weight-bolder text-dark">Notification</span>
+													<span class="text-muted mt-3 font-weight-bold font-size-sm"> @isset($unread_count)({{$unread_count}}) @endisset Unread</span>
+		  
+		 
 												</h3>
 												<div class="card-toolbar">
 													<div class="dropdown dropdown-inline">
@@ -350,135 +352,34 @@
 											<!--end::Header-->
 											<!--begin::Body-->
 											<div class="card-body pt-4">
+											<center><a href="{{ route('update_comment') }}" style="color:red">Mark All As Read</a></center>
 												<!--begin::Timeline-->
-												<div class="timeline timeline-6 mt-3">
+												
 													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">08:42</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-warning icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Outlines keep you honest. And keep structure</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">10:00</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-success icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Content-->
-														<div class="timeline-content d-flex">
-															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">AEOL meeting</span>
-														</div>
-														<!--end::Content-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">14:37</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">Make deposit 
-														<a href="#" class="text-primary">USD 700</a>. to ESL</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">16:50</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-primary icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Indulging in poorly driving and keep structure keep great</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">21:03</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content font-weight-bolder text-dark-75 pl-3 font-size-lg">New order placed 
-														<a href="#" class="text-primary">#XF-2356</a>.</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">23:07</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-info icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Outlines keep and you honest. Indulging in poorly driving</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">16:50</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-primary icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Indulging in poorly driving and keep structure keep great</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item align-items-start">
-														<!--begin::Label-->
-														<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">21:03</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger icon-xl"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">New order placed 
-														<a href="#" class="text-primary">#XF-2356</a>.</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
+										<div class="navi navi-icon-circle navi-spacer-x-0">			
+                                                @foreach($comment as $key)
+                                              <a href="{{$key->link}}" class="navi-item">
+								<div class="navi-link rounded">
+									<div class="symbol symbol-50 mr-3">
+										<div class="symbol-label">
+										@if($key->comment_status==0)
+											<i class="flaticon-bell text-success icon-lg"></i>
+										@else
+											<i class="flaticon-bell text-danger icon-lg"></i>
+										@endif
+										</div>
+									</div>
+									<div class="navi-text">
+										<div class="font-weight-bold font-size-lg">{{$key->comment_subject}}</div>
+										<div class="text-muted">{{$key->comment_text}}.</div>
+										<div class="text-muted">{{ \Carbon\Carbon::parse($key->created_at)->diffForHumans() }}</div>
+									</div>
+								</div>
+							</a>
+                                                @endforeach
 												</div>
-												<!--end::Timeline-->
+                                               
+													
 											</div>
 											<!--end: Card Body-->
 										</div>
@@ -996,8 +897,8 @@
 											<!--begin::Header-->
 											<div class="card-header border-0 py-5">
 												<h3 class="card-title align-items-start flex-column">
-													<span class="card-label font-weight-bolder text-dark">Agents Stats</span>
-													<span class="text-muted mt-3 font-weight-bold font-size-sm">More than 400+ new members</span>
+													<span class="card-label font-weight-bolder text-dark">Top 10 Rated Company</span>
+													<span class="text-muted mt-3 font-weight-bold font-size-sm">More than 4000+ Company</span>
 												</h3>
 												<div class="card-toolbar">
 													<a href="#" class="btn btn-info font-weight-bolder font-size-sm mr-3">New Report</a>
@@ -1014,152 +915,66 @@
 															<thead>
 																<tr class="text-left text-uppercase">
 																	<th style="min-width: 250px" class="pl-7">
-																		<span class="text-dark-75">products</span>
+																		<span class="text-dark-75">Company</span>
 																	</th>
-																	<th style="min-width: 100px">earnings</th>
-																	<th style="min-width: 100px">comission</th>
-																	<th style="min-width: 100px">company</th>
-																	<th style="min-width: 130px">rating</th>
+																	<th style="min-width: 100px">Adress</th>
+																	<th style="min-width: 100px">Contacts</th>
+																	<th style="min-width: 130px">Total rating</th>
 																	<th style="min-width: 80px"></th>
 																</tr>
 															</thead>
 															<tbody>
+															
+															 @foreach($company as $key)
 																<tr>
 																	<td class="pl-0 py-8">
 																		<div class="d-flex align-items-center">
 																			<div class="symbol symbol-50 symbol-light mr-4">
 																				<span class="symbol-label">
-																					<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/avatars/001-boy.svg" class="h-75 align-self-end" alt="" />
+																					
+																					 @if(File::exists("uploads/image/$key->email.jpg"))
+                                                                                    <img src="<?php echo asset("uploads/image/$key->email.jpg")?>" class="h-75 align-self-end" alt="" />
+                                                                                     @elseif(File::exists("uploads/image/$key->email.png")) 
+                                                                                    <img src="<?php echo asset("uploads/image/$key->email.png")?>" class="h-75 align-self-end" alt="" />
+                                                                                     @elseif(File::exists("uploads/image/$key->email.webp"))
+                                                                                    <img src="<?php echo asset("uploads/image/$key->email.webp")?>" class="h-75 align-self-end" alt="" />
+	                                                                                 @elseif(File::exists("uploads/image/$key->email.jpeg"))
+                                                                                    <img src="<?php echo asset("uploads/image/$key->email.jpeg")?>" class="h-75 align-self-end" alt="" />
+	                                                                                 @elseif(File::exists("uploads/image/$key->email.gif"))
+                                                                                    <img src="<?php echo asset("uploads/image/$key->email.gif")?>" class="h-75 align-self-end" alt="" />
+	                                                                                 @elseif(File::exists("uploads/image/$key->email.svg"))
+                                                                                    <img src="<?php echo asset("uploads/image/$key->email.svg")?>" class="h-75 align-self-end" alt="" />
+                                                                                     @else
+                                                                                    <img src="<?php echo asset("uploads/image/non.jpg")?>" class="h-75 align-self-end" alt="" />
+                                                                                     @endif
 																				</span>
 																			</div>
 																			<div>
-																				<a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Brad Simmons</a>
-																				<span class="text-muted font-weight-bold d-block">HTML, JS, ReactJS</span>
+																				<a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{$key->company}}</a>
+																				<span class="text-muted font-weight-bold d-block">{{$key->category}}</span>
 																			</div>
 																		</div>
 																	</td>
 																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$8,000,000</span>
-																		<span class="text-muted font-weight-bold">In Proccess</span>
+																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$key->country}}</span>
+																		<span class="text-muted font-weight-bold">{{$key->city}}</span>
 																	</td>
 																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$520</span>
-																		<span class="text-muted font-weight-bold">Paid</span>
+																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$key->email}}</span>
+																		<span class="text-muted font-weight-bold">{{$key->contact}}</span>
 																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">Intertico</span>
-																		<span class="text-muted font-weight-bold">Web, UI/UX Design</span>
-																	</td>
+																	
 																	<td>
 																		<img src="../theme/html/demo1/dist/assets/media/logos/stars.png" alt="image" style="width: 5.5rem" />
-																		<span class="text-muted font-weight-bold d-block font-size-sm">Best Rated</span>
+																		<span class="text-muted font-weight-bold d-block font-size-sm">{{$key->totalratings}}</span>
 																	</td>
 																	<td class="pr-0 text-right">
 																		<a href="#" class="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
 																	</td>
 																</tr>
-																<tr>
-																	<td class="pl-0 py-0">
-																		<div class="d-flex align-items-center">
-																			<div class="symbol symbol-50 symbol-light mr-4">
-																				<span class="symbol-label">
-																					<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/avatars/018-girl-9.svg" class="h-75 align-self-end" alt="" />
-																				</span>
-																			</div>
-																			<div>
-																				<a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Jessie Clarcson</a>
-																				<span class="text-muted font-weight-bold d-block">C#, ASP.NET, MS SQL</span>
-																			</div>
-																		</div>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$23,000,000</span>
-																		<span class="text-muted font-weight-bold">Pending</span>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$1,600</span>
-																		<span class="text-muted font-weight-bold">Rejected</span>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">Agoda</span>
-																		<span class="text-muted font-weight-bold">Houses &amp; Hotels</span>
-																	</td>
-																	<td>
-																		<img src="../theme/html/demo1/dist/assets/media/logos/stars.png" alt="image" style="width: 5.5rem" />
-																		<span class="text-muted font-weight-bold d-block font-size-sm">Above Avarage</span>
-																	</td>
-																	<td class="pr-0 text-right">
-																		<a href="#" class="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
-																	</td>
-																</tr>
-																<tr>
-																	<td class="pl-0 py-8">
-																		<div class="d-flex align-items-center">
-																			<div class="symbol symbol-50 symbol-light mr-4">
-																				<span class="symbol-label">
-																					<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/avatars/047-girl-25.svg" class="h-75 align-self-end" alt="" />
-																				</span>
-																			</div>
-																			<div>
-																				<a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Lebron Wayde</a>
-																				<span class="text-muted font-weight-bold d-block">PHP, Laravel, VueJS</span>
-																			</div>
-																		</div>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$34,000,000</span>
-																		<span class="text-muted font-weight-bold">Paid</span>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$6,700</span>
-																		<span class="text-muted font-weight-bold">Paid</span>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">RoadGee</span>
-																		<span class="text-muted font-weight-bold">Paid</span>
-																	</td>
-																	<td>
-																		<img src="../theme/html/demo1/dist/assets/media/logos/stars.png" alt="image" style="width: 5.5rem" />
-																		<span class="text-muted font-weight-bold d-block font-size-sm">Best Rated</span>
-																	</td>
-																	<td class="pr-0 text-right">
-																		<a href="#" class="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
-																	</td>
-																</tr>
-																<tr>
-																	<td class="pl-0 py-0">
-																		<div class="d-flex align-items-center">
-																			<div class="symbol symbol-50 symbol-light mr-4">
-																				<span class="symbol-label">
-																					<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/avatars/014-girl-7.svg" class="h-75 align-self-end" alt="" />
-																				</span>
-																			</div>
-																			<div>
-																				<a href="#" class="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg">Natali Trump</a>
-																				<span class="text-muted font-weight-bold d-block">Python, PostgreSQL, ReactJS</span>
-																			</div>
-																		</div>
-																	</td>
-																	<td class="text-left pr-0">
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$2,600,000</span>
-																		<span class="text-muted font-weight-bold">Paid</span>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$14,000</span>
-																		<span class="text-muted font-weight-bold">Pending</span>
-																	</td>
-																	<td>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">The Hill</span>
-																		<span class="text-muted font-weight-bold">Insurance</span>
-																	</td>
-																	<td>
-																		<img src="../theme/html/demo1/dist/assets/media/logos/stars.png" style="width: 5.5rem" alt="" />
-																		<span class="text-muted font-weight-bold d-block font-size-sm">Avarage</span>
-																	</td>
-																	<td class="pr-0 text-right">
-																		<a href="#" class="btn btn-light-success font-weight-bolder font-size-sm" style="width: 7rem">View Offer</a>
-																	</td>
-																</tr>
+																
+															@endforeach 	
+																
 															</tbody>
 														</table>
 													</div>

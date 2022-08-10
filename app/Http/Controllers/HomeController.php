@@ -8,6 +8,7 @@ use App\Models\reviews;
 use DB;
 use App\Models\Companytb;
 use App\Models\User;
+use App\Models\Comment;
 
 
 class HomeController extends Controller
@@ -56,6 +57,12 @@ class HomeController extends Controller
     public function UploadImage()
     {
         return view('admin.uploadimage');
+    }
+	//update_comment
+	 public function update_comment()
+    {
+        DB::update('update comments set comment_status = ? where comment_status = ?',[0,1]);
+		return redirect()->back();
     }
    
 }

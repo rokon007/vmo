@@ -8,13 +8,22 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail; 
 use App\Mail\Request_email; 
 use App\Mail\Request_contact;
+use App\Models\Comment;
 
 class ContactController extends Controller
 {
 
         public function storeContactForm(Request $request) 
 
-    {          
+    { $name=$request->input('name');
+        //insert in to comments table
+		$comments = new Comment();
+		$comments->comment_subject ="Contact Form Submited";
+        $comments->comment_text = "By $name ";                
+        $comments->comment_status = 1;           
+        $comments->link ="#";              
+        $comments->save();
+	
         $deatils=[
          'name'=>$request->input('name'),
          'email'=>$request->input('email'),
@@ -29,7 +38,16 @@ class ContactController extends Controller
 	
 	 public function RequestForEmail(Request $request) 
 
-    {          
+    { 
+	     $name=$request->input('name');
+         //insert in to comments table
+		$comments = new Comment();
+		$comments->comment_subject ="Request For Contact Email Submited";
+        $comments->comment_text = "By $name ";                
+        $comments->comment_status = 1;            
+        $comments->link ="#";              
+        $comments->save();
+		
         $deatils=[
          'name'=>$request->input('name'),
          'email'=>$request->input('email'),
@@ -45,7 +63,16 @@ class ContactController extends Controller
 	//RequestForcontact
 	public function RequestForcontact(Request $request) 
 
-    {          
+    {
+		$name=$request->input('name');
+         //insert in to comments table
+		$comments = new Comment();
+		$comments->comment_subject ="Request For Contact Number Submited";
+        $comments->comment_text = "By $name ";                
+        $comments->comment_status = 1;            
+        $comments->link ="#";              
+        $comments->save();
+		
         $deatils=[
          'name'=>$request->input('name'),
          'email'=>$request->input('email'),

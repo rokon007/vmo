@@ -27,6 +27,7 @@ use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\RewardsController;
 use App\Mail\ClaimSubmitMail;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Comment;
 
 
 /*
@@ -343,6 +344,15 @@ Route::post('/reset-password', function (Request $request) {
 			
 		    
     );
+	         
+			 $comments = new Comment();
+		     $comments->comment_subject ="Claims Profile Request";
+             $comments->comment_text =$request->email;                
+             $comments->comment_status = 1;
+             //$comments->user_id = Auth::user()->id;              
+             $comments->link ="#";      
+             $comments->save();
+			 
             $deatils='You will receive confirmation mail after your request is approved';
 			Mail::to($request->email)->cc("info@vimbiso.org")->send(new ClaimSubmitMail($deatils));
     return $status === Password::PASSWORD_RESET
@@ -378,5 +388,5 @@ Route::get('/sitemap', [App\Http\Controllers\sitemapcontroller::class, 'set_site
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Route::get('/user/index', [App\Http\Controllers\ClaimedController::class, 'adminindex'])->name('uaer.index')->middleware('is_claimed');
 
-
+Route::get('update-coment',[App\Http\Controllers\HomeController::class, 'update_comment'])->name('update_comment');
 

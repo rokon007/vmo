@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Comment;
 
 class NewsLetterController extends Controller
 {
@@ -27,8 +28,17 @@ class NewsLetterController extends Controller
 				$newsletter->email=$request->subscriber_email;
 				$newsletter->status=1;
 				$newsletter->save();
-				//Session::flash('success', 'SUBSCRIBED SUCCESSFULLY!');
-               // return redirect()->back();
+				
+				//insert in to comments table
+				$comments = new Comment();
+		        $comments->comment_subject ="New Subscriber";
+                $comments->comment_text =$request->subscriber_email;               
+                $comments->comment_status = 1;
+                //$comments->user_id = Auth::user()->id;              
+                $comments->link ="#";               
+                $comments->save();
+				
+				
 			   return back()->with('success','SUBSCRIBED SUCCESSFULLY!');
 			}
 		}

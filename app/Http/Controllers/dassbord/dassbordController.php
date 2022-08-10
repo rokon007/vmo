@@ -26,7 +26,29 @@ public function adminIndex()
 		  ->select('id','email','status','created_at')
 		 ->orderBy('id','DESC')->simplePaginate(5);
 		 $subscriberCount=DB::table('newsletter_subscribers')->count();
-        return view('admin.adminhome',compact('subscriberCount','nSubscriber','UserClaim','usercount','categoriescount','reviewscount','companycount'));
+		 //comment
+		  $comment=DB::table('comments')
+          ->orderBy('comments.id', 'DESC') ->simplePaginate(10); 
+		  
+		  
+		  $company = DB::table('companytbs')
+                   ->join('reviews', 'companytbs.id', '=', 'reviews.company_id')
+                   ->join('business_profiles', 'companytbs.email', '=', 'business_profiles.email')
+                   ->select('companytbs.id as id','companytbs.company as company','companytbs.email as email',
+				   'companytbs.country as country','companytbs.city as city','companytbs.block as block',
+				   'companytbs.contact as contact','companytbs.category as category',
+				   'companytbs.subcategory as subcategory', DB::raw('count(reviews.id) as count'),
+				   DB::raw('SUM(reviews.ratings) as totalratings'),'business_profiles.image as image')
+
+                 ->groupBy('companytbs.id','companytbs.company','companytbs.country','companytbs.city','companytbs.block',
+                 'companytbs.contact','companytbs.category','companytbs.subcategory','companytbs.email',
+				 'business_profiles.image')
+                 ->orderBy('totalratings', 'DESC')
+                 ->simplePaginate(10);
+		  
+		  
+		  
+        return view('admin.adminhome',compact('company','comment','subscriberCount','nSubscriber','UserClaim','usercount','categoriescount','reviewscount','companycount'));
     }
 	
 

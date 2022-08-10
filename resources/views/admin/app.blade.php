@@ -1375,7 +1375,7 @@
 								</div>
 								<!--end::Search-->
 								<!--begin::Notifications-->
-								<div class="dropdown">
+								{{--	<div class="dropdown">
 									<!--begin::Toggle-->
 									<div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
 										<div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1 pulse pulse-primary">
@@ -1830,10 +1830,10 @@
 										</form>
 									</div>
 									<!--end::Dropdown-->
-								</div>
+								</div> --}}
 								<!--end::Notifications-->
 								<!--begin::Quick Actions-->
-								<div class="dropdown">
+								{{--	<div class="dropdown">
 									<!--begin::Toggle-->
 									<div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
 										<div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
@@ -1943,10 +1943,10 @@
 										<!--end:Nav-->
 									</div>
 									<!--end::Dropdown-->
-								</div>
+								</div> --}}
 								<!--end::Quick Actions-->
 								<!--begin::Cart-->
-								<div class="topbar-item">
+								{{--	<div class="topbar-item">
 									<div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1" id="kt_quick_cart_toggle">
 										<span class="svg-icon svg-icon-xl svg-icon-primary">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Shopping/Cart3.svg-->
@@ -1960,25 +1960,26 @@
 											<!--end::Svg Icon-->
 										</span>
 									</div>
-								</div>
+								</div> --}}
 								<!--end::Cart-->
-								<!--begin::Quick panel-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbegin::Quick panel-->
 								<div class="topbar-item">
-									<div class="btn btn-icon btn-clean btn-lg mr-1" id="kt_quick_panel_toggle">
-										<span class="svg-icon svg-icon-xl svg-icon-primary">
-											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-													<rect x="0" y="0" width="24" height="24" />
-													<rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5" />
-													<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" fill="#000000" opacity="0.3" />
-												</g>
-											</svg>
-											<!--end::Svg Icon-->
+									<div class="btn btn-icon btn-clean btn-lg mr-1 pulse pulse-danger" id="kt_quick_panel_toggle">
+										<span class="svg-icon svg-icon-danger svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/General/Notifications1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"/>
+        <rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"/>
+    </g>
+</svg><!--end::Svg Icon--></span>
+										<span>
+										 @isset($unread_count)
+		                                     ({{$unread_count}})
+		                                 @endisset
 										</span>
+									<span class="pulse-ring"></span>
 									</div>
 								</div>
-								<!--end::Quick panel-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXend::Quick panel-->
 								<!--begin::Chat-->
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-clean btn-lg mr-1" data-toggle="modal" data-target="#kt_chat_modal">
@@ -2583,14 +2584,12 @@
 			<div class="offcanvas-header offcanvas-header-navs d-flex align-items-center justify-content-between mb-5">
 				<ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_logs">Audit Logs</a>
+						<a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_logs">Unread Notifications</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_notifications">Notifications</a>
+						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_notifications">Read Notifications</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_settings">Settings</a>
-					</li>
+					
 				</ul>
 				<div class="offcanvas-close mt-n1 pr-5">
 					<a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_panel_close">
@@ -2606,22 +2605,11 @@
 					<div class="tab-pane fade show pt-3 pr-5 mr-n5 active" id="kt_quick_panel_logs" role="tabpanel">
 						<!--begin::Section-->
 						<div class="mb-15">
-							<h5 class="font-weight-bold mb-5">System Messages</h5>
+							<center><a href="{{ route('update_comment') }}" style="color:red">Mark All As Read</a></center>
+							<br>
+							 @foreach($unread_notifications as $key)
 							<!--begin: Item-->
-							<div class="d-flex align-items-center flex-wrap mb-5">
-								<div class="symbol symbol-50 symbol-light mr-5">
-									<span class="symbol-label">
-										<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/misc/006-plurk.svg" class="h-50 align-self-center" alt="" />
-									</span>
-								</div>
-								<div class="d-flex flex-column flex-grow-1 mr-2">
-									<a href="#" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">Top Authors</a>
-									<span class="text-muted font-weight-bold">Most Successful Fellas</span>
-								</div>
-								<span class="btn btn-sm btn-light font-weight-bolder py-1 my-lg-0 my-2 text-dark-50">+82$</span>
-							</div>
-							<!--end: Item-->
-							<!--begin: Item-->
+							<a href="{{$key->link}}" >
 							<div class="d-flex align-items-center flex-wrap mb-5">
 								<div class="symbol symbol-50 symbol-light mr-5">
 									<span class="symbol-label">
@@ -2629,61 +2617,24 @@
 									</span>
 								</div>
 								<div class="d-flex flex-column flex-grow-1 mr-2">
-									<a href="#" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">Popular Authors</a>
-									<span class="text-muted font-weight-bold">Most Successful Fellas</span>
+									<a href="#" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">{{$key->comment_subject}}</a>
+									<span class="text-muted font-weight-bold">{{$key->comment_text}}.</span>
 								</div>
-								<span class="btn btn-sm btn-light font-weight-bolder my-lg-0 my-2 py-1 text-dark-50">+280$</span>
+								<span class="btn btn-sm btn-light font-weight-bolder my-lg-0 my-2 py-1 text-dark-50">{{ \Carbon\Carbon::parse($key->created_at)->diffForHumans() }}
+</span>
 							</div>
+							</a>
 							<!--end: Item-->
-							<!--begin: Item-->
-							<div class="d-flex align-items-center flex-wrap mb-5">
-								<div class="symbol symbol-50 symbol-light mr-5">
-									<span class="symbol-label">
-										<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/misc/003-puzzle.svg" class="h-50 align-self-center" alt="" />
-									</span>
-								</div>
-								<div class="d-flex flex-column flex-grow-1 mr-2">
-									<a href="#" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">New Users</a>
-									<span class="text-muted font-weight-bold">Most Successful Fellas</span>
-								</div>
-								<span class="btn btn-sm btn-light font-weight-bolder my-lg-0 my-2 py-1 text-dark-50">+4500$</span>
-							</div>
-							<!--end: Item-->
-							<!--begin: Item-->
-							<div class="d-flex align-items-center flex-wrap mb-5">
-								<div class="symbol symbol-50 symbol-light mr-5">
-									<span class="symbol-label">
-										<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/misc/005-bebo.svg" class="h-50 align-self-center" alt="" />
-									</span>
-								</div>
-								<div class="d-flex flex-column flex-grow-1 mr-2">
-									<a href="#" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">Active Customers</a>
-									<span class="text-muted font-weight-bold">Most Successful Fellas</span>
-								</div>
-								<span class="btn btn-sm btn-light font-weight-bolder my-lg-0 my-2 py-1 text-dark-50">+4500$</span>
-							</div>
-							<!--end: Item-->
-							<!--begin: Item-->
-							<div class="d-flex align-items-center flex-wrap">
-								<div class="symbol symbol-50 symbol-light mr-5">
-									<span class="symbol-label">
-										<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/misc/014-kickstarter.svg" class="h-50 align-self-center" alt="" />
-									</span>
-								</div>
-								<div class="d-flex flex-column flex-grow-1 mr-2">
-									<a href="#" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">Bestseller Theme</a>
-									<span class="text-muted font-weight-bold">Most Successful Fellas</span>
-								</div>
-								<span class="btn btn-sm btn-light font-weight-bolder my-lg-0 my-2 py-1 text-dark-50">+4500$</span>
-							</div>
-							<!--end: Item-->
+							@endforeach 
+							
+							
 						</div>
 						<!--end::Section-->
 						<!--begin::Section-->
-						<div class="mb-5">
+						{{--		<div class="mb-5">
 							<h5 class="font-weight-bold mb-5">Notifications</h5>
 							<!--begin: Item-->
-							<div class="d-flex align-items-center bg-light-warning rounded p-5 mb-5">
+							<div class="d-flex align-items-center bg-light-  rounded p-5 mb-5">
 								<span class="svg-icon svg-icon-warning mr-5">
 									<span class="svg-icon svg-icon-lg">
 										<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Home/Library.svg-->
@@ -2772,7 +2723,7 @@
 								<span class="font-weight-bolder text-info py-1 font-size-lg">+8%</span>
 							</div>
 							<!--end: Item-->
-						</div>
+						</div>--}}
 						<!--end::Section-->
 					</div>
 					<!--end::Tabpane-->
@@ -2780,8 +2731,10 @@
 					<div class="tab-pane fade pt-2 pr-5 mr-n5" id="kt_quick_panel_notifications" role="tabpanel">
 						<!--begin::Nav-->
 						<div class="navi navi-icon-circle navi-spacer-x-0">
+						
+						 @foreach($read_notifications as $key)
 							<!--begin::Item-->
-							<a href="#" class="navi-item">
+							<a href="{{$key->link}}" class="navi-item">
 								<div class="navi-link rounded">
 									<div class="symbol symbol-50 mr-3">
 										<div class="symbol-label">
@@ -2789,318 +2742,32 @@
 										</div>
 									</div>
 									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">5 new user generated report</div>
-										<div class="text-muted">Reports based on sales</div>
+										<div class="font-weight-bold font-size-lg">{{$key->comment_subject}}</div>
+										<div class="text-muted">{{$key->comment_text}}.</div>
+										<div class="text-muted">{{ \Carbon\Carbon::parse($key->created_at)->diffForHumans() }}</div>
 									</div>
 								</div>
 							</a>
 							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon2-box text-danger icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">2 new items submited</div>
-										<div class="text-muted">by Grog John</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-psd text-primary icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">79 PSD files generated</div>
-										<div class="text-muted">Reports based on sales</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon2-supermarket text-warning icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">$2900 worth producucts sold</div>
-										<div class="text-muted">Total 234 items</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-paper-plane-1 text-success icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">4.5h-avarage response time</div>
-										<div class="text-muted">Fostest is Barry</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-safe-shield-protection text-danger icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">3 Defence alerts</div>
-										<div class="text-muted">40% less alerts thar last week</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-notepad text-primary icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">Avarage 4 blog posts per author</div>
-										<div class="text-muted">Most posted 12 time</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-users-1 text-warning icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">16 authors joined last week</div>
-										<div class="text-muted">9 photodrapehrs, 7 designer</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon2-box text-info icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">2 new items have been submited</div>
-										<div class="text-muted">by Grog John</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon2-download text-success icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">2.8 GB-total downloads size</div>
-										<div class="text-muted">Mostly PSD end AL concepts</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon2-supermarket text-danger icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">$2900 worth producucts sold</div>
-										<div class="text-muted">Total 234 items</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-bell text-primary icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">7 new user generated report</div>
-										<div class="text-muted">Reports based on sales</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
-							<!--begin::Item-->
-							<a href="#" class="navi-item">
-								<div class="navi-link rounded">
-									<div class="symbol symbol-50 mr-3">
-										<div class="symbol-label">
-											<i class="flaticon-paper-plane-1 text-success icon-lg"></i>
-										</div>
-									</div>
-									<div class="navi-text">
-										<div class="font-weight-bold font-size-lg">4.5h-avarage response time</div>
-										<div class="text-muted">Fostest is Barry</div>
-									</div>
-								</div>
-							</a>
-							<!--end::Item-->
+							@endforeach 
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 						</div>
 						<!--end::Nav-->
 					</div>
 					<!--end::Tabpane-->
-					<!--begin::Tabpane-->
-					<div class="tab-pane fade pt-3 pr-5 mr-n5" id="kt_quick_panel_settings" role="tabpanel">
-						<form class="form">
-							<!--begin::Section-->
-							<div>
-								<h5 class="font-weight-bold mb-3">Customer Care</h5>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Enable Notifications:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-success switch-sm">
-											<label>
-												<input type="checkbox" checked="checked" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Enable Case Tracking:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-success switch-sm">
-											<label>
-												<input type="checkbox" name="quick_panel_notifications_2" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Support Portal:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-success switch-sm">
-											<label>
-												<input type="checkbox" checked="checked" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-							</div>
-							<!--end::Section-->
-							<div class="separator separator-dashed my-6"></div>
-							<!--begin::Section-->
-							<div class="pt-2">
-								<h5 class="font-weight-bold mb-3">Reports</h5>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Generate Reports:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-sm switch-danger">
-											<label>
-												<input type="checkbox" checked="checked" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Enable Report Export:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-sm switch-danger">
-											<label>
-												<input type="checkbox" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Allow Data Collection:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-sm switch-danger">
-											<label>
-												<input type="checkbox" checked="checked" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-							</div>
-							<!--end::Section-->
-							<div class="separator separator-dashed my-6"></div>
-							<!--begin::Section-->
-							<div class="pt-2">
-								<h5 class="font-weight-bold mb-3">Memebers</h5>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Enable Member singup:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-sm switch-primary">
-											<label>
-												<input type="checkbox" checked="checked" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Allow User Feedbacks:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-sm switch-primary">
-											<label>
-												<input type="checkbox" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-								<div class="form-group mb-0 row align-items-center">
-									<label class="col-8 col-form-label">Enable Customer Portal:</label>
-									<div class="col-4 d-flex justify-content-end">
-										<span class="switch switch-sm switch-primary">
-											<label>
-												<input type="checkbox" checked="checked" name="select" />
-												<span></span>
-											</label>
-										</span>
-									</div>
-								</div>
-							</div>
-							<!--end::Section-->
-						</form>
-					</div>
-					<!--end::Tabpane-->
+					
+					
 				</div>
 			</div>
 			<!--end::Content-->
