@@ -180,13 +180,13 @@ a.ex1:hover {
      <center>
      <script type="text/javascript">
     atOptions = {
-        'key' : '8f9fff97b2eefd0a18fee37738af571e',
+        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
+        'height' : 50,
+        'width' : 320,
         'params' : {}
     };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
     </center>
 
@@ -196,13 +196,13 @@ a.ex1:hover {
      <center>
      <script type="text/javascript">
     atOptions = {
-        'key' : '8f9fff97b2eefd0a18fee37738af571e',
+        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
+        'height' : 50,
+        'width' : 320,
         'params' : {}
     };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
  </center>
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
