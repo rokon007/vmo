@@ -71,6 +71,11 @@ $(function() {
         </div>
 		
 		
+		<script async="async" data-cfasync="false" src="//pl17591916.highperformancegate.com/6031ce30e4fbceb5d331525095ac7d00/invoke.js"></script>
+<div id="container-6031ce30e4fbceb5d331525095ac7d00"></div>
+		
+		
+		
 		
 		
 		
@@ -79,34 +84,6 @@ $(function() {
                     <span class="section-title float-left">Explore categories</span>
                     <a class="btn float-right text-white border-0 bright-green-bg" href="{{url('/categories')}}">View All</a>
                 </div><br>
-				<div class="row">
-				 <div class="col-2"><br></div> 
-		<div class="col-5">
-		<script type="text/javascript">
-    atOptions = {
-        'key' : '04d8dc338c29aacbcc8424433298a188',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-    };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script> 
-		</div>
-		<div class="col-5">
-		<script type="text/javascript">
-    atOptions = {
-        'key' : '04d8dc338c29aacbcc8424433298a188',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-    };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script> 
-		</div>
-		</div>
-		<br>
         </section>
         <div class="row d-flex align-items-center justify-content-center my-2">
             @foreach($categories as $categorie)
@@ -115,39 +92,17 @@ $(function() {
                     <a href="/viewcompany1/{{$categorie->name}}"><button class="btn btn-default  btn-category m-1 category-block" style="text-transform:capitalize;">{{$categorie->name}}</button></a>
 
             @endforeach                               
-            <br>
-              <div class="col-2"><br></div>  
+            
+                
 
-            <div class="col-5">
-		<script type="text/javascript">
-    atOptions = {
-        'key' : '04d8dc338c29aacbcc8424433298a188',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-    };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script> 
-		</div>
-		<div class="col-5">
-		<script type="text/javascript">
-    atOptions = {
-        'key' : '04d8dc338c29aacbcc8424433298a188',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-    };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script> 
-		</div>                               
-		</div>                               
-		</div>                               
-		</div>                               
+                                           
             
         </div>
 		
+		
+		
+		<script async="async" data-cfasync="false" src="//pl17591916.highperformancegate.com/6031ce30e4fbceb5d331525095ac7d00/invoke.js"></script>
+<div id="container-6031ce30e4fbceb5d331525095ac7d00"></div>
 		
 		
 		
