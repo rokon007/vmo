@@ -4,7 +4,8 @@
   <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598584479139935"
      crossorigin="anonymous"></script>
-  
+  <!-- 3rd party add script -->
+  <script type='text/javascript' src='//pl17590401.highperformancegate.com/20/2c/a3/202ca3d02b6ae2d839e53612510be45d.js'></script>
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225043657-1"></script>
