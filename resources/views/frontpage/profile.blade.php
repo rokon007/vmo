@@ -172,6 +172,8 @@ window.location.href = "{{ route('settings') }}"
                         <div class=" text-center m-5"><h2><strong>Recent Reviews</strong></h2>
                         <input class="form-control" id="myInput" type="text" placeholder="Search reviews">
                         <!---->
+						<br>
+						<div>
 						<script type="text/javascript">
                     atOptions = {
                         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
@@ -182,6 +184,7 @@ window.location.href = "{{ route('settings') }}"
                            };
                     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
                    </script>
+				   </div>
 				   <!---->
                         </div>
                         <br>
@@ -400,6 +403,8 @@ window.location.href = "{{ route('settings') }}"
 
                 </div>
 				<!---->
+				<br>
+				<div>
 				<script type="text/javascript">
 	atOptions = {
 		'key' : '39b6fc00bcab59ceed21057f45aaa076',
@@ -410,6 +415,7 @@ window.location.href = "{{ route('settings') }}"
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/39b6fc00bcab59ceed21057f45aaa076/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
 				<!---->
             </div>
         </div>

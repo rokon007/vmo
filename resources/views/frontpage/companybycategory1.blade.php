@@ -73,16 +73,6 @@
 			  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--SEARCH--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->    
               <div class="col-sm-12 col-lg-3 col-md-3">
                     <h3 class="text-center"><b>Filter By</b></h3>
-					<script type="text/javascript">
-                    atOptions = {
-                        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                           };
-                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
-                   </script>
                       <form method="GET" action="/view-companies/14/" id="search-form">
                         <div class="card mb-3" style="min-width: 16rem !important;border:3px solid var(--green);border-radius:10px">
                           <ul class="list-group list-group-flush">
@@ -112,23 +102,6 @@
                             </li>
                           </ul>
                         </div>
-						
-						
-						
-						<script type="text/javascript">
-                    atOptions = {
-                        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                           };
-                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
-                   </script>
-				   
-				   
-				   
-				   
                         
                         <div class="card mb-3" style="min-width: 16rem !important;border:3px solid var(--green);border-radius:10px">
                           <ul class="list-group list-group-flush">
@@ -163,21 +136,6 @@
                             </li>
                           </ul>
                         </div>
-						
-						
-						
-						<script type="text/javascript">
-                    atOptions = {
-                        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                           };
-                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
-                   </script>
-				   
-				   
                         
                         <div class="card" style="min-width: 16rem !important;border:3px solid var(--green);border-radius:10px">
                           <ul class="list-group list-group-flush">
