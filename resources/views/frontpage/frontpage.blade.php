@@ -177,7 +177,8 @@ a.ex1:hover {
 		 
 	 @endif
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
-     <script type="text/javascript">
+     <center>
+         <script type="text/javascript">
     atOptions = {
         'key' : '04d8dc338c29aacbcc8424433298a188',
         'format' : 'iframe',
@@ -186,8 +187,10 @@ a.ex1:hover {
         'params' : {}
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script>
-<iframe id="04d8dc338c29aacbcc8424433298a188"></iframe>
+</script> 
+     </center>
+    
+
      
       @yield('body')
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
