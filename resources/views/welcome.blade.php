@@ -106,7 +106,7 @@ $(function() {
 		'key' : 'bca573691af9e92d8533ccfcee4d52b1',
 		'format' : 'iframe',
 		'height' : 90,
-		'width' : 728,
+		'width' : 100%,
 		'params' : {}
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/bca573691af9e92d8533ccfcee4d52b1/invoke.js"></scr' + 'ipt>');
