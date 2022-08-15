@@ -101,6 +101,7 @@ $(function() {
 		
 	 
 		 <div class="row d-flex align-items-center justify-content-center my-2">
+		 <div>
      <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
@@ -111,7 +112,9 @@ $(function() {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
 <br>
+<div>
 <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
@@ -122,7 +125,9 @@ $(function() {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
 <br>
+<div>
 <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
@@ -133,6 +138,7 @@ $(function() {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
     </div>
 	 
 		

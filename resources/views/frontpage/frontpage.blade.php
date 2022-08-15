@@ -254,7 +254,7 @@ a.ex1:hover {
 
 <br>
 <div>
-    script type="text/javascript">
+    <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -265,7 +265,7 @@ a.ex1:hover {
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
 </div>
-<
+
     </div>
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
       
