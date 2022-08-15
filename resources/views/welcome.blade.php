@@ -101,8 +101,16 @@ $(function() {
 		
 		
 		
-		<script async="async" data-cfasync="false" src="//pl17591916.highperformancegate.com/6031ce30e4fbceb5d331525095ac7d00/invoke.js"></script>
-<div id="container-6031ce30e4fbceb5d331525095ac7d00"></div>
+		<script type="text/javascript">
+	atOptions = {
+		'key' : 'bca573691af9e92d8533ccfcee4d52b1',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/bca573691af9e92d8533ccfcee4d52b1/invoke.js"></scr' + 'ipt>');
+</script>
 		
 		
 		
