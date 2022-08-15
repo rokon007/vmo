@@ -177,6 +177,7 @@ a.ex1:hover {
 		 
 	 @endif
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
+     <script type='text/javascript' src='//pl17590401.highperformancegate.com/20/2c/a3/202ca3d02b6ae2d839e53612510be45d.js'></script>
       @yield('body')
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
       
