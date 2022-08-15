@@ -69,6 +69,9 @@ $(function() {
             <div class="d-lg-none d-sm-block cover-sm-bg">
             </div> 
         </div>
+		
+		
+		<div class="container-fluid">
 		<div class="row">
 		<div class="col-lg-6">
 		<script type="text/javascript">
@@ -95,6 +98,9 @@ $(function() {
 </script> 
 		</div>
 		</div>
+		</div>
+		
+		
         <section class="row mt-4 px-lg-5">
                 <div class="col-12 px-lg-5">
                     <span class="section-title float-left">Explore categories</span>
@@ -115,6 +121,8 @@ $(function() {
             
         </div>
 		
+		
+		<div class="container-fluid">
 		<div class="row">
 		<div class="col-lg-6">
 		<script type="text/javascript">
@@ -141,7 +149,7 @@ $(function() {
 </script> 
 		</div>
 		</div>
-		
+		</div>
 		
         <h2 class="text-center">Recent Reviews</h2>
         <div class="slider">

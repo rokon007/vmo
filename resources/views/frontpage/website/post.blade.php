@@ -297,6 +297,17 @@
                         </ul>
                     </div>
                 </div>
+				
+				<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+</script>
                 <!-- END sidebar-box -->
 
                 <div class="sidebar-box">
@@ -308,18 +319,8 @@
                     </ul>
                 </div>
                 <!-- END sidebar-box -->
-
-                <div class="sidebar-box">
-                    <h3 class="heading">Tags</h3>
-                    <ul class="tags">
-                        @foreach($tags as $tag)
-                        <li><a href="{{ route('website.tag', ['slug' => $tag->slug]) }}">{{ $tag->name }}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <!-- END sidebar -->
-             <script type="text/javascript">
+				
+				<script type="text/javascript">
 	atOptions = {
 		'key' : '8f9fff97b2eefd0a18fee37738af571e',
 		'format' : 'iframe',
@@ -329,6 +330,29 @@
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
 </script>
+
+
+                <div class="sidebar-box">
+                    <h3 class="heading">Tags</h3>
+                    <ul class="tags">
+                        @foreach($tags as $tag)
+                        <li><a href="{{ route('website.tag', ['slug' => $tag->slug]) }}">{{ $tag->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+				 <script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+</script>
+            </div>
+            <!-- END sidebar -->
+            
         </div>
     </div>
 </section>
@@ -341,6 +365,35 @@
                 <h2>More Related Posts</h2>
             </div>
         </div>
+		
+		
+		<div class="row">
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		</div>
+		
 
         <div class="row align-items-stretch retro-layout">
 
