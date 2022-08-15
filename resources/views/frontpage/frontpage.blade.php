@@ -177,7 +177,7 @@ a.ex1:hover {
 		 
 	 @endif
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
-     <center>
+     <div class="row d-flex align-items-center justify-content-center my-2">
      <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
@@ -188,7 +188,29 @@ a.ex1:hover {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
-    </center>
+
+<script type="text/javascript">
+    atOptions = {
+        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
+</script>
+
+<script type="text/javascript">
+    atOptions = {
+        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
+</script>
+    </div>
 
      
       @yield('body')
