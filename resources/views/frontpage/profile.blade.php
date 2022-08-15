@@ -172,6 +172,17 @@ window.location.href = "{{ route('settings') }}"
                         <div class=" text-center m-5"><h2><strong>Recent Reviews</strong></h2>
                         <input class="form-control" id="myInput" type="text" placeholder="Search reviews">
                         <!---->
+						<script type="text/javascript">
+                    atOptions = {
+                        'key' : '6050cdd679d716b3a40b7e7ca1241a34',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                           };
+                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
+                   </script>
+				   <!---->
                         </div>
                         <br>
 						 @foreach($RData as $reviews)
@@ -388,6 +399,18 @@ window.location.href = "{{ route('settings') }}"
                     </ul>
 
                 </div>
+				<!---->
+				<script type="text/javascript">
+	atOptions = {
+		'key' : '39b6fc00bcab59ceed21057f45aaa076',
+		'format' : 'iframe',
+		'height' : 300,
+		'width' : 160,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/39b6fc00bcab59ceed21057f45aaa076/invoke.js"></scr' + 'ipt>');
+</script>
+				<!---->
             </div>
         </div>
 
