@@ -177,7 +177,17 @@ a.ex1:hover {
 		 
 	 @endif
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
-     <div>><script type='text/javascript' src='//pl17590401.highperformancegate.com/20/2c/a3/202ca3d02b6ae2d839e53612510be45d.js'></script></div>
+     <script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script>
+<iframe id="04d8dc338c29aacbcc8424433298a188"></iframe>
      
       @yield('body')
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
