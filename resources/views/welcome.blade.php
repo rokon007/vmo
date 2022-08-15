@@ -80,7 +80,8 @@ $(function() {
                     <a class="btn float-right text-white border-0 bright-green-bg" href="{{url('/categories')}}">View All</a>
                 </div><br>
 				<div class="row">
-		<div class="col-6">
+				 <div class="col-2"><br></div> 
+		<div class="col-5">
 		<script type="text/javascript">
     atOptions = {
         'key' : '04d8dc338c29aacbcc8424433298a188',
@@ -92,7 +93,7 @@ $(function() {
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
 </script> 
 		</div>
-		<div class="col-6">
+		<div class="col-5">
 		<script type="text/javascript">
     atOptions = {
         'key' : '04d8dc338c29aacbcc8424433298a188',
@@ -114,10 +115,10 @@ $(function() {
                     <a href="/viewcompany1/{{$categorie->name}}"><button class="btn btn-default  btn-category m-1 category-block" style="text-transform:capitalize;">{{$categorie->name}}</button></a>
 
             @endforeach                               
-            
-                
+            <br>
+              <div class="col-2"><br></div>  
 
-            <div class="col-6">
+            <div class="col-5">
 		<script type="text/javascript">
     atOptions = {
         'key' : '04d8dc338c29aacbcc8424433298a188',
@@ -129,7 +130,7 @@ $(function() {
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
 </script> 
 		</div>
-		<div class="col-6">
+		<div class="col-5">
 		<script type="text/javascript">
     atOptions = {
         'key' : '04d8dc338c29aacbcc8424433298a188',
