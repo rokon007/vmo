@@ -64,6 +64,45 @@
             </div>
         </div>
         <div class="row">
+		<div class="col-lg-4 mb-4">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+         </script>
+			</div>
+			<div class="col-lg-4 mb-4">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+         </script>
+			</div>
+			<div class="col-lg-4 mb-4">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+         </script>
+			</div>
+			</div>
+			</div>
+			</div>
             @foreach($recentPosts as $post)
             <div class="col-lg-4 mb-4">
                 <div class="entry2">
@@ -88,7 +127,10 @@
                     </div>
                 </div>
             </div>
-			 <script type="text/javascript">
+			 
+            @endforeach
+			<div class="col-lg-4 mb-4">
+			<script type="text/javascript">
 	atOptions = {
 		'key' : '8f9fff97b2eefd0a18fee37738af571e',
 		'format' : 'iframe',
@@ -97,8 +139,32 @@
 		'params' : {}
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
-</script>
-            @endforeach
+         </script>
+			</div>
+			<div class="col-lg-4 mb-4">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+         </script>
+			</div>
+			<div class="col-lg-4 mb-4">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+         </script>
+			</div>
         </div>
 		 <div class="d-flex justify-content-center m-2">
                         <ul class="pagination">

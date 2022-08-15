@@ -71,34 +71,7 @@ $(function() {
         </div>
 		
 		
-		<div class="container-fluid">
-		<div class="row">
-		<div class="col-lg-6">
-		<script type="text/javascript">
-    atOptions = {
-        'key' : '04d8dc338c29aacbcc8424433298a188',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-    };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script> 
-		</div>
-		<div class="col-lg-6">
-		<script type="text/javascript">
-    atOptions = {
-        'key' : '04d8dc338c29aacbcc8424433298a188',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-    };
-    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
-</script> 
-		</div>
-		</div>
-		</div>
+		
 		
 		
         <section class="row mt-4 px-lg-5">
@@ -106,6 +79,33 @@ $(function() {
                     <span class="section-title float-left">Explore categories</span>
                     <a class="btn float-right text-white border-0 bright-green-bg" href="{{url('/categories')}}">View All</a>
                 </div><br>
+				<div class="row">
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		</div>
+		<br>
         </section>
         <div class="row d-flex align-items-center justify-content-center my-2">
             @foreach($categories as $categorie)
