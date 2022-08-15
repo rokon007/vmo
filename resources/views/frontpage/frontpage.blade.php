@@ -178,7 +178,8 @@ a.ex1:hover {
 	 @endif
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
      <div class="row d-flex align-items-center justify-content-center my-2">
-     <script type="text/javascript">
+        <div>
+            <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -188,8 +189,11 @@ a.ex1:hover {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+        </div>
+     
 <br>
-<script type="text/javascript">
+<div>
+    <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -199,8 +203,11 @@ a.ex1:hover {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
+
 <br>
-<script type="text/javascript">
+<div>
+    <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -210,13 +217,16 @@ a.ex1:hover {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
+
     </div>
 
      
       @yield('body')
 
       <div class="row d-flex align-items-center justify-content-center my-2">
-     <script type="text/javascript">
+        <div>
+           <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -225,9 +235,12 @@ a.ex1:hover {
         'params' : {}
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
-</script>
+</script>  
+        </div>
+    
 <br>
-<script type="text/javascript">
+<div>
+    <script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -237,8 +250,11 @@ a.ex1:hover {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
+
 <br>
-<script type="text/javascript">
+<div>
+    script type="text/javascript">
     atOptions = {
         'key' : '6050cdd679d716b3a40b7e7ca1241a34',
         'format' : 'iframe',
@@ -248,6 +264,8 @@ a.ex1:hover {
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/6050cdd679d716b3a40b7e7ca1241a34/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
+<
     </div>
      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX--->
       
