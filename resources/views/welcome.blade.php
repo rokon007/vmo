@@ -99,20 +99,20 @@ $(function() {
             
         </div>
 		
-		
+	 <section class="row">	
 		<center>
 		<script type="text/javascript">
 	atOptions = {
 		'key' : 'bca573691af9e92d8533ccfcee4d52b1',
 		'format' : 'iframe',
 		'height' : 90,
-		'width' : 100%,
+		'width' : 728,
 		'params' : {}
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/bca573691af9e92d8533ccfcee4d52b1/invoke.js"></scr' + 'ipt>');
 </script>
 		</center>
-		
+	 </section>	
 		
         <h2 class="text-center">Recent Reviews</h2>
         <div class="slider">

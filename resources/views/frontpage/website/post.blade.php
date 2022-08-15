@@ -52,7 +52,7 @@
         'key' : '04d8dc338c29aacbcc8424433298a188',
         'format' : 'iframe',
         'height' : 60,
-        'width' : 100%,
+        'width' : 468,
         'params' : {}
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
@@ -81,18 +81,20 @@
                         @endif
                     </p>
                 </div>
+	 <section class="row">				
 				<center>
          <script type="text/javascript">
     atOptions = {
         'key' : '04d8dc338c29aacbcc8424433298a188',
         'format' : 'iframe',
         'height' : 60,
-        'width' : 100%,
+        'width' : 468,
         'params' : {}
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
 </script> 
      </center>
+	 </section>
                 <div class="pt-5">
                     <h5 class="mb-5" id="dsq-count-scr">{{$commentcount}} Comments</h5>
 					@if($commentcount!=0)

@@ -183,7 +183,7 @@ a.ex1:hover {
         'key' : 'bca573691af9e92d8533ccfcee4d52b1',
         'format' : 'iframe',
         'height' : 90,
-        'width' : 100%,
+        'width' : 728,
         'params' : {}
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/bca573691af9e92d8533ccfcee4d52b1/invoke.js"></scr' + 'ipt>');
@@ -199,7 +199,7 @@ a.ex1:hover {
         'key' : 'bca573691af9e92d8533ccfcee4d52b1',
         'format' : 'iframe',
         'height' : 90,
-        'width' : 100%,
+        'width' : 728,
         'params' : {}
     };
     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/bca573691af9e92d8533ccfcee4d52b1/invoke.js"></scr' + 'ipt>');
