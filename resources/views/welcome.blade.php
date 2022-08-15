@@ -69,6 +69,32 @@ $(function() {
             <div class="d-lg-none d-sm-block cover-sm-bg">
             </div> 
         </div>
+		<div class="row">
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		</div>
         <section class="row mt-4 px-lg-5">
                 <div class="col-12 px-lg-5">
                     <span class="section-title float-left">Explore categories</span>
@@ -88,6 +114,35 @@ $(function() {
                                            
             
         </div>
+		
+		<div class="row">
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		<div class="col-lg-6">
+		<script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+		</div>
+		</div>
+		
+		
         <h2 class="text-center">Recent Reviews</h2>
         <div class="slider">
             <div class="slide-track">

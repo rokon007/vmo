@@ -46,6 +46,19 @@
         <div class="row blog-entries element-animate">
             <div class="col-md-12 col-lg-8 main-content">
                 <div class="post-content-body">
+				<center>
+         <script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+     </center>
+	 <br>
                     {!! $post->description !!}
                 </div>
 				 <div class="post-content-body">
@@ -68,6 +81,18 @@
                         @endif
                     </p>
                 </div>
+				<center>
+         <script type="text/javascript">
+    atOptions = {
+        'key' : '04d8dc338c29aacbcc8424433298a188',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/04d8dc338c29aacbcc8424433298a188/invoke.js"></scr' + 'ipt>');
+</script> 
+     </center>
                 <div class="pt-5">
                     <h5 class="mb-5" id="dsq-count-scr">{{$commentcount}} Comments</h5>
 					@if($commentcount!=0)
@@ -240,6 +265,16 @@
                         </div>
                     </div>
                 </div>
+				<script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+</script>
                 <!-- END sidebar-box -->
                 <div class="sidebar-box">
                     <h3 class="heading">Popular Posts</h3>
@@ -284,7 +319,16 @@
                 </div>
             </div>
             <!-- END sidebar -->
-
+             <script type="text/javascript">
+	atOptions = {
+		'key' : '8f9fff97b2eefd0a18fee37738af571e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
+</script>
         </div>
     </div>
 </section>
