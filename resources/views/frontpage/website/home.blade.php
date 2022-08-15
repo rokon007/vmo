@@ -76,6 +76,7 @@
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
          </script>
 			</div>
+			
 			<div class="col-lg-4 mb-4">
 			<script type="text/javascript">
 	atOptions = {
@@ -88,6 +89,7 @@
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
          </script>
 			</div>
+			
 			<div class="col-lg-4 mb-4">
 			<script type="text/javascript">
 	atOptions = {
@@ -100,9 +102,8 @@
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivecreativeformats.com/8f9fff97b2eefd0a18fee37738af571e/invoke.js"></scr' + 'ipt>');
          </script>
 			</div>
-			</div>
-			</div>
-			</div>
+			
+			
             @foreach($recentPosts as $post)
             <div class="col-lg-4 mb-4">
                 <div class="entry2">
