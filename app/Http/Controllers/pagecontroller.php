@@ -410,7 +410,7 @@ class pagecontroller extends Controller
          
         }
          if($request->has('is_superuser')){
-         $is_superuser =1;
+         $is_superuser =2;
          
         }else{
              $is_superuser = 0;

@@ -208,7 +208,10 @@
                      <input type="checkbox" name="is_active[]" id="id_is_active" {{ $UserData->is_active == 1 ? 'checked' : null }}>
 						<label  for="id_is_active">Active</label>
                        <h3><span class="d-block text-muted pt-2 font-size-lg">Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</span></h3>
-                 </div>       
+                 </div>   
+                  
+                   
+                  		   
                </div> 
 			    <div class="col-xl-8">
 			   <div class="form-group">
@@ -218,9 +221,9 @@
                </div> 
 			    <div class="col-xl-8">
 			   <div class="form-group">
-                       <input type="checkbox" name="is_superuser[]" id="id_is_superuser" {{ $UserData->is_superuser == 1 ? 'checked' : null }} >
-						<label class="vCheckboxLabel" for="id_is_superuser">Superuser status</label>
-                        <h3><span class="d-block text-muted pt-2 font-size-lg">Designates that this user has all permissions without explicitly assigning them.</span></h3>
+                       <input type="checkbox" name="is_superuser[]" id="id_is_superuser" {{ $UserData->is_superuser == 2 ? 'checked' : null }} >
+						<label class="vCheckboxLabel" for="id_is_superuser">User Dashboard</label>
+                        <h3><span class="d-block text-muted pt-2 font-size-lg">It's allows access to the dashboard for this user.</span></h3>
                  </div>       
                </div> 
        
