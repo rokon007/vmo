@@ -1,8 +1,11 @@
 @extends('frontpage.frontpage')
  @section('title') 
  <title>Vimbiso | Password Reset</title>
-         <meta name="description" content="vary good">
-     <meta name="keywords" content="vimbiso">
+         <meta charset="utf-8">
+         <meta name="description" content="Password Reset">
+         <meta name="keywords" content="Password Reset">   
+         <meta name="author" content="Tanaka Karumazondo">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	 
     
 @endsection 

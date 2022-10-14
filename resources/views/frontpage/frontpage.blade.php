@@ -300,7 +300,7 @@ a.ex1:hover {
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text">
                                 <h4>Mail us</h4>
-                                <span><a href = "mailto: info@vimbiso.org">info@vimbiso.org</a></span>
+                                <span><a href = "mailto: info@vimbiso.org">info@vimbiso.info</a></span>
                             </div>
                         </div>
                     </div>

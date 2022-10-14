@@ -56,12 +56,29 @@ return [
 
 
         'smtp' => [
+            // 'transport' => 'smtp',
+            // 'host' =>'smtp.gmail.com',
+            // 'port' =>'465',
+            // 'encryption' =>'ssl',
+            // 'username' =>'innfo.vimbiso@gmail.com',
+            // 'password' =>'zasxyrszylpdlvum',
+
+
+
+
+
             'transport' => 'smtp',
-            'host' =>'smtp.gmail.com',
+            'host' =>'smtp.hostinger.com',
             'port' =>'465',
             'encryption' =>'ssl',
-            'username' =>'innfo.vimbiso@gmail.com',
-            'password' =>'zasxyrszylpdlvum',
+            'username' =>'info@vimbiso.info',
+            'password' =>'V!mb!so4952',
+
+
+
+
+
+
             // 'password' =>'asd*2022',
             // 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             // 'port' => env('MAIL_PORT', 587),
@@ -121,7 +138,7 @@ return [
     'from' => [
         // 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         // 'name' => env('MAIL_FROM_NAME', 'Example'),
-         'address' => 'innfo.vimbiso@gmail.com',
+         'address' => 'info@vimbiso.info',
         'name' => 'Vimbiso',
     ],
 

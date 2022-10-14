@@ -30,7 +30,7 @@ class ContactController extends Controller
          'subject' => 'New Email',
          'message'=>$request->input('message')
         ];
-        Mail::to("info@vimbiso.org")->send(new ContactMail($deatils));
+        Mail::to("info@vimbiso.info")->send(new ContactMail($deatils));
         // return "Email Sent";
         return redirect()->back()->with(['success' => 'Contact Form Submit Successfully']); 
 
@@ -54,7 +54,7 @@ class ContactController extends Controller
          'subject' => 'Request For Contact Email',
          'message'=>$request->input('message')
         ];
-        Mail::to($request->input('company_email'))->cc("info@vimbiso.org")->send(new Request_email($deatils));
+        Mail::to($request->input('company_email'))->cc("info@vimbiso.info")->send(new Request_email($deatils));
         // return "Email Sent";
         return redirect()->back()->with(['success' => 'Request For Contact Email Submited Successfully']); 
 
@@ -79,7 +79,7 @@ class ContactController extends Controller
          'subject' => 'Request For Contact Email',
          'message'=>$request->input('message')
         ];
-        Mail::to($request->input('company_email'))->cc("info@vimbiso.org")->send(new Request_contact($deatils));
+        Mail::to($request->input('company_email'))->cc("info@vimbiso.info")->send(new Request_contact($deatils));
 		
         // return "Email Sent";
         return redirect()->back()->with(['success2' => 'Request For Contact Number Submited Successfully']); 
